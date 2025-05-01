@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
+**CreatedBy** | Pointer to **NullableString** |  | [optional] 
+**Expand** | Pointer to **[]string** | Specifies which fields in the response should be expanded. | [optional] 
+**IsActive** | Pointer to **NullableBool** |  | [optional] 
+**NameContains** | Pointer to **NullableString** |  | [optional] 
 **PageNumber** | Pointer to **int32** | Page number | [optional] [default to 1]
 **PageSize** | Pointer to **int32** | Page size | [optional] [default to 100]
-**SortKey** | Pointer to **string** | Key name based on which data is sorted. | [optional] [default to "created_at"]
-**SortDescending** | Pointer to **bool** | Sort direction. | [optional] [default to false]
-**CreatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**UpdatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**Expand** | Pointer to **[]string** |  | [optional] 
-**IsActive** | Pointer to **NullableBool** |  | [optional] 
-**CreatedBy** | Pointer to **NullableString** |  | [optional] 
-**NameContains** | Pointer to **NullableString** |  | [optional] 
 **Search** | Pointer to [**NullableSearchFilter**](SearchFilter.md) |  | [optional] 
+**SortDescending** | Pointer to **bool** | Sort direction. | [optional] [default to false]
+**SortKey** | Pointer to **string** | Key name based on which data is sorted. | [optional] [default to "created_at"]
+**UpdatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
 
 ## Methods
 
@@ -34,106 +34,6 @@ will change when the set of required properties is changed
 NewProductQueryParamsWithDefaults instantiates a new ProductQueryParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPageNumber
-
-`func (o *ProductQueryParams) GetPageNumber() int32`
-
-GetPageNumber returns the PageNumber field if non-nil, zero value otherwise.
-
-### GetPageNumberOk
-
-`func (o *ProductQueryParams) GetPageNumberOk() (*int32, bool)`
-
-GetPageNumberOk returns a tuple with the PageNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPageNumber
-
-`func (o *ProductQueryParams) SetPageNumber(v int32)`
-
-SetPageNumber sets PageNumber field to given value.
-
-### HasPageNumber
-
-`func (o *ProductQueryParams) HasPageNumber() bool`
-
-HasPageNumber returns a boolean if a field has been set.
-
-### GetPageSize
-
-`func (o *ProductQueryParams) GetPageSize() int32`
-
-GetPageSize returns the PageSize field if non-nil, zero value otherwise.
-
-### GetPageSizeOk
-
-`func (o *ProductQueryParams) GetPageSizeOk() (*int32, bool)`
-
-GetPageSizeOk returns a tuple with the PageSize field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPageSize
-
-`func (o *ProductQueryParams) SetPageSize(v int32)`
-
-SetPageSize sets PageSize field to given value.
-
-### HasPageSize
-
-`func (o *ProductQueryParams) HasPageSize() bool`
-
-HasPageSize returns a boolean if a field has been set.
-
-### GetSortKey
-
-`func (o *ProductQueryParams) GetSortKey() string`
-
-GetSortKey returns the SortKey field if non-nil, zero value otherwise.
-
-### GetSortKeyOk
-
-`func (o *ProductQueryParams) GetSortKeyOk() (*string, bool)`
-
-GetSortKeyOk returns a tuple with the SortKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSortKey
-
-`func (o *ProductQueryParams) SetSortKey(v string)`
-
-SetSortKey sets SortKey field to given value.
-
-### HasSortKey
-
-`func (o *ProductQueryParams) HasSortKey() bool`
-
-HasSortKey returns a boolean if a field has been set.
-
-### GetSortDescending
-
-`func (o *ProductQueryParams) GetSortDescending() bool`
-
-GetSortDescending returns the SortDescending field if non-nil, zero value otherwise.
-
-### GetSortDescendingOk
-
-`func (o *ProductQueryParams) GetSortDescendingOk() (*bool, bool)`
-
-GetSortDescendingOk returns a tuple with the SortDescending field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSortDescending
-
-`func (o *ProductQueryParams) SetSortDescending(v bool)`
-
-SetSortDescending sets SortDescending field to given value.
-
-### HasSortDescending
-
-`func (o *ProductQueryParams) HasSortDescending() bool`
-
-HasSortDescending returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -170,41 +70,41 @@ HasCreatedAt returns a boolean if a field has been set.
 `func (o *ProductQueryParams) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetUpdatedAt
+### GetCreatedBy
 
-`func (o *ProductQueryParams) GetUpdatedAt() DateTimeFilter`
+`func (o *ProductQueryParams) GetCreatedBy() string`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetCreatedByOk
 
-`func (o *ProductQueryParams) GetUpdatedAtOk() (*DateTimeFilter, bool)`
+`func (o *ProductQueryParams) GetCreatedByOk() (*string, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetCreatedBy
 
-`func (o *ProductQueryParams) SetUpdatedAt(v DateTimeFilter)`
+`func (o *ProductQueryParams) SetCreatedBy(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetCreatedBy sets CreatedBy field to given value.
 
-### HasUpdatedAt
+### HasCreatedBy
 
-`func (o *ProductQueryParams) HasUpdatedAt() bool`
+`func (o *ProductQueryParams) HasCreatedBy() bool`
 
-HasUpdatedAt returns a boolean if a field has been set.
+HasCreatedBy returns a boolean if a field has been set.
 
-### SetUpdatedAtNil
+### SetCreatedByNil
 
-`func (o *ProductQueryParams) SetUpdatedAtNil(b bool)`
+`func (o *ProductQueryParams) SetCreatedByNil(b bool)`
 
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+ SetCreatedByNil sets the value for CreatedBy to be an explicit nil
 
-### UnsetUpdatedAt
-`func (o *ProductQueryParams) UnsetUpdatedAt()`
+### UnsetCreatedBy
+`func (o *ProductQueryParams) UnsetCreatedBy()`
 
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetExpand
 
 `func (o *ProductQueryParams) GetExpand() []string`
@@ -265,41 +165,6 @@ HasIsActive returns a boolean if a field has been set.
 `func (o *ProductQueryParams) UnsetIsActive()`
 
 UnsetIsActive ensures that no value is present for IsActive, not even an explicit nil
-### GetCreatedBy
-
-`func (o *ProductQueryParams) GetCreatedBy() string`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *ProductQueryParams) GetCreatedByOk() (*string, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *ProductQueryParams) SetCreatedBy(v string)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *ProductQueryParams) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### SetCreatedByNil
-
-`func (o *ProductQueryParams) SetCreatedByNil(b bool)`
-
- SetCreatedByNil sets the value for CreatedBy to be an explicit nil
-
-### UnsetCreatedBy
-`func (o *ProductQueryParams) UnsetCreatedBy()`
-
-UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetNameContains
 
 `func (o *ProductQueryParams) GetNameContains() string`
@@ -335,6 +200,56 @@ HasNameContains returns a boolean if a field has been set.
 `func (o *ProductQueryParams) UnsetNameContains()`
 
 UnsetNameContains ensures that no value is present for NameContains, not even an explicit nil
+### GetPageNumber
+
+`func (o *ProductQueryParams) GetPageNumber() int32`
+
+GetPageNumber returns the PageNumber field if non-nil, zero value otherwise.
+
+### GetPageNumberOk
+
+`func (o *ProductQueryParams) GetPageNumberOk() (*int32, bool)`
+
+GetPageNumberOk returns a tuple with the PageNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPageNumber
+
+`func (o *ProductQueryParams) SetPageNumber(v int32)`
+
+SetPageNumber sets PageNumber field to given value.
+
+### HasPageNumber
+
+`func (o *ProductQueryParams) HasPageNumber() bool`
+
+HasPageNumber returns a boolean if a field has been set.
+
+### GetPageSize
+
+`func (o *ProductQueryParams) GetPageSize() int32`
+
+GetPageSize returns the PageSize field if non-nil, zero value otherwise.
+
+### GetPageSizeOk
+
+`func (o *ProductQueryParams) GetPageSizeOk() (*int32, bool)`
+
+GetPageSizeOk returns a tuple with the PageSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPageSize
+
+`func (o *ProductQueryParams) SetPageSize(v int32)`
+
+SetPageSize sets PageSize field to given value.
+
+### HasPageSize
+
+`func (o *ProductQueryParams) HasPageSize() bool`
+
+HasPageSize returns a boolean if a field has been set.
+
 ### GetSearch
 
 `func (o *ProductQueryParams) GetSearch() SearchFilter`
@@ -370,6 +285,91 @@ HasSearch returns a boolean if a field has been set.
 `func (o *ProductQueryParams) UnsetSearch()`
 
 UnsetSearch ensures that no value is present for Search, not even an explicit nil
+### GetSortDescending
+
+`func (o *ProductQueryParams) GetSortDescending() bool`
+
+GetSortDescending returns the SortDescending field if non-nil, zero value otherwise.
+
+### GetSortDescendingOk
+
+`func (o *ProductQueryParams) GetSortDescendingOk() (*bool, bool)`
+
+GetSortDescendingOk returns a tuple with the SortDescending field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortDescending
+
+`func (o *ProductQueryParams) SetSortDescending(v bool)`
+
+SetSortDescending sets SortDescending field to given value.
+
+### HasSortDescending
+
+`func (o *ProductQueryParams) HasSortDescending() bool`
+
+HasSortDescending returns a boolean if a field has been set.
+
+### GetSortKey
+
+`func (o *ProductQueryParams) GetSortKey() string`
+
+GetSortKey returns the SortKey field if non-nil, zero value otherwise.
+
+### GetSortKeyOk
+
+`func (o *ProductQueryParams) GetSortKeyOk() (*string, bool)`
+
+GetSortKeyOk returns a tuple with the SortKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortKey
+
+`func (o *ProductQueryParams) SetSortKey(v string)`
+
+SetSortKey sets SortKey field to given value.
+
+### HasSortKey
+
+`func (o *ProductQueryParams) HasSortKey() bool`
+
+HasSortKey returns a boolean if a field has been set.
+
+### GetUpdatedAt
+
+`func (o *ProductQueryParams) GetUpdatedAt() DateTimeFilter`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *ProductQueryParams) GetUpdatedAtOk() (*DateTimeFilter, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *ProductQueryParams) SetUpdatedAt(v DateTimeFilter)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *ProductQueryParams) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *ProductQueryParams) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *ProductQueryParams) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

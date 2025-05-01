@@ -24,24 +24,24 @@ Create Product Family
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createProductFamilyRequest := *openapiclient.NewCreateProductFamilyRequest("CRM products", []string{"Products_example"}) // CreateProductFamilyRequest | 
+	createProductFamilyRequest := *openapiclient.NewCreateProductFamilyRequest("CRM products", []string{"Products_example"}) // CreateProductFamilyRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductFamilyAPI.CreateProductFamily(context.Background()).CreateProductFamilyRequest(createProductFamilyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.CreateProductFamily``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateProductFamily`: ProductFamilyExternal
-    fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.CreateProductFamily`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductFamilyAPI.CreateProductFamily(context.Background()).CreateProductFamilyRequest(createProductFamilyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.CreateProductFamily``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateProductFamily`: ProductFamilyExternal
+	fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.CreateProductFamily`: %v\n", resp)
 }
 ```
 
@@ -88,22 +88,22 @@ Delete Product Family
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    id := "id_example" // string | 
+	id := "id_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ProductFamilyAPI.DeleteProductFamily(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.DeleteProductFamily``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ProductFamilyAPI.DeleteProductFamily(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.DeleteProductFamily``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -154,24 +154,24 @@ Get Product Family
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    id := "id_example" // string | 
+	id := "id_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductFamilyAPI.GetProductFamily(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.GetProductFamily``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetProductFamily`: ProductFamilyExternal
-    fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.GetProductFamily`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductFamilyAPI.GetProductFamily(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.GetProductFamily``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetProductFamily`: ProductFamilyExternal
+	fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.GetProductFamily`: %v\n", resp)
 }
 ```
 
@@ -222,24 +222,24 @@ List Product Families
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    productFamilyQueryParams := *openapiclient.NewProductFamilyQueryParams() // ProductFamilyQueryParams | 
+	productFamilyQueryParams := *openapiclient.NewProductFamilyQueryParams() // ProductFamilyQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductFamilyAPI.ListProductFamilies(context.Background()).ProductFamilyQueryParams(productFamilyQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.ListProductFamilies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListProductFamilies`: ListResponseProductFamilyExternal
-    fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.ListProductFamilies`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductFamilyAPI.ListProductFamilies(context.Background()).ProductFamilyQueryParams(productFamilyQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.ListProductFamilies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListProductFamilies`: ListResponseProductFamilyExternal
+	fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.ListProductFamilies`: %v\n", resp)
 }
 ```
 
@@ -286,25 +286,25 @@ Update Product Family
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    id := "id_example" // string | 
-    updateProductFamilyRequest := *openapiclient.NewUpdateProductFamilyRequest("Name_example", []string{"Products_example"}) // UpdateProductFamilyRequest | 
+	id := "id_example" // string | 
+	updateProductFamilyRequest := *openapiclient.NewUpdateProductFamilyRequest("Name_example", []string{"Products_example"}) // UpdateProductFamilyRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ProductFamilyAPI.UpdateProductFamily(context.Background(), id).UpdateProductFamilyRequest(updateProductFamilyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.UpdateProductFamily``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateProductFamily`: ProductFamilyExternal
-    fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.UpdateProductFamily`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductFamilyAPI.UpdateProductFamily(context.Background(), id).UpdateProductFamilyRequest(updateProductFamilyRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductFamilyAPI.UpdateProductFamily``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateProductFamily`: ProductFamilyExternal
+	fmt.Fprintf(os.Stdout, "Response from `ProductFamilyAPI.UpdateProductFamily`: %v\n", resp)
 }
 ```
 

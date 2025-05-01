@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PriceId** | Pointer to **NullableString** |  | [optional] 
-**Quantity** | Pointer to **NullableInt32** |  | [optional] 
-**ProrationBehavior** | Pointer to [**ProrationEnum**](ProrationEnum.md) |  | [optional] [default to PRORATIONENUM_ALWAYS_INVOICE]
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **DropAtEnd** | Pointer to **NullableBool** |  | [optional] 
+**PriceId** | Pointer to **NullableString** |  | [optional] 
+**ProrationBehavior** | Pointer to [**ProrationEnum**](ProrationEnum.md) | Determines how to handle prorations when the billable items changes. In case of subscription is in trialing state, invoice items if any will be for amount_atom 0. | [optional] 
+**Quantity** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -28,101 +30,76 @@ NewUpdateSubscriptionItemRequestWithDefaults instantiates a new UpdateSubscripti
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetPriceId
+### GetCustomFields
 
-`func (o *UpdateSubscriptionItemRequest) GetPriceId() string`
+`func (o *UpdateSubscriptionItemRequest) GetCustomFields() map[string]interface{}`
 
-GetPriceId returns the PriceId field if non-nil, zero value otherwise.
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
-### GetPriceIdOk
+### GetCustomFieldsOk
 
-`func (o *UpdateSubscriptionItemRequest) GetPriceIdOk() (*string, bool)`
+`func (o *UpdateSubscriptionItemRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
 
-GetPriceIdOk returns a tuple with the PriceId field if it's non-nil, zero value otherwise
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPriceId
+### SetCustomFields
 
-`func (o *UpdateSubscriptionItemRequest) SetPriceId(v string)`
+`func (o *UpdateSubscriptionItemRequest) SetCustomFields(v map[string]interface{})`
 
-SetPriceId sets PriceId field to given value.
+SetCustomFields sets CustomFields field to given value.
 
-### HasPriceId
+### HasCustomFields
 
-`func (o *UpdateSubscriptionItemRequest) HasPriceId() bool`
+`func (o *UpdateSubscriptionItemRequest) HasCustomFields() bool`
 
-HasPriceId returns a boolean if a field has been set.
+HasCustomFields returns a boolean if a field has been set.
 
-### SetPriceIdNil
+### SetCustomFieldsNil
 
-`func (o *UpdateSubscriptionItemRequest) SetPriceIdNil(b bool)`
+`func (o *UpdateSubscriptionItemRequest) SetCustomFieldsNil(b bool)`
 
- SetPriceIdNil sets the value for PriceId to be an explicit nil
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
 
-### UnsetPriceId
-`func (o *UpdateSubscriptionItemRequest) UnsetPriceId()`
+### UnsetCustomFields
+`func (o *UpdateSubscriptionItemRequest) UnsetCustomFields()`
 
-UnsetPriceId ensures that no value is present for PriceId, not even an explicit nil
-### GetQuantity
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
+### GetDescription
 
-`func (o *UpdateSubscriptionItemRequest) GetQuantity() int32`
+`func (o *UpdateSubscriptionItemRequest) GetDescription() string`
 
-GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetQuantityOk
+### GetDescriptionOk
 
-`func (o *UpdateSubscriptionItemRequest) GetQuantityOk() (*int32, bool)`
+`func (o *UpdateSubscriptionItemRequest) GetDescriptionOk() (*string, bool)`
 
-GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetQuantity
+### SetDescription
 
-`func (o *UpdateSubscriptionItemRequest) SetQuantity(v int32)`
+`func (o *UpdateSubscriptionItemRequest) SetDescription(v string)`
 
-SetQuantity sets Quantity field to given value.
+SetDescription sets Description field to given value.
 
-### HasQuantity
+### HasDescription
 
-`func (o *UpdateSubscriptionItemRequest) HasQuantity() bool`
+`func (o *UpdateSubscriptionItemRequest) HasDescription() bool`
 
-HasQuantity returns a boolean if a field has been set.
+HasDescription returns a boolean if a field has been set.
 
-### SetQuantityNil
+### SetDescriptionNil
 
-`func (o *UpdateSubscriptionItemRequest) SetQuantityNil(b bool)`
+`func (o *UpdateSubscriptionItemRequest) SetDescriptionNil(b bool)`
 
- SetQuantityNil sets the value for Quantity to be an explicit nil
+ SetDescriptionNil sets the value for Description to be an explicit nil
 
-### UnsetQuantity
-`func (o *UpdateSubscriptionItemRequest) UnsetQuantity()`
+### UnsetDescription
+`func (o *UpdateSubscriptionItemRequest) UnsetDescription()`
 
-UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
-### GetProrationBehavior
-
-`func (o *UpdateSubscriptionItemRequest) GetProrationBehavior() ProrationEnum`
-
-GetProrationBehavior returns the ProrationBehavior field if non-nil, zero value otherwise.
-
-### GetProrationBehaviorOk
-
-`func (o *UpdateSubscriptionItemRequest) GetProrationBehaviorOk() (*ProrationEnum, bool)`
-
-GetProrationBehaviorOk returns a tuple with the ProrationBehavior field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProrationBehavior
-
-`func (o *UpdateSubscriptionItemRequest) SetProrationBehavior(v ProrationEnum)`
-
-SetProrationBehavior sets ProrationBehavior field to given value.
-
-### HasProrationBehavior
-
-`func (o *UpdateSubscriptionItemRequest) HasProrationBehavior() bool`
-
-HasProrationBehavior returns a boolean if a field has been set.
-
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDropAtEnd
 
 `func (o *UpdateSubscriptionItemRequest) GetDropAtEnd() bool`
@@ -158,6 +135,101 @@ HasDropAtEnd returns a boolean if a field has been set.
 `func (o *UpdateSubscriptionItemRequest) UnsetDropAtEnd()`
 
 UnsetDropAtEnd ensures that no value is present for DropAtEnd, not even an explicit nil
+### GetPriceId
+
+`func (o *UpdateSubscriptionItemRequest) GetPriceId() string`
+
+GetPriceId returns the PriceId field if non-nil, zero value otherwise.
+
+### GetPriceIdOk
+
+`func (o *UpdateSubscriptionItemRequest) GetPriceIdOk() (*string, bool)`
+
+GetPriceIdOk returns a tuple with the PriceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceId
+
+`func (o *UpdateSubscriptionItemRequest) SetPriceId(v string)`
+
+SetPriceId sets PriceId field to given value.
+
+### HasPriceId
+
+`func (o *UpdateSubscriptionItemRequest) HasPriceId() bool`
+
+HasPriceId returns a boolean if a field has been set.
+
+### SetPriceIdNil
+
+`func (o *UpdateSubscriptionItemRequest) SetPriceIdNil(b bool)`
+
+ SetPriceIdNil sets the value for PriceId to be an explicit nil
+
+### UnsetPriceId
+`func (o *UpdateSubscriptionItemRequest) UnsetPriceId()`
+
+UnsetPriceId ensures that no value is present for PriceId, not even an explicit nil
+### GetProrationBehavior
+
+`func (o *UpdateSubscriptionItemRequest) GetProrationBehavior() ProrationEnum`
+
+GetProrationBehavior returns the ProrationBehavior field if non-nil, zero value otherwise.
+
+### GetProrationBehaviorOk
+
+`func (o *UpdateSubscriptionItemRequest) GetProrationBehaviorOk() (*ProrationEnum, bool)`
+
+GetProrationBehaviorOk returns a tuple with the ProrationBehavior field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrationBehavior
+
+`func (o *UpdateSubscriptionItemRequest) SetProrationBehavior(v ProrationEnum)`
+
+SetProrationBehavior sets ProrationBehavior field to given value.
+
+### HasProrationBehavior
+
+`func (o *UpdateSubscriptionItemRequest) HasProrationBehavior() bool`
+
+HasProrationBehavior returns a boolean if a field has been set.
+
+### GetQuantity
+
+`func (o *UpdateSubscriptionItemRequest) GetQuantity() int32`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *UpdateSubscriptionItemRequest) GetQuantityOk() (*int32, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *UpdateSubscriptionItemRequest) SetQuantity(v int32)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *UpdateSubscriptionItemRequest) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
+### SetQuantityNil
+
+`func (o *UpdateSubscriptionItemRequest) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *UpdateSubscriptionItemRequest) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

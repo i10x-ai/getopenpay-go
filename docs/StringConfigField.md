@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name of the field. | 
-**Key** | **string** | The key of the field in the config. | 
+**DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
+**Key** | **string** | The key of the field in the config. | 
+**MaxLength** | Pointer to **NullableInt32** |  | [optional] 
+**MinLength** | Pointer to **NullableInt32** |  | [optional] 
+**Name** | **string** | The name of the field. | 
 **Type** | Pointer to **string** |  | [optional] [default to "string"]
 **Value** | **NullableString** |  | 
-**DefaultValue** | Pointer to **NullableString** |  | [optional] 
-**MinLength** | Pointer to **NullableInt32** |  | [optional] 
-**MaxLength** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
 ### NewStringConfigField
 
-`func NewStringConfigField(name string, key string, value NullableString, ) *StringConfigField`
+`func NewStringConfigField(key string, name string, value NullableString, ) *StringConfigField`
 
 NewStringConfigField instantiates a new StringConfigField object
 This constructor will assign default values to properties that have it defined,
@@ -32,46 +32,41 @@ NewStringConfigFieldWithDefaults instantiates a new StringConfigField object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetDefaultValue
 
-`func (o *StringConfigField) GetName() string`
+`func (o *StringConfigField) GetDefaultValue() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetDefaultValueOk
 
-`func (o *StringConfigField) GetNameOk() (*string, bool)`
+`func (o *StringConfigField) GetDefaultValueOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetDefaultValue
 
-`func (o *StringConfigField) SetName(v string)`
+`func (o *StringConfigField) SetDefaultValue(v string)`
 
-SetName sets Name field to given value.
+SetDefaultValue sets DefaultValue field to given value.
 
+### HasDefaultValue
 
-### GetKey
+`func (o *StringConfigField) HasDefaultValue() bool`
 
-`func (o *StringConfigField) GetKey() string`
+HasDefaultValue returns a boolean if a field has been set.
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+### SetDefaultValueNil
 
-### GetKeyOk
+`func (o *StringConfigField) SetDefaultValueNil(b bool)`
 
-`func (o *StringConfigField) GetKeyOk() (*string, bool)`
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
+### UnsetDefaultValue
+`func (o *StringConfigField) UnsetDefaultValue()`
 
-### SetKey
-
-`func (o *StringConfigField) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
-
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetDescription
 
 `func (o *StringConfigField) GetDescription() string`
@@ -107,6 +102,116 @@ HasDescription returns a boolean if a field has been set.
 `func (o *StringConfigField) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
+### GetKey
+
+`func (o *StringConfigField) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *StringConfigField) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *StringConfigField) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+
+### GetMaxLength
+
+`func (o *StringConfigField) GetMaxLength() int32`
+
+GetMaxLength returns the MaxLength field if non-nil, zero value otherwise.
+
+### GetMaxLengthOk
+
+`func (o *StringConfigField) GetMaxLengthOk() (*int32, bool)`
+
+GetMaxLengthOk returns a tuple with the MaxLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxLength
+
+`func (o *StringConfigField) SetMaxLength(v int32)`
+
+SetMaxLength sets MaxLength field to given value.
+
+### HasMaxLength
+
+`func (o *StringConfigField) HasMaxLength() bool`
+
+HasMaxLength returns a boolean if a field has been set.
+
+### SetMaxLengthNil
+
+`func (o *StringConfigField) SetMaxLengthNil(b bool)`
+
+ SetMaxLengthNil sets the value for MaxLength to be an explicit nil
+
+### UnsetMaxLength
+`func (o *StringConfigField) UnsetMaxLength()`
+
+UnsetMaxLength ensures that no value is present for MaxLength, not even an explicit nil
+### GetMinLength
+
+`func (o *StringConfigField) GetMinLength() int32`
+
+GetMinLength returns the MinLength field if non-nil, zero value otherwise.
+
+### GetMinLengthOk
+
+`func (o *StringConfigField) GetMinLengthOk() (*int32, bool)`
+
+GetMinLengthOk returns a tuple with the MinLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinLength
+
+`func (o *StringConfigField) SetMinLength(v int32)`
+
+SetMinLength sets MinLength field to given value.
+
+### HasMinLength
+
+`func (o *StringConfigField) HasMinLength() bool`
+
+HasMinLength returns a boolean if a field has been set.
+
+### SetMinLengthNil
+
+`func (o *StringConfigField) SetMinLengthNil(b bool)`
+
+ SetMinLengthNil sets the value for MinLength to be an explicit nil
+
+### UnsetMinLength
+`func (o *StringConfigField) UnsetMinLength()`
+
+UnsetMinLength ensures that no value is present for MinLength, not even an explicit nil
+### GetName
+
+`func (o *StringConfigField) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *StringConfigField) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *StringConfigField) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
 ### GetType
 
 `func (o *StringConfigField) GetType() string`
@@ -162,111 +267,6 @@ SetValue sets Value field to given value.
 `func (o *StringConfigField) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
-### GetDefaultValue
-
-`func (o *StringConfigField) GetDefaultValue() string`
-
-GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
-
-### GetDefaultValueOk
-
-`func (o *StringConfigField) GetDefaultValueOk() (*string, bool)`
-
-GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultValue
-
-`func (o *StringConfigField) SetDefaultValue(v string)`
-
-SetDefaultValue sets DefaultValue field to given value.
-
-### HasDefaultValue
-
-`func (o *StringConfigField) HasDefaultValue() bool`
-
-HasDefaultValue returns a boolean if a field has been set.
-
-### SetDefaultValueNil
-
-`func (o *StringConfigField) SetDefaultValueNil(b bool)`
-
- SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
-
-### UnsetDefaultValue
-`func (o *StringConfigField) UnsetDefaultValue()`
-
-UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-### GetMinLength
-
-`func (o *StringConfigField) GetMinLength() int32`
-
-GetMinLength returns the MinLength field if non-nil, zero value otherwise.
-
-### GetMinLengthOk
-
-`func (o *StringConfigField) GetMinLengthOk() (*int32, bool)`
-
-GetMinLengthOk returns a tuple with the MinLength field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMinLength
-
-`func (o *StringConfigField) SetMinLength(v int32)`
-
-SetMinLength sets MinLength field to given value.
-
-### HasMinLength
-
-`func (o *StringConfigField) HasMinLength() bool`
-
-HasMinLength returns a boolean if a field has been set.
-
-### SetMinLengthNil
-
-`func (o *StringConfigField) SetMinLengthNil(b bool)`
-
- SetMinLengthNil sets the value for MinLength to be an explicit nil
-
-### UnsetMinLength
-`func (o *StringConfigField) UnsetMinLength()`
-
-UnsetMinLength ensures that no value is present for MinLength, not even an explicit nil
-### GetMaxLength
-
-`func (o *StringConfigField) GetMaxLength() int32`
-
-GetMaxLength returns the MaxLength field if non-nil, zero value otherwise.
-
-### GetMaxLengthOk
-
-`func (o *StringConfigField) GetMaxLengthOk() (*int32, bool)`
-
-GetMaxLengthOk returns a tuple with the MaxLength field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxLength
-
-`func (o *StringConfigField) SetMaxLength(v int32)`
-
-SetMaxLength sets MaxLength field to given value.
-
-### HasMaxLength
-
-`func (o *StringConfigField) HasMaxLength() bool`
-
-HasMaxLength returns a boolean if a field has been set.
-
-### SetMaxLengthNil
-
-`func (o *StringConfigField) SetMaxLengthNil(b bool)`
-
- SetMaxLengthNil sets the value for MaxLength to be an explicit nil
-
-### UnsetMaxLength
-`func (o *StringConfigField) UnsetMaxLength()`
-
-UnsetMaxLength ensures that no value is present for MaxLength, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

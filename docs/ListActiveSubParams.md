@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProductId** | Pointer to **NullableString** |  | [optional] 
 **PriceId** | Pointer to **NullableString** |  | [optional] 
+**ProductId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -26,41 +26,6 @@ NewListActiveSubParamsWithDefaults instantiates a new ListActiveSubParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetProductId
-
-`func (o *ListActiveSubParams) GetProductId() string`
-
-GetProductId returns the ProductId field if non-nil, zero value otherwise.
-
-### GetProductIdOk
-
-`func (o *ListActiveSubParams) GetProductIdOk() (*string, bool)`
-
-GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProductId
-
-`func (o *ListActiveSubParams) SetProductId(v string)`
-
-SetProductId sets ProductId field to given value.
-
-### HasProductId
-
-`func (o *ListActiveSubParams) HasProductId() bool`
-
-HasProductId returns a boolean if a field has been set.
-
-### SetProductIdNil
-
-`func (o *ListActiveSubParams) SetProductIdNil(b bool)`
-
- SetProductIdNil sets the value for ProductId to be an explicit nil
-
-### UnsetProductId
-`func (o *ListActiveSubParams) UnsetProductId()`
-
-UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
 ### GetPriceId
 
 `func (o *ListActiveSubParams) GetPriceId() string`
@@ -96,6 +61,41 @@ HasPriceId returns a boolean if a field has been set.
 `func (o *ListActiveSubParams) UnsetPriceId()`
 
 UnsetPriceId ensures that no value is present for PriceId, not even an explicit nil
+### GetProductId
+
+`func (o *ListActiveSubParams) GetProductId() string`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *ListActiveSubParams) GetProductIdOk() (*string, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *ListActiveSubParams) SetProductId(v string)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *ListActiveSubParams) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
+
+### SetProductIdNil
+
+`func (o *ListActiveSubParams) SetProductIdNil(b bool)`
+
+ SetProductIdNil sets the value for ProductId to be an explicit nil
+
+### UnsetProductId
+`func (o *ListActiveSubParams) UnsetProductId()`
+
+UnsetProductId ensures that no value is present for ProductId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

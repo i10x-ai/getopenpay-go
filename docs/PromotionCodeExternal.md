@@ -4,28 +4,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_PROMOTION_CODE]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **Code** | **string** |  | 
-**IsActive** | **bool** |  | 
+**Coupon** | [**CouponExternal**](CouponExternal.md) | Coupon object for this promotion code. | 
 **CouponId** | **string** |  | 
-**Coupon** | [**CouponExternal**](CouponExternal.md) |  | 
-**CustomerIds** | Pointer to **[]string** |  | [optional] 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
+**CustomerIds** | Pointer to **[]string** | List of customer ids who can redeem this PromotionCode. If empty all customers can redeem it. | [optional] 
 **ExpiresAt** | Pointer to **NullableTime** |  | [optional] 
+**Id** | **string** |  | 
+**IsActive** | **bool** |  | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **MaxRedemptions** | Pointer to **NullableInt32** |  | [optional] 
-**TimesRedeemed** | Pointer to **NullableInt32** |  | [optional] 
 **MaxRedemptionsPerCustomer** | Pointer to **NullableInt32** |  | [optional] 
-**Restrictions** | [**NullablePromoRestrictions**](PromoRestrictions.md) |  | 
 **Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**Restrictions** | [**NullablePromoRestrictions**](PromoRestrictions.md) |  | 
+**TimesRedeemed** | Pointer to **NullableInt32** |  | [optional] 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewPromotionCodeExternal
 
-`func NewPromotionCodeExternal(id string, createdAt time.Time, updatedAt time.Time, code string, isActive bool, couponId string, coupon CouponExternal, restrictions NullablePromoRestrictions, ) *PromotionCodeExternal`
+`func NewPromotionCodeExternal(code string, coupon CouponExternal, couponId string, createdAt time.Time, id string, isActive bool, restrictions NullablePromoRestrictions, updatedAt time.Time, ) *PromotionCodeExternal`
 
 NewPromotionCodeExternal instantiates a new PromotionCodeExternal object
 This constructor will assign default values to properties that have it defined,
@@ -39,116 +39,6 @@ will change when the set of required properties is changed
 NewPromotionCodeExternalWithDefaults instantiates a new PromotionCodeExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *PromotionCodeExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PromotionCodeExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PromotionCodeExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *PromotionCodeExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *PromotionCodeExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *PromotionCodeExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *PromotionCodeExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *PromotionCodeExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *PromotionCodeExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *PromotionCodeExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *PromotionCodeExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *PromotionCodeExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *PromotionCodeExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *PromotionCodeExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *PromotionCodeExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *PromotionCodeExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *PromotionCodeExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
 
 ### GetCode
 
@@ -170,24 +60,24 @@ and a boolean to check if the value has been set.
 SetCode sets Code field to given value.
 
 
-### GetIsActive
+### GetCoupon
 
-`func (o *PromotionCodeExternal) GetIsActive() bool`
+`func (o *PromotionCodeExternal) GetCoupon() CouponExternal`
 
-GetIsActive returns the IsActive field if non-nil, zero value otherwise.
+GetCoupon returns the Coupon field if non-nil, zero value otherwise.
 
-### GetIsActiveOk
+### GetCouponOk
 
-`func (o *PromotionCodeExternal) GetIsActiveOk() (*bool, bool)`
+`func (o *PromotionCodeExternal) GetCouponOk() (*CouponExternal, bool)`
 
-GetIsActiveOk returns a tuple with the IsActive field if it's non-nil, zero value otherwise
+GetCouponOk returns a tuple with the Coupon field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsActive
+### SetCoupon
 
-`func (o *PromotionCodeExternal) SetIsActive(v bool)`
+`func (o *PromotionCodeExternal) SetCoupon(v CouponExternal)`
 
-SetIsActive sets IsActive field to given value.
+SetCoupon sets Coupon field to given value.
 
 
 ### GetCouponId
@@ -210,24 +100,24 @@ and a boolean to check if the value has been set.
 SetCouponId sets CouponId field to given value.
 
 
-### GetCoupon
+### GetCreatedAt
 
-`func (o *PromotionCodeExternal) GetCoupon() CouponExternal`
+`func (o *PromotionCodeExternal) GetCreatedAt() time.Time`
 
-GetCoupon returns the Coupon field if non-nil, zero value otherwise.
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
-### GetCouponOk
+### GetCreatedAtOk
 
-`func (o *PromotionCodeExternal) GetCouponOk() (*CouponExternal, bool)`
+`func (o *PromotionCodeExternal) GetCreatedAtOk() (*time.Time, bool)`
 
-GetCouponOk returns a tuple with the Coupon field if it's non-nil, zero value otherwise
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCoupon
+### SetCreatedAt
 
-`func (o *PromotionCodeExternal) SetCoupon(v CouponExternal)`
+`func (o *PromotionCodeExternal) SetCreatedAt(v time.Time)`
 
-SetCoupon sets Coupon field to given value.
+SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetCustomerIds
@@ -290,6 +180,71 @@ HasExpiresAt returns a boolean if a field has been set.
 `func (o *PromotionCodeExternal) UnsetExpiresAt()`
 
 UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
+### GetId
+
+`func (o *PromotionCodeExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PromotionCodeExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PromotionCodeExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetIsActive
+
+`func (o *PromotionCodeExternal) GetIsActive() bool`
+
+GetIsActive returns the IsActive field if non-nil, zero value otherwise.
+
+### GetIsActiveOk
+
+`func (o *PromotionCodeExternal) GetIsActiveOk() (*bool, bool)`
+
+GetIsActiveOk returns a tuple with the IsActive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsActive
+
+`func (o *PromotionCodeExternal) SetIsActive(v bool)`
+
+SetIsActive sets IsActive field to given value.
+
+
+### GetIsDeleted
+
+`func (o *PromotionCodeExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *PromotionCodeExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *PromotionCodeExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *PromotionCodeExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
 ### GetMaxRedemptions
 
 `func (o *PromotionCodeExternal) GetMaxRedemptions() int32`
@@ -325,41 +280,6 @@ HasMaxRedemptions returns a boolean if a field has been set.
 `func (o *PromotionCodeExternal) UnsetMaxRedemptions()`
 
 UnsetMaxRedemptions ensures that no value is present for MaxRedemptions, not even an explicit nil
-### GetTimesRedeemed
-
-`func (o *PromotionCodeExternal) GetTimesRedeemed() int32`
-
-GetTimesRedeemed returns the TimesRedeemed field if non-nil, zero value otherwise.
-
-### GetTimesRedeemedOk
-
-`func (o *PromotionCodeExternal) GetTimesRedeemedOk() (*int32, bool)`
-
-GetTimesRedeemedOk returns a tuple with the TimesRedeemed field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTimesRedeemed
-
-`func (o *PromotionCodeExternal) SetTimesRedeemed(v int32)`
-
-SetTimesRedeemed sets TimesRedeemed field to given value.
-
-### HasTimesRedeemed
-
-`func (o *PromotionCodeExternal) HasTimesRedeemed() bool`
-
-HasTimesRedeemed returns a boolean if a field has been set.
-
-### SetTimesRedeemedNil
-
-`func (o *PromotionCodeExternal) SetTimesRedeemedNil(b bool)`
-
- SetTimesRedeemedNil sets the value for TimesRedeemed to be an explicit nil
-
-### UnsetTimesRedeemed
-`func (o *PromotionCodeExternal) UnsetTimesRedeemed()`
-
-UnsetTimesRedeemed ensures that no value is present for TimesRedeemed, not even an explicit nil
 ### GetMaxRedemptionsPerCustomer
 
 `func (o *PromotionCodeExternal) GetMaxRedemptionsPerCustomer() int32`
@@ -395,36 +315,6 @@ HasMaxRedemptionsPerCustomer returns a boolean if a field has been set.
 `func (o *PromotionCodeExternal) UnsetMaxRedemptionsPerCustomer()`
 
 UnsetMaxRedemptionsPerCustomer ensures that no value is present for MaxRedemptionsPerCustomer, not even an explicit nil
-### GetRestrictions
-
-`func (o *PromotionCodeExternal) GetRestrictions() PromoRestrictions`
-
-GetRestrictions returns the Restrictions field if non-nil, zero value otherwise.
-
-### GetRestrictionsOk
-
-`func (o *PromotionCodeExternal) GetRestrictionsOk() (*PromoRestrictions, bool)`
-
-GetRestrictionsOk returns a tuple with the Restrictions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRestrictions
-
-`func (o *PromotionCodeExternal) SetRestrictions(v PromoRestrictions)`
-
-SetRestrictions sets Restrictions field to given value.
-
-
-### SetRestrictionsNil
-
-`func (o *PromotionCodeExternal) SetRestrictionsNil(b bool)`
-
- SetRestrictionsNil sets the value for Restrictions to be an explicit nil
-
-### UnsetRestrictions
-`func (o *PromotionCodeExternal) UnsetRestrictions()`
-
-UnsetRestrictions ensures that no value is present for Restrictions, not even an explicit nil
 ### GetMetadata
 
 `func (o *PromotionCodeExternal) GetMetadata() map[string]interface{}`
@@ -460,6 +350,116 @@ HasMetadata returns a boolean if a field has been set.
 `func (o *PromotionCodeExternal) UnsetMetadata()`
 
 UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetObject
+
+`func (o *PromotionCodeExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *PromotionCodeExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *PromotionCodeExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *PromotionCodeExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### GetRestrictions
+
+`func (o *PromotionCodeExternal) GetRestrictions() PromoRestrictions`
+
+GetRestrictions returns the Restrictions field if non-nil, zero value otherwise.
+
+### GetRestrictionsOk
+
+`func (o *PromotionCodeExternal) GetRestrictionsOk() (*PromoRestrictions, bool)`
+
+GetRestrictionsOk returns a tuple with the Restrictions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestrictions
+
+`func (o *PromotionCodeExternal) SetRestrictions(v PromoRestrictions)`
+
+SetRestrictions sets Restrictions field to given value.
+
+
+### SetRestrictionsNil
+
+`func (o *PromotionCodeExternal) SetRestrictionsNil(b bool)`
+
+ SetRestrictionsNil sets the value for Restrictions to be an explicit nil
+
+### UnsetRestrictions
+`func (o *PromotionCodeExternal) UnsetRestrictions()`
+
+UnsetRestrictions ensures that no value is present for Restrictions, not even an explicit nil
+### GetTimesRedeemed
+
+`func (o *PromotionCodeExternal) GetTimesRedeemed() int32`
+
+GetTimesRedeemed returns the TimesRedeemed field if non-nil, zero value otherwise.
+
+### GetTimesRedeemedOk
+
+`func (o *PromotionCodeExternal) GetTimesRedeemedOk() (*int32, bool)`
+
+GetTimesRedeemedOk returns a tuple with the TimesRedeemed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimesRedeemed
+
+`func (o *PromotionCodeExternal) SetTimesRedeemed(v int32)`
+
+SetTimesRedeemed sets TimesRedeemed field to given value.
+
+### HasTimesRedeemed
+
+`func (o *PromotionCodeExternal) HasTimesRedeemed() bool`
+
+HasTimesRedeemed returns a boolean if a field has been set.
+
+### SetTimesRedeemedNil
+
+`func (o *PromotionCodeExternal) SetTimesRedeemedNil(b bool)`
+
+ SetTimesRedeemedNil sets the value for TimesRedeemed to be an explicit nil
+
+### UnsetTimesRedeemed
+`func (o *PromotionCodeExternal) UnsetTimesRedeemed()`
+
+UnsetTimesRedeemed ensures that no value is present for TimesRedeemed, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *PromotionCodeExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *PromotionCodeExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *PromotionCodeExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

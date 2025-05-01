@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func Test_getopenpay_PaymentLinksAPIService(t *testing.T) {
@@ -66,9 +66,10 @@ func Test_getopenpay_PaymentLinksAPIService(t *testing.T) {
 
 		var secureToken string
 
-		httpRes, err := apiClient.PaymentLinksAPI.OpenPaymentLinkPagePublic(context.Background(), secureToken).Execute()
+		resp, httpRes, err := apiClient.PaymentLinksAPI.OpenPaymentLinkPagePublic(context.Background(), secureToken).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

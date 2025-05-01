@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | [**[]PromotionCodeExternal**](PromotionCodeExternal.md) |  | 
-**TotalObjects** | **int32** |  | 
 **PageNumber** | **int32** |  | 
 **PageSize** | **int32** |  | 
+**TotalObjects** | **int32** |  | 
 
 ## Methods
 
 ### NewListResponsePromotionCodeExternal
 
-`func NewListResponsePromotionCodeExternal(data []PromotionCodeExternal, totalObjects int32, pageNumber int32, pageSize int32, ) *ListResponsePromotionCodeExternal`
+`func NewListResponsePromotionCodeExternal(data []PromotionCodeExternal, pageNumber int32, pageSize int32, totalObjects int32, ) *ListResponsePromotionCodeExternal`
 
 NewListResponsePromotionCodeExternal instantiates a new ListResponsePromotionCodeExternal object
 This constructor will assign default values to properties that have it defined,
@@ -46,26 +46,6 @@ and a boolean to check if the value has been set.
 `func (o *ListResponsePromotionCodeExternal) SetData(v []PromotionCodeExternal)`
 
 SetData sets Data field to given value.
-
-
-### GetTotalObjects
-
-`func (o *ListResponsePromotionCodeExternal) GetTotalObjects() int32`
-
-GetTotalObjects returns the TotalObjects field if non-nil, zero value otherwise.
-
-### GetTotalObjectsOk
-
-`func (o *ListResponsePromotionCodeExternal) GetTotalObjectsOk() (*int32, bool)`
-
-GetTotalObjectsOk returns a tuple with the TotalObjects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalObjects
-
-`func (o *ListResponsePromotionCodeExternal) SetTotalObjects(v int32)`
-
-SetTotalObjects sets TotalObjects field to given value.
 
 
 ### GetPageNumber
@@ -106,6 +86,26 @@ and a boolean to check if the value has been set.
 `func (o *ListResponsePromotionCodeExternal) SetPageSize(v int32)`
 
 SetPageSize sets PageSize field to given value.
+
+
+### GetTotalObjects
+
+`func (o *ListResponsePromotionCodeExternal) GetTotalObjects() int32`
+
+GetTotalObjects returns the TotalObjects field if non-nil, zero value otherwise.
+
+### GetTotalObjectsOk
+
+`func (o *ListResponsePromotionCodeExternal) GetTotalObjectsOk() (*int32, bool)`
+
+GetTotalObjectsOk returns a tuple with the TotalObjects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalObjects
+
+`func (o *ListResponsePromotionCodeExternal) SetTotalObjects(v int32)`
+
+SetTotalObjects sets TotalObjects field to given value.
 
 
 

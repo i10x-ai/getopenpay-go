@@ -4,22 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name of the line item as it appears in the invoice. | 
-**Quantity** | **int32** | Quantity of the line item. | 
 **AmountAtom** | **int32** | Total amount of invoice_item in atomic units (in USD this is cents). | 
-**Currency** | [**CurrencyEnum**](CurrencyEnum.md) |  | 
-**InvoiceItemDescription** | **NullableString** |  | 
-**Discounts** | **[]string** |  | 
-**DiscountAmountAtoms** | [**[]InvoiceItemDiscountAmountsPublic**](InvoiceItemDiscountAmountsPublic.md) |  | 
 **AmountAtomConsideringDiscountApplied** | **int32** | Total amount of invoice_item in atomic units considering discounts | 
-**PriceTiers** | Pointer to [**[]PriceTierPublic**](PriceTierPublic.md) |  | [optional] 
+**Currency** | [**CurrencyEnum**](CurrencyEnum.md) | Three-letter ISO currency code, in lowercase. | 
+**DiscountAmountAtoms** | [**[]InvoiceItemDiscountAmountsPublic**](InvoiceItemDiscountAmountsPublic.md) | The amount_atom of all discount. | 
+**Discounts** | **[]string** | The discounts only directly applied to the InvoiceItem. | 
+**InvoiceItemDescription** | **NullableString** |  | 
+**Name** | **string** | The name of the line item as it appears in the invoice. | 
 **PeriodEnd** | **time.Time** | End of the usage period of the invoice_item. It is in &#39;ISO 8601&#39; format. | 
+**PriceTiers** | Pointer to [**[]PriceTierPublic**](PriceTierPublic.md) | The price tiers of the product, if applicable. | [optional] 
+**Quantity** | **int32** | Quantity of the line item. | 
+**SubscriptionItemDescription** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewInvoiceItemPublic
 
-`func NewInvoiceItemPublic(name string, quantity int32, amountAtom int32, currency CurrencyEnum, invoiceItemDescription NullableString, discounts []string, discountAmountAtoms []InvoiceItemDiscountAmountsPublic, amountAtomConsideringDiscountApplied int32, periodEnd time.Time, ) *InvoiceItemPublic`
+`func NewInvoiceItemPublic(amountAtom int32, amountAtomConsideringDiscountApplied int32, currency CurrencyEnum, discountAmountAtoms []InvoiceItemDiscountAmountsPublic, discounts []string, invoiceItemDescription NullableString, name string, periodEnd time.Time, quantity int32, ) *InvoiceItemPublic`
 
 NewInvoiceItemPublic instantiates a new InvoiceItemPublic object
 This constructor will assign default values to properties that have it defined,
@@ -33,46 +34,6 @@ will change when the set of required properties is changed
 NewInvoiceItemPublicWithDefaults instantiates a new InvoiceItemPublic object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *InvoiceItemPublic) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *InvoiceItemPublic) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *InvoiceItemPublic) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetQuantity
-
-`func (o *InvoiceItemPublic) GetQuantity() int32`
-
-GetQuantity returns the Quantity field if non-nil, zero value otherwise.
-
-### GetQuantityOk
-
-`func (o *InvoiceItemPublic) GetQuantityOk() (*int32, bool)`
-
-GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantity
-
-`func (o *InvoiceItemPublic) SetQuantity(v int32)`
-
-SetQuantity sets Quantity field to given value.
-
 
 ### GetAmountAtom
 
@@ -94,6 +55,26 @@ and a boolean to check if the value has been set.
 SetAmountAtom sets AmountAtom field to given value.
 
 
+### GetAmountAtomConsideringDiscountApplied
+
+`func (o *InvoiceItemPublic) GetAmountAtomConsideringDiscountApplied() int32`
+
+GetAmountAtomConsideringDiscountApplied returns the AmountAtomConsideringDiscountApplied field if non-nil, zero value otherwise.
+
+### GetAmountAtomConsideringDiscountAppliedOk
+
+`func (o *InvoiceItemPublic) GetAmountAtomConsideringDiscountAppliedOk() (*int32, bool)`
+
+GetAmountAtomConsideringDiscountAppliedOk returns a tuple with the AmountAtomConsideringDiscountApplied field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmountAtomConsideringDiscountApplied
+
+`func (o *InvoiceItemPublic) SetAmountAtomConsideringDiscountApplied(v int32)`
+
+SetAmountAtomConsideringDiscountApplied sets AmountAtomConsideringDiscountApplied field to given value.
+
+
 ### GetCurrency
 
 `func (o *InvoiceItemPublic) GetCurrency() CurrencyEnum`
@@ -112,6 +93,46 @@ and a boolean to check if the value has been set.
 `func (o *InvoiceItemPublic) SetCurrency(v CurrencyEnum)`
 
 SetCurrency sets Currency field to given value.
+
+
+### GetDiscountAmountAtoms
+
+`func (o *InvoiceItemPublic) GetDiscountAmountAtoms() []InvoiceItemDiscountAmountsPublic`
+
+GetDiscountAmountAtoms returns the DiscountAmountAtoms field if non-nil, zero value otherwise.
+
+### GetDiscountAmountAtomsOk
+
+`func (o *InvoiceItemPublic) GetDiscountAmountAtomsOk() (*[]InvoiceItemDiscountAmountsPublic, bool)`
+
+GetDiscountAmountAtomsOk returns a tuple with the DiscountAmountAtoms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountAmountAtoms
+
+`func (o *InvoiceItemPublic) SetDiscountAmountAtoms(v []InvoiceItemDiscountAmountsPublic)`
+
+SetDiscountAmountAtoms sets DiscountAmountAtoms field to given value.
+
+
+### GetDiscounts
+
+`func (o *InvoiceItemPublic) GetDiscounts() []string`
+
+GetDiscounts returns the Discounts field if non-nil, zero value otherwise.
+
+### GetDiscountsOk
+
+`func (o *InvoiceItemPublic) GetDiscountsOk() (*[]string, bool)`
+
+GetDiscountsOk returns a tuple with the Discounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscounts
+
+`func (o *InvoiceItemPublic) SetDiscounts(v []string)`
+
+SetDiscounts sets Discounts field to given value.
 
 
 ### GetInvoiceItemDescription
@@ -144,64 +165,44 @@ SetInvoiceItemDescription sets InvoiceItemDescription field to given value.
 `func (o *InvoiceItemPublic) UnsetInvoiceItemDescription()`
 
 UnsetInvoiceItemDescription ensures that no value is present for InvoiceItemDescription, not even an explicit nil
-### GetDiscounts
+### GetName
 
-`func (o *InvoiceItemPublic) GetDiscounts() []string`
+`func (o *InvoiceItemPublic) GetName() string`
 
-GetDiscounts returns the Discounts field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetDiscountsOk
+### GetNameOk
 
-`func (o *InvoiceItemPublic) GetDiscountsOk() (*[]string, bool)`
+`func (o *InvoiceItemPublic) GetNameOk() (*string, bool)`
 
-GetDiscountsOk returns a tuple with the Discounts field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDiscounts
+### SetName
 
-`func (o *InvoiceItemPublic) SetDiscounts(v []string)`
+`func (o *InvoiceItemPublic) SetName(v string)`
 
-SetDiscounts sets Discounts field to given value.
+SetName sets Name field to given value.
 
 
-### GetDiscountAmountAtoms
+### GetPeriodEnd
 
-`func (o *InvoiceItemPublic) GetDiscountAmountAtoms() []InvoiceItemDiscountAmountsPublic`
+`func (o *InvoiceItemPublic) GetPeriodEnd() time.Time`
 
-GetDiscountAmountAtoms returns the DiscountAmountAtoms field if non-nil, zero value otherwise.
+GetPeriodEnd returns the PeriodEnd field if non-nil, zero value otherwise.
 
-### GetDiscountAmountAtomsOk
+### GetPeriodEndOk
 
-`func (o *InvoiceItemPublic) GetDiscountAmountAtomsOk() (*[]InvoiceItemDiscountAmountsPublic, bool)`
+`func (o *InvoiceItemPublic) GetPeriodEndOk() (*time.Time, bool)`
 
-GetDiscountAmountAtomsOk returns a tuple with the DiscountAmountAtoms field if it's non-nil, zero value otherwise
+GetPeriodEndOk returns a tuple with the PeriodEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDiscountAmountAtoms
+### SetPeriodEnd
 
-`func (o *InvoiceItemPublic) SetDiscountAmountAtoms(v []InvoiceItemDiscountAmountsPublic)`
+`func (o *InvoiceItemPublic) SetPeriodEnd(v time.Time)`
 
-SetDiscountAmountAtoms sets DiscountAmountAtoms field to given value.
-
-
-### GetAmountAtomConsideringDiscountApplied
-
-`func (o *InvoiceItemPublic) GetAmountAtomConsideringDiscountApplied() int32`
-
-GetAmountAtomConsideringDiscountApplied returns the AmountAtomConsideringDiscountApplied field if non-nil, zero value otherwise.
-
-### GetAmountAtomConsideringDiscountAppliedOk
-
-`func (o *InvoiceItemPublic) GetAmountAtomConsideringDiscountAppliedOk() (*int32, bool)`
-
-GetAmountAtomConsideringDiscountAppliedOk returns a tuple with the AmountAtomConsideringDiscountApplied field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAmountAtomConsideringDiscountApplied
-
-`func (o *InvoiceItemPublic) SetAmountAtomConsideringDiscountApplied(v int32)`
-
-SetAmountAtomConsideringDiscountApplied sets AmountAtomConsideringDiscountApplied field to given value.
+SetPeriodEnd sets PeriodEnd field to given value.
 
 
 ### GetPriceTiers
@@ -229,26 +230,61 @@ SetPriceTiers sets PriceTiers field to given value.
 
 HasPriceTiers returns a boolean if a field has been set.
 
-### GetPeriodEnd
+### GetQuantity
 
-`func (o *InvoiceItemPublic) GetPeriodEnd() time.Time`
+`func (o *InvoiceItemPublic) GetQuantity() int32`
 
-GetPeriodEnd returns the PeriodEnd field if non-nil, zero value otherwise.
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
-### GetPeriodEndOk
+### GetQuantityOk
 
-`func (o *InvoiceItemPublic) GetPeriodEndOk() (*time.Time, bool)`
+`func (o *InvoiceItemPublic) GetQuantityOk() (*int32, bool)`
 
-GetPeriodEndOk returns a tuple with the PeriodEnd field if it's non-nil, zero value otherwise
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPeriodEnd
+### SetQuantity
 
-`func (o *InvoiceItemPublic) SetPeriodEnd(v time.Time)`
+`func (o *InvoiceItemPublic) SetQuantity(v int32)`
 
-SetPeriodEnd sets PeriodEnd field to given value.
+SetQuantity sets Quantity field to given value.
 
 
+### GetSubscriptionItemDescription
+
+`func (o *InvoiceItemPublic) GetSubscriptionItemDescription() string`
+
+GetSubscriptionItemDescription returns the SubscriptionItemDescription field if non-nil, zero value otherwise.
+
+### GetSubscriptionItemDescriptionOk
+
+`func (o *InvoiceItemPublic) GetSubscriptionItemDescriptionOk() (*string, bool)`
+
+GetSubscriptionItemDescriptionOk returns a tuple with the SubscriptionItemDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionItemDescription
+
+`func (o *InvoiceItemPublic) SetSubscriptionItemDescription(v string)`
+
+SetSubscriptionItemDescription sets SubscriptionItemDescription field to given value.
+
+### HasSubscriptionItemDescription
+
+`func (o *InvoiceItemPublic) HasSubscriptionItemDescription() bool`
+
+HasSubscriptionItemDescription returns a boolean if a field has been set.
+
+### SetSubscriptionItemDescriptionNil
+
+`func (o *InvoiceItemPublic) SetSubscriptionItemDescriptionNil(b bool)`
+
+ SetSubscriptionItemDescriptionNil sets the value for SubscriptionItemDescription to be an explicit nil
+
+### UnsetSubscriptionItemDescription
+`func (o *InvoiceItemPublic) UnsetSubscriptionItemDescription()`
+
+UnsetSubscriptionItemDescription ensures that no value is present for SubscriptionItemDescription, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

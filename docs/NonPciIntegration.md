@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountId** | **string** | The account ID | 
+**Configuration** | Pointer to [**[]NonPciIntegrationConfigurationInner**](NonPciIntegrationConfigurationInner.md) | The configuration fields | [optional] 
 **IntegrationId** | **string** | The integration ID | 
-**IntegrationType** | [**NonPciIntegrationEnum**](NonPciIntegrationEnum.md) |  | 
-**Configuration** | Pointer to [**[]NonPciIntegrationConfigurationInner**](NonPciIntegrationConfigurationInner.md) |  | [optional] 
+**IntegrationType** | [**NonPciIntegrationEnum**](NonPciIntegrationEnum.md) | The integration type | 
 
 ## Methods
 
@@ -48,6 +48,31 @@ and a boolean to check if the value has been set.
 SetAccountId sets AccountId field to given value.
 
 
+### GetConfiguration
+
+`func (o *NonPciIntegration) GetConfiguration() []NonPciIntegrationConfigurationInner`
+
+GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
+
+### GetConfigurationOk
+
+`func (o *NonPciIntegration) GetConfigurationOk() (*[]NonPciIntegrationConfigurationInner, bool)`
+
+GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfiguration
+
+`func (o *NonPciIntegration) SetConfiguration(v []NonPciIntegrationConfigurationInner)`
+
+SetConfiguration sets Configuration field to given value.
+
+### HasConfiguration
+
+`func (o *NonPciIntegration) HasConfiguration() bool`
+
+HasConfiguration returns a boolean if a field has been set.
+
 ### GetIntegrationId
 
 `func (o *NonPciIntegration) GetIntegrationId() string`
@@ -87,31 +112,6 @@ and a boolean to check if the value has been set.
 
 SetIntegrationType sets IntegrationType field to given value.
 
-
-### GetConfiguration
-
-`func (o *NonPciIntegration) GetConfiguration() []NonPciIntegrationConfigurationInner`
-
-GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
-
-### GetConfigurationOk
-
-`func (o *NonPciIntegration) GetConfigurationOk() (*[]NonPciIntegrationConfigurationInner, bool)`
-
-GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfiguration
-
-`func (o *NonPciIntegration) SetConfiguration(v []NonPciIntegrationConfigurationInner)`
-
-SetConfiguration sets Configuration field to given value.
-
-### HasConfiguration
-
-`func (o *NonPciIntegration) HasConfiguration() bool`
-
-HasConfiguration returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

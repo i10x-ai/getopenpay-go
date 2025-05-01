@@ -4,12 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChargeId** | Pointer to **NullableString** |  | [optional] 
-**PaymentIntentId** | Pointer to **NullableString** |  | [optional] 
 **AmountAtom** | Pointer to **NullableInt32** |  | [optional] 
-**Currency** | Pointer to [**CurrencyEnum**](CurrencyEnum.md) |  | [optional] [default to CURRENCYENUM_USD]
-**Reason** | Pointer to [**RefundReasonEnum**](RefundReasonEnum.md) |  | [optional] [default to REFUNDREASONENUM_MANUAL]
+**ChargeId** | Pointer to **NullableString** |  | [optional] 
+**Currency** | Pointer to [**CurrencyEnum**](CurrencyEnum.md) | Three-letter ISO currency code, in lowercase. | [optional] 
 **Description** | Pointer to **string** | Description of the refund. | [optional] [default to "Manually triggered refund by admin."]
+**PaymentIntentId** | Pointer to **NullableString** |  | [optional] 
+**Reason** | Pointer to [**RefundReasonEnum**](RefundReasonEnum.md) | Reason of the refund. | [optional] 
+**RefundedOutOfBand** | Pointer to **bool** | The charge was refunded by an external platform. This cause the request to not execute a refund externally and instead simply update internal records. | [optional] [default to false]
 
 ## Methods
 
@@ -30,76 +31,6 @@ NewCreateRefundRequestWithDefaults instantiates a new CreateRefundRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetChargeId
-
-`func (o *CreateRefundRequest) GetChargeId() string`
-
-GetChargeId returns the ChargeId field if non-nil, zero value otherwise.
-
-### GetChargeIdOk
-
-`func (o *CreateRefundRequest) GetChargeIdOk() (*string, bool)`
-
-GetChargeIdOk returns a tuple with the ChargeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChargeId
-
-`func (o *CreateRefundRequest) SetChargeId(v string)`
-
-SetChargeId sets ChargeId field to given value.
-
-### HasChargeId
-
-`func (o *CreateRefundRequest) HasChargeId() bool`
-
-HasChargeId returns a boolean if a field has been set.
-
-### SetChargeIdNil
-
-`func (o *CreateRefundRequest) SetChargeIdNil(b bool)`
-
- SetChargeIdNil sets the value for ChargeId to be an explicit nil
-
-### UnsetChargeId
-`func (o *CreateRefundRequest) UnsetChargeId()`
-
-UnsetChargeId ensures that no value is present for ChargeId, not even an explicit nil
-### GetPaymentIntentId
-
-`func (o *CreateRefundRequest) GetPaymentIntentId() string`
-
-GetPaymentIntentId returns the PaymentIntentId field if non-nil, zero value otherwise.
-
-### GetPaymentIntentIdOk
-
-`func (o *CreateRefundRequest) GetPaymentIntentIdOk() (*string, bool)`
-
-GetPaymentIntentIdOk returns a tuple with the PaymentIntentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPaymentIntentId
-
-`func (o *CreateRefundRequest) SetPaymentIntentId(v string)`
-
-SetPaymentIntentId sets PaymentIntentId field to given value.
-
-### HasPaymentIntentId
-
-`func (o *CreateRefundRequest) HasPaymentIntentId() bool`
-
-HasPaymentIntentId returns a boolean if a field has been set.
-
-### SetPaymentIntentIdNil
-
-`func (o *CreateRefundRequest) SetPaymentIntentIdNil(b bool)`
-
- SetPaymentIntentIdNil sets the value for PaymentIntentId to be an explicit nil
-
-### UnsetPaymentIntentId
-`func (o *CreateRefundRequest) UnsetPaymentIntentId()`
-
-UnsetPaymentIntentId ensures that no value is present for PaymentIntentId, not even an explicit nil
 ### GetAmountAtom
 
 `func (o *CreateRefundRequest) GetAmountAtom() int32`
@@ -135,6 +66,41 @@ HasAmountAtom returns a boolean if a field has been set.
 `func (o *CreateRefundRequest) UnsetAmountAtom()`
 
 UnsetAmountAtom ensures that no value is present for AmountAtom, not even an explicit nil
+### GetChargeId
+
+`func (o *CreateRefundRequest) GetChargeId() string`
+
+GetChargeId returns the ChargeId field if non-nil, zero value otherwise.
+
+### GetChargeIdOk
+
+`func (o *CreateRefundRequest) GetChargeIdOk() (*string, bool)`
+
+GetChargeIdOk returns a tuple with the ChargeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChargeId
+
+`func (o *CreateRefundRequest) SetChargeId(v string)`
+
+SetChargeId sets ChargeId field to given value.
+
+### HasChargeId
+
+`func (o *CreateRefundRequest) HasChargeId() bool`
+
+HasChargeId returns a boolean if a field has been set.
+
+### SetChargeIdNil
+
+`func (o *CreateRefundRequest) SetChargeIdNil(b bool)`
+
+ SetChargeIdNil sets the value for ChargeId to be an explicit nil
+
+### UnsetChargeId
+`func (o *CreateRefundRequest) UnsetChargeId()`
+
+UnsetChargeId ensures that no value is present for ChargeId, not even an explicit nil
 ### GetCurrency
 
 `func (o *CreateRefundRequest) GetCurrency() CurrencyEnum`
@@ -160,6 +126,66 @@ SetCurrency sets Currency field to given value.
 
 HasCurrency returns a boolean if a field has been set.
 
+### GetDescription
+
+`func (o *CreateRefundRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *CreateRefundRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *CreateRefundRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *CreateRefundRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetPaymentIntentId
+
+`func (o *CreateRefundRequest) GetPaymentIntentId() string`
+
+GetPaymentIntentId returns the PaymentIntentId field if non-nil, zero value otherwise.
+
+### GetPaymentIntentIdOk
+
+`func (o *CreateRefundRequest) GetPaymentIntentIdOk() (*string, bool)`
+
+GetPaymentIntentIdOk returns a tuple with the PaymentIntentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentIntentId
+
+`func (o *CreateRefundRequest) SetPaymentIntentId(v string)`
+
+SetPaymentIntentId sets PaymentIntentId field to given value.
+
+### HasPaymentIntentId
+
+`func (o *CreateRefundRequest) HasPaymentIntentId() bool`
+
+HasPaymentIntentId returns a boolean if a field has been set.
+
+### SetPaymentIntentIdNil
+
+`func (o *CreateRefundRequest) SetPaymentIntentIdNil(b bool)`
+
+ SetPaymentIntentIdNil sets the value for PaymentIntentId to be an explicit nil
+
+### UnsetPaymentIntentId
+`func (o *CreateRefundRequest) UnsetPaymentIntentId()`
+
+UnsetPaymentIntentId ensures that no value is present for PaymentIntentId, not even an explicit nil
 ### GetReason
 
 `func (o *CreateRefundRequest) GetReason() RefundReasonEnum`
@@ -185,30 +211,30 @@ SetReason sets Reason field to given value.
 
 HasReason returns a boolean if a field has been set.
 
-### GetDescription
+### GetRefundedOutOfBand
 
-`func (o *CreateRefundRequest) GetDescription() string`
+`func (o *CreateRefundRequest) GetRefundedOutOfBand() bool`
 
-GetDescription returns the Description field if non-nil, zero value otherwise.
+GetRefundedOutOfBand returns the RefundedOutOfBand field if non-nil, zero value otherwise.
 
-### GetDescriptionOk
+### GetRefundedOutOfBandOk
 
-`func (o *CreateRefundRequest) GetDescriptionOk() (*string, bool)`
+`func (o *CreateRefundRequest) GetRefundedOutOfBandOk() (*bool, bool)`
 
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+GetRefundedOutOfBandOk returns a tuple with the RefundedOutOfBand field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDescription
+### SetRefundedOutOfBand
 
-`func (o *CreateRefundRequest) SetDescription(v string)`
+`func (o *CreateRefundRequest) SetRefundedOutOfBand(v bool)`
 
-SetDescription sets Description field to given value.
+SetRefundedOutOfBand sets RefundedOutOfBand field to given value.
 
-### HasDescription
+### HasRefundedOutOfBand
 
-`func (o *CreateRefundRequest) HasDescription() bool`
+`func (o *CreateRefundRequest) HasRefundedOutOfBand() bool`
 
-HasDescription returns a boolean if a field has been set.
+HasRefundedOutOfBand returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

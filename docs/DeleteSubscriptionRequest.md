@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CancellationDetails** | Pointer to [**NullableSubscriptionCancellationDetails**](SubscriptionCancellationDetails.md) |  | [optional] 
 **CancelUnpaidInvoices** | Pointer to **bool** | Mark unpaid invoices as uncollectible | [optional] [default to false]
-**Prorate** | Pointer to **bool** | Will generate a proration invoice_item that credits remaining unused time until the subscription period end, also creates invoice_item for un-invoiced metered usage.Setting this to false will not invoice for un-invoiced metered usage. | [optional] [default to true]
+**CancellationDetails** | Pointer to [**NullableSubscriptionCancellationDetails**](SubscriptionCancellationDetails.md) |  | [optional] 
 **FullRefund** | Pointer to **bool** | Flag to decide whether full refund should be given or not. | [optional] [default to false]
 **IsPreview** | Pointer to **bool** | Whether the request is in preview mode (subscriptions won&#39;t actually be deleted) | [optional] [default to false]
+**Prorate** | Pointer to **bool** | Will generate a proration invoice_item that credits remaining unused time until the subscription period end, also creates invoice_item for un-invoiced metered usage.Setting this to false will not invoice for un-invoiced metered usage. | [optional] [default to true]
 
 ## Methods
 
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewDeleteSubscriptionRequestWithDefaults instantiates a new DeleteSubscriptionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCancelUnpaidInvoices
+
+`func (o *DeleteSubscriptionRequest) GetCancelUnpaidInvoices() bool`
+
+GetCancelUnpaidInvoices returns the CancelUnpaidInvoices field if non-nil, zero value otherwise.
+
+### GetCancelUnpaidInvoicesOk
+
+`func (o *DeleteSubscriptionRequest) GetCancelUnpaidInvoicesOk() (*bool, bool)`
+
+GetCancelUnpaidInvoicesOk returns a tuple with the CancelUnpaidInvoices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelUnpaidInvoices
+
+`func (o *DeleteSubscriptionRequest) SetCancelUnpaidInvoices(v bool)`
+
+SetCancelUnpaidInvoices sets CancelUnpaidInvoices field to given value.
+
+### HasCancelUnpaidInvoices
+
+`func (o *DeleteSubscriptionRequest) HasCancelUnpaidInvoices() bool`
+
+HasCancelUnpaidInvoices returns a boolean if a field has been set.
 
 ### GetCancellationDetails
 
@@ -64,56 +89,6 @@ HasCancellationDetails returns a boolean if a field has been set.
 `func (o *DeleteSubscriptionRequest) UnsetCancellationDetails()`
 
 UnsetCancellationDetails ensures that no value is present for CancellationDetails, not even an explicit nil
-### GetCancelUnpaidInvoices
-
-`func (o *DeleteSubscriptionRequest) GetCancelUnpaidInvoices() bool`
-
-GetCancelUnpaidInvoices returns the CancelUnpaidInvoices field if non-nil, zero value otherwise.
-
-### GetCancelUnpaidInvoicesOk
-
-`func (o *DeleteSubscriptionRequest) GetCancelUnpaidInvoicesOk() (*bool, bool)`
-
-GetCancelUnpaidInvoicesOk returns a tuple with the CancelUnpaidInvoices field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCancelUnpaidInvoices
-
-`func (o *DeleteSubscriptionRequest) SetCancelUnpaidInvoices(v bool)`
-
-SetCancelUnpaidInvoices sets CancelUnpaidInvoices field to given value.
-
-### HasCancelUnpaidInvoices
-
-`func (o *DeleteSubscriptionRequest) HasCancelUnpaidInvoices() bool`
-
-HasCancelUnpaidInvoices returns a boolean if a field has been set.
-
-### GetProrate
-
-`func (o *DeleteSubscriptionRequest) GetProrate() bool`
-
-GetProrate returns the Prorate field if non-nil, zero value otherwise.
-
-### GetProrateOk
-
-`func (o *DeleteSubscriptionRequest) GetProrateOk() (*bool, bool)`
-
-GetProrateOk returns a tuple with the Prorate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProrate
-
-`func (o *DeleteSubscriptionRequest) SetProrate(v bool)`
-
-SetProrate sets Prorate field to given value.
-
-### HasProrate
-
-`func (o *DeleteSubscriptionRequest) HasProrate() bool`
-
-HasProrate returns a boolean if a field has been set.
-
 ### GetFullRefund
 
 `func (o *DeleteSubscriptionRequest) GetFullRefund() bool`
@@ -163,6 +138,31 @@ SetIsPreview sets IsPreview field to given value.
 `func (o *DeleteSubscriptionRequest) HasIsPreview() bool`
 
 HasIsPreview returns a boolean if a field has been set.
+
+### GetProrate
+
+`func (o *DeleteSubscriptionRequest) GetProrate() bool`
+
+GetProrate returns the Prorate field if non-nil, zero value otherwise.
+
+### GetProrateOk
+
+`func (o *DeleteSubscriptionRequest) GetProrateOk() (*bool, bool)`
+
+GetProrateOk returns a tuple with the Prorate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrate
+
+`func (o *DeleteSubscriptionRequest) SetProrate(v bool)`
+
+SetProrate sets Prorate field to given value.
+
+### HasProrate
+
+`func (o *DeleteSubscriptionRequest) HasProrate() bool`
+
+HasProrate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

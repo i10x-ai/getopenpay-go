@@ -4,14 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CheckoutPreferences** | Pointer to [**NullableCheckoutPreferences**](CheckoutPreferences.md) |  | [optional] 
 **CouponId** | Pointer to **NullableString** |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomerId** | Pointer to **NullableString** |  | [optional] 
-**LineItems** | Pointer to [**[]CreateCheckoutLineItem**](CreateCheckoutLineItem.md) |  | [optional] 
-**Mode** | [**CheckoutMode**](CheckoutMode.md) |  | 
+**LineItems** | Pointer to [**[]CreateCheckoutLineItem**](CreateCheckoutLineItem.md) | The line items to be purchased by the customer. If empty, the checkout sessions produced by the payment link will be in \&quot;add payment method\&quot; mode. | [optional] 
+**Mode** | [**CheckoutMode**](CheckoutMode.md) | The mode of the checkout sessions created by this payment link. Possible values: payment (one-time payments), setup (not supported yet), subscription (recurring payments). | 
 **SuccessUrl** | **NullableString** |  | 
 **TrialEnd** | Pointer to **NullableTime** |  | [optional] 
-**TrialPeriodDays** | Pointer to **NullableInt32** |  | [optional] 
 **TrialFromPrice** | Pointer to **NullableBool** |  | [optional] 
+**TrialPeriodDays** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -32,6 +34,41 @@ NewCreatePaymentLinkRequestWithDefaults instantiates a new CreatePaymentLinkRequ
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetCheckoutPreferences
+
+`func (o *CreatePaymentLinkRequest) GetCheckoutPreferences() CheckoutPreferences`
+
+GetCheckoutPreferences returns the CheckoutPreferences field if non-nil, zero value otherwise.
+
+### GetCheckoutPreferencesOk
+
+`func (o *CreatePaymentLinkRequest) GetCheckoutPreferencesOk() (*CheckoutPreferences, bool)`
+
+GetCheckoutPreferencesOk returns a tuple with the CheckoutPreferences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckoutPreferences
+
+`func (o *CreatePaymentLinkRequest) SetCheckoutPreferences(v CheckoutPreferences)`
+
+SetCheckoutPreferences sets CheckoutPreferences field to given value.
+
+### HasCheckoutPreferences
+
+`func (o *CreatePaymentLinkRequest) HasCheckoutPreferences() bool`
+
+HasCheckoutPreferences returns a boolean if a field has been set.
+
+### SetCheckoutPreferencesNil
+
+`func (o *CreatePaymentLinkRequest) SetCheckoutPreferencesNil(b bool)`
+
+ SetCheckoutPreferencesNil sets the value for CheckoutPreferences to be an explicit nil
+
+### UnsetCheckoutPreferences
+`func (o *CreatePaymentLinkRequest) UnsetCheckoutPreferences()`
+
+UnsetCheckoutPreferences ensures that no value is present for CheckoutPreferences, not even an explicit nil
 ### GetCouponId
 
 `func (o *CreatePaymentLinkRequest) GetCouponId() string`
@@ -67,6 +104,41 @@ HasCouponId returns a boolean if a field has been set.
 `func (o *CreatePaymentLinkRequest) UnsetCouponId()`
 
 UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
+### GetCustomFields
+
+`func (o *CreatePaymentLinkRequest) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *CreatePaymentLinkRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *CreatePaymentLinkRequest) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *CreatePaymentLinkRequest) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### SetCustomFieldsNil
+
+`func (o *CreatePaymentLinkRequest) SetCustomFieldsNil(b bool)`
+
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
+
+### UnsetCustomFields
+`func (o *CreatePaymentLinkRequest) UnsetCustomFields()`
+
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetCustomerId
 
 `func (o *CreatePaymentLinkRequest) GetCustomerId() string`
@@ -212,41 +284,6 @@ HasTrialEnd returns a boolean if a field has been set.
 `func (o *CreatePaymentLinkRequest) UnsetTrialEnd()`
 
 UnsetTrialEnd ensures that no value is present for TrialEnd, not even an explicit nil
-### GetTrialPeriodDays
-
-`func (o *CreatePaymentLinkRequest) GetTrialPeriodDays() int32`
-
-GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
-
-### GetTrialPeriodDaysOk
-
-`func (o *CreatePaymentLinkRequest) GetTrialPeriodDaysOk() (*int32, bool)`
-
-GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrialPeriodDays
-
-`func (o *CreatePaymentLinkRequest) SetTrialPeriodDays(v int32)`
-
-SetTrialPeriodDays sets TrialPeriodDays field to given value.
-
-### HasTrialPeriodDays
-
-`func (o *CreatePaymentLinkRequest) HasTrialPeriodDays() bool`
-
-HasTrialPeriodDays returns a boolean if a field has been set.
-
-### SetTrialPeriodDaysNil
-
-`func (o *CreatePaymentLinkRequest) SetTrialPeriodDaysNil(b bool)`
-
- SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
-
-### UnsetTrialPeriodDays
-`func (o *CreatePaymentLinkRequest) UnsetTrialPeriodDays()`
-
-UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
 ### GetTrialFromPrice
 
 `func (o *CreatePaymentLinkRequest) GetTrialFromPrice() bool`
@@ -282,6 +319,41 @@ HasTrialFromPrice returns a boolean if a field has been set.
 `func (o *CreatePaymentLinkRequest) UnsetTrialFromPrice()`
 
 UnsetTrialFromPrice ensures that no value is present for TrialFromPrice, not even an explicit nil
+### GetTrialPeriodDays
+
+`func (o *CreatePaymentLinkRequest) GetTrialPeriodDays() int32`
+
+GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
+
+### GetTrialPeriodDaysOk
+
+`func (o *CreatePaymentLinkRequest) GetTrialPeriodDaysOk() (*int32, bool)`
+
+GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialPeriodDays
+
+`func (o *CreatePaymentLinkRequest) SetTrialPeriodDays(v int32)`
+
+SetTrialPeriodDays sets TrialPeriodDays field to given value.
+
+### HasTrialPeriodDays
+
+`func (o *CreatePaymentLinkRequest) HasTrialPeriodDays() bool`
+
+HasTrialPeriodDays returns a boolean if a field has been set.
+
+### SetTrialPeriodDaysNil
+
+`func (o *CreatePaymentLinkRequest) SetTrialPeriodDaysNil(b bool)`
+
+ SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
+
+### UnsetTrialPeriodDays
+`func (o *CreatePaymentLinkRequest) UnsetTrialPeriodDays()`
+
+UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

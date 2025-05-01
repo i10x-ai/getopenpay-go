@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func Test_getopenpay_CouponsAPIService(t *testing.T) {
@@ -40,9 +40,10 @@ func Test_getopenpay_CouponsAPIService(t *testing.T) {
 
 		var couponId string
 
-		httpRes, err := apiClient.CouponsAPI.DeleteCoupon(context.Background(), couponId).Execute()
+		resp, httpRes, err := apiClient.CouponsAPI.DeleteCoupon(context.Background(), couponId).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

@@ -24,24 +24,24 @@ Create Promo Code
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createPromoCodeRequest := *openapiclient.NewCreatePromoCodeRequest("CouponId_example", "Code_example") // CreatePromoCodeRequest | 
+	createPromoCodeRequest := *openapiclient.NewCreatePromoCodeRequest("Code_example", "CouponId_example") // CreatePromoCodeRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PromotionCodesAPI.CreatePromoCode(context.Background()).CreatePromoCodeRequest(createPromoCodeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.CreatePromoCode``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreatePromoCode`: PromotionCodeExternal
-    fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.CreatePromoCode`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PromotionCodesAPI.CreatePromoCode(context.Background()).CreatePromoCodeRequest(createPromoCodeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.CreatePromoCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreatePromoCode`: PromotionCodeExternal
+	fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.CreatePromoCode`: %v\n", resp)
 }
 ```
 
@@ -88,24 +88,24 @@ Get Promo Code
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    promoCodeId := "promo_dev_abc123" // string | Unique identifier of the PromotionCode.
+	promoCodeId := "promo_dev_abc123" // string | Unique identifier of the PromotionCode.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PromotionCodesAPI.GetPromoCode(context.Background(), promoCodeId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.GetPromoCode``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPromoCode`: PromotionCodeExternal
-    fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.GetPromoCode`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PromotionCodesAPI.GetPromoCode(context.Background(), promoCodeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.GetPromoCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPromoCode`: PromotionCodeExternal
+	fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.GetPromoCode`: %v\n", resp)
 }
 ```
 
@@ -156,24 +156,24 @@ Get Promo Code By Code
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    promoCode := "promoCode_example" // string | Unique PromotionCode code.
+	promoCode := "promoCode_example" // string | Unique PromotionCode code.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PromotionCodesAPI.GetPromoCodeByCode(context.Background(), promoCode).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.GetPromoCodeByCode``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPromoCodeByCode`: PromotionCodeExternal
-    fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.GetPromoCodeByCode`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PromotionCodesAPI.GetPromoCodeByCode(context.Background(), promoCode).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.GetPromoCodeByCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPromoCodeByCode`: PromotionCodeExternal
+	fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.GetPromoCodeByCode`: %v\n", resp)
 }
 ```
 
@@ -224,24 +224,24 @@ List Promo Codes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    promoCodeQueryParams := *openapiclient.NewPromoCodeQueryParams() // PromoCodeQueryParams | 
+	promoCodeQueryParams := *openapiclient.NewPromoCodeQueryParams() // PromoCodeQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PromotionCodesAPI.ListPromoCodes(context.Background()).PromoCodeQueryParams(promoCodeQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.ListPromoCodes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListPromoCodes`: ListResponsePromotionCodeExternal
-    fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.ListPromoCodes`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PromotionCodesAPI.ListPromoCodes(context.Background()).PromoCodeQueryParams(promoCodeQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.ListPromoCodes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPromoCodes`: ListResponsePromotionCodeExternal
+	fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.ListPromoCodes`: %v\n", resp)
 }
 ```
 
@@ -288,25 +288,25 @@ Update Promo Code
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    promoCodeId := "promo_dev_abc123" // string | Unique identifier of the PromotionCode.
-    updatePromoCodeRequest := *openapiclient.NewUpdatePromoCodeRequest(false) // UpdatePromoCodeRequest | 
+	promoCodeId := "promo_dev_abc123" // string | Unique identifier of the PromotionCode.
+	updatePromoCodeRequest := *openapiclient.NewUpdatePromoCodeRequest(false) // UpdatePromoCodeRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PromotionCodesAPI.UpdatePromoCode(context.Background(), promoCodeId).UpdatePromoCodeRequest(updatePromoCodeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.UpdatePromoCode``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdatePromoCode`: PromotionCodeExternal
-    fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.UpdatePromoCode`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PromotionCodesAPI.UpdatePromoCode(context.Background(), promoCodeId).UpdatePromoCodeRequest(updatePromoCodeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PromotionCodesAPI.UpdatePromoCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePromoCode`: PromotionCodeExternal
+	fmt.Fprintf(os.Stdout, "Response from `PromotionCodesAPI.UpdatePromoCode`: %v\n", resp)
 }
 ```
 

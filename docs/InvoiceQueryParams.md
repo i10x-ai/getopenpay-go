@@ -4,24 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BillingReason** | Pointer to [**NullableBillingReasonEnum**](BillingReasonEnum.md) |  | [optional] 
+**CollectionMethod** | Pointer to [**NullableCollectionMethodEnum**](CollectionMethodEnum.md) |  | [optional] 
+**CouponId** | Pointer to **NullableString** |  | [optional] 
+**CreatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
+**Currency** | Pointer to [**NullableCurrencyEnum**](CurrencyEnum.md) |  | [optional] 
+**CustomerId** | Pointer to **NullableString** |  | [optional] 
+**Expand** | Pointer to **[]string** | Specifies which fields in the response should be expanded. | [optional] 
 **PageNumber** | Pointer to **int32** | Page number | [optional] [default to 1]
 **PageSize** | Pointer to **int32** | Page size | [optional] [default to 100]
-**SortKey** | Pointer to **string** | Key name based on which data is sorted. | [optional] [default to "created_at"]
+**PeriodEnd** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
+**PeriodStart** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
+**Search** | Pointer to [**NullableSearchFilter**](SearchFilter.md) |  | [optional] 
 **SortDescending** | Pointer to **bool** | Sort direction. | [optional] [default to false]
-**CreatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**UpdatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**Expand** | Pointer to **[]string** |  | [optional] 
-**CustomerId** | Pointer to **NullableString** |  | [optional] 
+**SortKey** | Pointer to **string** | Key name based on which data is sorted. | [optional] [default to "created_at"]
 **Status** | Pointer to [**NullableInvoiceStatusEnum**](InvoiceStatusEnum.md) |  | [optional] 
 **SubscriptionId** | Pointer to **NullableString** |  | [optional] 
-**BillingReason** | Pointer to [**NullableBillingReasonEnum**](BillingReasonEnum.md) |  | [optional] 
 **TotalAmountAtom** | Pointer to [**NullableIntRangeFilter**](IntRangeFilter.md) |  | [optional] 
-**CollectionMethod** | Pointer to [**NullableCollectionMethodEnum**](CollectionMethodEnum.md) |  | [optional] 
-**Currency** | Pointer to [**NullableCurrencyEnum**](CurrencyEnum.md) |  | [optional] 
-**PeriodStart** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**PeriodEnd** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**CouponId** | Pointer to **NullableString** |  | [optional] 
-**Search** | Pointer to [**NullableSearchFilter**](SearchFilter.md) |  | [optional] 
+**UpdatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
 
 ## Methods
 
@@ -41,6 +41,241 @@ will change when the set of required properties is changed
 NewInvoiceQueryParamsWithDefaults instantiates a new InvoiceQueryParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBillingReason
+
+`func (o *InvoiceQueryParams) GetBillingReason() BillingReasonEnum`
+
+GetBillingReason returns the BillingReason field if non-nil, zero value otherwise.
+
+### GetBillingReasonOk
+
+`func (o *InvoiceQueryParams) GetBillingReasonOk() (*BillingReasonEnum, bool)`
+
+GetBillingReasonOk returns a tuple with the BillingReason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingReason
+
+`func (o *InvoiceQueryParams) SetBillingReason(v BillingReasonEnum)`
+
+SetBillingReason sets BillingReason field to given value.
+
+### HasBillingReason
+
+`func (o *InvoiceQueryParams) HasBillingReason() bool`
+
+HasBillingReason returns a boolean if a field has been set.
+
+### SetBillingReasonNil
+
+`func (o *InvoiceQueryParams) SetBillingReasonNil(b bool)`
+
+ SetBillingReasonNil sets the value for BillingReason to be an explicit nil
+
+### UnsetBillingReason
+`func (o *InvoiceQueryParams) UnsetBillingReason()`
+
+UnsetBillingReason ensures that no value is present for BillingReason, not even an explicit nil
+### GetCollectionMethod
+
+`func (o *InvoiceQueryParams) GetCollectionMethod() CollectionMethodEnum`
+
+GetCollectionMethod returns the CollectionMethod field if non-nil, zero value otherwise.
+
+### GetCollectionMethodOk
+
+`func (o *InvoiceQueryParams) GetCollectionMethodOk() (*CollectionMethodEnum, bool)`
+
+GetCollectionMethodOk returns a tuple with the CollectionMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCollectionMethod
+
+`func (o *InvoiceQueryParams) SetCollectionMethod(v CollectionMethodEnum)`
+
+SetCollectionMethod sets CollectionMethod field to given value.
+
+### HasCollectionMethod
+
+`func (o *InvoiceQueryParams) HasCollectionMethod() bool`
+
+HasCollectionMethod returns a boolean if a field has been set.
+
+### SetCollectionMethodNil
+
+`func (o *InvoiceQueryParams) SetCollectionMethodNil(b bool)`
+
+ SetCollectionMethodNil sets the value for CollectionMethod to be an explicit nil
+
+### UnsetCollectionMethod
+`func (o *InvoiceQueryParams) UnsetCollectionMethod()`
+
+UnsetCollectionMethod ensures that no value is present for CollectionMethod, not even an explicit nil
+### GetCouponId
+
+`func (o *InvoiceQueryParams) GetCouponId() string`
+
+GetCouponId returns the CouponId field if non-nil, zero value otherwise.
+
+### GetCouponIdOk
+
+`func (o *InvoiceQueryParams) GetCouponIdOk() (*string, bool)`
+
+GetCouponIdOk returns a tuple with the CouponId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCouponId
+
+`func (o *InvoiceQueryParams) SetCouponId(v string)`
+
+SetCouponId sets CouponId field to given value.
+
+### HasCouponId
+
+`func (o *InvoiceQueryParams) HasCouponId() bool`
+
+HasCouponId returns a boolean if a field has been set.
+
+### SetCouponIdNil
+
+`func (o *InvoiceQueryParams) SetCouponIdNil(b bool)`
+
+ SetCouponIdNil sets the value for CouponId to be an explicit nil
+
+### UnsetCouponId
+`func (o *InvoiceQueryParams) UnsetCouponId()`
+
+UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
+### GetCreatedAt
+
+`func (o *InvoiceQueryParams) GetCreatedAt() DateTimeFilter`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *InvoiceQueryParams) GetCreatedAtOk() (*DateTimeFilter, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *InvoiceQueryParams) SetCreatedAt(v DateTimeFilter)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *InvoiceQueryParams) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### SetCreatedAtNil
+
+`func (o *InvoiceQueryParams) SetCreatedAtNil(b bool)`
+
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+
+### UnsetCreatedAt
+`func (o *InvoiceQueryParams) UnsetCreatedAt()`
+
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetCurrency
+
+`func (o *InvoiceQueryParams) GetCurrency() CurrencyEnum`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *InvoiceQueryParams) GetCurrencyOk() (*CurrencyEnum, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *InvoiceQueryParams) SetCurrency(v CurrencyEnum)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *InvoiceQueryParams) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
+
+### SetCurrencyNil
+
+`func (o *InvoiceQueryParams) SetCurrencyNil(b bool)`
+
+ SetCurrencyNil sets the value for Currency to be an explicit nil
+
+### UnsetCurrency
+`func (o *InvoiceQueryParams) UnsetCurrency()`
+
+UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
+### GetCustomerId
+
+`func (o *InvoiceQueryParams) GetCustomerId() string`
+
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+
+### GetCustomerIdOk
+
+`func (o *InvoiceQueryParams) GetCustomerIdOk() (*string, bool)`
+
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerId
+
+`func (o *InvoiceQueryParams) SetCustomerId(v string)`
+
+SetCustomerId sets CustomerId field to given value.
+
+### HasCustomerId
+
+`func (o *InvoiceQueryParams) HasCustomerId() bool`
+
+HasCustomerId returns a boolean if a field has been set.
+
+### SetCustomerIdNil
+
+`func (o *InvoiceQueryParams) SetCustomerIdNil(b bool)`
+
+ SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+
+### UnsetCustomerId
+`func (o *InvoiceQueryParams) UnsetCustomerId()`
+
+UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+### GetExpand
+
+`func (o *InvoiceQueryParams) GetExpand() []string`
+
+GetExpand returns the Expand field if non-nil, zero value otherwise.
+
+### GetExpandOk
+
+`func (o *InvoiceQueryParams) GetExpandOk() (*[]string, bool)`
+
+GetExpandOk returns a tuple with the Expand field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpand
+
+`func (o *InvoiceQueryParams) SetExpand(v []string)`
+
+SetExpand sets Expand field to given value.
+
+### HasExpand
+
+`func (o *InvoiceQueryParams) HasExpand() bool`
+
+HasExpand returns a boolean if a field has been set.
 
 ### GetPageNumber
 
@@ -92,31 +327,111 @@ SetPageSize sets PageSize field to given value.
 
 HasPageSize returns a boolean if a field has been set.
 
-### GetSortKey
+### GetPeriodEnd
 
-`func (o *InvoiceQueryParams) GetSortKey() string`
+`func (o *InvoiceQueryParams) GetPeriodEnd() DateTimeFilter`
 
-GetSortKey returns the SortKey field if non-nil, zero value otherwise.
+GetPeriodEnd returns the PeriodEnd field if non-nil, zero value otherwise.
 
-### GetSortKeyOk
+### GetPeriodEndOk
 
-`func (o *InvoiceQueryParams) GetSortKeyOk() (*string, bool)`
+`func (o *InvoiceQueryParams) GetPeriodEndOk() (*DateTimeFilter, bool)`
 
-GetSortKeyOk returns a tuple with the SortKey field if it's non-nil, zero value otherwise
+GetPeriodEndOk returns a tuple with the PeriodEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSortKey
+### SetPeriodEnd
 
-`func (o *InvoiceQueryParams) SetSortKey(v string)`
+`func (o *InvoiceQueryParams) SetPeriodEnd(v DateTimeFilter)`
 
-SetSortKey sets SortKey field to given value.
+SetPeriodEnd sets PeriodEnd field to given value.
 
-### HasSortKey
+### HasPeriodEnd
 
-`func (o *InvoiceQueryParams) HasSortKey() bool`
+`func (o *InvoiceQueryParams) HasPeriodEnd() bool`
 
-HasSortKey returns a boolean if a field has been set.
+HasPeriodEnd returns a boolean if a field has been set.
 
+### SetPeriodEndNil
+
+`func (o *InvoiceQueryParams) SetPeriodEndNil(b bool)`
+
+ SetPeriodEndNil sets the value for PeriodEnd to be an explicit nil
+
+### UnsetPeriodEnd
+`func (o *InvoiceQueryParams) UnsetPeriodEnd()`
+
+UnsetPeriodEnd ensures that no value is present for PeriodEnd, not even an explicit nil
+### GetPeriodStart
+
+`func (o *InvoiceQueryParams) GetPeriodStart() DateTimeFilter`
+
+GetPeriodStart returns the PeriodStart field if non-nil, zero value otherwise.
+
+### GetPeriodStartOk
+
+`func (o *InvoiceQueryParams) GetPeriodStartOk() (*DateTimeFilter, bool)`
+
+GetPeriodStartOk returns a tuple with the PeriodStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPeriodStart
+
+`func (o *InvoiceQueryParams) SetPeriodStart(v DateTimeFilter)`
+
+SetPeriodStart sets PeriodStart field to given value.
+
+### HasPeriodStart
+
+`func (o *InvoiceQueryParams) HasPeriodStart() bool`
+
+HasPeriodStart returns a boolean if a field has been set.
+
+### SetPeriodStartNil
+
+`func (o *InvoiceQueryParams) SetPeriodStartNil(b bool)`
+
+ SetPeriodStartNil sets the value for PeriodStart to be an explicit nil
+
+### UnsetPeriodStart
+`func (o *InvoiceQueryParams) UnsetPeriodStart()`
+
+UnsetPeriodStart ensures that no value is present for PeriodStart, not even an explicit nil
+### GetSearch
+
+`func (o *InvoiceQueryParams) GetSearch() SearchFilter`
+
+GetSearch returns the Search field if non-nil, zero value otherwise.
+
+### GetSearchOk
+
+`func (o *InvoiceQueryParams) GetSearchOk() (*SearchFilter, bool)`
+
+GetSearchOk returns a tuple with the Search field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearch
+
+`func (o *InvoiceQueryParams) SetSearch(v SearchFilter)`
+
+SetSearch sets Search field to given value.
+
+### HasSearch
+
+`func (o *InvoiceQueryParams) HasSearch() bool`
+
+HasSearch returns a boolean if a field has been set.
+
+### SetSearchNil
+
+`func (o *InvoiceQueryParams) SetSearchNil(b bool)`
+
+ SetSearchNil sets the value for Search to be an explicit nil
+
+### UnsetSearch
+`func (o *InvoiceQueryParams) UnsetSearch()`
+
+UnsetSearch ensures that no value is present for Search, not even an explicit nil
 ### GetSortDescending
 
 `func (o *InvoiceQueryParams) GetSortDescending() bool`
@@ -142,136 +457,31 @@ SetSortDescending sets SortDescending field to given value.
 
 HasSortDescending returns a boolean if a field has been set.
 
-### GetCreatedAt
+### GetSortKey
 
-`func (o *InvoiceQueryParams) GetCreatedAt() DateTimeFilter`
+`func (o *InvoiceQueryParams) GetSortKey() string`
 
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+GetSortKey returns the SortKey field if non-nil, zero value otherwise.
 
-### GetCreatedAtOk
+### GetSortKeyOk
 
-`func (o *InvoiceQueryParams) GetCreatedAtOk() (*DateTimeFilter, bool)`
+`func (o *InvoiceQueryParams) GetSortKeyOk() (*string, bool)`
 
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+GetSortKeyOk returns a tuple with the SortKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedAt
+### SetSortKey
 
-`func (o *InvoiceQueryParams) SetCreatedAt(v DateTimeFilter)`
+`func (o *InvoiceQueryParams) SetSortKey(v string)`
 
-SetCreatedAt sets CreatedAt field to given value.
+SetSortKey sets SortKey field to given value.
 
-### HasCreatedAt
+### HasSortKey
 
-`func (o *InvoiceQueryParams) HasCreatedAt() bool`
+`func (o *InvoiceQueryParams) HasSortKey() bool`
 
-HasCreatedAt returns a boolean if a field has been set.
+HasSortKey returns a boolean if a field has been set.
 
-### SetCreatedAtNil
-
-`func (o *InvoiceQueryParams) SetCreatedAtNil(b bool)`
-
- SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-
-### UnsetCreatedAt
-`func (o *InvoiceQueryParams) UnsetCreatedAt()`
-
-UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetUpdatedAt
-
-`func (o *InvoiceQueryParams) GetUpdatedAt() DateTimeFilter`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *InvoiceQueryParams) GetUpdatedAtOk() (*DateTimeFilter, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *InvoiceQueryParams) SetUpdatedAt(v DateTimeFilter)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-### HasUpdatedAt
-
-`func (o *InvoiceQueryParams) HasUpdatedAt() bool`
-
-HasUpdatedAt returns a boolean if a field has been set.
-
-### SetUpdatedAtNil
-
-`func (o *InvoiceQueryParams) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *InvoiceQueryParams) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetExpand
-
-`func (o *InvoiceQueryParams) GetExpand() []string`
-
-GetExpand returns the Expand field if non-nil, zero value otherwise.
-
-### GetExpandOk
-
-`func (o *InvoiceQueryParams) GetExpandOk() (*[]string, bool)`
-
-GetExpandOk returns a tuple with the Expand field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpand
-
-`func (o *InvoiceQueryParams) SetExpand(v []string)`
-
-SetExpand sets Expand field to given value.
-
-### HasExpand
-
-`func (o *InvoiceQueryParams) HasExpand() bool`
-
-HasExpand returns a boolean if a field has been set.
-
-### GetCustomerId
-
-`func (o *InvoiceQueryParams) GetCustomerId() string`
-
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
-
-### GetCustomerIdOk
-
-`func (o *InvoiceQueryParams) GetCustomerIdOk() (*string, bool)`
-
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerId
-
-`func (o *InvoiceQueryParams) SetCustomerId(v string)`
-
-SetCustomerId sets CustomerId field to given value.
-
-### HasCustomerId
-
-`func (o *InvoiceQueryParams) HasCustomerId() bool`
-
-HasCustomerId returns a boolean if a field has been set.
-
-### SetCustomerIdNil
-
-`func (o *InvoiceQueryParams) SetCustomerIdNil(b bool)`
-
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
-
-### UnsetCustomerId
-`func (o *InvoiceQueryParams) UnsetCustomerId()`
-
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
 ### GetStatus
 
 `func (o *InvoiceQueryParams) GetStatus() InvoiceStatusEnum`
@@ -342,41 +552,6 @@ HasSubscriptionId returns a boolean if a field has been set.
 `func (o *InvoiceQueryParams) UnsetSubscriptionId()`
 
 UnsetSubscriptionId ensures that no value is present for SubscriptionId, not even an explicit nil
-### GetBillingReason
-
-`func (o *InvoiceQueryParams) GetBillingReason() BillingReasonEnum`
-
-GetBillingReason returns the BillingReason field if non-nil, zero value otherwise.
-
-### GetBillingReasonOk
-
-`func (o *InvoiceQueryParams) GetBillingReasonOk() (*BillingReasonEnum, bool)`
-
-GetBillingReasonOk returns a tuple with the BillingReason field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBillingReason
-
-`func (o *InvoiceQueryParams) SetBillingReason(v BillingReasonEnum)`
-
-SetBillingReason sets BillingReason field to given value.
-
-### HasBillingReason
-
-`func (o *InvoiceQueryParams) HasBillingReason() bool`
-
-HasBillingReason returns a boolean if a field has been set.
-
-### SetBillingReasonNil
-
-`func (o *InvoiceQueryParams) SetBillingReasonNil(b bool)`
-
- SetBillingReasonNil sets the value for BillingReason to be an explicit nil
-
-### UnsetBillingReason
-`func (o *InvoiceQueryParams) UnsetBillingReason()`
-
-UnsetBillingReason ensures that no value is present for BillingReason, not even an explicit nil
 ### GetTotalAmountAtom
 
 `func (o *InvoiceQueryParams) GetTotalAmountAtom() IntRangeFilter`
@@ -412,216 +587,41 @@ HasTotalAmountAtom returns a boolean if a field has been set.
 `func (o *InvoiceQueryParams) UnsetTotalAmountAtom()`
 
 UnsetTotalAmountAtom ensures that no value is present for TotalAmountAtom, not even an explicit nil
-### GetCollectionMethod
+### GetUpdatedAt
 
-`func (o *InvoiceQueryParams) GetCollectionMethod() CollectionMethodEnum`
+`func (o *InvoiceQueryParams) GetUpdatedAt() DateTimeFilter`
 
-GetCollectionMethod returns the CollectionMethod field if non-nil, zero value otherwise.
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
-### GetCollectionMethodOk
+### GetUpdatedAtOk
 
-`func (o *InvoiceQueryParams) GetCollectionMethodOk() (*CollectionMethodEnum, bool)`
+`func (o *InvoiceQueryParams) GetUpdatedAtOk() (*DateTimeFilter, bool)`
 
-GetCollectionMethodOk returns a tuple with the CollectionMethod field if it's non-nil, zero value otherwise
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCollectionMethod
+### SetUpdatedAt
 
-`func (o *InvoiceQueryParams) SetCollectionMethod(v CollectionMethodEnum)`
+`func (o *InvoiceQueryParams) SetUpdatedAt(v DateTimeFilter)`
 
-SetCollectionMethod sets CollectionMethod field to given value.
+SetUpdatedAt sets UpdatedAt field to given value.
 
-### HasCollectionMethod
+### HasUpdatedAt
 
-`func (o *InvoiceQueryParams) HasCollectionMethod() bool`
+`func (o *InvoiceQueryParams) HasUpdatedAt() bool`
 
-HasCollectionMethod returns a boolean if a field has been set.
+HasUpdatedAt returns a boolean if a field has been set.
 
-### SetCollectionMethodNil
+### SetUpdatedAtNil
 
-`func (o *InvoiceQueryParams) SetCollectionMethodNil(b bool)`
+`func (o *InvoiceQueryParams) SetUpdatedAtNil(b bool)`
 
- SetCollectionMethodNil sets the value for CollectionMethod to be an explicit nil
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
-### UnsetCollectionMethod
-`func (o *InvoiceQueryParams) UnsetCollectionMethod()`
+### UnsetUpdatedAt
+`func (o *InvoiceQueryParams) UnsetUpdatedAt()`
 
-UnsetCollectionMethod ensures that no value is present for CollectionMethod, not even an explicit nil
-### GetCurrency
-
-`func (o *InvoiceQueryParams) GetCurrency() CurrencyEnum`
-
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
-
-### GetCurrencyOk
-
-`func (o *InvoiceQueryParams) GetCurrencyOk() (*CurrencyEnum, bool)`
-
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrency
-
-`func (o *InvoiceQueryParams) SetCurrency(v CurrencyEnum)`
-
-SetCurrency sets Currency field to given value.
-
-### HasCurrency
-
-`func (o *InvoiceQueryParams) HasCurrency() bool`
-
-HasCurrency returns a boolean if a field has been set.
-
-### SetCurrencyNil
-
-`func (o *InvoiceQueryParams) SetCurrencyNil(b bool)`
-
- SetCurrencyNil sets the value for Currency to be an explicit nil
-
-### UnsetCurrency
-`func (o *InvoiceQueryParams) UnsetCurrency()`
-
-UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-### GetPeriodStart
-
-`func (o *InvoiceQueryParams) GetPeriodStart() DateTimeFilter`
-
-GetPeriodStart returns the PeriodStart field if non-nil, zero value otherwise.
-
-### GetPeriodStartOk
-
-`func (o *InvoiceQueryParams) GetPeriodStartOk() (*DateTimeFilter, bool)`
-
-GetPeriodStartOk returns a tuple with the PeriodStart field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPeriodStart
-
-`func (o *InvoiceQueryParams) SetPeriodStart(v DateTimeFilter)`
-
-SetPeriodStart sets PeriodStart field to given value.
-
-### HasPeriodStart
-
-`func (o *InvoiceQueryParams) HasPeriodStart() bool`
-
-HasPeriodStart returns a boolean if a field has been set.
-
-### SetPeriodStartNil
-
-`func (o *InvoiceQueryParams) SetPeriodStartNil(b bool)`
-
- SetPeriodStartNil sets the value for PeriodStart to be an explicit nil
-
-### UnsetPeriodStart
-`func (o *InvoiceQueryParams) UnsetPeriodStart()`
-
-UnsetPeriodStart ensures that no value is present for PeriodStart, not even an explicit nil
-### GetPeriodEnd
-
-`func (o *InvoiceQueryParams) GetPeriodEnd() DateTimeFilter`
-
-GetPeriodEnd returns the PeriodEnd field if non-nil, zero value otherwise.
-
-### GetPeriodEndOk
-
-`func (o *InvoiceQueryParams) GetPeriodEndOk() (*DateTimeFilter, bool)`
-
-GetPeriodEndOk returns a tuple with the PeriodEnd field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPeriodEnd
-
-`func (o *InvoiceQueryParams) SetPeriodEnd(v DateTimeFilter)`
-
-SetPeriodEnd sets PeriodEnd field to given value.
-
-### HasPeriodEnd
-
-`func (o *InvoiceQueryParams) HasPeriodEnd() bool`
-
-HasPeriodEnd returns a boolean if a field has been set.
-
-### SetPeriodEndNil
-
-`func (o *InvoiceQueryParams) SetPeriodEndNil(b bool)`
-
- SetPeriodEndNil sets the value for PeriodEnd to be an explicit nil
-
-### UnsetPeriodEnd
-`func (o *InvoiceQueryParams) UnsetPeriodEnd()`
-
-UnsetPeriodEnd ensures that no value is present for PeriodEnd, not even an explicit nil
-### GetCouponId
-
-`func (o *InvoiceQueryParams) GetCouponId() string`
-
-GetCouponId returns the CouponId field if non-nil, zero value otherwise.
-
-### GetCouponIdOk
-
-`func (o *InvoiceQueryParams) GetCouponIdOk() (*string, bool)`
-
-GetCouponIdOk returns a tuple with the CouponId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCouponId
-
-`func (o *InvoiceQueryParams) SetCouponId(v string)`
-
-SetCouponId sets CouponId field to given value.
-
-### HasCouponId
-
-`func (o *InvoiceQueryParams) HasCouponId() bool`
-
-HasCouponId returns a boolean if a field has been set.
-
-### SetCouponIdNil
-
-`func (o *InvoiceQueryParams) SetCouponIdNil(b bool)`
-
- SetCouponIdNil sets the value for CouponId to be an explicit nil
-
-### UnsetCouponId
-`func (o *InvoiceQueryParams) UnsetCouponId()`
-
-UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
-### GetSearch
-
-`func (o *InvoiceQueryParams) GetSearch() SearchFilter`
-
-GetSearch returns the Search field if non-nil, zero value otherwise.
-
-### GetSearchOk
-
-`func (o *InvoiceQueryParams) GetSearchOk() (*SearchFilter, bool)`
-
-GetSearchOk returns a tuple with the Search field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSearch
-
-`func (o *InvoiceQueryParams) SetSearch(v SearchFilter)`
-
-SetSearch sets Search field to given value.
-
-### HasSearch
-
-`func (o *InvoiceQueryParams) HasSearch() bool`
-
-HasSearch returns a boolean if a field has been set.
-
-### SetSearchNil
-
-`func (o *InvoiceQueryParams) SetSearchNil(b bool)`
-
- SetSearchNil sets the value for Search to be an explicit nil
-
-### UnsetSearch
-`func (o *InvoiceQueryParams) UnsetSearch()`
-
-UnsetSearch ensures that no value is present for Search, not even an explicit nil
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

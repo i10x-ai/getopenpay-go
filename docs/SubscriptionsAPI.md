@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**PauseSubscription**](SubscriptionsAPI.md#PauseSubscription) | **Put** /subscriptions/{subscription_id}/pause | Pause Subscription
 [**RefreshSubscriptionStatus**](SubscriptionsAPI.md#RefreshSubscriptionStatus) | **Post** /subscriptions/{subscription_id}/refresh-status | Refresh Subscription Status
 [**ResumeSubscription**](SubscriptionsAPI.md#ResumeSubscription) | **Put** /subscriptions/{subscription_id}/resume | Resume Subscription
-[**SearchSubscriptions**](SubscriptionsAPI.md#SearchSubscriptions) | **Post** /subscriptions/search | Search Subscriptions
 [**UpdateSubscription**](SubscriptionsAPI.md#UpdateSubscription) | **Put** /subscriptions/{subscription_id} | Update Subscription
 
 
@@ -32,24 +31,24 @@ Cancel Subscription Trial
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.CancelSubscriptionTrial(context.Background(), subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.CancelSubscriptionTrial``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CancelSubscriptionTrial`: SubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.CancelSubscriptionTrial`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.CancelSubscriptionTrial(context.Background(), subscriptionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.CancelSubscriptionTrial``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CancelSubscriptionTrial`: SubscriptionExternal
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.CancelSubscriptionTrial`: %v\n", resp)
 }
 ```
 
@@ -94,30 +93,32 @@ Name | Type | Description  | Notes
 
 Create Subscriptions
 
+
+
 ### Example
 
 ```go
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createSubscriptionRequest := *openapiclient.NewCreateSubscriptionRequest("cus_dev_abc123", []openapiclient.SelectedPriceQuantity{*openapiclient.NewSelectedPriceQuantity("PriceId_example", int32(123))}, int32(9000)) // CreateSubscriptionRequest | 
+	createSubscriptionRequest := *openapiclient.NewCreateSubscriptionRequest("cus_dev_abc123", []openapiclient.SelectedPriceQuantity{*openapiclient.NewSelectedPriceQuantity("PriceId_example", int32(123))}) // CreateSubscriptionRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.CreateSubscriptions(context.Background()).CreateSubscriptionRequest(createSubscriptionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.CreateSubscriptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSubscriptions`: CreateSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.CreateSubscriptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.CreateSubscriptions(context.Background()).CreateSubscriptionRequest(createSubscriptionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.CreateSubscriptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSubscriptions`: CreateSubscriptionResponse
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.CreateSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -164,25 +165,25 @@ Delete Subscription
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
-    deleteSubscriptionRequest := *openapiclient.NewDeleteSubscriptionRequest() // DeleteSubscriptionRequest |  (optional)
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	deleteSubscriptionRequest := *openapiclient.NewDeleteSubscriptionRequest() // DeleteSubscriptionRequest |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.DeleteSubscription(context.Background(), subscriptionId).DeleteSubscriptionRequest(deleteSubscriptionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.DeleteSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DeleteSubscription`: DeleteSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.DeleteSubscription`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.DeleteSubscription(context.Background(), subscriptionId).DeleteSubscriptionRequest(deleteSubscriptionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.DeleteSubscription``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteSubscription`: DeleteSubscriptionResponse
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.DeleteSubscription`: %v\n", resp)
 }
 ```
 
@@ -234,24 +235,24 @@ Delete Subscription Discount
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.DeleteSubscriptionDiscount(context.Background(), subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.DeleteSubscriptionDiscount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DeleteSubscriptionDiscount`: SubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.DeleteSubscriptionDiscount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.DeleteSubscriptionDiscount(context.Background(), subscriptionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.DeleteSubscriptionDiscount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteSubscriptionDiscount`: SubscriptionExternal
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.DeleteSubscriptionDiscount`: %v\n", resp)
 }
 ```
 
@@ -302,24 +303,24 @@ Get Subscription
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.GetSubscription(context.Background(), subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.GetSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSubscription`: SubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.GetSubscription`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.GetSubscription(context.Background(), subscriptionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.GetSubscription``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSubscription`: SubscriptionExternal
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.GetSubscription`: %v\n", resp)
 }
 ```
 
@@ -370,24 +371,24 @@ List Subscriptions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionQueryParams := *openapiclient.NewSubscriptionQueryParams() // SubscriptionQueryParams | 
+	subscriptionQueryParams := *openapiclient.NewSubscriptionQueryParams() // SubscriptionQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.ListSubscriptions(context.Background()).SubscriptionQueryParams(subscriptionQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.ListSubscriptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListSubscriptions`: ListResponseSubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.ListSubscriptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.ListSubscriptions(context.Background()).SubscriptionQueryParams(subscriptionQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.ListSubscriptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSubscriptions`: ListResponseSubscriptionExternal
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.ListSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -434,25 +435,25 @@ Pause Subscription
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
-    subscriptionPauseRequest := *openapiclient.NewSubscriptionPauseRequest(int32(123)) // SubscriptionPauseRequest | 
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	subscriptionPauseRequest := *openapiclient.NewSubscriptionPauseRequest() // SubscriptionPauseRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.PauseSubscription(context.Background(), subscriptionId).SubscriptionPauseRequest(subscriptionPauseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.PauseSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PauseSubscription`: SubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.PauseSubscription`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.PauseSubscription(context.Background(), subscriptionId).SubscriptionPauseRequest(subscriptionPauseRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.PauseSubscription``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PauseSubscription`: SubscriptionExternal
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.PauseSubscription`: %v\n", resp)
 }
 ```
 
@@ -504,24 +505,24 @@ Refresh Subscription Status
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.RefreshSubscriptionStatus(context.Background(), subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.RefreshSubscriptionStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RefreshSubscriptionStatus`: SubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.RefreshSubscriptionStatus`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.RefreshSubscriptionStatus(context.Background(), subscriptionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.RefreshSubscriptionStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RefreshSubscriptionStatus`: SubscriptionExternal
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.RefreshSubscriptionStatus`: %v\n", resp)
 }
 ```
 
@@ -562,7 +563,7 @@ Name | Type | Description  | Notes
 
 ## ResumeSubscription
 
-> SubscriptionExternal ResumeSubscription(ctx, subscriptionId).SubscriptionResumeRequest(subscriptionResumeRequest).Execute()
+> ResumeSubscriptionResponse ResumeSubscription(ctx, subscriptionId).SubscriptionResumeRequest(subscriptionResumeRequest).Execute()
 
 Resume Subscription
 
@@ -572,25 +573,25 @@ Resume Subscription
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
-    subscriptionResumeRequest := *openapiclient.NewSubscriptionResumeRequest() // SubscriptionResumeRequest | 
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	subscriptionResumeRequest := *openapiclient.NewSubscriptionResumeRequest() // SubscriptionResumeRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.ResumeSubscription(context.Background(), subscriptionId).SubscriptionResumeRequest(subscriptionResumeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.ResumeSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ResumeSubscription`: SubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.ResumeSubscription`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.ResumeSubscription(context.Background(), subscriptionId).SubscriptionResumeRequest(subscriptionResumeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.ResumeSubscription``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ResumeSubscription`: ResumeSubscriptionResponse
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.ResumeSubscription`: %v\n", resp)
 }
 ```
 
@@ -614,71 +615,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubscriptionExternal**](SubscriptionExternal.md)
-
-### Authorization
-
-[HTTPBearer](../README.md#HTTPBearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SearchSubscriptions
-
-> ListResponseSubscriptionExternal SearchSubscriptions(ctx).SearchSubscriptionRequest(searchSubscriptionRequest).Execute()
-
-Search Subscriptions
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
-)
-
-func main() {
-    searchSubscriptionRequest := *openapiclient.NewSearchSubscriptionRequest("Query_example") // SearchSubscriptionRequest | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.SearchSubscriptions(context.Background()).SearchSubscriptionRequest(searchSubscriptionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.SearchSubscriptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchSubscriptions`: ListResponseSubscriptionExternal
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.SearchSubscriptions`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSearchSubscriptionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **searchSubscriptionRequest** | [**SearchSubscriptionRequest**](SearchSubscriptionRequest.md) |  | 
-
-### Return type
-
-[**ListResponseSubscriptionExternal**](ListResponseSubscriptionExternal.md)
+[**ResumeSubscriptionResponse**](ResumeSubscriptionResponse.md)
 
 ### Authorization
 
@@ -706,25 +643,25 @@ Update Subscription
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
-    updateSubscriptionRequest := *openapiclient.NewUpdateSubscriptionRequest() // UpdateSubscriptionRequest | 
+	subscriptionId := "subscription_dev_abc123" // string | Unique identifier of the subscription.
+	updateSubscriptionRequest := *openapiclient.NewUpdateSubscriptionRequest() // UpdateSubscriptionRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionsAPI.UpdateSubscription(context.Background(), subscriptionId).UpdateSubscriptionRequest(updateSubscriptionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.UpdateSubscription``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateSubscription`: UpdateSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.UpdateSubscription`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionsAPI.UpdateSubscription(context.Background(), subscriptionId).UpdateSubscriptionRequest(updateSubscriptionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionsAPI.UpdateSubscription``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSubscription`: UpdateSubscriptionResponse
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionsAPI.UpdateSubscription`: %v\n", resp)
 }
 ```
 

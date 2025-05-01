@@ -20,24 +20,24 @@ Create Tax Integration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createTaxIntegrationRequest := *openapiclient.NewCreateTaxIntegrationRequest(openapiclient.TaxIntegrationApiName("anrok_v1"), map[string]string({api_key=00000000000/aaaaaaaaaaaaa/secret.ZZZZZZZZZZZZZZZZZZZZZZZZZZ}), "US/Pacific") // CreateTaxIntegrationRequest | 
+	createTaxIntegrationRequest := *openapiclient.NewCreateTaxIntegrationRequest("US/Pacific", map[string]string{"key": "Inner_example"}, openapiclient.TaxIntegrationApiName("anrok_v1")) // CreateTaxIntegrationRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxIntegrationsAPI.CreateTaxIntegration(context.Background()).CreateTaxIntegrationRequest(createTaxIntegrationRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TaxIntegrationsAPI.CreateTaxIntegration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTaxIntegration`: TaxIntegrationExternal
-    fmt.Fprintf(os.Stdout, "Response from `TaxIntegrationsAPI.CreateTaxIntegration`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TaxIntegrationsAPI.CreateTaxIntegration(context.Background()).CreateTaxIntegrationRequest(createTaxIntegrationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TaxIntegrationsAPI.CreateTaxIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTaxIntegration`: TaxIntegrationExternal
+	fmt.Fprintf(os.Stdout, "Response from `TaxIntegrationsAPI.CreateTaxIntegration`: %v\n", resp)
 }
 ```
 

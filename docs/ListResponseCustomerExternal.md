@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | [**[]CustomerExternal**](CustomerExternal.md) |  | 
-**TotalObjects** | **int32** |  | 
 **PageNumber** | **int32** |  | 
 **PageSize** | **int32** |  | 
+**TotalObjects** | **int32** |  | 
 
 ## Methods
 
 ### NewListResponseCustomerExternal
 
-`func NewListResponseCustomerExternal(data []CustomerExternal, totalObjects int32, pageNumber int32, pageSize int32, ) *ListResponseCustomerExternal`
+`func NewListResponseCustomerExternal(data []CustomerExternal, pageNumber int32, pageSize int32, totalObjects int32, ) *ListResponseCustomerExternal`
 
 NewListResponseCustomerExternal instantiates a new ListResponseCustomerExternal object
 This constructor will assign default values to properties that have it defined,
@@ -46,26 +46,6 @@ and a boolean to check if the value has been set.
 `func (o *ListResponseCustomerExternal) SetData(v []CustomerExternal)`
 
 SetData sets Data field to given value.
-
-
-### GetTotalObjects
-
-`func (o *ListResponseCustomerExternal) GetTotalObjects() int32`
-
-GetTotalObjects returns the TotalObjects field if non-nil, zero value otherwise.
-
-### GetTotalObjectsOk
-
-`func (o *ListResponseCustomerExternal) GetTotalObjectsOk() (*int32, bool)`
-
-GetTotalObjectsOk returns a tuple with the TotalObjects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalObjects
-
-`func (o *ListResponseCustomerExternal) SetTotalObjects(v int32)`
-
-SetTotalObjects sets TotalObjects field to given value.
 
 
 ### GetPageNumber
@@ -106,6 +86,26 @@ and a boolean to check if the value has been set.
 `func (o *ListResponseCustomerExternal) SetPageSize(v int32)`
 
 SetPageSize sets PageSize field to given value.
+
+
+### GetTotalObjects
+
+`func (o *ListResponseCustomerExternal) GetTotalObjects() int32`
+
+GetTotalObjects returns the TotalObjects field if non-nil, zero value otherwise.
+
+### GetTotalObjectsOk
+
+`func (o *ListResponseCustomerExternal) GetTotalObjectsOk() (*int32, bool)`
+
+GetTotalObjectsOk returns a tuple with the TotalObjects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalObjects
+
+`func (o *ListResponseCustomerExternal) SetTotalObjects(v int32)`
+
+SetTotalObjects sets TotalObjects field to given value.
 
 
 

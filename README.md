@@ -1,13 +1,14 @@
 # Quick start
 
-1. Go into `sanity_test.go` and replace `TODO_ADD_BEARER_KEY` with your secret token
+1. In `sanity_test.go` and replace `TODO_SECRET_KEY` with your OpenPay secret token
 
-2.
-```shell
-go build
+In staging your secret token would start with `st_stg_*` and in prod `st_prod_*`
 
-go test -v
-```
+
+2. `go build`
+
+3. `go test -v`
+
 
 # Go API client for getopenpay
 

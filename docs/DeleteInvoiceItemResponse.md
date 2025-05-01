@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Message** | Pointer to **string** | Message describing result of API call. | [optional] [default to "Invoice Item Deleted successfully."]
 **InvoiceItemId** | **string** | Unique identifier of the invoice_item. | 
+**Message** | Pointer to **string** | Message describing result of API call. | [optional] [default to "Invoice Item Deleted successfully."]
 
 ## Methods
 
@@ -25,6 +25,26 @@ will change when the set of required properties is changed
 NewDeleteInvoiceItemResponseWithDefaults instantiates a new DeleteInvoiceItemResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetInvoiceItemId
+
+`func (o *DeleteInvoiceItemResponse) GetInvoiceItemId() string`
+
+GetInvoiceItemId returns the InvoiceItemId field if non-nil, zero value otherwise.
+
+### GetInvoiceItemIdOk
+
+`func (o *DeleteInvoiceItemResponse) GetInvoiceItemIdOk() (*string, bool)`
+
+GetInvoiceItemIdOk returns a tuple with the InvoiceItemId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceItemId
+
+`func (o *DeleteInvoiceItemResponse) SetInvoiceItemId(v string)`
+
+SetInvoiceItemId sets InvoiceItemId field to given value.
+
 
 ### GetMessage
 
@@ -50,26 +70,6 @@ SetMessage sets Message field to given value.
 `func (o *DeleteInvoiceItemResponse) HasMessage() bool`
 
 HasMessage returns a boolean if a field has been set.
-
-### GetInvoiceItemId
-
-`func (o *DeleteInvoiceItemResponse) GetInvoiceItemId() string`
-
-GetInvoiceItemId returns the InvoiceItemId field if non-nil, zero value otherwise.
-
-### GetInvoiceItemIdOk
-
-`func (o *DeleteInvoiceItemResponse) GetInvoiceItemIdOk() (*string, bool)`
-
-GetInvoiceItemIdOk returns a tuple with the InvoiceItemId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvoiceItemId
-
-`func (o *DeleteInvoiceItemResponse) SetInvoiceItemId(v string)`
-
-SetInvoiceItemId sets InvoiceItemId field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

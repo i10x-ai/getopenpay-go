@@ -4,24 +4,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BillingEmail** | Pointer to **NullableString** |  | [optional] 
+**BusinessName** | Pointer to **NullableString** |  | [optional] 
+**City** | Pointer to **NullableString** |  | [optional] 
+**Country** | Pointer to **NullableString** |  | [optional] 
+**CouponId** | Pointer to **NullableString** |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomerBillingAddress** | Pointer to [**NullableCompleteAddress**](CompleteAddress.md) |  | [optional] 
+**Email** | Pointer to **NullableString** |  | [optional] 
 **FirstName** | Pointer to **NullableString** |  | [optional] 
+**InvoiceSettings** | Pointer to [**NullableCustomerInvoiceSettings**](CustomerInvoiceSettings.md) |  | [optional] 
+**Language** | Pointer to [**NullableCustomerLanguage**](CustomerLanguage.md) |  | [optional] 
 **LastName** | Pointer to **NullableString** |  | [optional] 
 **Line1** | Pointer to **NullableString** |  | [optional] 
 **Line2** | Pointer to **NullableString** |  | [optional] 
 **Line3** | Pointer to **NullableString** |  | [optional] 
-**City** | Pointer to **NullableString** |  | [optional] 
-**State** | Pointer to **NullableString** |  | [optional] 
-**Country** | Pointer to **NullableString** |  | [optional] 
-**ZipCode** | Pointer to **NullableString** |  | [optional] 
-**CouponId** | Pointer to **NullableString** |  | [optional] 
-**PromotionCodeId** | Pointer to **NullableString** |  | [optional] 
 **Notes** | Pointer to **NullableString** |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Email** | Pointer to **NullableString** |  | [optional] 
-**InvoiceSettings** | Pointer to [**NullableCustomerInvoiceSettings**](CustomerInvoiceSettings.md) |  | [optional] 
-**BillingEmail** | Pointer to **NullableString** |  | [optional] 
-**Language** | Pointer to [**NullableCustomerLanguage**](CustomerLanguage.md) |  | [optional] 
 **PhoneNumber** | Pointer to **NullableString** |  | [optional] 
+**PromotionCodeId** | Pointer to **NullableString** |  | [optional] 
+**ShippingAddresses** | Pointer to [**[]CompleteAddress**](CompleteAddress.md) | List of the customer’s shipping addresses. | [optional] [default to []]
+**State** | Pointer to **NullableString** |  | [optional] 
+**ZipCode** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,6 +45,286 @@ NewUpdateCustomerRequestWithDefaults instantiates a new UpdateCustomerRequest ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetBillingEmail
+
+`func (o *UpdateCustomerRequest) GetBillingEmail() string`
+
+GetBillingEmail returns the BillingEmail field if non-nil, zero value otherwise.
+
+### GetBillingEmailOk
+
+`func (o *UpdateCustomerRequest) GetBillingEmailOk() (*string, bool)`
+
+GetBillingEmailOk returns a tuple with the BillingEmail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingEmail
+
+`func (o *UpdateCustomerRequest) SetBillingEmail(v string)`
+
+SetBillingEmail sets BillingEmail field to given value.
+
+### HasBillingEmail
+
+`func (o *UpdateCustomerRequest) HasBillingEmail() bool`
+
+HasBillingEmail returns a boolean if a field has been set.
+
+### SetBillingEmailNil
+
+`func (o *UpdateCustomerRequest) SetBillingEmailNil(b bool)`
+
+ SetBillingEmailNil sets the value for BillingEmail to be an explicit nil
+
+### UnsetBillingEmail
+`func (o *UpdateCustomerRequest) UnsetBillingEmail()`
+
+UnsetBillingEmail ensures that no value is present for BillingEmail, not even an explicit nil
+### GetBusinessName
+
+`func (o *UpdateCustomerRequest) GetBusinessName() string`
+
+GetBusinessName returns the BusinessName field if non-nil, zero value otherwise.
+
+### GetBusinessNameOk
+
+`func (o *UpdateCustomerRequest) GetBusinessNameOk() (*string, bool)`
+
+GetBusinessNameOk returns a tuple with the BusinessName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBusinessName
+
+`func (o *UpdateCustomerRequest) SetBusinessName(v string)`
+
+SetBusinessName sets BusinessName field to given value.
+
+### HasBusinessName
+
+`func (o *UpdateCustomerRequest) HasBusinessName() bool`
+
+HasBusinessName returns a boolean if a field has been set.
+
+### SetBusinessNameNil
+
+`func (o *UpdateCustomerRequest) SetBusinessNameNil(b bool)`
+
+ SetBusinessNameNil sets the value for BusinessName to be an explicit nil
+
+### UnsetBusinessName
+`func (o *UpdateCustomerRequest) UnsetBusinessName()`
+
+UnsetBusinessName ensures that no value is present for BusinessName, not even an explicit nil
+### GetCity
+
+`func (o *UpdateCustomerRequest) GetCity() string`
+
+GetCity returns the City field if non-nil, zero value otherwise.
+
+### GetCityOk
+
+`func (o *UpdateCustomerRequest) GetCityOk() (*string, bool)`
+
+GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCity
+
+`func (o *UpdateCustomerRequest) SetCity(v string)`
+
+SetCity sets City field to given value.
+
+### HasCity
+
+`func (o *UpdateCustomerRequest) HasCity() bool`
+
+HasCity returns a boolean if a field has been set.
+
+### SetCityNil
+
+`func (o *UpdateCustomerRequest) SetCityNil(b bool)`
+
+ SetCityNil sets the value for City to be an explicit nil
+
+### UnsetCity
+`func (o *UpdateCustomerRequest) UnsetCity()`
+
+UnsetCity ensures that no value is present for City, not even an explicit nil
+### GetCountry
+
+`func (o *UpdateCustomerRequest) GetCountry() string`
+
+GetCountry returns the Country field if non-nil, zero value otherwise.
+
+### GetCountryOk
+
+`func (o *UpdateCustomerRequest) GetCountryOk() (*string, bool)`
+
+GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountry
+
+`func (o *UpdateCustomerRequest) SetCountry(v string)`
+
+SetCountry sets Country field to given value.
+
+### HasCountry
+
+`func (o *UpdateCustomerRequest) HasCountry() bool`
+
+HasCountry returns a boolean if a field has been set.
+
+### SetCountryNil
+
+`func (o *UpdateCustomerRequest) SetCountryNil(b bool)`
+
+ SetCountryNil sets the value for Country to be an explicit nil
+
+### UnsetCountry
+`func (o *UpdateCustomerRequest) UnsetCountry()`
+
+UnsetCountry ensures that no value is present for Country, not even an explicit nil
+### GetCouponId
+
+`func (o *UpdateCustomerRequest) GetCouponId() string`
+
+GetCouponId returns the CouponId field if non-nil, zero value otherwise.
+
+### GetCouponIdOk
+
+`func (o *UpdateCustomerRequest) GetCouponIdOk() (*string, bool)`
+
+GetCouponIdOk returns a tuple with the CouponId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCouponId
+
+`func (o *UpdateCustomerRequest) SetCouponId(v string)`
+
+SetCouponId sets CouponId field to given value.
+
+### HasCouponId
+
+`func (o *UpdateCustomerRequest) HasCouponId() bool`
+
+HasCouponId returns a boolean if a field has been set.
+
+### SetCouponIdNil
+
+`func (o *UpdateCustomerRequest) SetCouponIdNil(b bool)`
+
+ SetCouponIdNil sets the value for CouponId to be an explicit nil
+
+### UnsetCouponId
+`func (o *UpdateCustomerRequest) UnsetCouponId()`
+
+UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
+### GetCustomFields
+
+`func (o *UpdateCustomerRequest) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *UpdateCustomerRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *UpdateCustomerRequest) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *UpdateCustomerRequest) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### SetCustomFieldsNil
+
+`func (o *UpdateCustomerRequest) SetCustomFieldsNil(b bool)`
+
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
+
+### UnsetCustomFields
+`func (o *UpdateCustomerRequest) UnsetCustomFields()`
+
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
+### GetCustomerBillingAddress
+
+`func (o *UpdateCustomerRequest) GetCustomerBillingAddress() CompleteAddress`
+
+GetCustomerBillingAddress returns the CustomerBillingAddress field if non-nil, zero value otherwise.
+
+### GetCustomerBillingAddressOk
+
+`func (o *UpdateCustomerRequest) GetCustomerBillingAddressOk() (*CompleteAddress, bool)`
+
+GetCustomerBillingAddressOk returns a tuple with the CustomerBillingAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerBillingAddress
+
+`func (o *UpdateCustomerRequest) SetCustomerBillingAddress(v CompleteAddress)`
+
+SetCustomerBillingAddress sets CustomerBillingAddress field to given value.
+
+### HasCustomerBillingAddress
+
+`func (o *UpdateCustomerRequest) HasCustomerBillingAddress() bool`
+
+HasCustomerBillingAddress returns a boolean if a field has been set.
+
+### SetCustomerBillingAddressNil
+
+`func (o *UpdateCustomerRequest) SetCustomerBillingAddressNil(b bool)`
+
+ SetCustomerBillingAddressNil sets the value for CustomerBillingAddress to be an explicit nil
+
+### UnsetCustomerBillingAddress
+`func (o *UpdateCustomerRequest) UnsetCustomerBillingAddress()`
+
+UnsetCustomerBillingAddress ensures that no value is present for CustomerBillingAddress, not even an explicit nil
+### GetEmail
+
+`func (o *UpdateCustomerRequest) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UpdateCustomerRequest) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UpdateCustomerRequest) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UpdateCustomerRequest) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### SetEmailNil
+
+`func (o *UpdateCustomerRequest) SetEmailNil(b bool)`
+
+ SetEmailNil sets the value for Email to be an explicit nil
+
+### UnsetEmail
+`func (o *UpdateCustomerRequest) UnsetEmail()`
+
+UnsetEmail ensures that no value is present for Email, not even an explicit nil
 ### GetFirstName
 
 `func (o *UpdateCustomerRequest) GetFirstName() string`
@@ -77,6 +360,76 @@ HasFirstName returns a boolean if a field has been set.
 `func (o *UpdateCustomerRequest) UnsetFirstName()`
 
 UnsetFirstName ensures that no value is present for FirstName, not even an explicit nil
+### GetInvoiceSettings
+
+`func (o *UpdateCustomerRequest) GetInvoiceSettings() CustomerInvoiceSettings`
+
+GetInvoiceSettings returns the InvoiceSettings field if non-nil, zero value otherwise.
+
+### GetInvoiceSettingsOk
+
+`func (o *UpdateCustomerRequest) GetInvoiceSettingsOk() (*CustomerInvoiceSettings, bool)`
+
+GetInvoiceSettingsOk returns a tuple with the InvoiceSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceSettings
+
+`func (o *UpdateCustomerRequest) SetInvoiceSettings(v CustomerInvoiceSettings)`
+
+SetInvoiceSettings sets InvoiceSettings field to given value.
+
+### HasInvoiceSettings
+
+`func (o *UpdateCustomerRequest) HasInvoiceSettings() bool`
+
+HasInvoiceSettings returns a boolean if a field has been set.
+
+### SetInvoiceSettingsNil
+
+`func (o *UpdateCustomerRequest) SetInvoiceSettingsNil(b bool)`
+
+ SetInvoiceSettingsNil sets the value for InvoiceSettings to be an explicit nil
+
+### UnsetInvoiceSettings
+`func (o *UpdateCustomerRequest) UnsetInvoiceSettings()`
+
+UnsetInvoiceSettings ensures that no value is present for InvoiceSettings, not even an explicit nil
+### GetLanguage
+
+`func (o *UpdateCustomerRequest) GetLanguage() CustomerLanguage`
+
+GetLanguage returns the Language field if non-nil, zero value otherwise.
+
+### GetLanguageOk
+
+`func (o *UpdateCustomerRequest) GetLanguageOk() (*CustomerLanguage, bool)`
+
+GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguage
+
+`func (o *UpdateCustomerRequest) SetLanguage(v CustomerLanguage)`
+
+SetLanguage sets Language field to given value.
+
+### HasLanguage
+
+`func (o *UpdateCustomerRequest) HasLanguage() bool`
+
+HasLanguage returns a boolean if a field has been set.
+
+### SetLanguageNil
+
+`func (o *UpdateCustomerRequest) SetLanguageNil(b bool)`
+
+ SetLanguageNil sets the value for Language to be an explicit nil
+
+### UnsetLanguage
+`func (o *UpdateCustomerRequest) UnsetLanguage()`
+
+UnsetLanguage ensures that no value is present for Language, not even an explicit nil
 ### GetLastName
 
 `func (o *UpdateCustomerRequest) GetLastName() string`
@@ -217,216 +570,6 @@ HasLine3 returns a boolean if a field has been set.
 `func (o *UpdateCustomerRequest) UnsetLine3()`
 
 UnsetLine3 ensures that no value is present for Line3, not even an explicit nil
-### GetCity
-
-`func (o *UpdateCustomerRequest) GetCity() string`
-
-GetCity returns the City field if non-nil, zero value otherwise.
-
-### GetCityOk
-
-`func (o *UpdateCustomerRequest) GetCityOk() (*string, bool)`
-
-GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCity
-
-`func (o *UpdateCustomerRequest) SetCity(v string)`
-
-SetCity sets City field to given value.
-
-### HasCity
-
-`func (o *UpdateCustomerRequest) HasCity() bool`
-
-HasCity returns a boolean if a field has been set.
-
-### SetCityNil
-
-`func (o *UpdateCustomerRequest) SetCityNil(b bool)`
-
- SetCityNil sets the value for City to be an explicit nil
-
-### UnsetCity
-`func (o *UpdateCustomerRequest) UnsetCity()`
-
-UnsetCity ensures that no value is present for City, not even an explicit nil
-### GetState
-
-`func (o *UpdateCustomerRequest) GetState() string`
-
-GetState returns the State field if non-nil, zero value otherwise.
-
-### GetStateOk
-
-`func (o *UpdateCustomerRequest) GetStateOk() (*string, bool)`
-
-GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetState
-
-`func (o *UpdateCustomerRequest) SetState(v string)`
-
-SetState sets State field to given value.
-
-### HasState
-
-`func (o *UpdateCustomerRequest) HasState() bool`
-
-HasState returns a boolean if a field has been set.
-
-### SetStateNil
-
-`func (o *UpdateCustomerRequest) SetStateNil(b bool)`
-
- SetStateNil sets the value for State to be an explicit nil
-
-### UnsetState
-`func (o *UpdateCustomerRequest) UnsetState()`
-
-UnsetState ensures that no value is present for State, not even an explicit nil
-### GetCountry
-
-`func (o *UpdateCustomerRequest) GetCountry() string`
-
-GetCountry returns the Country field if non-nil, zero value otherwise.
-
-### GetCountryOk
-
-`func (o *UpdateCustomerRequest) GetCountryOk() (*string, bool)`
-
-GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCountry
-
-`func (o *UpdateCustomerRequest) SetCountry(v string)`
-
-SetCountry sets Country field to given value.
-
-### HasCountry
-
-`func (o *UpdateCustomerRequest) HasCountry() bool`
-
-HasCountry returns a boolean if a field has been set.
-
-### SetCountryNil
-
-`func (o *UpdateCustomerRequest) SetCountryNil(b bool)`
-
- SetCountryNil sets the value for Country to be an explicit nil
-
-### UnsetCountry
-`func (o *UpdateCustomerRequest) UnsetCountry()`
-
-UnsetCountry ensures that no value is present for Country, not even an explicit nil
-### GetZipCode
-
-`func (o *UpdateCustomerRequest) GetZipCode() string`
-
-GetZipCode returns the ZipCode field if non-nil, zero value otherwise.
-
-### GetZipCodeOk
-
-`func (o *UpdateCustomerRequest) GetZipCodeOk() (*string, bool)`
-
-GetZipCodeOk returns a tuple with the ZipCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZipCode
-
-`func (o *UpdateCustomerRequest) SetZipCode(v string)`
-
-SetZipCode sets ZipCode field to given value.
-
-### HasZipCode
-
-`func (o *UpdateCustomerRequest) HasZipCode() bool`
-
-HasZipCode returns a boolean if a field has been set.
-
-### SetZipCodeNil
-
-`func (o *UpdateCustomerRequest) SetZipCodeNil(b bool)`
-
- SetZipCodeNil sets the value for ZipCode to be an explicit nil
-
-### UnsetZipCode
-`func (o *UpdateCustomerRequest) UnsetZipCode()`
-
-UnsetZipCode ensures that no value is present for ZipCode, not even an explicit nil
-### GetCouponId
-
-`func (o *UpdateCustomerRequest) GetCouponId() string`
-
-GetCouponId returns the CouponId field if non-nil, zero value otherwise.
-
-### GetCouponIdOk
-
-`func (o *UpdateCustomerRequest) GetCouponIdOk() (*string, bool)`
-
-GetCouponIdOk returns a tuple with the CouponId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCouponId
-
-`func (o *UpdateCustomerRequest) SetCouponId(v string)`
-
-SetCouponId sets CouponId field to given value.
-
-### HasCouponId
-
-`func (o *UpdateCustomerRequest) HasCouponId() bool`
-
-HasCouponId returns a boolean if a field has been set.
-
-### SetCouponIdNil
-
-`func (o *UpdateCustomerRequest) SetCouponIdNil(b bool)`
-
- SetCouponIdNil sets the value for CouponId to be an explicit nil
-
-### UnsetCouponId
-`func (o *UpdateCustomerRequest) UnsetCouponId()`
-
-UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
-### GetPromotionCodeId
-
-`func (o *UpdateCustomerRequest) GetPromotionCodeId() string`
-
-GetPromotionCodeId returns the PromotionCodeId field if non-nil, zero value otherwise.
-
-### GetPromotionCodeIdOk
-
-`func (o *UpdateCustomerRequest) GetPromotionCodeIdOk() (*string, bool)`
-
-GetPromotionCodeIdOk returns a tuple with the PromotionCodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPromotionCodeId
-
-`func (o *UpdateCustomerRequest) SetPromotionCodeId(v string)`
-
-SetPromotionCodeId sets PromotionCodeId field to given value.
-
-### HasPromotionCodeId
-
-`func (o *UpdateCustomerRequest) HasPromotionCodeId() bool`
-
-HasPromotionCodeId returns a boolean if a field has been set.
-
-### SetPromotionCodeIdNil
-
-`func (o *UpdateCustomerRequest) SetPromotionCodeIdNil(b bool)`
-
- SetPromotionCodeIdNil sets the value for PromotionCodeId to be an explicit nil
-
-### UnsetPromotionCodeId
-`func (o *UpdateCustomerRequest) UnsetPromotionCodeId()`
-
-UnsetPromotionCodeId ensures that no value is present for PromotionCodeId, not even an explicit nil
 ### GetNotes
 
 `func (o *UpdateCustomerRequest) GetNotes() string`
@@ -462,181 +605,6 @@ HasNotes returns a boolean if a field has been set.
 `func (o *UpdateCustomerRequest) UnsetNotes()`
 
 UnsetNotes ensures that no value is present for Notes, not even an explicit nil
-### GetCustomFields
-
-`func (o *UpdateCustomerRequest) GetCustomFields() map[string]interface{}`
-
-GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
-
-### GetCustomFieldsOk
-
-`func (o *UpdateCustomerRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
-
-GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomFields
-
-`func (o *UpdateCustomerRequest) SetCustomFields(v map[string]interface{})`
-
-SetCustomFields sets CustomFields field to given value.
-
-### HasCustomFields
-
-`func (o *UpdateCustomerRequest) HasCustomFields() bool`
-
-HasCustomFields returns a boolean if a field has been set.
-
-### SetCustomFieldsNil
-
-`func (o *UpdateCustomerRequest) SetCustomFieldsNil(b bool)`
-
- SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
-
-### UnsetCustomFields
-`func (o *UpdateCustomerRequest) UnsetCustomFields()`
-
-UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
-### GetEmail
-
-`func (o *UpdateCustomerRequest) GetEmail() string`
-
-GetEmail returns the Email field if non-nil, zero value otherwise.
-
-### GetEmailOk
-
-`func (o *UpdateCustomerRequest) GetEmailOk() (*string, bool)`
-
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmail
-
-`func (o *UpdateCustomerRequest) SetEmail(v string)`
-
-SetEmail sets Email field to given value.
-
-### HasEmail
-
-`func (o *UpdateCustomerRequest) HasEmail() bool`
-
-HasEmail returns a boolean if a field has been set.
-
-### SetEmailNil
-
-`func (o *UpdateCustomerRequest) SetEmailNil(b bool)`
-
- SetEmailNil sets the value for Email to be an explicit nil
-
-### UnsetEmail
-`func (o *UpdateCustomerRequest) UnsetEmail()`
-
-UnsetEmail ensures that no value is present for Email, not even an explicit nil
-### GetInvoiceSettings
-
-`func (o *UpdateCustomerRequest) GetInvoiceSettings() CustomerInvoiceSettings`
-
-GetInvoiceSettings returns the InvoiceSettings field if non-nil, zero value otherwise.
-
-### GetInvoiceSettingsOk
-
-`func (o *UpdateCustomerRequest) GetInvoiceSettingsOk() (*CustomerInvoiceSettings, bool)`
-
-GetInvoiceSettingsOk returns a tuple with the InvoiceSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvoiceSettings
-
-`func (o *UpdateCustomerRequest) SetInvoiceSettings(v CustomerInvoiceSettings)`
-
-SetInvoiceSettings sets InvoiceSettings field to given value.
-
-### HasInvoiceSettings
-
-`func (o *UpdateCustomerRequest) HasInvoiceSettings() bool`
-
-HasInvoiceSettings returns a boolean if a field has been set.
-
-### SetInvoiceSettingsNil
-
-`func (o *UpdateCustomerRequest) SetInvoiceSettingsNil(b bool)`
-
- SetInvoiceSettingsNil sets the value for InvoiceSettings to be an explicit nil
-
-### UnsetInvoiceSettings
-`func (o *UpdateCustomerRequest) UnsetInvoiceSettings()`
-
-UnsetInvoiceSettings ensures that no value is present for InvoiceSettings, not even an explicit nil
-### GetBillingEmail
-
-`func (o *UpdateCustomerRequest) GetBillingEmail() string`
-
-GetBillingEmail returns the BillingEmail field if non-nil, zero value otherwise.
-
-### GetBillingEmailOk
-
-`func (o *UpdateCustomerRequest) GetBillingEmailOk() (*string, bool)`
-
-GetBillingEmailOk returns a tuple with the BillingEmail field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBillingEmail
-
-`func (o *UpdateCustomerRequest) SetBillingEmail(v string)`
-
-SetBillingEmail sets BillingEmail field to given value.
-
-### HasBillingEmail
-
-`func (o *UpdateCustomerRequest) HasBillingEmail() bool`
-
-HasBillingEmail returns a boolean if a field has been set.
-
-### SetBillingEmailNil
-
-`func (o *UpdateCustomerRequest) SetBillingEmailNil(b bool)`
-
- SetBillingEmailNil sets the value for BillingEmail to be an explicit nil
-
-### UnsetBillingEmail
-`func (o *UpdateCustomerRequest) UnsetBillingEmail()`
-
-UnsetBillingEmail ensures that no value is present for BillingEmail, not even an explicit nil
-### GetLanguage
-
-`func (o *UpdateCustomerRequest) GetLanguage() CustomerLanguage`
-
-GetLanguage returns the Language field if non-nil, zero value otherwise.
-
-### GetLanguageOk
-
-`func (o *UpdateCustomerRequest) GetLanguageOk() (*CustomerLanguage, bool)`
-
-GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLanguage
-
-`func (o *UpdateCustomerRequest) SetLanguage(v CustomerLanguage)`
-
-SetLanguage sets Language field to given value.
-
-### HasLanguage
-
-`func (o *UpdateCustomerRequest) HasLanguage() bool`
-
-HasLanguage returns a boolean if a field has been set.
-
-### SetLanguageNil
-
-`func (o *UpdateCustomerRequest) SetLanguageNil(b bool)`
-
- SetLanguageNil sets the value for Language to be an explicit nil
-
-### UnsetLanguage
-`func (o *UpdateCustomerRequest) UnsetLanguage()`
-
-UnsetLanguage ensures that no value is present for Language, not even an explicit nil
 ### GetPhoneNumber
 
 `func (o *UpdateCustomerRequest) GetPhoneNumber() string`
@@ -672,6 +640,136 @@ HasPhoneNumber returns a boolean if a field has been set.
 `func (o *UpdateCustomerRequest) UnsetPhoneNumber()`
 
 UnsetPhoneNumber ensures that no value is present for PhoneNumber, not even an explicit nil
+### GetPromotionCodeId
+
+`func (o *UpdateCustomerRequest) GetPromotionCodeId() string`
+
+GetPromotionCodeId returns the PromotionCodeId field if non-nil, zero value otherwise.
+
+### GetPromotionCodeIdOk
+
+`func (o *UpdateCustomerRequest) GetPromotionCodeIdOk() (*string, bool)`
+
+GetPromotionCodeIdOk returns a tuple with the PromotionCodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromotionCodeId
+
+`func (o *UpdateCustomerRequest) SetPromotionCodeId(v string)`
+
+SetPromotionCodeId sets PromotionCodeId field to given value.
+
+### HasPromotionCodeId
+
+`func (o *UpdateCustomerRequest) HasPromotionCodeId() bool`
+
+HasPromotionCodeId returns a boolean if a field has been set.
+
+### SetPromotionCodeIdNil
+
+`func (o *UpdateCustomerRequest) SetPromotionCodeIdNil(b bool)`
+
+ SetPromotionCodeIdNil sets the value for PromotionCodeId to be an explicit nil
+
+### UnsetPromotionCodeId
+`func (o *UpdateCustomerRequest) UnsetPromotionCodeId()`
+
+UnsetPromotionCodeId ensures that no value is present for PromotionCodeId, not even an explicit nil
+### GetShippingAddresses
+
+`func (o *UpdateCustomerRequest) GetShippingAddresses() []CompleteAddress`
+
+GetShippingAddresses returns the ShippingAddresses field if non-nil, zero value otherwise.
+
+### GetShippingAddressesOk
+
+`func (o *UpdateCustomerRequest) GetShippingAddressesOk() (*[]CompleteAddress, bool)`
+
+GetShippingAddressesOk returns a tuple with the ShippingAddresses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingAddresses
+
+`func (o *UpdateCustomerRequest) SetShippingAddresses(v []CompleteAddress)`
+
+SetShippingAddresses sets ShippingAddresses field to given value.
+
+### HasShippingAddresses
+
+`func (o *UpdateCustomerRequest) HasShippingAddresses() bool`
+
+HasShippingAddresses returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *UpdateCustomerRequest) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *UpdateCustomerRequest) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *UpdateCustomerRequest) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *UpdateCustomerRequest) HasState() bool`
+
+HasState returns a boolean if a field has been set.
+
+### SetStateNil
+
+`func (o *UpdateCustomerRequest) SetStateNil(b bool)`
+
+ SetStateNil sets the value for State to be an explicit nil
+
+### UnsetState
+`func (o *UpdateCustomerRequest) UnsetState()`
+
+UnsetState ensures that no value is present for State, not even an explicit nil
+### GetZipCode
+
+`func (o *UpdateCustomerRequest) GetZipCode() string`
+
+GetZipCode returns the ZipCode field if non-nil, zero value otherwise.
+
+### GetZipCodeOk
+
+`func (o *UpdateCustomerRequest) GetZipCodeOk() (*string, bool)`
+
+GetZipCodeOk returns a tuple with the ZipCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZipCode
+
+`func (o *UpdateCustomerRequest) SetZipCode(v string)`
+
+SetZipCode sets ZipCode field to given value.
+
+### HasZipCode
+
+`func (o *UpdateCustomerRequest) HasZipCode() bool`
+
+HasZipCode returns a boolean if a field has been set.
+
+### SetZipCodeNil
+
+`func (o *UpdateCustomerRequest) SetZipCodeNil(b bool)`
+
+ SetZipCodeNil sets the value for ZipCode to be an explicit nil
+
+### UnsetZipCode
+`func (o *UpdateCustomerRequest) UnsetZipCode()`
+
+UnsetZipCode ensures that no value is present for ZipCode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

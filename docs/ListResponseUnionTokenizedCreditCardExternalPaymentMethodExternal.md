@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | [**[]ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternalDataInner**](ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternalDataInner.md) |  | 
-**TotalObjects** | **int32** |  | 
 **PageNumber** | **int32** |  | 
 **PageSize** | **int32** |  | 
+**TotalObjects** | **int32** |  | 
 
 ## Methods
 
 ### NewListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal
 
-`func NewListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal(data []ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternalDataInner, totalObjects int32, pageNumber int32, pageSize int32, ) *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal`
+`func NewListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal(data []ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternalDataInner, pageNumber int32, pageSize int32, totalObjects int32, ) *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal`
 
 NewListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal instantiates a new ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal object
 This constructor will assign default values to properties that have it defined,
@@ -46,26 +46,6 @@ and a boolean to check if the value has been set.
 `func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) SetData(v []ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternalDataInner)`
 
 SetData sets Data field to given value.
-
-
-### GetTotalObjects
-
-`func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) GetTotalObjects() int32`
-
-GetTotalObjects returns the TotalObjects field if non-nil, zero value otherwise.
-
-### GetTotalObjectsOk
-
-`func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) GetTotalObjectsOk() (*int32, bool)`
-
-GetTotalObjectsOk returns a tuple with the TotalObjects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalObjects
-
-`func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) SetTotalObjects(v int32)`
-
-SetTotalObjects sets TotalObjects field to given value.
 
 
 ### GetPageNumber
@@ -106,6 +86,26 @@ and a boolean to check if the value has been set.
 `func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) SetPageSize(v int32)`
 
 SetPageSize sets PageSize field to given value.
+
+
+### GetTotalObjects
+
+`func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) GetTotalObjects() int32`
+
+GetTotalObjects returns the TotalObjects field if non-nil, zero value otherwise.
+
+### GetTotalObjectsOk
+
+`func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) GetTotalObjectsOk() (*int32, bool)`
+
+GetTotalObjectsOk returns a tuple with the TotalObjects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalObjects
+
+`func (o *ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal) SetTotalObjects(v int32)`
+
+SetTotalObjects sets TotalObjects field to given value.
 
 
 

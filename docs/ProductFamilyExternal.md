@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique identifier of the product family. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_PRODUCT_FAMILY]
 **CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
+**Description** | **NullableString** |  | 
+**Hierarchy** | Pointer to **string** | A JSON object representing the hierarchy within the family. | [optional] [default to "{}"]
+**Id** | **string** | Unique identifier of the product family. | 
 **IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **Name** | **string** | Name of the product family. | 
-**Description** | **NullableString** |  | 
-**Products** | **[]string** |  | 
-**Hierarchy** | Pointer to **string** | A JSON object representing the hierarchy within the family. | [optional] [default to "{}"]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**Products** | **[]string** | List of products in the family | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewProductFamilyExternal
 
-`func NewProductFamilyExternal(id string, createdAt time.Time, updatedAt time.Time, name string, description NullableString, products []string, ) *ProductFamilyExternal`
+`func NewProductFamilyExternal(createdAt time.Time, description NullableString, id string, name string, products []string, updatedAt time.Time, ) *ProductFamilyExternal`
 
 NewProductFamilyExternal instantiates a new ProductFamilyExternal object
 This constructor will assign default values to properties that have it defined,
@@ -32,51 +32,6 @@ will change when the set of required properties is changed
 NewProductFamilyExternalWithDefaults instantiates a new ProductFamilyExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ProductFamilyExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ProductFamilyExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ProductFamilyExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *ProductFamilyExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *ProductFamilyExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *ProductFamilyExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *ProductFamilyExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -98,24 +53,79 @@ and a boolean to check if the value has been set.
 SetCreatedAt sets CreatedAt field to given value.
 
 
-### GetUpdatedAt
+### GetDescription
 
-`func (o *ProductFamilyExternal) GetUpdatedAt() time.Time`
+`func (o *ProductFamilyExternal) GetDescription() string`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetDescriptionOk
 
-`func (o *ProductFamilyExternal) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *ProductFamilyExternal) GetDescriptionOk() (*string, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetDescription
 
-`func (o *ProductFamilyExternal) SetUpdatedAt(v time.Time)`
+`func (o *ProductFamilyExternal) SetDescription(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetDescription sets Description field to given value.
+
+
+### SetDescriptionNil
+
+`func (o *ProductFamilyExternal) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ProductFamilyExternal) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
+### GetHierarchy
+
+`func (o *ProductFamilyExternal) GetHierarchy() string`
+
+GetHierarchy returns the Hierarchy field if non-nil, zero value otherwise.
+
+### GetHierarchyOk
+
+`func (o *ProductFamilyExternal) GetHierarchyOk() (*string, bool)`
+
+GetHierarchyOk returns a tuple with the Hierarchy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHierarchy
+
+`func (o *ProductFamilyExternal) SetHierarchy(v string)`
+
+SetHierarchy sets Hierarchy field to given value.
+
+### HasHierarchy
+
+`func (o *ProductFamilyExternal) HasHierarchy() bool`
+
+HasHierarchy returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ProductFamilyExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ProductFamilyExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ProductFamilyExternal) SetId(v string)`
+
+SetId sets Id field to given value.
 
 
 ### GetIsDeleted
@@ -163,36 +173,31 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetDescription
+### GetObject
 
-`func (o *ProductFamilyExternal) GetDescription() string`
+`func (o *ProductFamilyExternal) GetObject() ObjectName`
 
-GetDescription returns the Description field if non-nil, zero value otherwise.
+GetObject returns the Object field if non-nil, zero value otherwise.
 
-### GetDescriptionOk
+### GetObjectOk
 
-`func (o *ProductFamilyExternal) GetDescriptionOk() (*string, bool)`
+`func (o *ProductFamilyExternal) GetObjectOk() (*ObjectName, bool)`
 
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDescription
+### SetObject
 
-`func (o *ProductFamilyExternal) SetDescription(v string)`
+`func (o *ProductFamilyExternal) SetObject(v ObjectName)`
 
-SetDescription sets Description field to given value.
+SetObject sets Object field to given value.
 
+### HasObject
 
-### SetDescriptionNil
+`func (o *ProductFamilyExternal) HasObject() bool`
 
-`func (o *ProductFamilyExternal) SetDescriptionNil(b bool)`
+HasObject returns a boolean if a field has been set.
 
- SetDescriptionNil sets the value for Description to be an explicit nil
-
-### UnsetDescription
-`func (o *ProductFamilyExternal) UnsetDescription()`
-
-UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetProducts
 
 `func (o *ProductFamilyExternal) GetProducts() []string`
@@ -213,30 +218,25 @@ and a boolean to check if the value has been set.
 SetProducts sets Products field to given value.
 
 
-### GetHierarchy
+### GetUpdatedAt
 
-`func (o *ProductFamilyExternal) GetHierarchy() string`
+`func (o *ProductFamilyExternal) GetUpdatedAt() time.Time`
 
-GetHierarchy returns the Hierarchy field if non-nil, zero value otherwise.
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
-### GetHierarchyOk
+### GetUpdatedAtOk
 
-`func (o *ProductFamilyExternal) GetHierarchyOk() (*string, bool)`
+`func (o *ProductFamilyExternal) GetUpdatedAtOk() (*time.Time, bool)`
 
-GetHierarchyOk returns a tuple with the Hierarchy field if it's non-nil, zero value otherwise
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHierarchy
+### SetUpdatedAt
 
-`func (o *ProductFamilyExternal) SetHierarchy(v string)`
+`func (o *ProductFamilyExternal) SetUpdatedAt(v time.Time)`
 
-SetHierarchy sets Hierarchy field to given value.
+SetUpdatedAt sets UpdatedAt field to given value.
 
-### HasHierarchy
-
-`func (o *ProductFamilyExternal) HasHierarchy() bool`
-
-HasHierarchy returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

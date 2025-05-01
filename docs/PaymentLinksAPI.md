@@ -23,24 +23,24 @@ Create Payment Link
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createPaymentLinkRequest := *openapiclient.NewCreatePaymentLinkRequest(openapiclient.CheckoutMode("payment"), "SuccessUrl_example") // CreatePaymentLinkRequest | 
+	createPaymentLinkRequest := *openapiclient.NewCreatePaymentLinkRequest(openapiclient.CheckoutMode("payment"), "SuccessUrl_example") // CreatePaymentLinkRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentLinksAPI.CreatePaymentLink(context.Background()).CreatePaymentLinkRequest(createPaymentLinkRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.CreatePaymentLink``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreatePaymentLink`: PaymentLinkExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.CreatePaymentLink`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentLinksAPI.CreatePaymentLink(context.Background()).CreatePaymentLinkRequest(createPaymentLinkRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.CreatePaymentLink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreatePaymentLink`: PaymentLinkExternal
+	fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.CreatePaymentLink`: %v\n", resp)
 }
 ```
 
@@ -87,24 +87,24 @@ Get Payment Link
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    plinkId := "plink_dev_abc123" // string | Unique identifier of the payment link.
+	plinkId := "plink_dev_abc123" // string | Unique identifier of the payment link.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentLinksAPI.GetPaymentLink(context.Background(), plinkId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.GetPaymentLink``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPaymentLink`: PaymentLinkExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.GetPaymentLink`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentLinksAPI.GetPaymentLink(context.Background(), plinkId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.GetPaymentLink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPaymentLink`: PaymentLinkExternal
+	fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.GetPaymentLink`: %v\n", resp)
 }
 ```
 
@@ -155,24 +155,24 @@ List Payment Links
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    paymentLinkQueryParams := *openapiclient.NewPaymentLinkQueryParams() // PaymentLinkQueryParams | 
+	paymentLinkQueryParams := *openapiclient.NewPaymentLinkQueryParams() // PaymentLinkQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentLinksAPI.ListPaymentLinks(context.Background()).PaymentLinkQueryParams(paymentLinkQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.ListPaymentLinks``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListPaymentLinks`: ListResponsePaymentLinkExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.ListPaymentLinks`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentLinksAPI.ListPaymentLinks(context.Background()).PaymentLinkQueryParams(paymentLinkQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.ListPaymentLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPaymentLinks`: ListResponsePaymentLinkExternal
+	fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.ListPaymentLinks`: %v\n", resp)
 }
 ```
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ## OpenPaymentLinkPagePublic
 
-> OpenPaymentLinkPagePublic(ctx, secureToken).Execute()
+> interface{} OpenPaymentLinkPagePublic(ctx, secureToken).RefId(refId).Execute()
 
 Open Payment Link Page Public
 
@@ -219,22 +219,25 @@ Open Payment Link Page Public
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    secureToken := "00000000-aaaa-bbbb-cccc-dddddddddddd" // string | Secure token of the payment link.
+	secureToken := "00000000-aaaa-bbbb-cccc-dddddddddddd" // string | Secure token of the payment link.
+	refId := "ORDER-12345" // string | Optional reference ID for the payment link (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PaymentLinksAPI.OpenPaymentLinkPagePublic(context.Background(), secureToken).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.OpenPaymentLinkPagePublic``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentLinksAPI.OpenPaymentLinkPagePublic(context.Background(), secureToken).RefId(refId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentLinksAPI.OpenPaymentLinkPagePublic``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `OpenPaymentLinkPagePublic`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PaymentLinksAPI.OpenPaymentLinkPagePublic`: %v\n", resp)
 }
 ```
 
@@ -254,10 +257,11 @@ Other parameters are passed through a pointer to a apiOpenPaymentLinkPagePublicR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **refId** | **string** | Optional reference ID for the payment link | 
 
 ### Return type
 
- (empty response body)
+**interface{}**
 
 ### Authorization
 

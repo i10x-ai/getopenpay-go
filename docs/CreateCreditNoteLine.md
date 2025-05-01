@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AmountAtom** | **int32** | The integer amount representing the gross amount being credited for this line item. | 
 **Currency** | [**CurrencyEnum**](CurrencyEnum.md) |  | 
-**Type** | [**CreditNoteLineType**](CreditNoteLineType.md) |  | 
-**Quantity** | Pointer to **int32** |  | [optional] [default to 1]
 **InvoiceItemId** | Pointer to **NullableString** |  | [optional] 
+**Quantity** | Pointer to **int32** |  | [optional] [default to 1]
+**Type** | [**CreditNoteLineType**](CreditNoteLineType.md) | The type of the credit note line item, one of invoice_line_item or custom_line_item. When the type is invoice_line_item there is an additional invoice_line_item property on the resource the value of which is the id of the credited line item on the invoice | 
 **UnitAmountAtom** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
@@ -70,51 +70,6 @@ and a boolean to check if the value has been set.
 SetCurrency sets Currency field to given value.
 
 
-### GetType
-
-`func (o *CreateCreditNoteLine) GetType() CreditNoteLineType`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *CreateCreditNoteLine) GetTypeOk() (*CreditNoteLineType, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *CreateCreditNoteLine) SetType(v CreditNoteLineType)`
-
-SetType sets Type field to given value.
-
-
-### GetQuantity
-
-`func (o *CreateCreditNoteLine) GetQuantity() int32`
-
-GetQuantity returns the Quantity field if non-nil, zero value otherwise.
-
-### GetQuantityOk
-
-`func (o *CreateCreditNoteLine) GetQuantityOk() (*int32, bool)`
-
-GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantity
-
-`func (o *CreateCreditNoteLine) SetQuantity(v int32)`
-
-SetQuantity sets Quantity field to given value.
-
-### HasQuantity
-
-`func (o *CreateCreditNoteLine) HasQuantity() bool`
-
-HasQuantity returns a boolean if a field has been set.
-
 ### GetInvoiceItemId
 
 `func (o *CreateCreditNoteLine) GetInvoiceItemId() string`
@@ -150,6 +105,51 @@ HasInvoiceItemId returns a boolean if a field has been set.
 `func (o *CreateCreditNoteLine) UnsetInvoiceItemId()`
 
 UnsetInvoiceItemId ensures that no value is present for InvoiceItemId, not even an explicit nil
+### GetQuantity
+
+`func (o *CreateCreditNoteLine) GetQuantity() int32`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *CreateCreditNoteLine) GetQuantityOk() (*int32, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *CreateCreditNoteLine) SetQuantity(v int32)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *CreateCreditNoteLine) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *CreateCreditNoteLine) GetType() CreditNoteLineType`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *CreateCreditNoteLine) GetTypeOk() (*CreditNoteLineType, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *CreateCreditNoteLine) SetType(v CreditNoteLineType)`
+
+SetType sets Type field to given value.
+
+
 ### GetUnitAmountAtom
 
 `func (o *CreateCreditNoteLine) GetUnitAmountAtom() int32`

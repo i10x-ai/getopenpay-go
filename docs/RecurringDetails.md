@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UsageType** | [**UsageTypeEnum**](UsageTypeEnum.md) |  | 
 **AggregateUsage** | Pointer to [**NullableUsageAggMethodEnum**](UsageAggMethodEnum.md) |  | [optional] 
 **TrialPeriodDays** | Pointer to **int32** |  | [optional] [default to 0]
+**UsageType** | [**UsageTypeEnum**](UsageTypeEnum.md) |  | 
 
 ## Methods
 
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewRecurringDetailsWithDefaults instantiates a new RecurringDetails object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetUsageType
-
-`func (o *RecurringDetails) GetUsageType() UsageTypeEnum`
-
-GetUsageType returns the UsageType field if non-nil, zero value otherwise.
-
-### GetUsageTypeOk
-
-`func (o *RecurringDetails) GetUsageTypeOk() (*UsageTypeEnum, bool)`
-
-GetUsageTypeOk returns a tuple with the UsageType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsageType
-
-`func (o *RecurringDetails) SetUsageType(v UsageTypeEnum)`
-
-SetUsageType sets UsageType field to given value.
-
 
 ### GetAggregateUsage
 
@@ -106,6 +86,26 @@ SetTrialPeriodDays sets TrialPeriodDays field to given value.
 `func (o *RecurringDetails) HasTrialPeriodDays() bool`
 
 HasTrialPeriodDays returns a boolean if a field has been set.
+
+### GetUsageType
+
+`func (o *RecurringDetails) GetUsageType() UsageTypeEnum`
+
+GetUsageType returns the UsageType field if non-nil, zero value otherwise.
+
+### GetUsageTypeOk
+
+`func (o *RecurringDetails) GetUsageTypeOk() (*UsageTypeEnum, bool)`
+
+GetUsageTypeOk returns a tuple with the UsageType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsageType
+
+`func (o *RecurringDetails) SetUsageType(v UsageTypeEnum)`
+
+SetUsageType sets UsageType field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

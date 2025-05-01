@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** |  | [optional] 
-**Delete** | Pointer to **bool** | A flag that, if set to true, will delete the specified item immediately from subscription. drop_at_end flag cannot be used while using this behaviour | [optional] [default to false]
 **AddAtPeriodEnd** | Pointer to **NullableBool** |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Delete** | Pointer to **bool** | A flag that, if set to true, will delete the specified item immediately from subscription. drop_at_end flag cannot be used while using this behaviour | [optional] [default to false]
+**Description** | Pointer to **NullableString** |  | [optional] 
 **DropAtEnd** | Pointer to **NullableBool** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
 **PriceId** | Pointer to **NullableString** |  | [optional] 
 **Quantity** | Pointer to **NullableInt32** |  | [optional] 
 **StartsAt** | Pointer to **NullableTime** |  | [optional] 
@@ -30,66 +32,6 @@ will change when the set of required properties is changed
 NewInlineSubscriptionItemUpdateWithDefaults instantiates a new InlineSubscriptionItemUpdate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *InlineSubscriptionItemUpdate) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *InlineSubscriptionItemUpdate) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *InlineSubscriptionItemUpdate) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *InlineSubscriptionItemUpdate) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### SetIdNil
-
-`func (o *InlineSubscriptionItemUpdate) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *InlineSubscriptionItemUpdate) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
-### GetDelete
-
-`func (o *InlineSubscriptionItemUpdate) GetDelete() bool`
-
-GetDelete returns the Delete field if non-nil, zero value otherwise.
-
-### GetDeleteOk
-
-`func (o *InlineSubscriptionItemUpdate) GetDeleteOk() (*bool, bool)`
-
-GetDeleteOk returns a tuple with the Delete field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDelete
-
-`func (o *InlineSubscriptionItemUpdate) SetDelete(v bool)`
-
-SetDelete sets Delete field to given value.
-
-### HasDelete
-
-`func (o *InlineSubscriptionItemUpdate) HasDelete() bool`
-
-HasDelete returns a boolean if a field has been set.
 
 ### GetAddAtPeriodEnd
 
@@ -126,6 +68,101 @@ HasAddAtPeriodEnd returns a boolean if a field has been set.
 `func (o *InlineSubscriptionItemUpdate) UnsetAddAtPeriodEnd()`
 
 UnsetAddAtPeriodEnd ensures that no value is present for AddAtPeriodEnd, not even an explicit nil
+### GetCustomFields
+
+`func (o *InlineSubscriptionItemUpdate) GetCustomFields() map[string]interface{}`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *InlineSubscriptionItemUpdate) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *InlineSubscriptionItemUpdate) SetCustomFields(v map[string]interface{})`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *InlineSubscriptionItemUpdate) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### SetCustomFieldsNil
+
+`func (o *InlineSubscriptionItemUpdate) SetCustomFieldsNil(b bool)`
+
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
+
+### UnsetCustomFields
+`func (o *InlineSubscriptionItemUpdate) UnsetCustomFields()`
+
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
+### GetDelete
+
+`func (o *InlineSubscriptionItemUpdate) GetDelete() bool`
+
+GetDelete returns the Delete field if non-nil, zero value otherwise.
+
+### GetDeleteOk
+
+`func (o *InlineSubscriptionItemUpdate) GetDeleteOk() (*bool, bool)`
+
+GetDeleteOk returns a tuple with the Delete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDelete
+
+`func (o *InlineSubscriptionItemUpdate) SetDelete(v bool)`
+
+SetDelete sets Delete field to given value.
+
+### HasDelete
+
+`func (o *InlineSubscriptionItemUpdate) HasDelete() bool`
+
+HasDelete returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *InlineSubscriptionItemUpdate) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *InlineSubscriptionItemUpdate) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *InlineSubscriptionItemUpdate) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *InlineSubscriptionItemUpdate) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### SetDescriptionNil
+
+`func (o *InlineSubscriptionItemUpdate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *InlineSubscriptionItemUpdate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDropAtEnd
 
 `func (o *InlineSubscriptionItemUpdate) GetDropAtEnd() bool`
@@ -161,6 +198,41 @@ HasDropAtEnd returns a boolean if a field has been set.
 `func (o *InlineSubscriptionItemUpdate) UnsetDropAtEnd()`
 
 UnsetDropAtEnd ensures that no value is present for DropAtEnd, not even an explicit nil
+### GetId
+
+`func (o *InlineSubscriptionItemUpdate) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *InlineSubscriptionItemUpdate) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *InlineSubscriptionItemUpdate) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *InlineSubscriptionItemUpdate) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### SetIdNil
+
+`func (o *InlineSubscriptionItemUpdate) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *InlineSubscriptionItemUpdate) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetPriceId
 
 `func (o *InlineSubscriptionItemUpdate) GetPriceId() string`

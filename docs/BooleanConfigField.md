@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name of the field. | 
-**Key** | **string** | The key of the field in the config. | 
+**DefaultValue** | Pointer to **NullableBool** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
+**Key** | **string** | The key of the field in the config. | 
+**Name** | **string** | The name of the field. | 
 **Type** | Pointer to **string** |  | [optional] [default to "boolean"]
 **Value** | **NullableBool** |  | 
-**DefaultValue** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
 ### NewBooleanConfigField
 
-`func NewBooleanConfigField(name string, key string, value NullableBool, ) *BooleanConfigField`
+`func NewBooleanConfigField(key string, name string, value NullableBool, ) *BooleanConfigField`
 
 NewBooleanConfigField instantiates a new BooleanConfigField object
 This constructor will assign default values to properties that have it defined,
@@ -30,46 +30,41 @@ NewBooleanConfigFieldWithDefaults instantiates a new BooleanConfigField object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetDefaultValue
 
-`func (o *BooleanConfigField) GetName() string`
+`func (o *BooleanConfigField) GetDefaultValue() bool`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetDefaultValueOk
 
-`func (o *BooleanConfigField) GetNameOk() (*string, bool)`
+`func (o *BooleanConfigField) GetDefaultValueOk() (*bool, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetDefaultValue
 
-`func (o *BooleanConfigField) SetName(v string)`
+`func (o *BooleanConfigField) SetDefaultValue(v bool)`
 
-SetName sets Name field to given value.
+SetDefaultValue sets DefaultValue field to given value.
 
+### HasDefaultValue
 
-### GetKey
+`func (o *BooleanConfigField) HasDefaultValue() bool`
 
-`func (o *BooleanConfigField) GetKey() string`
+HasDefaultValue returns a boolean if a field has been set.
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+### SetDefaultValueNil
 
-### GetKeyOk
+`func (o *BooleanConfigField) SetDefaultValueNil(b bool)`
 
-`func (o *BooleanConfigField) GetKeyOk() (*string, bool)`
+ SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
+### UnsetDefaultValue
+`func (o *BooleanConfigField) UnsetDefaultValue()`
 
-### SetKey
-
-`func (o *BooleanConfigField) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
-
+UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetDescription
 
 `func (o *BooleanConfigField) GetDescription() string`
@@ -105,6 +100,46 @@ HasDescription returns a boolean if a field has been set.
 `func (o *BooleanConfigField) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
+### GetKey
+
+`func (o *BooleanConfigField) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *BooleanConfigField) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *BooleanConfigField) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+
+### GetName
+
+`func (o *BooleanConfigField) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *BooleanConfigField) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *BooleanConfigField) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
 ### GetType
 
 `func (o *BooleanConfigField) GetType() string`
@@ -160,41 +195,6 @@ SetValue sets Value field to given value.
 `func (o *BooleanConfigField) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
-### GetDefaultValue
-
-`func (o *BooleanConfigField) GetDefaultValue() bool`
-
-GetDefaultValue returns the DefaultValue field if non-nil, zero value otherwise.
-
-### GetDefaultValueOk
-
-`func (o *BooleanConfigField) GetDefaultValueOk() (*bool, bool)`
-
-GetDefaultValueOk returns a tuple with the DefaultValue field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultValue
-
-`func (o *BooleanConfigField) SetDefaultValue(v bool)`
-
-SetDefaultValue sets DefaultValue field to given value.
-
-### HasDefaultValue
-
-`func (o *BooleanConfigField) HasDefaultValue() bool`
-
-HasDefaultValue returns a boolean if a field has been set.
-
-### SetDefaultValueNil
-
-`func (o *BooleanConfigField) SetDefaultValueNil(b bool)`
-
- SetDefaultValueNil sets the value for DefaultValue to be an explicit nil
-
-### UnsetDefaultValue
-`func (o *BooleanConfigField) UnsetDefaultValue()`
-
-UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

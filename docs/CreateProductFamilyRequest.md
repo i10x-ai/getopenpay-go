@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name of the product family. | 
 **Description** | Pointer to **NullableString** |  | [optional] 
-**Products** | **[]string** |  | 
 **Hierarchy** | Pointer to **string** | A JSON object representing the hierarchy within the family. | [optional] [default to "{}"]
+**Name** | **string** | The name of the product family. | 
+**Products** | **[]string** | List of unique id&#39;s for the products in this family. | 
 
 ## Methods
 
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewCreateProductFamilyRequestWithDefaults instantiates a new CreateProductFamilyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *CreateProductFamilyRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *CreateProductFamilyRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *CreateProductFamilyRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
 
 ### GetDescription
 
@@ -83,26 +63,6 @@ HasDescription returns a boolean if a field has been set.
 `func (o *CreateProductFamilyRequest) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetProducts
-
-`func (o *CreateProductFamilyRequest) GetProducts() []string`
-
-GetProducts returns the Products field if non-nil, zero value otherwise.
-
-### GetProductsOk
-
-`func (o *CreateProductFamilyRequest) GetProductsOk() (*[]string, bool)`
-
-GetProductsOk returns a tuple with the Products field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProducts
-
-`func (o *CreateProductFamilyRequest) SetProducts(v []string)`
-
-SetProducts sets Products field to given value.
-
-
 ### GetHierarchy
 
 `func (o *CreateProductFamilyRequest) GetHierarchy() string`
@@ -127,6 +87,46 @@ SetHierarchy sets Hierarchy field to given value.
 `func (o *CreateProductFamilyRequest) HasHierarchy() bool`
 
 HasHierarchy returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *CreateProductFamilyRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *CreateProductFamilyRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *CreateProductFamilyRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetProducts
+
+`func (o *CreateProductFamilyRequest) GetProducts() []string`
+
+GetProducts returns the Products field if non-nil, zero value otherwise.
+
+### GetProductsOk
+
+`func (o *CreateProductFamilyRequest) GetProductsOk() (*[]string, bool)`
+
+GetProductsOk returns a tuple with the Products field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProducts
+
+`func (o *CreateProductFamilyRequest) SetProducts(v []string)`
+
+SetProducts sets Products field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

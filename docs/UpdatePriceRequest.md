@@ -4,27 +4,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsExclusive** | Pointer to **NullableBool** |  | [optional] 
-**ListedExclusivelyForCustomers** | Pointer to **[]string** |  | [optional] 
-**IsActive** | Pointer to **NullableBool** |  | [optional] 
-**Name** | Pointer to **NullableString** |  | [optional] 
-**InternalDescription** | Pointer to **NullableString** |  | [optional] 
-**PricingModel** | Pointer to [**NullablePricingModel**](PricingModel.md) |  | [optional] 
-**UnitAmountAtom** | Pointer to **NullableInt32** |  | [optional] 
-**TransformQuantityDivideBy** | Pointer to **NullableFloat32** |  | [optional] 
-**Currency** | Pointer to [**NullableCurrencyEnum**](CurrencyEnum.md) |  | [optional] 
-**PriceTiers** | Pointer to [**[]PriceTierParams**](PriceTierParams.md) |  | [optional] 
-**PriceType** | Pointer to [**NullablePriceTypeEnum**](PriceTypeEnum.md) |  | [optional] 
+**AggregateUsage** | Pointer to [**NullableUsageAggMethodEnum**](UsageAggMethodEnum.md) |  | [optional] 
 **BillingInterval** | Pointer to [**NullableCalendarIntervalEnum**](CalendarIntervalEnum.md) |  | [optional] 
 **BillingIntervalCount** | Pointer to **NullableInt32** |  | [optional] 
-**ContractTermMultiple** | Pointer to **NullableInt32** |  | [optional] 
+**CanOnlyBePurchasedWith** | Pointer to **[]string** | This price can only be purchased in a subscription if subscriptioncontains at least one of these prices. | [optional] 
 **ContractAutoRenew** | Pointer to **NullableBool** |  | [optional] 
-**TrialPeriodDays** | Pointer to **NullableInt32** |  | [optional] 
-**UsageType** | Pointer to [**NullableUsageTypeEnum**](UsageTypeEnum.md) |  | [optional] 
-**AggregateUsage** | Pointer to [**NullableUsageAggMethodEnum**](UsageAggMethodEnum.md) |  | [optional] 
+**ContractTermMultiple** | Pointer to **NullableInt32** |  | [optional] 
+**Currency** | Pointer to [**NullableCurrencyEnum**](CurrencyEnum.md) |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **DefaultNetD** | Pointer to **NullableInt32** |  | [optional] 
-**CanOnlyBePurchasedWith** | Pointer to **[]string** |  | [optional] 
+**InternalDescription** | Pointer to **NullableString** |  | [optional] 
+**IsActive** | Pointer to **NullableBool** |  | [optional] 
+**IsExclusive** | Pointer to **NullableBool** |  | [optional] 
+**ListedExclusivelyForCustomers** | Pointer to **[]string** | When listed_exclusively_for_customers is passed only customers under listed_exclusively_for_customers can list the given price. Anyone who has a payment_link containing the price can view and subscribe the prices regardless of it.Please do not pass a value if a price is not exclusive. | [optional] 
 **Meta** | Pointer to **map[string]interface{}** |  | [optional] 
+**MeterId** | Pointer to **NullableString** |  | [optional] 
+**Name** | Pointer to **NullableString** |  | [optional] 
+**PriceTiers** | Pointer to [**[]PriceTierParams**](PriceTierParams.md) | List of price_tiers. | [optional] 
+**PriceType** | Pointer to [**NullablePriceTypeEnum**](PriceTypeEnum.md) |  | [optional] 
+**PricingModel** | Pointer to [**NullablePricingModel**](PricingModel.md) |  | [optional] 
+**TransformQuantityDivideBy** | Pointer to **NullableFloat32** |  | [optional] 
+**TrialPeriodDays** | Pointer to **NullableInt32** |  | [optional] 
+**UnitAmountAtom** | Pointer to **NullableInt32** |  | [optional] 
+**UsageType** | Pointer to [**NullableUsageTypeEnum**](UsageTypeEnum.md) |  | [optional] 
 
 ## Methods
 
@@ -45,371 +47,41 @@ NewUpdatePriceRequestWithDefaults instantiates a new UpdatePriceRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIsExclusive
+### GetAggregateUsage
 
-`func (o *UpdatePriceRequest) GetIsExclusive() bool`
+`func (o *UpdatePriceRequest) GetAggregateUsage() UsageAggMethodEnum`
 
-GetIsExclusive returns the IsExclusive field if non-nil, zero value otherwise.
+GetAggregateUsage returns the AggregateUsage field if non-nil, zero value otherwise.
 
-### GetIsExclusiveOk
+### GetAggregateUsageOk
 
-`func (o *UpdatePriceRequest) GetIsExclusiveOk() (*bool, bool)`
+`func (o *UpdatePriceRequest) GetAggregateUsageOk() (*UsageAggMethodEnum, bool)`
 
-GetIsExclusiveOk returns a tuple with the IsExclusive field if it's non-nil, zero value otherwise
+GetAggregateUsageOk returns a tuple with the AggregateUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsExclusive
+### SetAggregateUsage
 
-`func (o *UpdatePriceRequest) SetIsExclusive(v bool)`
+`func (o *UpdatePriceRequest) SetAggregateUsage(v UsageAggMethodEnum)`
 
-SetIsExclusive sets IsExclusive field to given value.
+SetAggregateUsage sets AggregateUsage field to given value.
 
-### HasIsExclusive
+### HasAggregateUsage
 
-`func (o *UpdatePriceRequest) HasIsExclusive() bool`
+`func (o *UpdatePriceRequest) HasAggregateUsage() bool`
 
-HasIsExclusive returns a boolean if a field has been set.
+HasAggregateUsage returns a boolean if a field has been set.
 
-### SetIsExclusiveNil
+### SetAggregateUsageNil
 
-`func (o *UpdatePriceRequest) SetIsExclusiveNil(b bool)`
+`func (o *UpdatePriceRequest) SetAggregateUsageNil(b bool)`
 
- SetIsExclusiveNil sets the value for IsExclusive to be an explicit nil
+ SetAggregateUsageNil sets the value for AggregateUsage to be an explicit nil
 
-### UnsetIsExclusive
-`func (o *UpdatePriceRequest) UnsetIsExclusive()`
+### UnsetAggregateUsage
+`func (o *UpdatePriceRequest) UnsetAggregateUsage()`
 
-UnsetIsExclusive ensures that no value is present for IsExclusive, not even an explicit nil
-### GetListedExclusivelyForCustomers
-
-`func (o *UpdatePriceRequest) GetListedExclusivelyForCustomers() []string`
-
-GetListedExclusivelyForCustomers returns the ListedExclusivelyForCustomers field if non-nil, zero value otherwise.
-
-### GetListedExclusivelyForCustomersOk
-
-`func (o *UpdatePriceRequest) GetListedExclusivelyForCustomersOk() (*[]string, bool)`
-
-GetListedExclusivelyForCustomersOk returns a tuple with the ListedExclusivelyForCustomers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetListedExclusivelyForCustomers
-
-`func (o *UpdatePriceRequest) SetListedExclusivelyForCustomers(v []string)`
-
-SetListedExclusivelyForCustomers sets ListedExclusivelyForCustomers field to given value.
-
-### HasListedExclusivelyForCustomers
-
-`func (o *UpdatePriceRequest) HasListedExclusivelyForCustomers() bool`
-
-HasListedExclusivelyForCustomers returns a boolean if a field has been set.
-
-### GetIsActive
-
-`func (o *UpdatePriceRequest) GetIsActive() bool`
-
-GetIsActive returns the IsActive field if non-nil, zero value otherwise.
-
-### GetIsActiveOk
-
-`func (o *UpdatePriceRequest) GetIsActiveOk() (*bool, bool)`
-
-GetIsActiveOk returns a tuple with the IsActive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsActive
-
-`func (o *UpdatePriceRequest) SetIsActive(v bool)`
-
-SetIsActive sets IsActive field to given value.
-
-### HasIsActive
-
-`func (o *UpdatePriceRequest) HasIsActive() bool`
-
-HasIsActive returns a boolean if a field has been set.
-
-### SetIsActiveNil
-
-`func (o *UpdatePriceRequest) SetIsActiveNil(b bool)`
-
- SetIsActiveNil sets the value for IsActive to be an explicit nil
-
-### UnsetIsActive
-`func (o *UpdatePriceRequest) UnsetIsActive()`
-
-UnsetIsActive ensures that no value is present for IsActive, not even an explicit nil
-### GetName
-
-`func (o *UpdatePriceRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *UpdatePriceRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *UpdatePriceRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *UpdatePriceRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *UpdatePriceRequest) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *UpdatePriceRequest) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetInternalDescription
-
-`func (o *UpdatePriceRequest) GetInternalDescription() string`
-
-GetInternalDescription returns the InternalDescription field if non-nil, zero value otherwise.
-
-### GetInternalDescriptionOk
-
-`func (o *UpdatePriceRequest) GetInternalDescriptionOk() (*string, bool)`
-
-GetInternalDescriptionOk returns a tuple with the InternalDescription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInternalDescription
-
-`func (o *UpdatePriceRequest) SetInternalDescription(v string)`
-
-SetInternalDescription sets InternalDescription field to given value.
-
-### HasInternalDescription
-
-`func (o *UpdatePriceRequest) HasInternalDescription() bool`
-
-HasInternalDescription returns a boolean if a field has been set.
-
-### SetInternalDescriptionNil
-
-`func (o *UpdatePriceRequest) SetInternalDescriptionNil(b bool)`
-
- SetInternalDescriptionNil sets the value for InternalDescription to be an explicit nil
-
-### UnsetInternalDescription
-`func (o *UpdatePriceRequest) UnsetInternalDescription()`
-
-UnsetInternalDescription ensures that no value is present for InternalDescription, not even an explicit nil
-### GetPricingModel
-
-`func (o *UpdatePriceRequest) GetPricingModel() PricingModel`
-
-GetPricingModel returns the PricingModel field if non-nil, zero value otherwise.
-
-### GetPricingModelOk
-
-`func (o *UpdatePriceRequest) GetPricingModelOk() (*PricingModel, bool)`
-
-GetPricingModelOk returns a tuple with the PricingModel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPricingModel
-
-`func (o *UpdatePriceRequest) SetPricingModel(v PricingModel)`
-
-SetPricingModel sets PricingModel field to given value.
-
-### HasPricingModel
-
-`func (o *UpdatePriceRequest) HasPricingModel() bool`
-
-HasPricingModel returns a boolean if a field has been set.
-
-### SetPricingModelNil
-
-`func (o *UpdatePriceRequest) SetPricingModelNil(b bool)`
-
- SetPricingModelNil sets the value for PricingModel to be an explicit nil
-
-### UnsetPricingModel
-`func (o *UpdatePriceRequest) UnsetPricingModel()`
-
-UnsetPricingModel ensures that no value is present for PricingModel, not even an explicit nil
-### GetUnitAmountAtom
-
-`func (o *UpdatePriceRequest) GetUnitAmountAtom() int32`
-
-GetUnitAmountAtom returns the UnitAmountAtom field if non-nil, zero value otherwise.
-
-### GetUnitAmountAtomOk
-
-`func (o *UpdatePriceRequest) GetUnitAmountAtomOk() (*int32, bool)`
-
-GetUnitAmountAtomOk returns a tuple with the UnitAmountAtom field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUnitAmountAtom
-
-`func (o *UpdatePriceRequest) SetUnitAmountAtom(v int32)`
-
-SetUnitAmountAtom sets UnitAmountAtom field to given value.
-
-### HasUnitAmountAtom
-
-`func (o *UpdatePriceRequest) HasUnitAmountAtom() bool`
-
-HasUnitAmountAtom returns a boolean if a field has been set.
-
-### SetUnitAmountAtomNil
-
-`func (o *UpdatePriceRequest) SetUnitAmountAtomNil(b bool)`
-
- SetUnitAmountAtomNil sets the value for UnitAmountAtom to be an explicit nil
-
-### UnsetUnitAmountAtom
-`func (o *UpdatePriceRequest) UnsetUnitAmountAtom()`
-
-UnsetUnitAmountAtom ensures that no value is present for UnitAmountAtom, not even an explicit nil
-### GetTransformQuantityDivideBy
-
-`func (o *UpdatePriceRequest) GetTransformQuantityDivideBy() float32`
-
-GetTransformQuantityDivideBy returns the TransformQuantityDivideBy field if non-nil, zero value otherwise.
-
-### GetTransformQuantityDivideByOk
-
-`func (o *UpdatePriceRequest) GetTransformQuantityDivideByOk() (*float32, bool)`
-
-GetTransformQuantityDivideByOk returns a tuple with the TransformQuantityDivideBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTransformQuantityDivideBy
-
-`func (o *UpdatePriceRequest) SetTransformQuantityDivideBy(v float32)`
-
-SetTransformQuantityDivideBy sets TransformQuantityDivideBy field to given value.
-
-### HasTransformQuantityDivideBy
-
-`func (o *UpdatePriceRequest) HasTransformQuantityDivideBy() bool`
-
-HasTransformQuantityDivideBy returns a boolean if a field has been set.
-
-### SetTransformQuantityDivideByNil
-
-`func (o *UpdatePriceRequest) SetTransformQuantityDivideByNil(b bool)`
-
- SetTransformQuantityDivideByNil sets the value for TransformQuantityDivideBy to be an explicit nil
-
-### UnsetTransformQuantityDivideBy
-`func (o *UpdatePriceRequest) UnsetTransformQuantityDivideBy()`
-
-UnsetTransformQuantityDivideBy ensures that no value is present for TransformQuantityDivideBy, not even an explicit nil
-### GetCurrency
-
-`func (o *UpdatePriceRequest) GetCurrency() CurrencyEnum`
-
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
-
-### GetCurrencyOk
-
-`func (o *UpdatePriceRequest) GetCurrencyOk() (*CurrencyEnum, bool)`
-
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCurrency
-
-`func (o *UpdatePriceRequest) SetCurrency(v CurrencyEnum)`
-
-SetCurrency sets Currency field to given value.
-
-### HasCurrency
-
-`func (o *UpdatePriceRequest) HasCurrency() bool`
-
-HasCurrency returns a boolean if a field has been set.
-
-### SetCurrencyNil
-
-`func (o *UpdatePriceRequest) SetCurrencyNil(b bool)`
-
- SetCurrencyNil sets the value for Currency to be an explicit nil
-
-### UnsetCurrency
-`func (o *UpdatePriceRequest) UnsetCurrency()`
-
-UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-### GetPriceTiers
-
-`func (o *UpdatePriceRequest) GetPriceTiers() []PriceTierParams`
-
-GetPriceTiers returns the PriceTiers field if non-nil, zero value otherwise.
-
-### GetPriceTiersOk
-
-`func (o *UpdatePriceRequest) GetPriceTiersOk() (*[]PriceTierParams, bool)`
-
-GetPriceTiersOk returns a tuple with the PriceTiers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPriceTiers
-
-`func (o *UpdatePriceRequest) SetPriceTiers(v []PriceTierParams)`
-
-SetPriceTiers sets PriceTiers field to given value.
-
-### HasPriceTiers
-
-`func (o *UpdatePriceRequest) HasPriceTiers() bool`
-
-HasPriceTiers returns a boolean if a field has been set.
-
-### GetPriceType
-
-`func (o *UpdatePriceRequest) GetPriceType() PriceTypeEnum`
-
-GetPriceType returns the PriceType field if non-nil, zero value otherwise.
-
-### GetPriceTypeOk
-
-`func (o *UpdatePriceRequest) GetPriceTypeOk() (*PriceTypeEnum, bool)`
-
-GetPriceTypeOk returns a tuple with the PriceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPriceType
-
-`func (o *UpdatePriceRequest) SetPriceType(v PriceTypeEnum)`
-
-SetPriceType sets PriceType field to given value.
-
-### HasPriceType
-
-`func (o *UpdatePriceRequest) HasPriceType() bool`
-
-HasPriceType returns a boolean if a field has been set.
-
-### SetPriceTypeNil
-
-`func (o *UpdatePriceRequest) SetPriceTypeNil(b bool)`
-
- SetPriceTypeNil sets the value for PriceType to be an explicit nil
-
-### UnsetPriceType
-`func (o *UpdatePriceRequest) UnsetPriceType()`
-
-UnsetPriceType ensures that no value is present for PriceType, not even an explicit nil
+UnsetAggregateUsage ensures that no value is present for AggregateUsage, not even an explicit nil
 ### GetBillingInterval
 
 `func (o *UpdatePriceRequest) GetBillingInterval() CalendarIntervalEnum`
@@ -480,41 +152,31 @@ HasBillingIntervalCount returns a boolean if a field has been set.
 `func (o *UpdatePriceRequest) UnsetBillingIntervalCount()`
 
 UnsetBillingIntervalCount ensures that no value is present for BillingIntervalCount, not even an explicit nil
-### GetContractTermMultiple
+### GetCanOnlyBePurchasedWith
 
-`func (o *UpdatePriceRequest) GetContractTermMultiple() int32`
+`func (o *UpdatePriceRequest) GetCanOnlyBePurchasedWith() []string`
 
-GetContractTermMultiple returns the ContractTermMultiple field if non-nil, zero value otherwise.
+GetCanOnlyBePurchasedWith returns the CanOnlyBePurchasedWith field if non-nil, zero value otherwise.
 
-### GetContractTermMultipleOk
+### GetCanOnlyBePurchasedWithOk
 
-`func (o *UpdatePriceRequest) GetContractTermMultipleOk() (*int32, bool)`
+`func (o *UpdatePriceRequest) GetCanOnlyBePurchasedWithOk() (*[]string, bool)`
 
-GetContractTermMultipleOk returns a tuple with the ContractTermMultiple field if it's non-nil, zero value otherwise
+GetCanOnlyBePurchasedWithOk returns a tuple with the CanOnlyBePurchasedWith field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetContractTermMultiple
+### SetCanOnlyBePurchasedWith
 
-`func (o *UpdatePriceRequest) SetContractTermMultiple(v int32)`
+`func (o *UpdatePriceRequest) SetCanOnlyBePurchasedWith(v []string)`
 
-SetContractTermMultiple sets ContractTermMultiple field to given value.
+SetCanOnlyBePurchasedWith sets CanOnlyBePurchasedWith field to given value.
 
-### HasContractTermMultiple
+### HasCanOnlyBePurchasedWith
 
-`func (o *UpdatePriceRequest) HasContractTermMultiple() bool`
+`func (o *UpdatePriceRequest) HasCanOnlyBePurchasedWith() bool`
 
-HasContractTermMultiple returns a boolean if a field has been set.
+HasCanOnlyBePurchasedWith returns a boolean if a field has been set.
 
-### SetContractTermMultipleNil
-
-`func (o *UpdatePriceRequest) SetContractTermMultipleNil(b bool)`
-
- SetContractTermMultipleNil sets the value for ContractTermMultiple to be an explicit nil
-
-### UnsetContractTermMultiple
-`func (o *UpdatePriceRequest) UnsetContractTermMultiple()`
-
-UnsetContractTermMultiple ensures that no value is present for ContractTermMultiple, not even an explicit nil
 ### GetContractAutoRenew
 
 `func (o *UpdatePriceRequest) GetContractAutoRenew() bool`
@@ -550,111 +212,111 @@ HasContractAutoRenew returns a boolean if a field has been set.
 `func (o *UpdatePriceRequest) UnsetContractAutoRenew()`
 
 UnsetContractAutoRenew ensures that no value is present for ContractAutoRenew, not even an explicit nil
-### GetTrialPeriodDays
+### GetContractTermMultiple
 
-`func (o *UpdatePriceRequest) GetTrialPeriodDays() int32`
+`func (o *UpdatePriceRequest) GetContractTermMultiple() int32`
 
-GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
+GetContractTermMultiple returns the ContractTermMultiple field if non-nil, zero value otherwise.
 
-### GetTrialPeriodDaysOk
+### GetContractTermMultipleOk
 
-`func (o *UpdatePriceRequest) GetTrialPeriodDaysOk() (*int32, bool)`
+`func (o *UpdatePriceRequest) GetContractTermMultipleOk() (*int32, bool)`
 
-GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
+GetContractTermMultipleOk returns a tuple with the ContractTermMultiple field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTrialPeriodDays
+### SetContractTermMultiple
 
-`func (o *UpdatePriceRequest) SetTrialPeriodDays(v int32)`
+`func (o *UpdatePriceRequest) SetContractTermMultiple(v int32)`
 
-SetTrialPeriodDays sets TrialPeriodDays field to given value.
+SetContractTermMultiple sets ContractTermMultiple field to given value.
 
-### HasTrialPeriodDays
+### HasContractTermMultiple
 
-`func (o *UpdatePriceRequest) HasTrialPeriodDays() bool`
+`func (o *UpdatePriceRequest) HasContractTermMultiple() bool`
 
-HasTrialPeriodDays returns a boolean if a field has been set.
+HasContractTermMultiple returns a boolean if a field has been set.
 
-### SetTrialPeriodDaysNil
+### SetContractTermMultipleNil
 
-`func (o *UpdatePriceRequest) SetTrialPeriodDaysNil(b bool)`
+`func (o *UpdatePriceRequest) SetContractTermMultipleNil(b bool)`
 
- SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
+ SetContractTermMultipleNil sets the value for ContractTermMultiple to be an explicit nil
 
-### UnsetTrialPeriodDays
-`func (o *UpdatePriceRequest) UnsetTrialPeriodDays()`
+### UnsetContractTermMultiple
+`func (o *UpdatePriceRequest) UnsetContractTermMultiple()`
 
-UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
-### GetUsageType
+UnsetContractTermMultiple ensures that no value is present for ContractTermMultiple, not even an explicit nil
+### GetCurrency
 
-`func (o *UpdatePriceRequest) GetUsageType() UsageTypeEnum`
+`func (o *UpdatePriceRequest) GetCurrency() CurrencyEnum`
 
-GetUsageType returns the UsageType field if non-nil, zero value otherwise.
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
-### GetUsageTypeOk
+### GetCurrencyOk
 
-`func (o *UpdatePriceRequest) GetUsageTypeOk() (*UsageTypeEnum, bool)`
+`func (o *UpdatePriceRequest) GetCurrencyOk() (*CurrencyEnum, bool)`
 
-GetUsageTypeOk returns a tuple with the UsageType field if it's non-nil, zero value otherwise
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsageType
+### SetCurrency
 
-`func (o *UpdatePriceRequest) SetUsageType(v UsageTypeEnum)`
+`func (o *UpdatePriceRequest) SetCurrency(v CurrencyEnum)`
 
-SetUsageType sets UsageType field to given value.
+SetCurrency sets Currency field to given value.
 
-### HasUsageType
+### HasCurrency
 
-`func (o *UpdatePriceRequest) HasUsageType() bool`
+`func (o *UpdatePriceRequest) HasCurrency() bool`
 
-HasUsageType returns a boolean if a field has been set.
+HasCurrency returns a boolean if a field has been set.
 
-### SetUsageTypeNil
+### SetCurrencyNil
 
-`func (o *UpdatePriceRequest) SetUsageTypeNil(b bool)`
+`func (o *UpdatePriceRequest) SetCurrencyNil(b bool)`
 
- SetUsageTypeNil sets the value for UsageType to be an explicit nil
+ SetCurrencyNil sets the value for Currency to be an explicit nil
 
-### UnsetUsageType
-`func (o *UpdatePriceRequest) UnsetUsageType()`
+### UnsetCurrency
+`func (o *UpdatePriceRequest) UnsetCurrency()`
 
-UnsetUsageType ensures that no value is present for UsageType, not even an explicit nil
-### GetAggregateUsage
+UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
+### GetCustomFields
 
-`func (o *UpdatePriceRequest) GetAggregateUsage() UsageAggMethodEnum`
+`func (o *UpdatePriceRequest) GetCustomFields() map[string]interface{}`
 
-GetAggregateUsage returns the AggregateUsage field if non-nil, zero value otherwise.
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
-### GetAggregateUsageOk
+### GetCustomFieldsOk
 
-`func (o *UpdatePriceRequest) GetAggregateUsageOk() (*UsageAggMethodEnum, bool)`
+`func (o *UpdatePriceRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
 
-GetAggregateUsageOk returns a tuple with the AggregateUsage field if it's non-nil, zero value otherwise
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAggregateUsage
+### SetCustomFields
 
-`func (o *UpdatePriceRequest) SetAggregateUsage(v UsageAggMethodEnum)`
+`func (o *UpdatePriceRequest) SetCustomFields(v map[string]interface{})`
 
-SetAggregateUsage sets AggregateUsage field to given value.
+SetCustomFields sets CustomFields field to given value.
 
-### HasAggregateUsage
+### HasCustomFields
 
-`func (o *UpdatePriceRequest) HasAggregateUsage() bool`
+`func (o *UpdatePriceRequest) HasCustomFields() bool`
 
-HasAggregateUsage returns a boolean if a field has been set.
+HasCustomFields returns a boolean if a field has been set.
 
-### SetAggregateUsageNil
+### SetCustomFieldsNil
 
-`func (o *UpdatePriceRequest) SetAggregateUsageNil(b bool)`
+`func (o *UpdatePriceRequest) SetCustomFieldsNil(b bool)`
 
- SetAggregateUsageNil sets the value for AggregateUsage to be an explicit nil
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
 
-### UnsetAggregateUsage
-`func (o *UpdatePriceRequest) UnsetAggregateUsage()`
+### UnsetCustomFields
+`func (o *UpdatePriceRequest) UnsetCustomFields()`
 
-UnsetAggregateUsage ensures that no value is present for AggregateUsage, not even an explicit nil
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetDefaultNetD
 
 `func (o *UpdatePriceRequest) GetDefaultNetD() int32`
@@ -690,30 +352,135 @@ HasDefaultNetD returns a boolean if a field has been set.
 `func (o *UpdatePriceRequest) UnsetDefaultNetD()`
 
 UnsetDefaultNetD ensures that no value is present for DefaultNetD, not even an explicit nil
-### GetCanOnlyBePurchasedWith
+### GetInternalDescription
 
-`func (o *UpdatePriceRequest) GetCanOnlyBePurchasedWith() []string`
+`func (o *UpdatePriceRequest) GetInternalDescription() string`
 
-GetCanOnlyBePurchasedWith returns the CanOnlyBePurchasedWith field if non-nil, zero value otherwise.
+GetInternalDescription returns the InternalDescription field if non-nil, zero value otherwise.
 
-### GetCanOnlyBePurchasedWithOk
+### GetInternalDescriptionOk
 
-`func (o *UpdatePriceRequest) GetCanOnlyBePurchasedWithOk() (*[]string, bool)`
+`func (o *UpdatePriceRequest) GetInternalDescriptionOk() (*string, bool)`
 
-GetCanOnlyBePurchasedWithOk returns a tuple with the CanOnlyBePurchasedWith field if it's non-nil, zero value otherwise
+GetInternalDescriptionOk returns a tuple with the InternalDescription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCanOnlyBePurchasedWith
+### SetInternalDescription
 
-`func (o *UpdatePriceRequest) SetCanOnlyBePurchasedWith(v []string)`
+`func (o *UpdatePriceRequest) SetInternalDescription(v string)`
 
-SetCanOnlyBePurchasedWith sets CanOnlyBePurchasedWith field to given value.
+SetInternalDescription sets InternalDescription field to given value.
 
-### HasCanOnlyBePurchasedWith
+### HasInternalDescription
 
-`func (o *UpdatePriceRequest) HasCanOnlyBePurchasedWith() bool`
+`func (o *UpdatePriceRequest) HasInternalDescription() bool`
 
-HasCanOnlyBePurchasedWith returns a boolean if a field has been set.
+HasInternalDescription returns a boolean if a field has been set.
+
+### SetInternalDescriptionNil
+
+`func (o *UpdatePriceRequest) SetInternalDescriptionNil(b bool)`
+
+ SetInternalDescriptionNil sets the value for InternalDescription to be an explicit nil
+
+### UnsetInternalDescription
+`func (o *UpdatePriceRequest) UnsetInternalDescription()`
+
+UnsetInternalDescription ensures that no value is present for InternalDescription, not even an explicit nil
+### GetIsActive
+
+`func (o *UpdatePriceRequest) GetIsActive() bool`
+
+GetIsActive returns the IsActive field if non-nil, zero value otherwise.
+
+### GetIsActiveOk
+
+`func (o *UpdatePriceRequest) GetIsActiveOk() (*bool, bool)`
+
+GetIsActiveOk returns a tuple with the IsActive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsActive
+
+`func (o *UpdatePriceRequest) SetIsActive(v bool)`
+
+SetIsActive sets IsActive field to given value.
+
+### HasIsActive
+
+`func (o *UpdatePriceRequest) HasIsActive() bool`
+
+HasIsActive returns a boolean if a field has been set.
+
+### SetIsActiveNil
+
+`func (o *UpdatePriceRequest) SetIsActiveNil(b bool)`
+
+ SetIsActiveNil sets the value for IsActive to be an explicit nil
+
+### UnsetIsActive
+`func (o *UpdatePriceRequest) UnsetIsActive()`
+
+UnsetIsActive ensures that no value is present for IsActive, not even an explicit nil
+### GetIsExclusive
+
+`func (o *UpdatePriceRequest) GetIsExclusive() bool`
+
+GetIsExclusive returns the IsExclusive field if non-nil, zero value otherwise.
+
+### GetIsExclusiveOk
+
+`func (o *UpdatePriceRequest) GetIsExclusiveOk() (*bool, bool)`
+
+GetIsExclusiveOk returns a tuple with the IsExclusive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExclusive
+
+`func (o *UpdatePriceRequest) SetIsExclusive(v bool)`
+
+SetIsExclusive sets IsExclusive field to given value.
+
+### HasIsExclusive
+
+`func (o *UpdatePriceRequest) HasIsExclusive() bool`
+
+HasIsExclusive returns a boolean if a field has been set.
+
+### SetIsExclusiveNil
+
+`func (o *UpdatePriceRequest) SetIsExclusiveNil(b bool)`
+
+ SetIsExclusiveNil sets the value for IsExclusive to be an explicit nil
+
+### UnsetIsExclusive
+`func (o *UpdatePriceRequest) UnsetIsExclusive()`
+
+UnsetIsExclusive ensures that no value is present for IsExclusive, not even an explicit nil
+### GetListedExclusivelyForCustomers
+
+`func (o *UpdatePriceRequest) GetListedExclusivelyForCustomers() []string`
+
+GetListedExclusivelyForCustomers returns the ListedExclusivelyForCustomers field if non-nil, zero value otherwise.
+
+### GetListedExclusivelyForCustomersOk
+
+`func (o *UpdatePriceRequest) GetListedExclusivelyForCustomersOk() (*[]string, bool)`
+
+GetListedExclusivelyForCustomersOk returns a tuple with the ListedExclusivelyForCustomers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetListedExclusivelyForCustomers
+
+`func (o *UpdatePriceRequest) SetListedExclusivelyForCustomers(v []string)`
+
+SetListedExclusivelyForCustomers sets ListedExclusivelyForCustomers field to given value.
+
+### HasListedExclusivelyForCustomers
+
+`func (o *UpdatePriceRequest) HasListedExclusivelyForCustomers() bool`
+
+HasListedExclusivelyForCustomers returns a boolean if a field has been set.
 
 ### GetMeta
 
@@ -750,6 +517,311 @@ HasMeta returns a boolean if a field has been set.
 `func (o *UpdatePriceRequest) UnsetMeta()`
 
 UnsetMeta ensures that no value is present for Meta, not even an explicit nil
+### GetMeterId
+
+`func (o *UpdatePriceRequest) GetMeterId() string`
+
+GetMeterId returns the MeterId field if non-nil, zero value otherwise.
+
+### GetMeterIdOk
+
+`func (o *UpdatePriceRequest) GetMeterIdOk() (*string, bool)`
+
+GetMeterIdOk returns a tuple with the MeterId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeterId
+
+`func (o *UpdatePriceRequest) SetMeterId(v string)`
+
+SetMeterId sets MeterId field to given value.
+
+### HasMeterId
+
+`func (o *UpdatePriceRequest) HasMeterId() bool`
+
+HasMeterId returns a boolean if a field has been set.
+
+### SetMeterIdNil
+
+`func (o *UpdatePriceRequest) SetMeterIdNil(b bool)`
+
+ SetMeterIdNil sets the value for MeterId to be an explicit nil
+
+### UnsetMeterId
+`func (o *UpdatePriceRequest) UnsetMeterId()`
+
+UnsetMeterId ensures that no value is present for MeterId, not even an explicit nil
+### GetName
+
+`func (o *UpdatePriceRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UpdatePriceRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UpdatePriceRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UpdatePriceRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### SetNameNil
+
+`func (o *UpdatePriceRequest) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *UpdatePriceRequest) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetPriceTiers
+
+`func (o *UpdatePriceRequest) GetPriceTiers() []PriceTierParams`
+
+GetPriceTiers returns the PriceTiers field if non-nil, zero value otherwise.
+
+### GetPriceTiersOk
+
+`func (o *UpdatePriceRequest) GetPriceTiersOk() (*[]PriceTierParams, bool)`
+
+GetPriceTiersOk returns a tuple with the PriceTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceTiers
+
+`func (o *UpdatePriceRequest) SetPriceTiers(v []PriceTierParams)`
+
+SetPriceTiers sets PriceTiers field to given value.
+
+### HasPriceTiers
+
+`func (o *UpdatePriceRequest) HasPriceTiers() bool`
+
+HasPriceTiers returns a boolean if a field has been set.
+
+### GetPriceType
+
+`func (o *UpdatePriceRequest) GetPriceType() PriceTypeEnum`
+
+GetPriceType returns the PriceType field if non-nil, zero value otherwise.
+
+### GetPriceTypeOk
+
+`func (o *UpdatePriceRequest) GetPriceTypeOk() (*PriceTypeEnum, bool)`
+
+GetPriceTypeOk returns a tuple with the PriceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceType
+
+`func (o *UpdatePriceRequest) SetPriceType(v PriceTypeEnum)`
+
+SetPriceType sets PriceType field to given value.
+
+### HasPriceType
+
+`func (o *UpdatePriceRequest) HasPriceType() bool`
+
+HasPriceType returns a boolean if a field has been set.
+
+### SetPriceTypeNil
+
+`func (o *UpdatePriceRequest) SetPriceTypeNil(b bool)`
+
+ SetPriceTypeNil sets the value for PriceType to be an explicit nil
+
+### UnsetPriceType
+`func (o *UpdatePriceRequest) UnsetPriceType()`
+
+UnsetPriceType ensures that no value is present for PriceType, not even an explicit nil
+### GetPricingModel
+
+`func (o *UpdatePriceRequest) GetPricingModel() PricingModel`
+
+GetPricingModel returns the PricingModel field if non-nil, zero value otherwise.
+
+### GetPricingModelOk
+
+`func (o *UpdatePriceRequest) GetPricingModelOk() (*PricingModel, bool)`
+
+GetPricingModelOk returns a tuple with the PricingModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPricingModel
+
+`func (o *UpdatePriceRequest) SetPricingModel(v PricingModel)`
+
+SetPricingModel sets PricingModel field to given value.
+
+### HasPricingModel
+
+`func (o *UpdatePriceRequest) HasPricingModel() bool`
+
+HasPricingModel returns a boolean if a field has been set.
+
+### SetPricingModelNil
+
+`func (o *UpdatePriceRequest) SetPricingModelNil(b bool)`
+
+ SetPricingModelNil sets the value for PricingModel to be an explicit nil
+
+### UnsetPricingModel
+`func (o *UpdatePriceRequest) UnsetPricingModel()`
+
+UnsetPricingModel ensures that no value is present for PricingModel, not even an explicit nil
+### GetTransformQuantityDivideBy
+
+`func (o *UpdatePriceRequest) GetTransformQuantityDivideBy() float32`
+
+GetTransformQuantityDivideBy returns the TransformQuantityDivideBy field if non-nil, zero value otherwise.
+
+### GetTransformQuantityDivideByOk
+
+`func (o *UpdatePriceRequest) GetTransformQuantityDivideByOk() (*float32, bool)`
+
+GetTransformQuantityDivideByOk returns a tuple with the TransformQuantityDivideBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransformQuantityDivideBy
+
+`func (o *UpdatePriceRequest) SetTransformQuantityDivideBy(v float32)`
+
+SetTransformQuantityDivideBy sets TransformQuantityDivideBy field to given value.
+
+### HasTransformQuantityDivideBy
+
+`func (o *UpdatePriceRequest) HasTransformQuantityDivideBy() bool`
+
+HasTransformQuantityDivideBy returns a boolean if a field has been set.
+
+### SetTransformQuantityDivideByNil
+
+`func (o *UpdatePriceRequest) SetTransformQuantityDivideByNil(b bool)`
+
+ SetTransformQuantityDivideByNil sets the value for TransformQuantityDivideBy to be an explicit nil
+
+### UnsetTransformQuantityDivideBy
+`func (o *UpdatePriceRequest) UnsetTransformQuantityDivideBy()`
+
+UnsetTransformQuantityDivideBy ensures that no value is present for TransformQuantityDivideBy, not even an explicit nil
+### GetTrialPeriodDays
+
+`func (o *UpdatePriceRequest) GetTrialPeriodDays() int32`
+
+GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
+
+### GetTrialPeriodDaysOk
+
+`func (o *UpdatePriceRequest) GetTrialPeriodDaysOk() (*int32, bool)`
+
+GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialPeriodDays
+
+`func (o *UpdatePriceRequest) SetTrialPeriodDays(v int32)`
+
+SetTrialPeriodDays sets TrialPeriodDays field to given value.
+
+### HasTrialPeriodDays
+
+`func (o *UpdatePriceRequest) HasTrialPeriodDays() bool`
+
+HasTrialPeriodDays returns a boolean if a field has been set.
+
+### SetTrialPeriodDaysNil
+
+`func (o *UpdatePriceRequest) SetTrialPeriodDaysNil(b bool)`
+
+ SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
+
+### UnsetTrialPeriodDays
+`func (o *UpdatePriceRequest) UnsetTrialPeriodDays()`
+
+UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
+### GetUnitAmountAtom
+
+`func (o *UpdatePriceRequest) GetUnitAmountAtom() int32`
+
+GetUnitAmountAtom returns the UnitAmountAtom field if non-nil, zero value otherwise.
+
+### GetUnitAmountAtomOk
+
+`func (o *UpdatePriceRequest) GetUnitAmountAtomOk() (*int32, bool)`
+
+GetUnitAmountAtomOk returns a tuple with the UnitAmountAtom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitAmountAtom
+
+`func (o *UpdatePriceRequest) SetUnitAmountAtom(v int32)`
+
+SetUnitAmountAtom sets UnitAmountAtom field to given value.
+
+### HasUnitAmountAtom
+
+`func (o *UpdatePriceRequest) HasUnitAmountAtom() bool`
+
+HasUnitAmountAtom returns a boolean if a field has been set.
+
+### SetUnitAmountAtomNil
+
+`func (o *UpdatePriceRequest) SetUnitAmountAtomNil(b bool)`
+
+ SetUnitAmountAtomNil sets the value for UnitAmountAtom to be an explicit nil
+
+### UnsetUnitAmountAtom
+`func (o *UpdatePriceRequest) UnsetUnitAmountAtom()`
+
+UnsetUnitAmountAtom ensures that no value is present for UnitAmountAtom, not even an explicit nil
+### GetUsageType
+
+`func (o *UpdatePriceRequest) GetUsageType() UsageTypeEnum`
+
+GetUsageType returns the UsageType field if non-nil, zero value otherwise.
+
+### GetUsageTypeOk
+
+`func (o *UpdatePriceRequest) GetUsageTypeOk() (*UsageTypeEnum, bool)`
+
+GetUsageTypeOk returns a tuple with the UsageType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsageType
+
+`func (o *UpdatePriceRequest) SetUsageType(v UsageTypeEnum)`
+
+SetUsageType sets UsageType field to given value.
+
+### HasUsageType
+
+`func (o *UpdatePriceRequest) HasUsageType() bool`
+
+HasUsageType returns a boolean if a field has been set.
+
+### SetUsageTypeNil
+
+`func (o *UpdatePriceRequest) SetUsageTypeNil(b bool)`
+
+ SetUsageTypeNil sets the value for UsageType to be an explicit nil
+
+### UnsetUsageType
+`func (o *UpdatePriceRequest) UnsetUsageType()`
+
+UnsetUsageType ensures that no value is present for UsageType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**FlatAmountAtom** | Pointer to **NullableInt32** |  | [optional] 
+**UnitAmountAtom** | **int32** | The price for the unit in the smallest denomination.It is in atomic units (in USD this is cents). | 
 **UnitsFrom** | **int32** | The starting unit for the price tier. | 
 **UnitsUpto** | Pointer to **NullableInt32** |  | [optional] 
-**UnitAmountAtom** | **int32** | The price for the unit in the smallest denomination.It is in atomic units (in USD this is cents). | 
-**FlatAmountAtom** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
 ### NewPriceTierParams
 
-`func NewPriceTierParams(unitsFrom int32, unitAmountAtom int32, ) *PriceTierParams`
+`func NewPriceTierParams(unitAmountAtom int32, unitsFrom int32, ) *PriceTierParams`
 
 NewPriceTierParams instantiates a new PriceTierParams object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +27,61 @@ will change when the set of required properties is changed
 NewPriceTierParamsWithDefaults instantiates a new PriceTierParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetFlatAmountAtom
+
+`func (o *PriceTierParams) GetFlatAmountAtom() int32`
+
+GetFlatAmountAtom returns the FlatAmountAtom field if non-nil, zero value otherwise.
+
+### GetFlatAmountAtomOk
+
+`func (o *PriceTierParams) GetFlatAmountAtomOk() (*int32, bool)`
+
+GetFlatAmountAtomOk returns a tuple with the FlatAmountAtom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlatAmountAtom
+
+`func (o *PriceTierParams) SetFlatAmountAtom(v int32)`
+
+SetFlatAmountAtom sets FlatAmountAtom field to given value.
+
+### HasFlatAmountAtom
+
+`func (o *PriceTierParams) HasFlatAmountAtom() bool`
+
+HasFlatAmountAtom returns a boolean if a field has been set.
+
+### SetFlatAmountAtomNil
+
+`func (o *PriceTierParams) SetFlatAmountAtomNil(b bool)`
+
+ SetFlatAmountAtomNil sets the value for FlatAmountAtom to be an explicit nil
+
+### UnsetFlatAmountAtom
+`func (o *PriceTierParams) UnsetFlatAmountAtom()`
+
+UnsetFlatAmountAtom ensures that no value is present for FlatAmountAtom, not even an explicit nil
+### GetUnitAmountAtom
+
+`func (o *PriceTierParams) GetUnitAmountAtom() int32`
+
+GetUnitAmountAtom returns the UnitAmountAtom field if non-nil, zero value otherwise.
+
+### GetUnitAmountAtomOk
+
+`func (o *PriceTierParams) GetUnitAmountAtomOk() (*int32, bool)`
+
+GetUnitAmountAtomOk returns a tuple with the UnitAmountAtom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitAmountAtom
+
+`func (o *PriceTierParams) SetUnitAmountAtom(v int32)`
+
+SetUnitAmountAtom sets UnitAmountAtom field to given value.
+
 
 ### GetUnitsFrom
 
@@ -83,61 +138,6 @@ HasUnitsUpto returns a boolean if a field has been set.
 `func (o *PriceTierParams) UnsetUnitsUpto()`
 
 UnsetUnitsUpto ensures that no value is present for UnitsUpto, not even an explicit nil
-### GetUnitAmountAtom
-
-`func (o *PriceTierParams) GetUnitAmountAtom() int32`
-
-GetUnitAmountAtom returns the UnitAmountAtom field if non-nil, zero value otherwise.
-
-### GetUnitAmountAtomOk
-
-`func (o *PriceTierParams) GetUnitAmountAtomOk() (*int32, bool)`
-
-GetUnitAmountAtomOk returns a tuple with the UnitAmountAtom field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUnitAmountAtom
-
-`func (o *PriceTierParams) SetUnitAmountAtom(v int32)`
-
-SetUnitAmountAtom sets UnitAmountAtom field to given value.
-
-
-### GetFlatAmountAtom
-
-`func (o *PriceTierParams) GetFlatAmountAtom() int32`
-
-GetFlatAmountAtom returns the FlatAmountAtom field if non-nil, zero value otherwise.
-
-### GetFlatAmountAtomOk
-
-`func (o *PriceTierParams) GetFlatAmountAtomOk() (*int32, bool)`
-
-GetFlatAmountAtomOk returns a tuple with the FlatAmountAtom field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFlatAmountAtom
-
-`func (o *PriceTierParams) SetFlatAmountAtom(v int32)`
-
-SetFlatAmountAtom sets FlatAmountAtom field to given value.
-
-### HasFlatAmountAtom
-
-`func (o *PriceTierParams) HasFlatAmountAtom() bool`
-
-HasFlatAmountAtom returns a boolean if a field has been set.
-
-### SetFlatAmountAtomNil
-
-`func (o *PriceTierParams) SetFlatAmountAtomNil(b bool)`
-
- SetFlatAmountAtomNil sets the value for FlatAmountAtom to be an explicit nil
-
-### UnsetFlatAmountAtom
-`func (o *PriceTierParams) UnsetFlatAmountAtom()`
-
-UnsetFlatAmountAtom ensures that no value is present for FlatAmountAtom, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

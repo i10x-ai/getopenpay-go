@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Eq** | Pointer to **NullableTime** |  | [optional] 
-**Lt** | Pointer to **NullableTime** |  | [optional] 
-**Lte** | Pointer to **NullableTime** |  | [optional] 
 **Gt** | Pointer to **NullableTime** |  | [optional] 
 **Gte** | Pointer to **NullableTime** |  | [optional] 
+**Lt** | Pointer to **NullableTime** |  | [optional] 
+**Lte** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -64,76 +64,6 @@ HasEq returns a boolean if a field has been set.
 `func (o *DateTimeFilter) UnsetEq()`
 
 UnsetEq ensures that no value is present for Eq, not even an explicit nil
-### GetLt
-
-`func (o *DateTimeFilter) GetLt() time.Time`
-
-GetLt returns the Lt field if non-nil, zero value otherwise.
-
-### GetLtOk
-
-`func (o *DateTimeFilter) GetLtOk() (*time.Time, bool)`
-
-GetLtOk returns a tuple with the Lt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLt
-
-`func (o *DateTimeFilter) SetLt(v time.Time)`
-
-SetLt sets Lt field to given value.
-
-### HasLt
-
-`func (o *DateTimeFilter) HasLt() bool`
-
-HasLt returns a boolean if a field has been set.
-
-### SetLtNil
-
-`func (o *DateTimeFilter) SetLtNil(b bool)`
-
- SetLtNil sets the value for Lt to be an explicit nil
-
-### UnsetLt
-`func (o *DateTimeFilter) UnsetLt()`
-
-UnsetLt ensures that no value is present for Lt, not even an explicit nil
-### GetLte
-
-`func (o *DateTimeFilter) GetLte() time.Time`
-
-GetLte returns the Lte field if non-nil, zero value otherwise.
-
-### GetLteOk
-
-`func (o *DateTimeFilter) GetLteOk() (*time.Time, bool)`
-
-GetLteOk returns a tuple with the Lte field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLte
-
-`func (o *DateTimeFilter) SetLte(v time.Time)`
-
-SetLte sets Lte field to given value.
-
-### HasLte
-
-`func (o *DateTimeFilter) HasLte() bool`
-
-HasLte returns a boolean if a field has been set.
-
-### SetLteNil
-
-`func (o *DateTimeFilter) SetLteNil(b bool)`
-
- SetLteNil sets the value for Lte to be an explicit nil
-
-### UnsetLte
-`func (o *DateTimeFilter) UnsetLte()`
-
-UnsetLte ensures that no value is present for Lte, not even an explicit nil
 ### GetGt
 
 `func (o *DateTimeFilter) GetGt() time.Time`
@@ -204,6 +134,76 @@ HasGte returns a boolean if a field has been set.
 `func (o *DateTimeFilter) UnsetGte()`
 
 UnsetGte ensures that no value is present for Gte, not even an explicit nil
+### GetLt
+
+`func (o *DateTimeFilter) GetLt() time.Time`
+
+GetLt returns the Lt field if non-nil, zero value otherwise.
+
+### GetLtOk
+
+`func (o *DateTimeFilter) GetLtOk() (*time.Time, bool)`
+
+GetLtOk returns a tuple with the Lt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLt
+
+`func (o *DateTimeFilter) SetLt(v time.Time)`
+
+SetLt sets Lt field to given value.
+
+### HasLt
+
+`func (o *DateTimeFilter) HasLt() bool`
+
+HasLt returns a boolean if a field has been set.
+
+### SetLtNil
+
+`func (o *DateTimeFilter) SetLtNil(b bool)`
+
+ SetLtNil sets the value for Lt to be an explicit nil
+
+### UnsetLt
+`func (o *DateTimeFilter) UnsetLt()`
+
+UnsetLt ensures that no value is present for Lt, not even an explicit nil
+### GetLte
+
+`func (o *DateTimeFilter) GetLte() time.Time`
+
+GetLte returns the Lte field if non-nil, zero value otherwise.
+
+### GetLteOk
+
+`func (o *DateTimeFilter) GetLteOk() (*time.Time, bool)`
+
+GetLteOk returns a tuple with the Lte field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLte
+
+`func (o *DateTimeFilter) SetLte(v time.Time)`
+
+SetLte sets Lte field to given value.
+
+### HasLte
+
+`func (o *DateTimeFilter) HasLte() bool`
+
+HasLte returns a boolean if a field has been set.
+
+### SetLteNil
+
+`func (o *DateTimeFilter) SetLteNil(b bool)`
+
+ SetLteNil sets the value for Lte to be an explicit nil
+
+### UnsetLte
+`func (o *DateTimeFilter) UnsetLte()`
+
+UnsetLte ensures that no value is present for Lte, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

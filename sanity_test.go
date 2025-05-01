@@ -12,8 +12,9 @@ func TestClientUsage(t *testing.T) {
     cfg := getopenpay.NewConfiguration()
     cfg.Servers = getopenpay.ServerConfigurations{
         {URL: "https://connto.openpaystaging.com"},
+				// {URL: "https://connto.getopenpay.com"},  // for production
     }
-    cfg.DefaultHeader["Authorization"] = "Bearer st_stg_8i4HhDfwNh4mgpIfzUb9rA"
+    cfg.DefaultHeader["Authorization"] = "Bearer TODO_SECRET_KEY"
     client := getopenpay.NewAPIClient(cfg)
 
     // Test a simple API call (e.g., list customers)

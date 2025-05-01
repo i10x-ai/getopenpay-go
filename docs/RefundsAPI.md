@@ -21,24 +21,24 @@ Create Refund
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createRefundRequest := *openapiclient.NewCreateRefundRequest() // CreateRefundRequest | 
+	createRefundRequest := *openapiclient.NewCreateRefundRequest() // CreateRefundRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RefundsAPI.CreateRefund(context.Background()).CreateRefundRequest(createRefundRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RefundsAPI.CreateRefund``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateRefund`: RefundExternal
-    fmt.Fprintf(os.Stdout, "Response from `RefundsAPI.CreateRefund`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RefundsAPI.CreateRefund(context.Background()).CreateRefundRequest(createRefundRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RefundsAPI.CreateRefund``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateRefund`: RefundExternal
+	fmt.Fprintf(os.Stdout, "Response from `RefundsAPI.CreateRefund`: %v\n", resp)
 }
 ```
 
@@ -85,24 +85,24 @@ List Refunds
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    refundQueryParams := *openapiclient.NewRefundQueryParams() // RefundQueryParams | 
+	refundQueryParams := *openapiclient.NewRefundQueryParams() // RefundQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RefundsAPI.ListRefunds(context.Background()).RefundQueryParams(refundQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RefundsAPI.ListRefunds``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListRefunds`: ListResponseRefundExternal
-    fmt.Fprintf(os.Stdout, "Response from `RefundsAPI.ListRefunds`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RefundsAPI.ListRefunds(context.Background()).RefundQueryParams(refundQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RefundsAPI.ListRefunds``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListRefunds`: ListResponseRefundExternal
+	fmt.Fprintf(os.Stdout, "Response from `RefundsAPI.ListRefunds`: %v\n", resp)
 }
 ```
 

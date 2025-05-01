@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the tax integration. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_TAX_INTEGRATION]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
-**ApiName** | [**TaxIntegrationApiName**](TaxIntegrationApiName.md) |  | 
-**ApiKeys** | **map[string]interface{}** | These keys will allow to authenticate API requests to the tax processor. | 
 **AccountingTz** | **string** | The timezone name for the accounting timezone (see pytz.all_timezones for a full list) | 
+**ApiKeys** | **map[string]interface{}** | These keys will allow to authenticate API requests to the tax processor. | 
+**ApiName** | [**TaxIntegrationApiName**](TaxIntegrationApiName.md) | The name of the API used for the tax integration. | 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
+**Id** | **string** | Unique Identifier of the tax integration. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewTaxIntegrationExternal
 
-`func NewTaxIntegrationExternal(id string, createdAt time.Time, updatedAt time.Time, apiName TaxIntegrationApiName, apiKeys map[string]interface{}, accountingTz string, ) *TaxIntegrationExternal`
+`func NewTaxIntegrationExternal(accountingTz string, apiKeys map[string]interface{}, apiName TaxIntegrationApiName, createdAt time.Time, id string, updatedAt time.Time, ) *TaxIntegrationExternal`
 
 NewTaxIntegrationExternal instantiates a new TaxIntegrationExternal object
 This constructor will assign default values to properties that have it defined,
@@ -32,50 +32,65 @@ NewTaxIntegrationExternalWithDefaults instantiates a new TaxIntegrationExternal 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetAccountingTz
 
-`func (o *TaxIntegrationExternal) GetId() string`
+`func (o *TaxIntegrationExternal) GetAccountingTz() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetAccountingTz returns the AccountingTz field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetAccountingTzOk
 
-`func (o *TaxIntegrationExternal) GetIdOk() (*string, bool)`
+`func (o *TaxIntegrationExternal) GetAccountingTzOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetAccountingTzOk returns a tuple with the AccountingTz field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetAccountingTz
 
-`func (o *TaxIntegrationExternal) SetId(v string)`
+`func (o *TaxIntegrationExternal) SetAccountingTz(v string)`
 
-SetId sets Id field to given value.
+SetAccountingTz sets AccountingTz field to given value.
 
 
-### GetObject
+### GetApiKeys
 
-`func (o *TaxIntegrationExternal) GetObject() ObjectName`
+`func (o *TaxIntegrationExternal) GetApiKeys() map[string]interface{}`
 
-GetObject returns the Object field if non-nil, zero value otherwise.
+GetApiKeys returns the ApiKeys field if non-nil, zero value otherwise.
 
-### GetObjectOk
+### GetApiKeysOk
 
-`func (o *TaxIntegrationExternal) GetObjectOk() (*ObjectName, bool)`
+`func (o *TaxIntegrationExternal) GetApiKeysOk() (*map[string]interface{}, bool)`
 
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+GetApiKeysOk returns a tuple with the ApiKeys field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetObject
+### SetApiKeys
 
-`func (o *TaxIntegrationExternal) SetObject(v ObjectName)`
+`func (o *TaxIntegrationExternal) SetApiKeys(v map[string]interface{})`
 
-SetObject sets Object field to given value.
+SetApiKeys sets ApiKeys field to given value.
 
-### HasObject
 
-`func (o *TaxIntegrationExternal) HasObject() bool`
+### GetApiName
 
-HasObject returns a boolean if a field has been set.
+`func (o *TaxIntegrationExternal) GetApiName() TaxIntegrationApiName`
+
+GetApiName returns the ApiName field if non-nil, zero value otherwise.
+
+### GetApiNameOk
+
+`func (o *TaxIntegrationExternal) GetApiNameOk() (*TaxIntegrationApiName, bool)`
+
+GetApiNameOk returns a tuple with the ApiName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiName
+
+`func (o *TaxIntegrationExternal) SetApiName(v TaxIntegrationApiName)`
+
+SetApiName sets ApiName field to given value.
+
 
 ### GetCreatedAt
 
@@ -97,24 +112,24 @@ and a boolean to check if the value has been set.
 SetCreatedAt sets CreatedAt field to given value.
 
 
-### GetUpdatedAt
+### GetId
 
-`func (o *TaxIntegrationExternal) GetUpdatedAt() time.Time`
+`func (o *TaxIntegrationExternal) GetId() string`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetIdOk
 
-`func (o *TaxIntegrationExternal) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *TaxIntegrationExternal) GetIdOk() (*string, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetId
 
-`func (o *TaxIntegrationExternal) SetUpdatedAt(v time.Time)`
+`func (o *TaxIntegrationExternal) SetId(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetId sets Id field to given value.
 
 
 ### GetIsDeleted
@@ -142,64 +157,49 @@ SetIsDeleted sets IsDeleted field to given value.
 
 HasIsDeleted returns a boolean if a field has been set.
 
-### GetApiName
+### GetObject
 
-`func (o *TaxIntegrationExternal) GetApiName() TaxIntegrationApiName`
+`func (o *TaxIntegrationExternal) GetObject() ObjectName`
 
-GetApiName returns the ApiName field if non-nil, zero value otherwise.
+GetObject returns the Object field if non-nil, zero value otherwise.
 
-### GetApiNameOk
+### GetObjectOk
 
-`func (o *TaxIntegrationExternal) GetApiNameOk() (*TaxIntegrationApiName, bool)`
+`func (o *TaxIntegrationExternal) GetObjectOk() (*ObjectName, bool)`
 
-GetApiNameOk returns a tuple with the ApiName field if it's non-nil, zero value otherwise
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiName
+### SetObject
 
-`func (o *TaxIntegrationExternal) SetApiName(v TaxIntegrationApiName)`
+`func (o *TaxIntegrationExternal) SetObject(v ObjectName)`
 
-SetApiName sets ApiName field to given value.
+SetObject sets Object field to given value.
 
+### HasObject
 
-### GetApiKeys
+`func (o *TaxIntegrationExternal) HasObject() bool`
 
-`func (o *TaxIntegrationExternal) GetApiKeys() map[string]interface{}`
+HasObject returns a boolean if a field has been set.
 
-GetApiKeys returns the ApiKeys field if non-nil, zero value otherwise.
+### GetUpdatedAt
 
-### GetApiKeysOk
+`func (o *TaxIntegrationExternal) GetUpdatedAt() time.Time`
 
-`func (o *TaxIntegrationExternal) GetApiKeysOk() (*map[string]interface{}, bool)`
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
-GetApiKeysOk returns a tuple with the ApiKeys field if it's non-nil, zero value otherwise
+### GetUpdatedAtOk
+
+`func (o *TaxIntegrationExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiKeys
+### SetUpdatedAt
 
-`func (o *TaxIntegrationExternal) SetApiKeys(v map[string]interface{})`
+`func (o *TaxIntegrationExternal) SetUpdatedAt(v time.Time)`
 
-SetApiKeys sets ApiKeys field to given value.
-
-
-### GetAccountingTz
-
-`func (o *TaxIntegrationExternal) GetAccountingTz() string`
-
-GetAccountingTz returns the AccountingTz field if non-nil, zero value otherwise.
-
-### GetAccountingTzOk
-
-`func (o *TaxIntegrationExternal) GetAccountingTzOk() (*string, bool)`
-
-GetAccountingTzOk returns a tuple with the AccountingTz field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccountingTz
-
-`func (o *TaxIntegrationExternal) SetAccountingTz(v string)`
-
-SetAccountingTz sets AccountingTz field to given value.
+SetUpdatedAt sets UpdatedAt field to given value.
 
 
 

@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func Test_getopenpay_ProductsAPIService(t *testing.T) {
@@ -67,18 +67,6 @@ func Test_getopenpay_ProductsAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.ProductsAPI.ListProducts(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ProductsAPIService SearchProducts", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.ProductsAPI.SearchProducts(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

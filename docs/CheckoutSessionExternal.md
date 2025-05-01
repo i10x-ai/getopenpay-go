@@ -4,39 +4,41 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the checkout session. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_CHECKOUT_SESSION]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **AccountId** | **string** | Unique Identifier of the account. | 
 **AccountName** | **string** | Name of the account. | 
 **AmountSubtotalAtom** | **int32** | The integer amount representing the subtotal amount for the line items. | 
 **AmountTotalAtom** | **int32** | The integer amount representing the total amount for the line items, after discounts and taxes. | 
 **ClientReferenceId** | Pointer to **NullableString** |  | [optional] 
 **CouponId** | Pointer to **NullableString** |  | [optional] 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
 **Currency** | **NullableString** |  | 
-**CustomerId** | **NullableString** |  | 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomerEmail** | **NullableString** |  | 
-**LineItems** | [**[]CheckoutSessionLineItemExternal**](CheckoutSessionLineItemExternal.md) |  | 
-**Mode** | [**CheckoutMode**](CheckoutMode.md) |  | 
+**CustomerId** | **NullableString** |  | 
+**Id** | **string** | Unique Identifier of the checkout session. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**LineItems** | [**[]CheckoutSessionLineItemExternal**](CheckoutSessionLineItemExternal.md) | The line items purchased by the customers. | 
+**Mode** | [**CheckoutMode**](CheckoutMode.md) | The mode of the Checkout Session. | 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
 **ReturnUrl** | **NullableString** |  | 
 **SecureToken** | **string** | The random secure token associated with the checkout session. | 
 **SetupIntent** | [**NullableSetupIntentExternal**](SetupIntentExternal.md) |  | 
-**Status** | [**CheckoutSessionStatus**](CheckoutSessionStatus.md) |  | 
-**SubscriptionId** | **NullableString** |  | 
+**Status** | [**CheckoutSessionStatus**](CheckoutSessionStatus.md) | The current status of the checkout session. | 
+**SubscriptionId** | Pointer to **NullableString** |  | [optional] 
+**SubscriptionIds** | **[]string** |  | 
 **SuccessUrl** | **NullableString** |  | 
 **TaxAmountAtom** | **int32** | The integer amount representing the tax amount for the line items. | 
-**Url** | **string** | The main URL for this checkout session. | 
 **TrialEnd** | **NullableTime** |  | 
-**TrialPeriodDays** | **NullableInt32** |  | 
 **TrialFromPrice** | **NullableBool** |  | 
+**TrialPeriodDays** | **NullableInt32** |  | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
+**Url** | **string** | The main URL for this checkout session. | 
 
 ## Methods
 
 ### NewCheckoutSessionExternal
 
-`func NewCheckoutSessionExternal(id string, createdAt time.Time, updatedAt time.Time, accountId string, accountName string, amountSubtotalAtom int32, amountTotalAtom int32, currency NullableString, customerId NullableString, customerEmail NullableString, lineItems []CheckoutSessionLineItemExternal, mode CheckoutMode, returnUrl NullableString, secureToken string, setupIntent NullableSetupIntentExternal, status CheckoutSessionStatus, subscriptionId NullableString, successUrl NullableString, taxAmountAtom int32, url string, trialEnd NullableTime, trialPeriodDays NullableInt32, trialFromPrice NullableBool, ) *CheckoutSessionExternal`
+`func NewCheckoutSessionExternal(accountId string, accountName string, amountSubtotalAtom int32, amountTotalAtom int32, createdAt time.Time, currency NullableString, customerEmail NullableString, customerId NullableString, id string, lineItems []CheckoutSessionLineItemExternal, mode CheckoutMode, returnUrl NullableString, secureToken string, setupIntent NullableSetupIntentExternal, status CheckoutSessionStatus, subscriptionIds []string, successUrl NullableString, taxAmountAtom int32, trialEnd NullableTime, trialFromPrice NullableBool, trialPeriodDays NullableInt32, updatedAt time.Time, url string, ) *CheckoutSessionExternal`
 
 NewCheckoutSessionExternal instantiates a new CheckoutSessionExternal object
 This constructor will assign default values to properties that have it defined,
@@ -50,116 +52,6 @@ will change when the set of required properties is changed
 NewCheckoutSessionExternalWithDefaults instantiates a new CheckoutSessionExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *CheckoutSessionExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CheckoutSessionExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CheckoutSessionExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *CheckoutSessionExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *CheckoutSessionExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *CheckoutSessionExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *CheckoutSessionExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *CheckoutSessionExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *CheckoutSessionExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *CheckoutSessionExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *CheckoutSessionExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *CheckoutSessionExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *CheckoutSessionExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *CheckoutSessionExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *CheckoutSessionExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *CheckoutSessionExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *CheckoutSessionExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -311,6 +203,26 @@ HasCouponId returns a boolean if a field has been set.
 `func (o *CheckoutSessionExternal) UnsetCouponId()`
 
 UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
+### GetCreatedAt
+
+`func (o *CheckoutSessionExternal) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *CheckoutSessionExternal) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *CheckoutSessionExternal) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+
 ### GetCurrency
 
 `func (o *CheckoutSessionExternal) GetCurrency() string`
@@ -341,36 +253,41 @@ SetCurrency sets Currency field to given value.
 `func (o *CheckoutSessionExternal) UnsetCurrency()`
 
 UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-### GetCustomerId
+### GetCustomFields
 
-`func (o *CheckoutSessionExternal) GetCustomerId() string`
+`func (o *CheckoutSessionExternal) GetCustomFields() map[string]interface{}`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomFieldsOk
 
-`func (o *CheckoutSessionExternal) GetCustomerIdOk() (*string, bool)`
+`func (o *CheckoutSessionExternal) GetCustomFieldsOk() (*map[string]interface{}, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomFields
 
-`func (o *CheckoutSessionExternal) SetCustomerId(v string)`
+`func (o *CheckoutSessionExternal) SetCustomFields(v map[string]interface{})`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomFields sets CustomFields field to given value.
 
+### HasCustomFields
 
-### SetCustomerIdNil
+`func (o *CheckoutSessionExternal) HasCustomFields() bool`
 
-`func (o *CheckoutSessionExternal) SetCustomerIdNil(b bool)`
+HasCustomFields returns a boolean if a field has been set.
 
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+### SetCustomFieldsNil
 
-### UnsetCustomerId
-`func (o *CheckoutSessionExternal) UnsetCustomerId()`
+`func (o *CheckoutSessionExternal) SetCustomFieldsNil(b bool)`
 
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
+
+### UnsetCustomFields
+`func (o *CheckoutSessionExternal) UnsetCustomFields()`
+
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetCustomerEmail
 
 `func (o *CheckoutSessionExternal) GetCustomerEmail() string`
@@ -401,6 +318,81 @@ SetCustomerEmail sets CustomerEmail field to given value.
 `func (o *CheckoutSessionExternal) UnsetCustomerEmail()`
 
 UnsetCustomerEmail ensures that no value is present for CustomerEmail, not even an explicit nil
+### GetCustomerId
+
+`func (o *CheckoutSessionExternal) GetCustomerId() string`
+
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+
+### GetCustomerIdOk
+
+`func (o *CheckoutSessionExternal) GetCustomerIdOk() (*string, bool)`
+
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerId
+
+`func (o *CheckoutSessionExternal) SetCustomerId(v string)`
+
+SetCustomerId sets CustomerId field to given value.
+
+
+### SetCustomerIdNil
+
+`func (o *CheckoutSessionExternal) SetCustomerIdNil(b bool)`
+
+ SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+
+### UnsetCustomerId
+`func (o *CheckoutSessionExternal) UnsetCustomerId()`
+
+UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+### GetId
+
+`func (o *CheckoutSessionExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *CheckoutSessionExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *CheckoutSessionExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetIsDeleted
+
+`func (o *CheckoutSessionExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *CheckoutSessionExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *CheckoutSessionExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *CheckoutSessionExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
 ### GetLineItems
 
 `func (o *CheckoutSessionExternal) GetLineItems() []CheckoutSessionLineItemExternal`
@@ -440,6 +432,31 @@ and a boolean to check if the value has been set.
 
 SetMode sets Mode field to given value.
 
+
+### GetObject
+
+`func (o *CheckoutSessionExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *CheckoutSessionExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *CheckoutSessionExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *CheckoutSessionExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### GetReturnUrl
 
@@ -560,6 +577,11 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+### HasSubscriptionId
+
+`func (o *CheckoutSessionExternal) HasSubscriptionId() bool`
+
+HasSubscriptionId returns a boolean if a field has been set.
 
 ### SetSubscriptionIdNil
 
@@ -571,6 +593,36 @@ SetSubscriptionId sets SubscriptionId field to given value.
 `func (o *CheckoutSessionExternal) UnsetSubscriptionId()`
 
 UnsetSubscriptionId ensures that no value is present for SubscriptionId, not even an explicit nil
+### GetSubscriptionIds
+
+`func (o *CheckoutSessionExternal) GetSubscriptionIds() []string`
+
+GetSubscriptionIds returns the SubscriptionIds field if non-nil, zero value otherwise.
+
+### GetSubscriptionIdsOk
+
+`func (o *CheckoutSessionExternal) GetSubscriptionIdsOk() (*[]string, bool)`
+
+GetSubscriptionIdsOk returns a tuple with the SubscriptionIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionIds
+
+`func (o *CheckoutSessionExternal) SetSubscriptionIds(v []string)`
+
+SetSubscriptionIds sets SubscriptionIds field to given value.
+
+
+### SetSubscriptionIdsNil
+
+`func (o *CheckoutSessionExternal) SetSubscriptionIdsNil(b bool)`
+
+ SetSubscriptionIdsNil sets the value for SubscriptionIds to be an explicit nil
+
+### UnsetSubscriptionIds
+`func (o *CheckoutSessionExternal) UnsetSubscriptionIds()`
+
+UnsetSubscriptionIds ensures that no value is present for SubscriptionIds, not even an explicit nil
 ### GetSuccessUrl
 
 `func (o *CheckoutSessionExternal) GetSuccessUrl() string`
@@ -621,26 +673,6 @@ and a boolean to check if the value has been set.
 SetTaxAmountAtom sets TaxAmountAtom field to given value.
 
 
-### GetUrl
-
-`func (o *CheckoutSessionExternal) GetUrl() string`
-
-GetUrl returns the Url field if non-nil, zero value otherwise.
-
-### GetUrlOk
-
-`func (o *CheckoutSessionExternal) GetUrlOk() (*string, bool)`
-
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrl
-
-`func (o *CheckoutSessionExternal) SetUrl(v string)`
-
-SetUrl sets Url field to given value.
-
-
 ### GetTrialEnd
 
 `func (o *CheckoutSessionExternal) GetTrialEnd() time.Time`
@@ -671,36 +703,6 @@ SetTrialEnd sets TrialEnd field to given value.
 `func (o *CheckoutSessionExternal) UnsetTrialEnd()`
 
 UnsetTrialEnd ensures that no value is present for TrialEnd, not even an explicit nil
-### GetTrialPeriodDays
-
-`func (o *CheckoutSessionExternal) GetTrialPeriodDays() int32`
-
-GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
-
-### GetTrialPeriodDaysOk
-
-`func (o *CheckoutSessionExternal) GetTrialPeriodDaysOk() (*int32, bool)`
-
-GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrialPeriodDays
-
-`func (o *CheckoutSessionExternal) SetTrialPeriodDays(v int32)`
-
-SetTrialPeriodDays sets TrialPeriodDays field to given value.
-
-
-### SetTrialPeriodDaysNil
-
-`func (o *CheckoutSessionExternal) SetTrialPeriodDaysNil(b bool)`
-
- SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
-
-### UnsetTrialPeriodDays
-`func (o *CheckoutSessionExternal) UnsetTrialPeriodDays()`
-
-UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
 ### GetTrialFromPrice
 
 `func (o *CheckoutSessionExternal) GetTrialFromPrice() bool`
@@ -731,6 +733,76 @@ SetTrialFromPrice sets TrialFromPrice field to given value.
 `func (o *CheckoutSessionExternal) UnsetTrialFromPrice()`
 
 UnsetTrialFromPrice ensures that no value is present for TrialFromPrice, not even an explicit nil
+### GetTrialPeriodDays
+
+`func (o *CheckoutSessionExternal) GetTrialPeriodDays() int32`
+
+GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
+
+### GetTrialPeriodDaysOk
+
+`func (o *CheckoutSessionExternal) GetTrialPeriodDaysOk() (*int32, bool)`
+
+GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialPeriodDays
+
+`func (o *CheckoutSessionExternal) SetTrialPeriodDays(v int32)`
+
+SetTrialPeriodDays sets TrialPeriodDays field to given value.
+
+
+### SetTrialPeriodDaysNil
+
+`func (o *CheckoutSessionExternal) SetTrialPeriodDaysNil(b bool)`
+
+ SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
+
+### UnsetTrialPeriodDays
+`func (o *CheckoutSessionExternal) UnsetTrialPeriodDays()`
+
+UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *CheckoutSessionExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *CheckoutSessionExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *CheckoutSessionExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
+### GetUrl
+
+`func (o *CheckoutSessionExternal) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *CheckoutSessionExternal) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *CheckoutSessionExternal) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

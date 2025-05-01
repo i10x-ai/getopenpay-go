@@ -209,6 +209,12 @@
 
 * `WEBHOOK_ENDPOINT_DELETED` (value: `"webhook_endpoint.deleted"`)
 
+* `CHECKOUT_SESSION_CREATED` (value: `"checkout_session.created"`)
+
+* `CHECKOUT_SESSION_COMPLETED` (value: `"checkout_session.completed"`)
+
+* `CHECKOUT_SESSION_EXPIRED` (value: `"checkout_session.expired"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AmountAtom** | **int32** | The amount of the transaction in atomic units (in USD this is cents). A negative value is a credit for the customer’s balance, and a positive value is a debit to the customer’s balance. | 
-**Currency** | Pointer to [**CurrencyEnum**](CurrencyEnum.md) |  | [optional] [default to CURRENCYENUM_USD]
+**Currency** | Pointer to [**CurrencyEnum**](CurrencyEnum.md) |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods

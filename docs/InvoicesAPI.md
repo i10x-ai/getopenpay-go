@@ -14,7 +14,6 @@ Method | HTTP request | Description
 [**MarkInvoiceAsVoid**](InvoicesAPI.md#MarkInvoiceAsVoid) | **Post** /invoices/{invoice_external_id}/void | Mark Invoice As Void
 [**PayInvoice**](InvoicesAPI.md#PayInvoice) | **Post** /invoices/{invoice_external_id}/pay | Pay Invoice
 [**PreviewNextInvoice**](InvoicesAPI.md#PreviewNextInvoice) | **Get** /invoices/preview_next_invoice/{subscription_id} | Preview Next Invoice
-[**SearchInvoices**](InvoicesAPI.md#SearchInvoices) | **Post** /invoices/search | Search Invoices
 [**UpdateInvoice**](InvoicesAPI.md#UpdateInvoice) | **Put** /invoices/{invoice_id} | Update Invoice
 
 
@@ -31,25 +30,25 @@ Add Comment
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
-    addCommentRequest := *openapiclient.NewAddCommentRequest("Marked as paid.") // AddCommentRequest | 
+	invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	addCommentRequest := *openapiclient.NewAddCommentRequest("Marked as paid.") // AddCommentRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.AddComment(context.Background(), invoiceExternalId).AddCommentRequest(addCommentRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.AddComment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddComment`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.AddComment`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.AddComment(context.Background(), invoiceExternalId).AddCommentRequest(addCommentRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.AddComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddComment`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.AddComment`: %v\n", resp)
 }
 ```
 
@@ -103,24 +102,24 @@ Create Invoice
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createInvoiceRequest := *openapiclient.NewCreateInvoiceRequest("CustomerId_example") // CreateInvoiceRequest | 
+	createInvoiceRequest := *openapiclient.NewCreateInvoiceRequest("CustomerId_example") // CreateInvoiceRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.CreateInvoice(context.Background()).CreateInvoiceRequest(createInvoiceRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.CreateInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateInvoice`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.CreateInvoice`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.CreateInvoice(context.Background()).CreateInvoiceRequest(createInvoiceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.CreateInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateInvoice`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.CreateInvoice`: %v\n", resp)
 }
 ```
 
@@ -167,24 +166,24 @@ Finalize Invoice
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.FinalizeInvoice(context.Background(), invoiceExternalId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.FinalizeInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `FinalizeInvoice`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.FinalizeInvoice`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.FinalizeInvoice(context.Background(), invoiceExternalId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.FinalizeInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `FinalizeInvoice`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.FinalizeInvoice`: %v\n", resp)
 }
 ```
 
@@ -235,25 +234,25 @@ Get Invoice
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
-    expand := []string{"Inner_example"} // []string |  (optional)
+	invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	expand := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.GetInvoice(context.Background(), invoiceExternalId).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetInvoice`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.GetInvoice`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.GetInvoice(context.Background(), invoiceExternalId).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetInvoice`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.GetInvoice`: %v\n", resp)
 }
 ```
 
@@ -305,24 +304,24 @@ Get Invoice Public
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    publicPermanentToken := "00000000-aaaa-bbbb-cccc-dddddddddddd" // string | Public token for the invoice.
+	publicPermanentToken := "00000000-aaaa-bbbb-cccc-dddddddddddd" // string | Public token for the invoice.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.GetInvoicePublic(context.Background(), publicPermanentToken).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetInvoicePublic``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetInvoicePublic`: InvoicePublic
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.GetInvoicePublic`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.GetInvoicePublic(context.Background(), publicPermanentToken).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetInvoicePublic``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetInvoicePublic`: InvoicePublic
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.GetInvoicePublic`: %v\n", resp)
 }
 ```
 
@@ -373,24 +372,24 @@ List Invoices
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceQueryParams := *openapiclient.NewInvoiceQueryParams() // InvoiceQueryParams | 
+	invoiceQueryParams := *openapiclient.NewInvoiceQueryParams() // InvoiceQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.ListInvoices(context.Background()).InvoiceQueryParams(invoiceQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.ListInvoices``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListInvoices`: ListResponseInvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.ListInvoices`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.ListInvoices(context.Background()).InvoiceQueryParams(invoiceQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.ListInvoices``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListInvoices`: ListResponseInvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.ListInvoices`: %v\n", resp)
 }
 ```
 
@@ -437,25 +436,25 @@ Mark Invoice As Uncollectible
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
-    markUncollectibleRequest := *openapiclient.NewMarkUncollectibleRequest() // MarkUncollectibleRequest | 
+	invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	markUncollectibleRequest := *openapiclient.NewMarkUncollectibleRequest() // MarkUncollectibleRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.MarkInvoiceAsUncollectible(context.Background(), invoiceExternalId).MarkUncollectibleRequest(markUncollectibleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.MarkInvoiceAsUncollectible``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MarkInvoiceAsUncollectible`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.MarkInvoiceAsUncollectible`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.MarkInvoiceAsUncollectible(context.Background(), invoiceExternalId).MarkUncollectibleRequest(markUncollectibleRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.MarkInvoiceAsUncollectible``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MarkInvoiceAsUncollectible`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.MarkInvoiceAsUncollectible`: %v\n", resp)
 }
 ```
 
@@ -507,25 +506,25 @@ Mark Invoice As Void
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
-    markVoidRequest := *openapiclient.NewMarkVoidRequest() // MarkVoidRequest | 
+	invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	markVoidRequest := *openapiclient.NewMarkVoidRequest() // MarkVoidRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.MarkInvoiceAsVoid(context.Background(), invoiceExternalId).MarkVoidRequest(markVoidRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.MarkInvoiceAsVoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MarkInvoiceAsVoid`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.MarkInvoiceAsVoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.MarkInvoiceAsVoid(context.Background(), invoiceExternalId).MarkVoidRequest(markVoidRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.MarkInvoiceAsVoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MarkInvoiceAsVoid`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.MarkInvoiceAsVoid`: %v\n", resp)
 }
 ```
 
@@ -577,25 +576,25 @@ Pay Invoice
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
-    payInvoiceRequest := *openapiclient.NewPayInvoiceRequest() // PayInvoiceRequest | 
+	invoiceExternalId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	payInvoiceRequest := *openapiclient.NewPayInvoiceRequest() // PayInvoiceRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.PayInvoice(context.Background(), invoiceExternalId).PayInvoiceRequest(payInvoiceRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.PayInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PayInvoice`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.PayInvoice`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.PayInvoice(context.Background(), invoiceExternalId).PayInvoiceRequest(payInvoiceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.PayInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PayInvoice`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.PayInvoice`: %v\n", resp)
 }
 ```
 
@@ -647,24 +646,24 @@ Preview Next Invoice
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    subscriptionId := "subscriptionId_example" // string | 
+	subscriptionId := "subscriptionId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.PreviewNextInvoice(context.Background(), subscriptionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.PreviewNextInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PreviewNextInvoice`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.PreviewNextInvoice`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.PreviewNextInvoice(context.Background(), subscriptionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.PreviewNextInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PreviewNextInvoice`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.PreviewNextInvoice`: %v\n", resp)
 }
 ```
 
@@ -703,70 +702,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchInvoices
-
-> ListResponseInvoiceExternal SearchInvoices(ctx).SearchInvoiceRequest(searchInvoiceRequest).Execute()
-
-Search Invoices
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
-)
-
-func main() {
-    searchInvoiceRequest := *openapiclient.NewSearchInvoiceRequest("Query_example") // SearchInvoiceRequest | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.SearchInvoices(context.Background()).SearchInvoiceRequest(searchInvoiceRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.SearchInvoices``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchInvoices`: ListResponseInvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.SearchInvoices`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSearchInvoicesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **searchInvoiceRequest** | [**SearchInvoiceRequest**](SearchInvoiceRequest.md) |  | 
-
-### Return type
-
-[**ListResponseInvoiceExternal**](ListResponseInvoiceExternal.md)
-
-### Authorization
-
-[HTTPBearer](../README.md#HTTPBearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## UpdateInvoice
 
 > InvoiceExternal UpdateInvoice(ctx, invoiceId).UpdateInvoiceRequest(updateInvoiceRequest).Execute()
@@ -779,25 +714,25 @@ Update Invoice
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
-    updateInvoiceRequest := *openapiclient.NewUpdateInvoiceRequest() // UpdateInvoiceRequest | 
+	invoiceId := "invoice_dev_abc123" // string | Unique identifier of the invoice.
+	updateInvoiceRequest := *openapiclient.NewUpdateInvoiceRequest() // UpdateInvoiceRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoicesAPI.UpdateInvoice(context.Background(), invoiceId).UpdateInvoiceRequest(updateInvoiceRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.UpdateInvoice``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateInvoice`: InvoiceExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.UpdateInvoice`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoicesAPI.UpdateInvoice(context.Background(), invoiceId).UpdateInvoiceRequest(updateInvoiceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.UpdateInvoice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateInvoice`: InvoiceExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoicesAPI.UpdateInvoice`: %v\n", resp)
 }
 ```
 

@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique identifier for the object. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_PRICE_TIER]
 **CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
-**UnitsUpto** | Pointer to **NullableInt32** |  | [optional] 
-**UnitAmountAtom** | **int32** |  | 
 **FlatAmountAtom** | **int32** |  | 
+**Id** | **string** | Unique identifier for the object. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**UnitAmountAtom** | **int32** |  | 
+**UnitsUpto** | Pointer to **NullableInt32** |  | [optional] 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewPriceTierExternal
 
-`func NewPriceTierExternal(id string, createdAt time.Time, updatedAt time.Time, unitAmountAtom int32, flatAmountAtom int32, ) *PriceTierExternal`
+`func NewPriceTierExternal(createdAt time.Time, flatAmountAtom int32, id string, unitAmountAtom int32, updatedAt time.Time, ) *PriceTierExternal`
 
 NewPriceTierExternal instantiates a new PriceTierExternal object
 This constructor will assign default values to properties that have it defined,
@@ -31,51 +31,6 @@ will change when the set of required properties is changed
 NewPriceTierExternalWithDefaults instantiates a new PriceTierExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *PriceTierExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PriceTierExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PriceTierExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *PriceTierExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *PriceTierExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *PriceTierExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *PriceTierExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -97,24 +52,44 @@ and a boolean to check if the value has been set.
 SetCreatedAt sets CreatedAt field to given value.
 
 
-### GetUpdatedAt
+### GetFlatAmountAtom
 
-`func (o *PriceTierExternal) GetUpdatedAt() time.Time`
+`func (o *PriceTierExternal) GetFlatAmountAtom() int32`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetFlatAmountAtom returns the FlatAmountAtom field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetFlatAmountAtomOk
 
-`func (o *PriceTierExternal) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *PriceTierExternal) GetFlatAmountAtomOk() (*int32, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetFlatAmountAtomOk returns a tuple with the FlatAmountAtom field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetFlatAmountAtom
 
-`func (o *PriceTierExternal) SetUpdatedAt(v time.Time)`
+`func (o *PriceTierExternal) SetFlatAmountAtom(v int32)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetFlatAmountAtom sets FlatAmountAtom field to given value.
+
+
+### GetId
+
+`func (o *PriceTierExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PriceTierExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PriceTierExternal) SetId(v string)`
+
+SetId sets Id field to given value.
 
 
 ### GetIsDeleted
@@ -141,6 +116,51 @@ SetIsDeleted sets IsDeleted field to given value.
 `func (o *PriceTierExternal) HasIsDeleted() bool`
 
 HasIsDeleted returns a boolean if a field has been set.
+
+### GetObject
+
+`func (o *PriceTierExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *PriceTierExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *PriceTierExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *PriceTierExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### GetUnitAmountAtom
+
+`func (o *PriceTierExternal) GetUnitAmountAtom() int32`
+
+GetUnitAmountAtom returns the UnitAmountAtom field if non-nil, zero value otherwise.
+
+### GetUnitAmountAtomOk
+
+`func (o *PriceTierExternal) GetUnitAmountAtomOk() (*int32, bool)`
+
+GetUnitAmountAtomOk returns a tuple with the UnitAmountAtom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitAmountAtom
+
+`func (o *PriceTierExternal) SetUnitAmountAtom(v int32)`
+
+SetUnitAmountAtom sets UnitAmountAtom field to given value.
+
 
 ### GetUnitsUpto
 
@@ -177,44 +197,24 @@ HasUnitsUpto returns a boolean if a field has been set.
 `func (o *PriceTierExternal) UnsetUnitsUpto()`
 
 UnsetUnitsUpto ensures that no value is present for UnitsUpto, not even an explicit nil
-### GetUnitAmountAtom
+### GetUpdatedAt
 
-`func (o *PriceTierExternal) GetUnitAmountAtom() int32`
+`func (o *PriceTierExternal) GetUpdatedAt() time.Time`
 
-GetUnitAmountAtom returns the UnitAmountAtom field if non-nil, zero value otherwise.
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
-### GetUnitAmountAtomOk
+### GetUpdatedAtOk
 
-`func (o *PriceTierExternal) GetUnitAmountAtomOk() (*int32, bool)`
+`func (o *PriceTierExternal) GetUpdatedAtOk() (*time.Time, bool)`
 
-GetUnitAmountAtomOk returns a tuple with the UnitAmountAtom field if it's non-nil, zero value otherwise
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUnitAmountAtom
+### SetUpdatedAt
 
-`func (o *PriceTierExternal) SetUnitAmountAtom(v int32)`
+`func (o *PriceTierExternal) SetUpdatedAt(v time.Time)`
 
-SetUnitAmountAtom sets UnitAmountAtom field to given value.
-
-
-### GetFlatAmountAtom
-
-`func (o *PriceTierExternal) GetFlatAmountAtom() int32`
-
-GetFlatAmountAtom returns the FlatAmountAtom field if non-nil, zero value otherwise.
-
-### GetFlatAmountAtomOk
-
-`func (o *PriceTierExternal) GetFlatAmountAtomOk() (*int32, bool)`
-
-GetFlatAmountAtomOk returns a tuple with the FlatAmountAtom field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFlatAmountAtom
-
-`func (o *PriceTierExternal) SetFlatAmountAtom(v int32)`
-
-SetFlatAmountAtom sets FlatAmountAtom field to given value.
+SetUpdatedAt sets UpdatedAt field to given value.
 
 
 

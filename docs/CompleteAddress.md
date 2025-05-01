@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**City** | Pointer to **NullableString** |  | [optional] 
+**Country** | Pointer to **NullableString** |  | [optional] 
 **Line1** | Pointer to **NullableString** |  | [optional] 
 **Line2** | Pointer to **NullableString** |  | [optional] 
 **Line3** | Pointer to **NullableString** |  | [optional] 
-**City** | Pointer to **NullableString** |  | [optional] 
 **State** | Pointer to **NullableString** |  | [optional] 
 **ZipCode** | Pointer to **NullableString** |  | [optional] 
-**Country** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -31,6 +31,76 @@ NewCompleteAddressWithDefaults instantiates a new CompleteAddress object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetCity
+
+`func (o *CompleteAddress) GetCity() string`
+
+GetCity returns the City field if non-nil, zero value otherwise.
+
+### GetCityOk
+
+`func (o *CompleteAddress) GetCityOk() (*string, bool)`
+
+GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCity
+
+`func (o *CompleteAddress) SetCity(v string)`
+
+SetCity sets City field to given value.
+
+### HasCity
+
+`func (o *CompleteAddress) HasCity() bool`
+
+HasCity returns a boolean if a field has been set.
+
+### SetCityNil
+
+`func (o *CompleteAddress) SetCityNil(b bool)`
+
+ SetCityNil sets the value for City to be an explicit nil
+
+### UnsetCity
+`func (o *CompleteAddress) UnsetCity()`
+
+UnsetCity ensures that no value is present for City, not even an explicit nil
+### GetCountry
+
+`func (o *CompleteAddress) GetCountry() string`
+
+GetCountry returns the Country field if non-nil, zero value otherwise.
+
+### GetCountryOk
+
+`func (o *CompleteAddress) GetCountryOk() (*string, bool)`
+
+GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountry
+
+`func (o *CompleteAddress) SetCountry(v string)`
+
+SetCountry sets Country field to given value.
+
+### HasCountry
+
+`func (o *CompleteAddress) HasCountry() bool`
+
+HasCountry returns a boolean if a field has been set.
+
+### SetCountryNil
+
+`func (o *CompleteAddress) SetCountryNil(b bool)`
+
+ SetCountryNil sets the value for Country to be an explicit nil
+
+### UnsetCountry
+`func (o *CompleteAddress) UnsetCountry()`
+
+UnsetCountry ensures that no value is present for Country, not even an explicit nil
 ### GetLine1
 
 `func (o *CompleteAddress) GetLine1() string`
@@ -136,41 +206,6 @@ HasLine3 returns a boolean if a field has been set.
 `func (o *CompleteAddress) UnsetLine3()`
 
 UnsetLine3 ensures that no value is present for Line3, not even an explicit nil
-### GetCity
-
-`func (o *CompleteAddress) GetCity() string`
-
-GetCity returns the City field if non-nil, zero value otherwise.
-
-### GetCityOk
-
-`func (o *CompleteAddress) GetCityOk() (*string, bool)`
-
-GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCity
-
-`func (o *CompleteAddress) SetCity(v string)`
-
-SetCity sets City field to given value.
-
-### HasCity
-
-`func (o *CompleteAddress) HasCity() bool`
-
-HasCity returns a boolean if a field has been set.
-
-### SetCityNil
-
-`func (o *CompleteAddress) SetCityNil(b bool)`
-
- SetCityNil sets the value for City to be an explicit nil
-
-### UnsetCity
-`func (o *CompleteAddress) UnsetCity()`
-
-UnsetCity ensures that no value is present for City, not even an explicit nil
 ### GetState
 
 `func (o *CompleteAddress) GetState() string`
@@ -241,41 +276,6 @@ HasZipCode returns a boolean if a field has been set.
 `func (o *CompleteAddress) UnsetZipCode()`
 
 UnsetZipCode ensures that no value is present for ZipCode, not even an explicit nil
-### GetCountry
-
-`func (o *CompleteAddress) GetCountry() string`
-
-GetCountry returns the Country field if non-nil, zero value otherwise.
-
-### GetCountryOk
-
-`func (o *CompleteAddress) GetCountryOk() (*string, bool)`
-
-GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCountry
-
-`func (o *CompleteAddress) SetCountry(v string)`
-
-SetCountry sets Country field to given value.
-
-### HasCountry
-
-`func (o *CompleteAddress) HasCountry() bool`
-
-HasCountry returns a boolean if a field has been set.
-
-### SetCountryNil
-
-`func (o *CompleteAddress) SetCountryNil(b bool)`
-
- SetCountryNil sets the value for Country to be an explicit nil
-
-### UnsetCountry
-`func (o *CompleteAddress) UnsetCountry()`
-
-UnsetCountry ensures that no value is present for Country, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

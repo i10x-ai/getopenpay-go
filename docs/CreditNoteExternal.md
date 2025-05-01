@@ -4,24 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the credit_note. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_CREDIT_NOTE]
 **CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
-**TotalAmountAtom** | **int32** | The integer amount representing the total amount of the credit note. It is in atomic units (in USD this is cents). | 
-**Currency** | [**CurrencyEnum**](CurrencyEnum.md) |  | 
-**Reason** | [**NullableCreditNoteReason**](CreditNoteReason.md) |  | 
-**InvoiceId** | **string** | Unique ID of the invoice. | 
-**Items** | [**[]CreditNoteItemExternal**](CreditNoteItemExternal.md) |  | 
 **CreditAmountAtom** | **int32** | The integer amount representing the amount to credit the customer’s balance, which will be automatically applied to their next invoice. It is in atomic units (in USD this is cents). | 
+**Currency** | [**CurrencyEnum**](CurrencyEnum.md) | Three-letter ISO currency code, in lowercase. | 
+**Id** | **string** | Unique Identifier of the credit_note. | 
+**InvoiceId** | **string** | Unique ID of the invoice. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Items** | [**[]CreditNoteItemExternal**](CreditNoteItemExternal.md) | List of credit_note_items. | 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**Reason** | [**NullableCreditNoteReason**](CreditNoteReason.md) |  | 
 **RefundAmountAtom** | **int32** | The integer amount representing the amount to refund. If set, a refund will be created for the charge associated with the invoice. It is in atomic units (in USD this is cents). | 
+**TotalAmountAtom** | **int32** | The integer amount representing the total amount of the credit note. It is in atomic units (in USD this is cents). | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewCreditNoteExternal
 
-`func NewCreditNoteExternal(id string, createdAt time.Time, updatedAt time.Time, totalAmountAtom int32, currency CurrencyEnum, reason NullableCreditNoteReason, invoiceId string, items []CreditNoteItemExternal, creditAmountAtom int32, refundAmountAtom int32, ) *CreditNoteExternal`
+`func NewCreditNoteExternal(createdAt time.Time, creditAmountAtom int32, currency CurrencyEnum, id string, invoiceId string, items []CreditNoteItemExternal, reason NullableCreditNoteReason, refundAmountAtom int32, totalAmountAtom int32, updatedAt time.Time, ) *CreditNoteExternal`
 
 NewCreditNoteExternal instantiates a new CreditNoteExternal object
 This constructor will assign default values to properties that have it defined,
@@ -35,51 +35,6 @@ will change when the set of required properties is changed
 NewCreditNoteExternalWithDefaults instantiates a new CreditNoteExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *CreditNoteExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CreditNoteExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CreditNoteExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *CreditNoteExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *CreditNoteExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *CreditNoteExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *CreditNoteExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -101,24 +56,84 @@ and a boolean to check if the value has been set.
 SetCreatedAt sets CreatedAt field to given value.
 
 
-### GetUpdatedAt
+### GetCreditAmountAtom
 
-`func (o *CreditNoteExternal) GetUpdatedAt() time.Time`
+`func (o *CreditNoteExternal) GetCreditAmountAtom() int32`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetCreditAmountAtom returns the CreditAmountAtom field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetCreditAmountAtomOk
 
-`func (o *CreditNoteExternal) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *CreditNoteExternal) GetCreditAmountAtomOk() (*int32, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetCreditAmountAtomOk returns a tuple with the CreditAmountAtom field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetCreditAmountAtom
 
-`func (o *CreditNoteExternal) SetUpdatedAt(v time.Time)`
+`func (o *CreditNoteExternal) SetCreditAmountAtom(v int32)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetCreditAmountAtom sets CreditAmountAtom field to given value.
+
+
+### GetCurrency
+
+`func (o *CreditNoteExternal) GetCurrency() CurrencyEnum`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *CreditNoteExternal) GetCurrencyOk() (*CurrencyEnum, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *CreditNoteExternal) SetCurrency(v CurrencyEnum)`
+
+SetCurrency sets Currency field to given value.
+
+
+### GetId
+
+`func (o *CreditNoteExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *CreditNoteExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *CreditNoteExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetInvoiceId
+
+`func (o *CreditNoteExternal) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *CreditNoteExternal) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *CreditNoteExternal) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
 
 
 ### GetIsDeleted
@@ -146,45 +161,50 @@ SetIsDeleted sets IsDeleted field to given value.
 
 HasIsDeleted returns a boolean if a field has been set.
 
-### GetTotalAmountAtom
+### GetItems
 
-`func (o *CreditNoteExternal) GetTotalAmountAtom() int32`
+`func (o *CreditNoteExternal) GetItems() []CreditNoteItemExternal`
 
-GetTotalAmountAtom returns the TotalAmountAtom field if non-nil, zero value otherwise.
+GetItems returns the Items field if non-nil, zero value otherwise.
 
-### GetTotalAmountAtomOk
+### GetItemsOk
 
-`func (o *CreditNoteExternal) GetTotalAmountAtomOk() (*int32, bool)`
+`func (o *CreditNoteExternal) GetItemsOk() (*[]CreditNoteItemExternal, bool)`
 
-GetTotalAmountAtomOk returns a tuple with the TotalAmountAtom field if it's non-nil, zero value otherwise
+GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTotalAmountAtom
+### SetItems
 
-`func (o *CreditNoteExternal) SetTotalAmountAtom(v int32)`
+`func (o *CreditNoteExternal) SetItems(v []CreditNoteItemExternal)`
 
-SetTotalAmountAtom sets TotalAmountAtom field to given value.
+SetItems sets Items field to given value.
 
 
-### GetCurrency
+### GetObject
 
-`func (o *CreditNoteExternal) GetCurrency() CurrencyEnum`
+`func (o *CreditNoteExternal) GetObject() ObjectName`
 
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
+GetObject returns the Object field if non-nil, zero value otherwise.
 
-### GetCurrencyOk
+### GetObjectOk
 
-`func (o *CreditNoteExternal) GetCurrencyOk() (*CurrencyEnum, bool)`
+`func (o *CreditNoteExternal) GetObjectOk() (*ObjectName, bool)`
 
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCurrency
+### SetObject
 
-`func (o *CreditNoteExternal) SetCurrency(v CurrencyEnum)`
+`func (o *CreditNoteExternal) SetObject(v ObjectName)`
 
-SetCurrency sets Currency field to given value.
+SetObject sets Object field to given value.
 
+### HasObject
+
+`func (o *CreditNoteExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### GetReason
 
@@ -216,66 +236,6 @@ SetReason sets Reason field to given value.
 `func (o *CreditNoteExternal) UnsetReason()`
 
 UnsetReason ensures that no value is present for Reason, not even an explicit nil
-### GetInvoiceId
-
-`func (o *CreditNoteExternal) GetInvoiceId() string`
-
-GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
-
-### GetInvoiceIdOk
-
-`func (o *CreditNoteExternal) GetInvoiceIdOk() (*string, bool)`
-
-GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvoiceId
-
-`func (o *CreditNoteExternal) SetInvoiceId(v string)`
-
-SetInvoiceId sets InvoiceId field to given value.
-
-
-### GetItems
-
-`func (o *CreditNoteExternal) GetItems() []CreditNoteItemExternal`
-
-GetItems returns the Items field if non-nil, zero value otherwise.
-
-### GetItemsOk
-
-`func (o *CreditNoteExternal) GetItemsOk() (*[]CreditNoteItemExternal, bool)`
-
-GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetItems
-
-`func (o *CreditNoteExternal) SetItems(v []CreditNoteItemExternal)`
-
-SetItems sets Items field to given value.
-
-
-### GetCreditAmountAtom
-
-`func (o *CreditNoteExternal) GetCreditAmountAtom() int32`
-
-GetCreditAmountAtom returns the CreditAmountAtom field if non-nil, zero value otherwise.
-
-### GetCreditAmountAtomOk
-
-`func (o *CreditNoteExternal) GetCreditAmountAtomOk() (*int32, bool)`
-
-GetCreditAmountAtomOk returns a tuple with the CreditAmountAtom field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreditAmountAtom
-
-`func (o *CreditNoteExternal) SetCreditAmountAtom(v int32)`
-
-SetCreditAmountAtom sets CreditAmountAtom field to given value.
-
-
 ### GetRefundAmountAtom
 
 `func (o *CreditNoteExternal) GetRefundAmountAtom() int32`
@@ -294,6 +254,46 @@ and a boolean to check if the value has been set.
 `func (o *CreditNoteExternal) SetRefundAmountAtom(v int32)`
 
 SetRefundAmountAtom sets RefundAmountAtom field to given value.
+
+
+### GetTotalAmountAtom
+
+`func (o *CreditNoteExternal) GetTotalAmountAtom() int32`
+
+GetTotalAmountAtom returns the TotalAmountAtom field if non-nil, zero value otherwise.
+
+### GetTotalAmountAtomOk
+
+`func (o *CreditNoteExternal) GetTotalAmountAtomOk() (*int32, bool)`
+
+GetTotalAmountAtomOk returns a tuple with the TotalAmountAtom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalAmountAtom
+
+`func (o *CreditNoteExternal) SetTotalAmountAtom(v int32)`
+
+SetTotalAmountAtom sets TotalAmountAtom field to given value.
+
+
+### GetUpdatedAt
+
+`func (o *CreditNoteExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *CreditNoteExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *CreditNoteExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
 
 
 

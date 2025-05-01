@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Subscription** | [**SubscriptionExternal**](SubscriptionExternal.md) |  | 
 **Invoice** | Pointer to [**NullableInvoiceExternal**](InvoiceExternal.md) |  | [optional] 
+**Subscription** | [**SubscriptionExternal**](SubscriptionExternal.md) | Deleted subscription. | 
 
 ## Methods
 
@@ -25,26 +25,6 @@ will change when the set of required properties is changed
 NewDeleteSubscriptionResponseWithDefaults instantiates a new DeleteSubscriptionResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSubscription
-
-`func (o *DeleteSubscriptionResponse) GetSubscription() SubscriptionExternal`
-
-GetSubscription returns the Subscription field if non-nil, zero value otherwise.
-
-### GetSubscriptionOk
-
-`func (o *DeleteSubscriptionResponse) GetSubscriptionOk() (*SubscriptionExternal, bool)`
-
-GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubscription
-
-`func (o *DeleteSubscriptionResponse) SetSubscription(v SubscriptionExternal)`
-
-SetSubscription sets Subscription field to given value.
-
 
 ### GetInvoice
 
@@ -81,6 +61,26 @@ HasInvoice returns a boolean if a field has been set.
 `func (o *DeleteSubscriptionResponse) UnsetInvoice()`
 
 UnsetInvoice ensures that no value is present for Invoice, not even an explicit nil
+### GetSubscription
+
+`func (o *DeleteSubscriptionResponse) GetSubscription() SubscriptionExternal`
+
+GetSubscription returns the Subscription field if non-nil, zero value otherwise.
+
+### GetSubscriptionOk
+
+`func (o *DeleteSubscriptionResponse) GetSubscriptionOk() (*SubscriptionExternal, bool)`
+
+GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscription
+
+`func (o *DeleteSubscriptionResponse) SetSubscription(v SubscriptionExternal)`
+
+SetSubscription sets Subscription field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

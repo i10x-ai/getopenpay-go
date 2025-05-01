@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func Test_getopenpay_EventsAPIService(t *testing.T) {
@@ -53,6 +53,18 @@ func Test_getopenpay_EventsAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.EventsAPI.SearchEvents(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsAPIService TriggerEventCallback", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.EventsAPI.TriggerEventCallback(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

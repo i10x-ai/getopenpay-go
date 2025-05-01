@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentMethodId** | Pointer to **NullableString** |  | [optional] 
-**Description** | Pointer to **string** | Description for newly created invoice | [optional] [default to "Manual creation of invoice"]
 **CouponId** | Pointer to **NullableString** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**Description** | Pointer to **string** | Description for newly created invoice | [optional] [default to "Manual creation of invoice"]
 **EmailInvoiceOnFinalization** | Pointer to **NullableBool** |  | [optional] 
+**PaymentMethodId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -28,66 +28,6 @@ will change when the set of required properties is changed
 NewUpdateInvoiceRequestWithDefaults instantiates a new UpdateInvoiceRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPaymentMethodId
-
-`func (o *UpdateInvoiceRequest) GetPaymentMethodId() string`
-
-GetPaymentMethodId returns the PaymentMethodId field if non-nil, zero value otherwise.
-
-### GetPaymentMethodIdOk
-
-`func (o *UpdateInvoiceRequest) GetPaymentMethodIdOk() (*string, bool)`
-
-GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPaymentMethodId
-
-`func (o *UpdateInvoiceRequest) SetPaymentMethodId(v string)`
-
-SetPaymentMethodId sets PaymentMethodId field to given value.
-
-### HasPaymentMethodId
-
-`func (o *UpdateInvoiceRequest) HasPaymentMethodId() bool`
-
-HasPaymentMethodId returns a boolean if a field has been set.
-
-### SetPaymentMethodIdNil
-
-`func (o *UpdateInvoiceRequest) SetPaymentMethodIdNil(b bool)`
-
- SetPaymentMethodIdNil sets the value for PaymentMethodId to be an explicit nil
-
-### UnsetPaymentMethodId
-`func (o *UpdateInvoiceRequest) UnsetPaymentMethodId()`
-
-UnsetPaymentMethodId ensures that no value is present for PaymentMethodId, not even an explicit nil
-### GetDescription
-
-`func (o *UpdateInvoiceRequest) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *UpdateInvoiceRequest) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *UpdateInvoiceRequest) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *UpdateInvoiceRequest) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
 
 ### GetCouponId
 
@@ -159,6 +99,31 @@ HasCustomFields returns a boolean if a field has been set.
 `func (o *UpdateInvoiceRequest) UnsetCustomFields()`
 
 UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
+### GetDescription
+
+`func (o *UpdateInvoiceRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *UpdateInvoiceRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *UpdateInvoiceRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *UpdateInvoiceRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
 ### GetEmailInvoiceOnFinalization
 
 `func (o *UpdateInvoiceRequest) GetEmailInvoiceOnFinalization() bool`
@@ -194,6 +159,41 @@ HasEmailInvoiceOnFinalization returns a boolean if a field has been set.
 `func (o *UpdateInvoiceRequest) UnsetEmailInvoiceOnFinalization()`
 
 UnsetEmailInvoiceOnFinalization ensures that no value is present for EmailInvoiceOnFinalization, not even an explicit nil
+### GetPaymentMethodId
+
+`func (o *UpdateInvoiceRequest) GetPaymentMethodId() string`
+
+GetPaymentMethodId returns the PaymentMethodId field if non-nil, zero value otherwise.
+
+### GetPaymentMethodIdOk
+
+`func (o *UpdateInvoiceRequest) GetPaymentMethodIdOk() (*string, bool)`
+
+GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodId
+
+`func (o *UpdateInvoiceRequest) SetPaymentMethodId(v string)`
+
+SetPaymentMethodId sets PaymentMethodId field to given value.
+
+### HasPaymentMethodId
+
+`func (o *UpdateInvoiceRequest) HasPaymentMethodId() bool`
+
+HasPaymentMethodId returns a boolean if a field has been set.
+
+### SetPaymentMethodIdNil
+
+`func (o *UpdateInvoiceRequest) SetPaymentMethodIdNil(b bool)`
+
+ SetPaymentMethodIdNil sets the value for PaymentMethodId to be an explicit nil
+
+### UnsetPaymentMethodId
+`func (o *UpdateInvoiceRequest) UnsetPaymentMethodId()`
+
+UnsetPaymentMethodId ensures that no value is present for PaymentMethodId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

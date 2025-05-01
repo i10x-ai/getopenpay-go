@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetEvent**](EventsAPI.md#GetEvent) | **Get** /events/{event_id} | Get Event
 [**ListEvents**](EventsAPI.md#ListEvents) | **Post** /events/list | List Events
 [**SearchEvents**](EventsAPI.md#SearchEvents) | **Post** /events/search | Search Events
+[**TriggerEventCallback**](EventsAPI.md#TriggerEventCallback) | **Post** /events/trigger-webhook | Trigger Event Callback
 
 
 
@@ -22,24 +23,24 @@ Get Event
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    eventId := "eventId_example" // string | 
+	eventId := "eventId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventsAPI.GetEvent(context.Background(), eventId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.GetEvent``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetEvent`: EventExternal
-    fmt.Fprintf(os.Stdout, "Response from `EventsAPI.GetEvent`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EventsAPI.GetEvent(context.Background(), eventId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.GetEvent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetEvent`: EventExternal
+	fmt.Fprintf(os.Stdout, "Response from `EventsAPI.GetEvent`: %v\n", resp)
 }
 ```
 
@@ -90,24 +91,24 @@ List Events
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    eventsQueryParams := *openapiclient.NewEventsQueryParams() // EventsQueryParams | 
+	eventsQueryParams := *openapiclient.NewEventsQueryParams() // EventsQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventsAPI.ListEvents(context.Background()).EventsQueryParams(eventsQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.ListEvents``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListEvents`: ListResponseEventExternal
-    fmt.Fprintf(os.Stdout, "Response from `EventsAPI.ListEvents`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EventsAPI.ListEvents(context.Background()).EventsQueryParams(eventsQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.ListEvents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListEvents`: ListResponseEventExternal
+	fmt.Fprintf(os.Stdout, "Response from `EventsAPI.ListEvents`: %v\n", resp)
 }
 ```
 
@@ -154,24 +155,24 @@ Search Events
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    eventSearchParams := *openapiclient.NewEventSearchParams("ObjectId_example") // EventSearchParams | 
+	eventSearchParams := *openapiclient.NewEventSearchParams("ObjectId_example") // EventSearchParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventsAPI.SearchEvents(context.Background()).EventSearchParams(eventSearchParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.SearchEvents``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchEvents`: ListResponseEventExternal
-    fmt.Fprintf(os.Stdout, "Response from `EventsAPI.SearchEvents`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EventsAPI.SearchEvents(context.Background()).EventSearchParams(eventSearchParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.SearchEvents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchEvents`: ListResponseEventExternal
+	fmt.Fprintf(os.Stdout, "Response from `EventsAPI.SearchEvents`: %v\n", resp)
 }
 ```
 
@@ -191,6 +192,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListResponseEventExternal**](ListResponseEventExternal.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TriggerEventCallback
+
+> EventRetriggerResponse TriggerEventCallback(ctx).EventRetriggerRequest(eventRetriggerRequest).Execute()
+
+Trigger Event Callback
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
+)
+
+func main() {
+	eventRetriggerRequest := *openapiclient.NewEventRetriggerRequest("event_dev_abc123") // EventRetriggerRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EventsAPI.TriggerEventCallback(context.Background()).EventRetriggerRequest(eventRetriggerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.TriggerEventCallback``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TriggerEventCallback`: EventRetriggerResponse
+	fmt.Fprintf(os.Stdout, "Response from `EventsAPI.TriggerEventCallback`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTriggerEventCallbackRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventRetriggerRequest** | [**EventRetriggerRequest**](EventRetriggerRequest.md) |  | 
+
+### Return type
+
+[**EventRetriggerResponse**](EventRetriggerResponse.md)
 
 ### Authorization
 

@@ -4,25 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_EVENT]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **AccountId** | **NullableString** |  | 
-**Type** | [**EventType**](EventType.md) |  | 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
 **Data** | **map[string]interface{}** |  | 
 **DataPrevious** | **map[string]interface{}** |  | 
+**Id** | **string** |  | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**PendingWebhooks** | **int32** |  | 
 **RequestId** | **NullableString** |  | 
 **RequestIdempotencyKey** | **NullableString** |  | 
-**PendingWebhooks** | **int32** |  | 
+**Type** | [**EventType**](EventType.md) |  | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 **User** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewEventExternal
 
-`func NewEventExternal(id string, createdAt time.Time, updatedAt time.Time, accountId NullableString, type_ EventType, data map[string]interface{}, dataPrevious map[string]interface{}, requestId NullableString, requestIdempotencyKey NullableString, pendingWebhooks int32, ) *EventExternal`
+`func NewEventExternal(accountId NullableString, createdAt time.Time, data map[string]interface{}, dataPrevious map[string]interface{}, id string, pendingWebhooks int32, requestId NullableString, requestIdempotencyKey NullableString, type_ EventType, updatedAt time.Time, ) *EventExternal`
 
 NewEventExternal instantiates a new EventExternal object
 This constructor will assign default values to properties that have it defined,
@@ -36,116 +36,6 @@ will change when the set of required properties is changed
 NewEventExternalWithDefaults instantiates a new EventExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *EventExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *EventExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *EventExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *EventExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *EventExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *EventExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *EventExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *EventExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *EventExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *EventExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *EventExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *EventExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *EventExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *EventExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *EventExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *EventExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *EventExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -177,24 +67,24 @@ SetAccountId sets AccountId field to given value.
 `func (o *EventExternal) UnsetAccountId()`
 
 UnsetAccountId ensures that no value is present for AccountId, not even an explicit nil
-### GetType
+### GetCreatedAt
 
-`func (o *EventExternal) GetType() EventType`
+`func (o *EventExternal) GetCreatedAt() time.Time`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetCreatedAtOk
 
-`func (o *EventExternal) GetTypeOk() (*EventType, bool)`
+`func (o *EventExternal) GetCreatedAtOk() (*time.Time, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetCreatedAt
 
-`func (o *EventExternal) SetType(v EventType)`
+`func (o *EventExternal) SetCreatedAt(v time.Time)`
 
-SetType sets Type field to given value.
+SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetData
@@ -247,6 +137,96 @@ SetDataPrevious sets DataPrevious field to given value.
 `func (o *EventExternal) UnsetDataPrevious()`
 
 UnsetDataPrevious ensures that no value is present for DataPrevious, not even an explicit nil
+### GetId
+
+`func (o *EventExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *EventExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *EventExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetIsDeleted
+
+`func (o *EventExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *EventExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *EventExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *EventExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
+### GetObject
+
+`func (o *EventExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *EventExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *EventExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *EventExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### GetPendingWebhooks
+
+`func (o *EventExternal) GetPendingWebhooks() int32`
+
+GetPendingWebhooks returns the PendingWebhooks field if non-nil, zero value otherwise.
+
+### GetPendingWebhooksOk
+
+`func (o *EventExternal) GetPendingWebhooksOk() (*int32, bool)`
+
+GetPendingWebhooksOk returns a tuple with the PendingWebhooks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPendingWebhooks
+
+`func (o *EventExternal) SetPendingWebhooks(v int32)`
+
+SetPendingWebhooks sets PendingWebhooks field to given value.
+
+
 ### GetRequestId
 
 `func (o *EventExternal) GetRequestId() string`
@@ -307,24 +287,44 @@ SetRequestIdempotencyKey sets RequestIdempotencyKey field to given value.
 `func (o *EventExternal) UnsetRequestIdempotencyKey()`
 
 UnsetRequestIdempotencyKey ensures that no value is present for RequestIdempotencyKey, not even an explicit nil
-### GetPendingWebhooks
+### GetType
 
-`func (o *EventExternal) GetPendingWebhooks() int32`
+`func (o *EventExternal) GetType() EventType`
 
-GetPendingWebhooks returns the PendingWebhooks field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetPendingWebhooksOk
+### GetTypeOk
 
-`func (o *EventExternal) GetPendingWebhooksOk() (*int32, bool)`
+`func (o *EventExternal) GetTypeOk() (*EventType, bool)`
 
-GetPendingWebhooksOk returns a tuple with the PendingWebhooks field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPendingWebhooks
+### SetType
 
-`func (o *EventExternal) SetPendingWebhooks(v int32)`
+`func (o *EventExternal) SetType(v EventType)`
 
-SetPendingWebhooks sets PendingWebhooks field to given value.
+SetType sets Type field to given value.
+
+
+### GetUpdatedAt
+
+`func (o *EventExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *EventExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *EventExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
 
 
 ### GetUser

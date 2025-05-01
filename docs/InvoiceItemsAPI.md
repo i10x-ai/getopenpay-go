@@ -22,24 +22,24 @@ Delete Invoice Item By Id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceItemId := "invoiceitem_dev_abc123" // string | Unique identifier of the invoice_item.
+	invoiceItemId := "invoiceitem_dev_abc123" // string | Unique identifier of the invoice_item.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoiceItemsAPI.DeleteInvoiceItemById(context.Background(), invoiceItemId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoiceItemsAPI.DeleteInvoiceItemById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DeleteInvoiceItemById`: DeleteInvoiceItemResponse
-    fmt.Fprintf(os.Stdout, "Response from `InvoiceItemsAPI.DeleteInvoiceItemById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoiceItemsAPI.DeleteInvoiceItemById(context.Background(), invoiceItemId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoiceItemsAPI.DeleteInvoiceItemById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteInvoiceItemById`: DeleteInvoiceItemResponse
+	fmt.Fprintf(os.Stdout, "Response from `InvoiceItemsAPI.DeleteInvoiceItemById`: %v\n", resp)
 }
 ```
 
@@ -90,24 +90,24 @@ Get Invoice Item
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceItemId := "invoiceitem_dev_abc123" // string | Unique identifier of the invoice_item.
+	invoiceItemId := "invoiceitem_dev_abc123" // string | Unique identifier of the invoice_item.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoiceItemsAPI.GetInvoiceItem(context.Background(), invoiceItemId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoiceItemsAPI.GetInvoiceItem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetInvoiceItem`: InvoiceItemExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoiceItemsAPI.GetInvoiceItem`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoiceItemsAPI.GetInvoiceItem(context.Background(), invoiceItemId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoiceItemsAPI.GetInvoiceItem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetInvoiceItem`: InvoiceItemExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoiceItemsAPI.GetInvoiceItem`: %v\n", resp)
 }
 ```
 
@@ -158,24 +158,24 @@ List Invoice Items
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    invoiceItemsQueryParams := *openapiclient.NewInvoiceItemsQueryParams() // InvoiceItemsQueryParams | 
+	invoiceItemsQueryParams := *openapiclient.NewInvoiceItemsQueryParams() // InvoiceItemsQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InvoiceItemsAPI.ListInvoiceItems(context.Background()).InvoiceItemsQueryParams(invoiceItemsQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InvoiceItemsAPI.ListInvoiceItems``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListInvoiceItems`: ListResponseInvoiceItemExternal
-    fmt.Fprintf(os.Stdout, "Response from `InvoiceItemsAPI.ListInvoiceItems`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InvoiceItemsAPI.ListInvoiceItems(context.Background()).InvoiceItemsQueryParams(invoiceItemsQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InvoiceItemsAPI.ListInvoiceItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListInvoiceItems`: ListResponseInvoiceItemExternal
+	fmt.Fprintf(os.Stdout, "Response from `InvoiceItemsAPI.ListInvoiceItems`: %v\n", resp)
 }
 ```
 

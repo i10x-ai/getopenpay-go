@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerId** | **string** | The ID of an existing customer. | 
-**ReturnUrl** | **string** | The default URL to redirect customers to when they click on the portal&#39;s link to return to your website. | 
+**ReturnUrl** | **string** | The default URL to redirect customers to when they click on the portal\&quot;s link to return to your website. | 
 
 ## Methods
 

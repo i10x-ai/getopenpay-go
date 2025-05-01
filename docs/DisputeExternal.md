@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique identifier of the dispute. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_DISPUTE]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
-**TheirDisputeId** | **string** | There dispute id. | 
 **AccountId** | **string** | Unique identifier for the account. | 
-**PaymentIntentId** | **string** | The payment intent id. | 
-**TheirPaymentIntentId** | **string** | Their payment intent id | 
-**Reason** | Pointer to **NullableString** |  | [optional] 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
+**Id** | **string** | Unique identifier of the dispute. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**PaymentIntentId** | **string** | The payment intent id. | 
+**Reason** | Pointer to **NullableString** |  | [optional] 
+**TheirDisputeId** | **string** | There dispute id. | 
+**TheirPaymentIntentId** | **string** | Their payment intent id | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewDisputeExternal
 
-`func NewDisputeExternal(id string, createdAt time.Time, updatedAt time.Time, theirDisputeId string, accountId string, paymentIntentId string, theirPaymentIntentId string, ) *DisputeExternal`
+`func NewDisputeExternal(accountId string, createdAt time.Time, id string, paymentIntentId string, theirDisputeId string, theirPaymentIntentId string, updatedAt time.Time, ) *DisputeExternal`
 
 NewDisputeExternal instantiates a new DisputeExternal object
 This constructor will assign default values to properties that have it defined,
@@ -35,50 +35,25 @@ NewDisputeExternalWithDefaults instantiates a new DisputeExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetAccountId
 
-`func (o *DisputeExternal) GetId() string`
+`func (o *DisputeExternal) GetAccountId() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetAccountId returns the AccountId field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetAccountIdOk
 
-`func (o *DisputeExternal) GetIdOk() (*string, bool)`
+`func (o *DisputeExternal) GetAccountIdOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetAccountId
 
-`func (o *DisputeExternal) SetId(v string)`
+`func (o *DisputeExternal) SetAccountId(v string)`
 
-SetId sets Id field to given value.
+SetAccountId sets AccountId field to given value.
 
-
-### GetObject
-
-`func (o *DisputeExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *DisputeExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *DisputeExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *DisputeExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -100,24 +75,24 @@ and a boolean to check if the value has been set.
 SetCreatedAt sets CreatedAt field to given value.
 
 
-### GetUpdatedAt
+### GetId
 
-`func (o *DisputeExternal) GetUpdatedAt() time.Time`
+`func (o *DisputeExternal) GetId() string`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetIdOk
 
-`func (o *DisputeExternal) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *DisputeExternal) GetIdOk() (*string, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetId
 
-`func (o *DisputeExternal) SetUpdatedAt(v time.Time)`
+`func (o *DisputeExternal) SetId(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetId sets Id field to given value.
 
 
 ### GetIsDeleted
@@ -145,45 +120,65 @@ SetIsDeleted sets IsDeleted field to given value.
 
 HasIsDeleted returns a boolean if a field has been set.
 
-### GetTheirDisputeId
+### GetMetadata
 
-`func (o *DisputeExternal) GetTheirDisputeId() string`
+`func (o *DisputeExternal) GetMetadata() map[string]interface{}`
 
-GetTheirDisputeId returns the TheirDisputeId field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetTheirDisputeIdOk
+### GetMetadataOk
 
-`func (o *DisputeExternal) GetTheirDisputeIdOk() (*string, bool)`
+`func (o *DisputeExternal) GetMetadataOk() (*map[string]interface{}, bool)`
 
-GetTheirDisputeIdOk returns a tuple with the TheirDisputeId field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTheirDisputeId
+### SetMetadata
 
-`func (o *DisputeExternal) SetTheirDisputeId(v string)`
+`func (o *DisputeExternal) SetMetadata(v map[string]interface{})`
 
-SetTheirDisputeId sets TheirDisputeId field to given value.
+SetMetadata sets Metadata field to given value.
 
+### HasMetadata
 
-### GetAccountId
+`func (o *DisputeExternal) HasMetadata() bool`
 
-`func (o *DisputeExternal) GetAccountId() string`
+HasMetadata returns a boolean if a field has been set.
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+### SetMetadataNil
 
-### GetAccountIdOk
+`func (o *DisputeExternal) SetMetadataNil(b bool)`
 
-`func (o *DisputeExternal) GetAccountIdOk() (*string, bool)`
+ SetMetadataNil sets the value for Metadata to be an explicit nil
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+### UnsetMetadata
+`func (o *DisputeExternal) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetObject
+
+`func (o *DisputeExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *DisputeExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetObject
 
-`func (o *DisputeExternal) SetAccountId(v string)`
+`func (o *DisputeExternal) SetObject(v ObjectName)`
 
-SetAccountId sets AccountId field to given value.
+SetObject sets Object field to given value.
 
+### HasObject
+
+`func (o *DisputeExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### GetPaymentIntentId
 
@@ -203,26 +198,6 @@ and a boolean to check if the value has been set.
 `func (o *DisputeExternal) SetPaymentIntentId(v string)`
 
 SetPaymentIntentId sets PaymentIntentId field to given value.
-
-
-### GetTheirPaymentIntentId
-
-`func (o *DisputeExternal) GetTheirPaymentIntentId() string`
-
-GetTheirPaymentIntentId returns the TheirPaymentIntentId field if non-nil, zero value otherwise.
-
-### GetTheirPaymentIntentIdOk
-
-`func (o *DisputeExternal) GetTheirPaymentIntentIdOk() (*string, bool)`
-
-GetTheirPaymentIntentIdOk returns a tuple with the TheirPaymentIntentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTheirPaymentIntentId
-
-`func (o *DisputeExternal) SetTheirPaymentIntentId(v string)`
-
-SetTheirPaymentIntentId sets TheirPaymentIntentId field to given value.
 
 
 ### GetReason
@@ -260,41 +235,66 @@ HasReason returns a boolean if a field has been set.
 `func (o *DisputeExternal) UnsetReason()`
 
 UnsetReason ensures that no value is present for Reason, not even an explicit nil
-### GetMetadata
+### GetTheirDisputeId
 
-`func (o *DisputeExternal) GetMetadata() map[string]interface{}`
+`func (o *DisputeExternal) GetTheirDisputeId() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetTheirDisputeId returns the TheirDisputeId field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetTheirDisputeIdOk
 
-`func (o *DisputeExternal) GetMetadataOk() (*map[string]interface{}, bool)`
+`func (o *DisputeExternal) GetTheirDisputeIdOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetTheirDisputeIdOk returns a tuple with the TheirDisputeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetTheirDisputeId
 
-`func (o *DisputeExternal) SetMetadata(v map[string]interface{})`
+`func (o *DisputeExternal) SetTheirDisputeId(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetTheirDisputeId sets TheirDisputeId field to given value.
 
-### HasMetadata
 
-`func (o *DisputeExternal) HasMetadata() bool`
+### GetTheirPaymentIntentId
 
-HasMetadata returns a boolean if a field has been set.
+`func (o *DisputeExternal) GetTheirPaymentIntentId() string`
 
-### SetMetadataNil
+GetTheirPaymentIntentId returns the TheirPaymentIntentId field if non-nil, zero value otherwise.
 
-`func (o *DisputeExternal) SetMetadataNil(b bool)`
+### GetTheirPaymentIntentIdOk
 
- SetMetadataNil sets the value for Metadata to be an explicit nil
+`func (o *DisputeExternal) GetTheirPaymentIntentIdOk() (*string, bool)`
 
-### UnsetMetadata
-`func (o *DisputeExternal) UnsetMetadata()`
+GetTheirPaymentIntentIdOk returns a tuple with the TheirPaymentIntentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
 
-UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### SetTheirPaymentIntentId
+
+`func (o *DisputeExternal) SetTheirPaymentIntentId(v string)`
+
+SetTheirPaymentIntentId sets TheirPaymentIntentId field to given value.
+
+
+### GetUpdatedAt
+
+`func (o *DisputeExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *DisputeExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *DisputeExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

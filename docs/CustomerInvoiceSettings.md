@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailReceiptOnPaid** | Pointer to **NullableBool** |  | [optional] 
+**CustomerTaxIds** | Pointer to [**[]TaxIdSetting**](TaxIdSetting.md) | The tax IDs of the customer. | [optional] 
 **DefaultNetD** | Pointer to **NullableInt32** |  | [optional] 
+**EmailReceiptOnPaid** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -26,41 +27,31 @@ NewCustomerInvoiceSettingsWithDefaults instantiates a new CustomerInvoiceSetting
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEmailReceiptOnPaid
+### GetCustomerTaxIds
 
-`func (o *CustomerInvoiceSettings) GetEmailReceiptOnPaid() bool`
+`func (o *CustomerInvoiceSettings) GetCustomerTaxIds() []TaxIdSetting`
 
-GetEmailReceiptOnPaid returns the EmailReceiptOnPaid field if non-nil, zero value otherwise.
+GetCustomerTaxIds returns the CustomerTaxIds field if non-nil, zero value otherwise.
 
-### GetEmailReceiptOnPaidOk
+### GetCustomerTaxIdsOk
 
-`func (o *CustomerInvoiceSettings) GetEmailReceiptOnPaidOk() (*bool, bool)`
+`func (o *CustomerInvoiceSettings) GetCustomerTaxIdsOk() (*[]TaxIdSetting, bool)`
 
-GetEmailReceiptOnPaidOk returns a tuple with the EmailReceiptOnPaid field if it's non-nil, zero value otherwise
+GetCustomerTaxIdsOk returns a tuple with the CustomerTaxIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEmailReceiptOnPaid
+### SetCustomerTaxIds
 
-`func (o *CustomerInvoiceSettings) SetEmailReceiptOnPaid(v bool)`
+`func (o *CustomerInvoiceSettings) SetCustomerTaxIds(v []TaxIdSetting)`
 
-SetEmailReceiptOnPaid sets EmailReceiptOnPaid field to given value.
+SetCustomerTaxIds sets CustomerTaxIds field to given value.
 
-### HasEmailReceiptOnPaid
+### HasCustomerTaxIds
 
-`func (o *CustomerInvoiceSettings) HasEmailReceiptOnPaid() bool`
+`func (o *CustomerInvoiceSettings) HasCustomerTaxIds() bool`
 
-HasEmailReceiptOnPaid returns a boolean if a field has been set.
+HasCustomerTaxIds returns a boolean if a field has been set.
 
-### SetEmailReceiptOnPaidNil
-
-`func (o *CustomerInvoiceSettings) SetEmailReceiptOnPaidNil(b bool)`
-
- SetEmailReceiptOnPaidNil sets the value for EmailReceiptOnPaid to be an explicit nil
-
-### UnsetEmailReceiptOnPaid
-`func (o *CustomerInvoiceSettings) UnsetEmailReceiptOnPaid()`
-
-UnsetEmailReceiptOnPaid ensures that no value is present for EmailReceiptOnPaid, not even an explicit nil
 ### GetDefaultNetD
 
 `func (o *CustomerInvoiceSettings) GetDefaultNetD() int32`
@@ -96,6 +87,41 @@ HasDefaultNetD returns a boolean if a field has been set.
 `func (o *CustomerInvoiceSettings) UnsetDefaultNetD()`
 
 UnsetDefaultNetD ensures that no value is present for DefaultNetD, not even an explicit nil
+### GetEmailReceiptOnPaid
+
+`func (o *CustomerInvoiceSettings) GetEmailReceiptOnPaid() bool`
+
+GetEmailReceiptOnPaid returns the EmailReceiptOnPaid field if non-nil, zero value otherwise.
+
+### GetEmailReceiptOnPaidOk
+
+`func (o *CustomerInvoiceSettings) GetEmailReceiptOnPaidOk() (*bool, bool)`
+
+GetEmailReceiptOnPaidOk returns a tuple with the EmailReceiptOnPaid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailReceiptOnPaid
+
+`func (o *CustomerInvoiceSettings) SetEmailReceiptOnPaid(v bool)`
+
+SetEmailReceiptOnPaid sets EmailReceiptOnPaid field to given value.
+
+### HasEmailReceiptOnPaid
+
+`func (o *CustomerInvoiceSettings) HasEmailReceiptOnPaid() bool`
+
+HasEmailReceiptOnPaid returns a boolean if a field has been set.
+
+### SetEmailReceiptOnPaidNil
+
+`func (o *CustomerInvoiceSettings) SetEmailReceiptOnPaidNil(b bool)`
+
+ SetEmailReceiptOnPaidNil sets the value for EmailReceiptOnPaid to be an explicit nil
+
+### UnsetEmailReceiptOnPaid
+`func (o *CustomerInvoiceSettings) UnsetEmailReceiptOnPaid()`
+
+UnsetEmailReceiptOnPaid ensures that no value is present for EmailReceiptOnPaid, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,24 +24,24 @@ Create Credit Note
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createCreditNoteRequest := *openapiclient.NewCreateCreditNoteRequest("InvoiceId_example", int32(123), []openapiclient.CreateCreditNoteLine{*openapiclient.NewCreateCreditNoteLine(int32(123), openapiclient.CurrencyEnum("usd"), openapiclient.CreditNoteLineType("invoice_line_item"))}) // CreateCreditNoteRequest | 
+	createCreditNoteRequest := *openapiclient.NewCreateCreditNoteRequest("InvoiceId_example", []openapiclient.CreateCreditNoteLine{*openapiclient.NewCreateCreditNoteLine(int32(123), openapiclient.CurrencyEnum("usd"), openapiclient.CreditNoteLineType("invoice_line_item"))}, int32(123)) // CreateCreditNoteRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CreditNotesAPI.CreateCreditNote(context.Background()).CreateCreditNoteRequest(createCreditNoteRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CreditNotesAPI.CreateCreditNote``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCreditNote`: CreditNoteExternal
-    fmt.Fprintf(os.Stdout, "Response from `CreditNotesAPI.CreateCreditNote`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CreditNotesAPI.CreateCreditNote(context.Background()).CreateCreditNoteRequest(createCreditNoteRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CreditNotesAPI.CreateCreditNote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCreditNote`: CreditNoteExternal
+	fmt.Fprintf(os.Stdout, "Response from `CreditNotesAPI.CreateCreditNote`: %v\n", resp)
 }
 ```
 
@@ -88,24 +88,24 @@ Get Credit Note
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    creditNoteId := "credit_note_dev_abc123" // string | Unique Identifier of the credit_note.
+	creditNoteId := "credit_note_dev_abc123" // string | Unique Identifier of the credit_note.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CreditNotesAPI.GetCreditNote(context.Background(), creditNoteId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CreditNotesAPI.GetCreditNote``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCreditNote`: CreditNoteExternal
-    fmt.Fprintf(os.Stdout, "Response from `CreditNotesAPI.GetCreditNote`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CreditNotesAPI.GetCreditNote(context.Background(), creditNoteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CreditNotesAPI.GetCreditNote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCreditNote`: CreditNoteExternal
+	fmt.Fprintf(os.Stdout, "Response from `CreditNotesAPI.GetCreditNote`: %v\n", resp)
 }
 ```
 
@@ -156,24 +156,24 @@ List Credit Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    creditNoteQueryParams := *openapiclient.NewCreditNoteQueryParams() // CreditNoteQueryParams | 
+	creditNoteQueryParams := *openapiclient.NewCreditNoteQueryParams() // CreditNoteQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CreditNotesAPI.ListCreditNotes(context.Background()).CreditNoteQueryParams(creditNoteQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CreditNotesAPI.ListCreditNotes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListCreditNotes`: ListResponseCreditNoteExternal
-    fmt.Fprintf(os.Stdout, "Response from `CreditNotesAPI.ListCreditNotes`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CreditNotesAPI.ListCreditNotes(context.Background()).CreditNoteQueryParams(creditNoteQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CreditNotesAPI.ListCreditNotes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListCreditNotes`: ListResponseCreditNoteExternal
+	fmt.Fprintf(os.Stdout, "Response from `CreditNotesAPI.ListCreditNotes`: %v\n", resp)
 }
 ```
 

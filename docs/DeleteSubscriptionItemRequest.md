@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DropAtEnd** | Pointer to **bool** | Whether or not this item will be dropped from subscription before next renewal | [optional] [default to true]
-**ProrationBehavior** | Pointer to [**ProrationEnum**](ProrationEnum.md) |  | [optional] [default to PRORATIONENUM_ALWAYS_INVOICE]
+**ProrationBehavior** | Pointer to [**ProrationEnum**](ProrationEnum.md) | Determines how to handle prorations while deleting item.In case of subscription is in trialing state, invoice items if any will be for amount_atom 0. | [optional] 
 
 ## Methods
 

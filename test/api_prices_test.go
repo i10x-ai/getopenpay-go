@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func Test_getopenpay_PricesAPIService(t *testing.T) {
@@ -48,6 +48,20 @@ func Test_getopenpay_PricesAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test PricesAPIService GetPriceAddOns", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var priceId string
+
+		resp, httpRes, err := apiClient.PricesAPI.GetPriceAddOns(context.Background(), priceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test PricesAPIService GetPriceForProduct", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -67,18 +81,6 @@ func Test_getopenpay_PricesAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.PricesAPI.ListPrices(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test PricesAPIService SearchPrices", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.PricesAPI.SearchPrices(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

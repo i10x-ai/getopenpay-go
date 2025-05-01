@@ -4,18 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CheckoutPreferences** | Pointer to [**NullableCheckoutPreferences**](CheckoutPreferences.md) |  | [optional] 
 **ClientReferenceId** | Pointer to **NullableString** |  | [optional] 
 **CouponId** | Pointer to **NullableString** |  | [optional] 
 **Currency** | Pointer to [**NullableCurrencyEnum**](CurrencyEnum.md) |  | [optional] 
-**CustomerId** | Pointer to **NullableString** |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomerEmail** | Pointer to **NullableString** |  | [optional] 
-**LineItems** | Pointer to [**[]CreateCheckoutLineItem**](CreateCheckoutLineItem.md) |  | [optional] 
-**Mode** | [**CheckoutMode**](CheckoutMode.md) |  | 
+**CustomerId** | Pointer to **NullableString** |  | [optional] 
+**LineItems** | Pointer to [**[]CreateCheckoutLineItem**](CreateCheckoutLineItem.md) | The line items purchased by the customer. | [optional] 
+**Mode** | [**CheckoutMode**](CheckoutMode.md) | The mode of the Checkout Session. Possible values: payment (one-time payments), setup (collect payment info), subscription (recurring payments). | 
 **ReturnUrl** | Pointer to **NullableString** |  | [optional] 
 **SuccessUrl** | Pointer to **NullableString** |  | [optional] 
 **TrialEnd** | Pointer to **NullableTime** |  | [optional] 
-**TrialPeriodDays** | Pointer to **NullableInt32** |  | [optional] 
 **TrialFromPrice** | Pointer to **NullableBool** |  | [optional] 
+**TrialPeriodDays** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -36,6 +38,41 @@ NewCreateCheckoutSessionRequestWithDefaults instantiates a new CreateCheckoutSes
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetCheckoutPreferences
+
+`func (o *CreateCheckoutSessionRequest) GetCheckoutPreferences() CheckoutPreferences`
+
+GetCheckoutPreferences returns the CheckoutPreferences field if non-nil, zero value otherwise.
+
+### GetCheckoutPreferencesOk
+
+`func (o *CreateCheckoutSessionRequest) GetCheckoutPreferencesOk() (*CheckoutPreferences, bool)`
+
+GetCheckoutPreferencesOk returns a tuple with the CheckoutPreferences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckoutPreferences
+
+`func (o *CreateCheckoutSessionRequest) SetCheckoutPreferences(v CheckoutPreferences)`
+
+SetCheckoutPreferences sets CheckoutPreferences field to given value.
+
+### HasCheckoutPreferences
+
+`func (o *CreateCheckoutSessionRequest) HasCheckoutPreferences() bool`
+
+HasCheckoutPreferences returns a boolean if a field has been set.
+
+### SetCheckoutPreferencesNil
+
+`func (o *CreateCheckoutSessionRequest) SetCheckoutPreferencesNil(b bool)`
+
+ SetCheckoutPreferencesNil sets the value for CheckoutPreferences to be an explicit nil
+
+### UnsetCheckoutPreferences
+`func (o *CreateCheckoutSessionRequest) UnsetCheckoutPreferences()`
+
+UnsetCheckoutPreferences ensures that no value is present for CheckoutPreferences, not even an explicit nil
 ### GetClientReferenceId
 
 `func (o *CreateCheckoutSessionRequest) GetClientReferenceId() string`
@@ -141,41 +178,41 @@ HasCurrency returns a boolean if a field has been set.
 `func (o *CreateCheckoutSessionRequest) UnsetCurrency()`
 
 UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-### GetCustomerId
+### GetCustomFields
 
-`func (o *CreateCheckoutSessionRequest) GetCustomerId() string`
+`func (o *CreateCheckoutSessionRequest) GetCustomFields() map[string]interface{}`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomFieldsOk
 
-`func (o *CreateCheckoutSessionRequest) GetCustomerIdOk() (*string, bool)`
+`func (o *CreateCheckoutSessionRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomFields
 
-`func (o *CreateCheckoutSessionRequest) SetCustomerId(v string)`
+`func (o *CreateCheckoutSessionRequest) SetCustomFields(v map[string]interface{})`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomFields sets CustomFields field to given value.
 
-### HasCustomerId
+### HasCustomFields
 
-`func (o *CreateCheckoutSessionRequest) HasCustomerId() bool`
+`func (o *CreateCheckoutSessionRequest) HasCustomFields() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasCustomFields returns a boolean if a field has been set.
 
-### SetCustomerIdNil
+### SetCustomFieldsNil
 
-`func (o *CreateCheckoutSessionRequest) SetCustomerIdNil(b bool)`
+`func (o *CreateCheckoutSessionRequest) SetCustomFieldsNil(b bool)`
 
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
 
-### UnsetCustomerId
-`func (o *CreateCheckoutSessionRequest) UnsetCustomerId()`
+### UnsetCustomFields
+`func (o *CreateCheckoutSessionRequest) UnsetCustomFields()`
 
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetCustomerEmail
 
 `func (o *CreateCheckoutSessionRequest) GetCustomerEmail() string`
@@ -211,6 +248,41 @@ HasCustomerEmail returns a boolean if a field has been set.
 `func (o *CreateCheckoutSessionRequest) UnsetCustomerEmail()`
 
 UnsetCustomerEmail ensures that no value is present for CustomerEmail, not even an explicit nil
+### GetCustomerId
+
+`func (o *CreateCheckoutSessionRequest) GetCustomerId() string`
+
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+
+### GetCustomerIdOk
+
+`func (o *CreateCheckoutSessionRequest) GetCustomerIdOk() (*string, bool)`
+
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerId
+
+`func (o *CreateCheckoutSessionRequest) SetCustomerId(v string)`
+
+SetCustomerId sets CustomerId field to given value.
+
+### HasCustomerId
+
+`func (o *CreateCheckoutSessionRequest) HasCustomerId() bool`
+
+HasCustomerId returns a boolean if a field has been set.
+
+### SetCustomerIdNil
+
+`func (o *CreateCheckoutSessionRequest) SetCustomerIdNil(b bool)`
+
+ SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+
+### UnsetCustomerId
+`func (o *CreateCheckoutSessionRequest) UnsetCustomerId()`
+
+UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
 ### GetLineItems
 
 `func (o *CreateCheckoutSessionRequest) GetLineItems() []CreateCheckoutLineItem`
@@ -361,41 +433,6 @@ HasTrialEnd returns a boolean if a field has been set.
 `func (o *CreateCheckoutSessionRequest) UnsetTrialEnd()`
 
 UnsetTrialEnd ensures that no value is present for TrialEnd, not even an explicit nil
-### GetTrialPeriodDays
-
-`func (o *CreateCheckoutSessionRequest) GetTrialPeriodDays() int32`
-
-GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
-
-### GetTrialPeriodDaysOk
-
-`func (o *CreateCheckoutSessionRequest) GetTrialPeriodDaysOk() (*int32, bool)`
-
-GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrialPeriodDays
-
-`func (o *CreateCheckoutSessionRequest) SetTrialPeriodDays(v int32)`
-
-SetTrialPeriodDays sets TrialPeriodDays field to given value.
-
-### HasTrialPeriodDays
-
-`func (o *CreateCheckoutSessionRequest) HasTrialPeriodDays() bool`
-
-HasTrialPeriodDays returns a boolean if a field has been set.
-
-### SetTrialPeriodDaysNil
-
-`func (o *CreateCheckoutSessionRequest) SetTrialPeriodDaysNil(b bool)`
-
- SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
-
-### UnsetTrialPeriodDays
-`func (o *CreateCheckoutSessionRequest) UnsetTrialPeriodDays()`
-
-UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
 ### GetTrialFromPrice
 
 `func (o *CreateCheckoutSessionRequest) GetTrialFromPrice() bool`
@@ -431,6 +468,41 @@ HasTrialFromPrice returns a boolean if a field has been set.
 `func (o *CreateCheckoutSessionRequest) UnsetTrialFromPrice()`
 
 UnsetTrialFromPrice ensures that no value is present for TrialFromPrice, not even an explicit nil
+### GetTrialPeriodDays
+
+`func (o *CreateCheckoutSessionRequest) GetTrialPeriodDays() int32`
+
+GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
+
+### GetTrialPeriodDaysOk
+
+`func (o *CreateCheckoutSessionRequest) GetTrialPeriodDaysOk() (*int32, bool)`
+
+GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialPeriodDays
+
+`func (o *CreateCheckoutSessionRequest) SetTrialPeriodDays(v int32)`
+
+SetTrialPeriodDays sets TrialPeriodDays field to given value.
+
+### HasTrialPeriodDays
+
+`func (o *CreateCheckoutSessionRequest) HasTrialPeriodDays() bool`
+
+HasTrialPeriodDays returns a boolean if a field has been set.
+
+### SetTrialPeriodDaysNil
+
+`func (o *CreateCheckoutSessionRequest) SetTrialPeriodDaysNil(b bool)`
+
+ SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
+
+### UnsetTrialPeriodDays
+`func (o *CreateCheckoutSessionRequest) UnsetTrialPeriodDays()`
+
+UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

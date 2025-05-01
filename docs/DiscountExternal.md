@@ -4,27 +4,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_DISCOUNT]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
-**StartDate** | **time.Time** |  | 
-**EndDate** | **NullableTime** |  | 
-**CouponId** | **string** |  | 
 **Coupon** | [**CouponExternal**](CouponExternal.md) |  | 
+**CouponId** | **string** |  | 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
 **CustomerId** | **NullableString** |  | 
-**SubscriptionId** | **NullableString** |  | 
+**EndDate** | **NullableTime** |  | 
+**Id** | **string** |  | 
 **InvoiceId** | **NullableString** |  | 
 **InvoiceItemId** | **NullableString** |  | 
-**PromotionCodeId** | **NullableString** |  | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
 **PromotionCode** | [**NullablePromotionCodeExternal**](PromotionCodeExternal.md) |  | 
+**PromotionCodeId** | **NullableString** |  | 
+**StartDate** | **time.Time** |  | 
+**SubscriptionId** | **NullableString** |  | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewDiscountExternal
 
-`func NewDiscountExternal(id string, createdAt time.Time, updatedAt time.Time, startDate time.Time, endDate NullableTime, couponId string, coupon CouponExternal, customerId NullableString, subscriptionId NullableString, invoiceId NullableString, invoiceItemId NullableString, promotionCodeId NullableString, promotionCode NullablePromotionCodeExternal, ) *DiscountExternal`
+`func NewDiscountExternal(coupon CouponExternal, couponId string, createdAt time.Time, customerId NullableString, endDate NullableTime, id string, invoiceId NullableString, invoiceItemId NullableString, promotionCode NullablePromotionCodeExternal, promotionCodeId NullableString, startDate time.Time, subscriptionId NullableString, updatedAt time.Time, ) *DiscountExternal`
 
 NewDiscountExternal instantiates a new DiscountExternal object
 This constructor will assign default values to properties that have it defined,
@@ -39,166 +39,26 @@ NewDiscountExternalWithDefaults instantiates a new DiscountExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetCoupon
 
-`func (o *DiscountExternal) GetId() string`
+`func (o *DiscountExternal) GetCoupon() CouponExternal`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetCoupon returns the Coupon field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetCouponOk
 
-`func (o *DiscountExternal) GetIdOk() (*string, bool)`
+`func (o *DiscountExternal) GetCouponOk() (*CouponExternal, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetCouponOk returns a tuple with the Coupon field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetCoupon
 
-`func (o *DiscountExternal) SetId(v string)`
+`func (o *DiscountExternal) SetCoupon(v CouponExternal)`
 
-SetId sets Id field to given value.
+SetCoupon sets Coupon field to given value.
 
 
-### GetObject
-
-`func (o *DiscountExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *DiscountExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *DiscountExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *DiscountExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *DiscountExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *DiscountExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *DiscountExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *DiscountExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *DiscountExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *DiscountExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *DiscountExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *DiscountExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *DiscountExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *DiscountExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
-
-### GetStartDate
-
-`func (o *DiscountExternal) GetStartDate() time.Time`
-
-GetStartDate returns the StartDate field if non-nil, zero value otherwise.
-
-### GetStartDateOk
-
-`func (o *DiscountExternal) GetStartDateOk() (*time.Time, bool)`
-
-GetStartDateOk returns a tuple with the StartDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStartDate
-
-`func (o *DiscountExternal) SetStartDate(v time.Time)`
-
-SetStartDate sets StartDate field to given value.
-
-
-### GetEndDate
-
-`func (o *DiscountExternal) GetEndDate() time.Time`
-
-GetEndDate returns the EndDate field if non-nil, zero value otherwise.
-
-### GetEndDateOk
-
-`func (o *DiscountExternal) GetEndDateOk() (*time.Time, bool)`
-
-GetEndDateOk returns a tuple with the EndDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEndDate
-
-`func (o *DiscountExternal) SetEndDate(v time.Time)`
-
-SetEndDate sets EndDate field to given value.
-
-
-### SetEndDateNil
-
-`func (o *DiscountExternal) SetEndDateNil(b bool)`
-
- SetEndDateNil sets the value for EndDate to be an explicit nil
-
-### UnsetEndDate
-`func (o *DiscountExternal) UnsetEndDate()`
-
-UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
 ### GetCouponId
 
 `func (o *DiscountExternal) GetCouponId() string`
@@ -219,24 +79,24 @@ and a boolean to check if the value has been set.
 SetCouponId sets CouponId field to given value.
 
 
-### GetCoupon
+### GetCreatedAt
 
-`func (o *DiscountExternal) GetCoupon() CouponExternal`
+`func (o *DiscountExternal) GetCreatedAt() time.Time`
 
-GetCoupon returns the Coupon field if non-nil, zero value otherwise.
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
-### GetCouponOk
+### GetCreatedAtOk
 
-`func (o *DiscountExternal) GetCouponOk() (*CouponExternal, bool)`
+`func (o *DiscountExternal) GetCreatedAtOk() (*time.Time, bool)`
 
-GetCouponOk returns a tuple with the Coupon field if it's non-nil, zero value otherwise
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCoupon
+### SetCreatedAt
 
-`func (o *DiscountExternal) SetCoupon(v CouponExternal)`
+`func (o *DiscountExternal) SetCreatedAt(v time.Time)`
 
-SetCoupon sets Coupon field to given value.
+SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetCustomerId
@@ -269,36 +129,56 @@ SetCustomerId sets CustomerId field to given value.
 `func (o *DiscountExternal) UnsetCustomerId()`
 
 UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
-### GetSubscriptionId
+### GetEndDate
 
-`func (o *DiscountExternal) GetSubscriptionId() string`
+`func (o *DiscountExternal) GetEndDate() time.Time`
 
-GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
+GetEndDate returns the EndDate field if non-nil, zero value otherwise.
 
-### GetSubscriptionIdOk
+### GetEndDateOk
 
-`func (o *DiscountExternal) GetSubscriptionIdOk() (*string, bool)`
+`func (o *DiscountExternal) GetEndDateOk() (*time.Time, bool)`
 
-GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
+GetEndDateOk returns a tuple with the EndDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSubscriptionId
+### SetEndDate
 
-`func (o *DiscountExternal) SetSubscriptionId(v string)`
+`func (o *DiscountExternal) SetEndDate(v time.Time)`
 
-SetSubscriptionId sets SubscriptionId field to given value.
+SetEndDate sets EndDate field to given value.
 
 
-### SetSubscriptionIdNil
+### SetEndDateNil
 
-`func (o *DiscountExternal) SetSubscriptionIdNil(b bool)`
+`func (o *DiscountExternal) SetEndDateNil(b bool)`
 
- SetSubscriptionIdNil sets the value for SubscriptionId to be an explicit nil
+ SetEndDateNil sets the value for EndDate to be an explicit nil
 
-### UnsetSubscriptionId
-`func (o *DiscountExternal) UnsetSubscriptionId()`
+### UnsetEndDate
+`func (o *DiscountExternal) UnsetEndDate()`
 
-UnsetSubscriptionId ensures that no value is present for SubscriptionId, not even an explicit nil
+UnsetEndDate ensures that no value is present for EndDate, not even an explicit nil
+### GetId
+
+`func (o *DiscountExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *DiscountExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *DiscountExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
 ### GetInvoiceId
 
 `func (o *DiscountExternal) GetInvoiceId() string`
@@ -359,36 +239,56 @@ SetInvoiceItemId sets InvoiceItemId field to given value.
 `func (o *DiscountExternal) UnsetInvoiceItemId()`
 
 UnsetInvoiceItemId ensures that no value is present for InvoiceItemId, not even an explicit nil
-### GetPromotionCodeId
+### GetIsDeleted
 
-`func (o *DiscountExternal) GetPromotionCodeId() string`
+`func (o *DiscountExternal) GetIsDeleted() bool`
 
-GetPromotionCodeId returns the PromotionCodeId field if non-nil, zero value otherwise.
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
 
-### GetPromotionCodeIdOk
+### GetIsDeletedOk
 
-`func (o *DiscountExternal) GetPromotionCodeIdOk() (*string, bool)`
+`func (o *DiscountExternal) GetIsDeletedOk() (*bool, bool)`
 
-GetPromotionCodeIdOk returns a tuple with the PromotionCodeId field if it's non-nil, zero value otherwise
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPromotionCodeId
+### SetIsDeleted
 
-`func (o *DiscountExternal) SetPromotionCodeId(v string)`
+`func (o *DiscountExternal) SetIsDeleted(v bool)`
 
-SetPromotionCodeId sets PromotionCodeId field to given value.
+SetIsDeleted sets IsDeleted field to given value.
 
+### HasIsDeleted
 
-### SetPromotionCodeIdNil
+`func (o *DiscountExternal) HasIsDeleted() bool`
 
-`func (o *DiscountExternal) SetPromotionCodeIdNil(b bool)`
+HasIsDeleted returns a boolean if a field has been set.
 
- SetPromotionCodeIdNil sets the value for PromotionCodeId to be an explicit nil
+### GetObject
 
-### UnsetPromotionCodeId
-`func (o *DiscountExternal) UnsetPromotionCodeId()`
+`func (o *DiscountExternal) GetObject() ObjectName`
 
-UnsetPromotionCodeId ensures that no value is present for PromotionCodeId, not even an explicit nil
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *DiscountExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *DiscountExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *DiscountExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
 ### GetPromotionCode
 
 `func (o *DiscountExternal) GetPromotionCode() PromotionCodeExternal`
@@ -419,6 +319,106 @@ SetPromotionCode sets PromotionCode field to given value.
 `func (o *DiscountExternal) UnsetPromotionCode()`
 
 UnsetPromotionCode ensures that no value is present for PromotionCode, not even an explicit nil
+### GetPromotionCodeId
+
+`func (o *DiscountExternal) GetPromotionCodeId() string`
+
+GetPromotionCodeId returns the PromotionCodeId field if non-nil, zero value otherwise.
+
+### GetPromotionCodeIdOk
+
+`func (o *DiscountExternal) GetPromotionCodeIdOk() (*string, bool)`
+
+GetPromotionCodeIdOk returns a tuple with the PromotionCodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromotionCodeId
+
+`func (o *DiscountExternal) SetPromotionCodeId(v string)`
+
+SetPromotionCodeId sets PromotionCodeId field to given value.
+
+
+### SetPromotionCodeIdNil
+
+`func (o *DiscountExternal) SetPromotionCodeIdNil(b bool)`
+
+ SetPromotionCodeIdNil sets the value for PromotionCodeId to be an explicit nil
+
+### UnsetPromotionCodeId
+`func (o *DiscountExternal) UnsetPromotionCodeId()`
+
+UnsetPromotionCodeId ensures that no value is present for PromotionCodeId, not even an explicit nil
+### GetStartDate
+
+`func (o *DiscountExternal) GetStartDate() time.Time`
+
+GetStartDate returns the StartDate field if non-nil, zero value otherwise.
+
+### GetStartDateOk
+
+`func (o *DiscountExternal) GetStartDateOk() (*time.Time, bool)`
+
+GetStartDateOk returns a tuple with the StartDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartDate
+
+`func (o *DiscountExternal) SetStartDate(v time.Time)`
+
+SetStartDate sets StartDate field to given value.
+
+
+### GetSubscriptionId
+
+`func (o *DiscountExternal) GetSubscriptionId() string`
+
+GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
+
+### GetSubscriptionIdOk
+
+`func (o *DiscountExternal) GetSubscriptionIdOk() (*string, bool)`
+
+GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionId
+
+`func (o *DiscountExternal) SetSubscriptionId(v string)`
+
+SetSubscriptionId sets SubscriptionId field to given value.
+
+
+### SetSubscriptionIdNil
+
+`func (o *DiscountExternal) SetSubscriptionIdNil(b bool)`
+
+ SetSubscriptionIdNil sets the value for SubscriptionId to be an explicit nil
+
+### UnsetSubscriptionId
+`func (o *DiscountExternal) UnsetSubscriptionId()`
+
+UnsetSubscriptionId ensures that no value is present for SubscriptionId, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *DiscountExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *DiscountExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *DiscountExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiName** | [**TaxIntegrationApiName**](TaxIntegrationApiName.md) |  | 
-**ApiKeys** |  | These keys will allow to authenticate API requests to the tax processor. | 
 **AccountingTz** | **string** | The timezone name for the accounting timezone (see pytz.all_timezones for a full list) | 
+**ApiKeys** | **map[string]string** | These keys will allow to authenticate API requests to the tax processor. | 
+**ApiName** | [**TaxIntegrationApiName**](TaxIntegrationApiName.md) | The name of the API used for the tax integration. | 
 
 ## Methods
 
 ### NewCreateTaxIntegrationRequest
 
-`func NewCreateTaxIntegrationRequest(apiName TaxIntegrationApiName, apiKeys map[string]string, accountingTz string, ) *CreateTaxIntegrationRequest`
+`func NewCreateTaxIntegrationRequest(accountingTz string, apiKeys map[string]string, apiName TaxIntegrationApiName, ) *CreateTaxIntegrationRequest`
 
 NewCreateTaxIntegrationRequest instantiates a new CreateTaxIntegrationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,24 +27,24 @@ NewCreateTaxIntegrationRequestWithDefaults instantiates a new CreateTaxIntegrati
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetApiName
+### GetAccountingTz
 
-`func (o *CreateTaxIntegrationRequest) GetApiName() TaxIntegrationApiName`
+`func (o *CreateTaxIntegrationRequest) GetAccountingTz() string`
 
-GetApiName returns the ApiName field if non-nil, zero value otherwise.
+GetAccountingTz returns the AccountingTz field if non-nil, zero value otherwise.
 
-### GetApiNameOk
+### GetAccountingTzOk
 
-`func (o *CreateTaxIntegrationRequest) GetApiNameOk() (*TaxIntegrationApiName, bool)`
+`func (o *CreateTaxIntegrationRequest) GetAccountingTzOk() (*string, bool)`
 
-GetApiNameOk returns a tuple with the ApiName field if it's non-nil, zero value otherwise
+GetAccountingTzOk returns a tuple with the AccountingTz field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiName
+### SetAccountingTz
 
-`func (o *CreateTaxIntegrationRequest) SetApiName(v TaxIntegrationApiName)`
+`func (o *CreateTaxIntegrationRequest) SetAccountingTz(v string)`
 
-SetApiName sets ApiName field to given value.
+SetAccountingTz sets AccountingTz field to given value.
 
 
 ### GetApiKeys
@@ -67,34 +67,24 @@ and a boolean to check if the value has been set.
 SetApiKeys sets ApiKeys field to given value.
 
 
-### SetApiKeysNil
+### GetApiName
 
-`func (o *CreateTaxIntegrationRequest) SetApiKeysNil(b bool)`
+`func (o *CreateTaxIntegrationRequest) GetApiName() TaxIntegrationApiName`
 
- SetApiKeysNil sets the value for ApiKeys to be an explicit nil
+GetApiName returns the ApiName field if non-nil, zero value otherwise.
 
-### UnsetApiKeys
-`func (o *CreateTaxIntegrationRequest) UnsetApiKeys()`
+### GetApiNameOk
 
-UnsetApiKeys ensures that no value is present for ApiKeys, not even an explicit nil
-### GetAccountingTz
+`func (o *CreateTaxIntegrationRequest) GetApiNameOk() (*TaxIntegrationApiName, bool)`
 
-`func (o *CreateTaxIntegrationRequest) GetAccountingTz() string`
-
-GetAccountingTz returns the AccountingTz field if non-nil, zero value otherwise.
-
-### GetAccountingTzOk
-
-`func (o *CreateTaxIntegrationRequest) GetAccountingTzOk() (*string, bool)`
-
-GetAccountingTzOk returns a tuple with the AccountingTz field if it's non-nil, zero value otherwise
+GetApiNameOk returns a tuple with the ApiName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountingTz
+### SetApiName
 
-`func (o *CreateTaxIntegrationRequest) SetAccountingTz(v string)`
+`func (o *CreateTaxIntegrationRequest) SetApiName(v TaxIntegrationApiName)`
 
-SetAccountingTz sets AccountingTz field to given value.
+SetApiName sets ApiName field to given value.
 
 
 

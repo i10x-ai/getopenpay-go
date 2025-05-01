@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the credit_note_item. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_CREDIT_NOTE_ITEM]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **AmountAtom** | **int32** | The integer amount representing the gross amount being credited for this credit_note_item. It is in atomic units (in USD this is cents). | 
-**Currency** | [**CurrencyEnum**](CurrencyEnum.md) |  | 
-**Type** | [**CreditNoteLineType**](CreditNoteLineType.md) |  | 
-**Quantity** | Pointer to **int32** | Quantity of the product being credited. | [optional] [default to 1]
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
+**Currency** | [**CurrencyEnum**](CurrencyEnum.md) | Three-letter ISO currency code, in lowercase. | 
+**Id** | **string** | Unique Identifier of the credit_note_item. | 
 **InvoiceItemId** | Pointer to **NullableString** |  | [optional] 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**Quantity** | Pointer to **int32** | Quantity of the product being credited. | [optional] [default to 1]
+**Type** | [**CreditNoteLineType**](CreditNoteLineType.md) | The type of the credit note line item, one of invoice_line_item or custom_line_item. When the type is invoice_line_item there is an additional invoice_line_item property on the resource the value of which is the id of the credited line item on the invoice. | 
 **UnitAmountAtom** | Pointer to **NullableInt32** |  | [optional] 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewCreditNoteItemExternal
 
-`func NewCreditNoteItemExternal(id string, createdAt time.Time, updatedAt time.Time, amountAtom int32, currency CurrencyEnum, type_ CreditNoteLineType, ) *CreditNoteItemExternal`
+`func NewCreditNoteItemExternal(amountAtom int32, createdAt time.Time, currency CurrencyEnum, id string, type_ CreditNoteLineType, updatedAt time.Time, ) *CreditNoteItemExternal`
 
 NewCreditNoteItemExternal instantiates a new CreditNoteItemExternal object
 This constructor will assign default values to properties that have it defined,
@@ -34,116 +34,6 @@ will change when the set of required properties is changed
 NewCreditNoteItemExternalWithDefaults instantiates a new CreditNoteItemExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *CreditNoteItemExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CreditNoteItemExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CreditNoteItemExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *CreditNoteItemExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *CreditNoteItemExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *CreditNoteItemExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *CreditNoteItemExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *CreditNoteItemExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *CreditNoteItemExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *CreditNoteItemExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *CreditNoteItemExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *CreditNoteItemExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *CreditNoteItemExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *CreditNoteItemExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *CreditNoteItemExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *CreditNoteItemExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *CreditNoteItemExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
 
 ### GetAmountAtom
 
@@ -163,6 +53,26 @@ and a boolean to check if the value has been set.
 `func (o *CreditNoteItemExternal) SetAmountAtom(v int32)`
 
 SetAmountAtom sets AmountAtom field to given value.
+
+
+### GetCreatedAt
+
+`func (o *CreditNoteItemExternal) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *CreditNoteItemExternal) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *CreditNoteItemExternal) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetCurrency
@@ -185,50 +95,25 @@ and a boolean to check if the value has been set.
 SetCurrency sets Currency field to given value.
 
 
-### GetType
+### GetId
 
-`func (o *CreditNoteItemExternal) GetType() CreditNoteLineType`
+`func (o *CreditNoteItemExternal) GetId() string`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetIdOk
 
-`func (o *CreditNoteItemExternal) GetTypeOk() (*CreditNoteLineType, bool)`
+`func (o *CreditNoteItemExternal) GetIdOk() (*string, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetId
 
-`func (o *CreditNoteItemExternal) SetType(v CreditNoteLineType)`
+`func (o *CreditNoteItemExternal) SetId(v string)`
 
-SetType sets Type field to given value.
+SetId sets Id field to given value.
 
-
-### GetQuantity
-
-`func (o *CreditNoteItemExternal) GetQuantity() int32`
-
-GetQuantity returns the Quantity field if non-nil, zero value otherwise.
-
-### GetQuantityOk
-
-`func (o *CreditNoteItemExternal) GetQuantityOk() (*int32, bool)`
-
-GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantity
-
-`func (o *CreditNoteItemExternal) SetQuantity(v int32)`
-
-SetQuantity sets Quantity field to given value.
-
-### HasQuantity
-
-`func (o *CreditNoteItemExternal) HasQuantity() bool`
-
-HasQuantity returns a boolean if a field has been set.
 
 ### GetInvoiceItemId
 
@@ -265,6 +150,101 @@ HasInvoiceItemId returns a boolean if a field has been set.
 `func (o *CreditNoteItemExternal) UnsetInvoiceItemId()`
 
 UnsetInvoiceItemId ensures that no value is present for InvoiceItemId, not even an explicit nil
+### GetIsDeleted
+
+`func (o *CreditNoteItemExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *CreditNoteItemExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *CreditNoteItemExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *CreditNoteItemExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
+### GetObject
+
+`func (o *CreditNoteItemExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *CreditNoteItemExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *CreditNoteItemExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *CreditNoteItemExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### GetQuantity
+
+`func (o *CreditNoteItemExternal) GetQuantity() int32`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *CreditNoteItemExternal) GetQuantityOk() (*int32, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *CreditNoteItemExternal) SetQuantity(v int32)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *CreditNoteItemExternal) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *CreditNoteItemExternal) GetType() CreditNoteLineType`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *CreditNoteItemExternal) GetTypeOk() (*CreditNoteLineType, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *CreditNoteItemExternal) SetType(v CreditNoteLineType)`
+
+SetType sets Type field to given value.
+
+
 ### GetUnitAmountAtom
 
 `func (o *CreditNoteItemExternal) GetUnitAmountAtom() int32`
@@ -300,6 +280,26 @@ HasUnitAmountAtom returns a boolean if a field has been set.
 `func (o *CreditNoteItemExternal) UnsetUnitAmountAtom()`
 
 UnsetUnitAmountAtom ensures that no value is present for UnitAmountAtom, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *CreditNoteItemExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *CreditNoteItemExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *CreditNoteItemExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

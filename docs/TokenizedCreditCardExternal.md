@@ -4,32 +4,33 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the payment_method. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_TOKENIZED_CARD_PAYMENT_METHOD]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
-**CustomerId** | Pointer to **NullableString** |  | [optional] 
 **BillingAddress** | Pointer to [**NullableCompleteAddress**](CompleteAddress.md) |  | [optional] 
-**Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
-**Provider** | [**PaymentProviderType**](PaymentProviderType.md) |  | 
-**CardType** | Pointer to **NullableString** |  | [optional] 
-**LastFour** | Pointer to **NullableString** |  | [optional] 
-**DisplayName** | **string** | Display name for the payment method to show on the UI. | 
-**ExpiryDate** | **NullableString** |  | 
+**CardBrand** | Pointer to **NullableString** |  | [optional] 
+**CardCountry** | Pointer to **NullableString** |  | [optional] 
 **CardFingerprint** | Pointer to **NullableString** |  | [optional] 
 **CardIin** | Pointer to **NullableString** |  | [optional] 
-**CardCountry** | Pointer to **NullableString** |  | [optional] 
-**CardBrand** | Pointer to **NullableString** |  | [optional] 
 **CardIssuer** | Pointer to **NullableString** |  | [optional] 
-**IsFullDetailsKnown** | **bool** | Indicates if full details of the card are known | 
+**CardType** | Pointer to **NullableString** |  | [optional] 
 **CdeExternalId** | Pointer to **NullableString** |  | [optional] 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
+**CustomerId** | Pointer to **NullableString** |  | [optional] 
+**DisplayName** | **string** | Display name for the payment method to show on the UI. | 
+**ExpiryDate** | **NullableString** |  | 
+**Id** | **string** | Unique Identifier of the payment_method. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**IsFullDetailsKnown** | **bool** | Indicates if full details of the card are known | 
+**LastFour** | Pointer to **NullableString** |  | [optional] 
+**Mappings** | Pointer to [**[]PaymentMethodMappingExternal**](PaymentMethodMappingExternal.md) | List of payment method mappings associated with this payment method. Include \&quot;mappings\&quot; in the expand parameter to retrieve this data. | [optional] [default to []]
+**Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**Provider** | [**PaymentProviderType**](PaymentProviderType.md) | The provider type for this payment method | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewTokenizedCreditCardExternal
 
-`func NewTokenizedCreditCardExternal(id string, createdAt time.Time, updatedAt time.Time, provider PaymentProviderType, displayName string, expiryDate NullableString, isFullDetailsKnown bool, ) *TokenizedCreditCardExternal`
+`func NewTokenizedCreditCardExternal(createdAt time.Time, displayName string, expiryDate NullableString, id string, isFullDetailsKnown bool, provider PaymentProviderType, updatedAt time.Time, ) *TokenizedCreditCardExternal`
 
 NewTokenizedCreditCardExternal instantiates a new TokenizedCreditCardExternal object
 This constructor will assign default values to properties that have it defined,
@@ -44,151 +45,6 @@ NewTokenizedCreditCardExternalWithDefaults instantiates a new TokenizedCreditCar
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
-
-`func (o *TokenizedCreditCardExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *TokenizedCreditCardExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *TokenizedCreditCardExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *TokenizedCreditCardExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *TokenizedCreditCardExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *TokenizedCreditCardExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *TokenizedCreditCardExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *TokenizedCreditCardExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *TokenizedCreditCardExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *TokenizedCreditCardExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *TokenizedCreditCardExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *TokenizedCreditCardExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *TokenizedCreditCardExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *TokenizedCreditCardExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *TokenizedCreditCardExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *TokenizedCreditCardExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *TokenizedCreditCardExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
-
-### GetCustomerId
-
-`func (o *TokenizedCreditCardExternal) GetCustomerId() string`
-
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
-
-### GetCustomerIdOk
-
-`func (o *TokenizedCreditCardExternal) GetCustomerIdOk() (*string, bool)`
-
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerId
-
-`func (o *TokenizedCreditCardExternal) SetCustomerId(v string)`
-
-SetCustomerId sets CustomerId field to given value.
-
-### HasCustomerId
-
-`func (o *TokenizedCreditCardExternal) HasCustomerId() bool`
-
-HasCustomerId returns a boolean if a field has been set.
-
-### SetCustomerIdNil
-
-`func (o *TokenizedCreditCardExternal) SetCustomerIdNil(b bool)`
-
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
-
-### UnsetCustomerId
-`func (o *TokenizedCreditCardExternal) UnsetCustomerId()`
-
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
 ### GetBillingAddress
 
 `func (o *TokenizedCreditCardExternal) GetBillingAddress() CompleteAddress`
@@ -224,181 +80,76 @@ HasBillingAddress returns a boolean if a field has been set.
 `func (o *TokenizedCreditCardExternal) UnsetBillingAddress()`
 
 UnsetBillingAddress ensures that no value is present for BillingAddress, not even an explicit nil
-### GetMetadata
+### GetCardBrand
 
-`func (o *TokenizedCreditCardExternal) GetMetadata() map[string]interface{}`
+`func (o *TokenizedCreditCardExternal) GetCardBrand() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetCardBrand returns the CardBrand field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetCardBrandOk
 
-`func (o *TokenizedCreditCardExternal) GetMetadataOk() (*map[string]interface{}, bool)`
+`func (o *TokenizedCreditCardExternal) GetCardBrandOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetCardBrandOk returns a tuple with the CardBrand field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetCardBrand
 
-`func (o *TokenizedCreditCardExternal) SetMetadata(v map[string]interface{})`
+`func (o *TokenizedCreditCardExternal) SetCardBrand(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetCardBrand sets CardBrand field to given value.
 
-### HasMetadata
+### HasCardBrand
 
-`func (o *TokenizedCreditCardExternal) HasMetadata() bool`
+`func (o *TokenizedCreditCardExternal) HasCardBrand() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasCardBrand returns a boolean if a field has been set.
 
-### SetMetadataNil
+### SetCardBrandNil
 
-`func (o *TokenizedCreditCardExternal) SetMetadataNil(b bool)`
+`func (o *TokenizedCreditCardExternal) SetCardBrandNil(b bool)`
 
- SetMetadataNil sets the value for Metadata to be an explicit nil
+ SetCardBrandNil sets the value for CardBrand to be an explicit nil
 
-### UnsetMetadata
-`func (o *TokenizedCreditCardExternal) UnsetMetadata()`
+### UnsetCardBrand
+`func (o *TokenizedCreditCardExternal) UnsetCardBrand()`
 
-UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
-### GetProvider
+UnsetCardBrand ensures that no value is present for CardBrand, not even an explicit nil
+### GetCardCountry
 
-`func (o *TokenizedCreditCardExternal) GetProvider() PaymentProviderType`
+`func (o *TokenizedCreditCardExternal) GetCardCountry() string`
 
-GetProvider returns the Provider field if non-nil, zero value otherwise.
+GetCardCountry returns the CardCountry field if non-nil, zero value otherwise.
 
-### GetProviderOk
+### GetCardCountryOk
 
-`func (o *TokenizedCreditCardExternal) GetProviderOk() (*PaymentProviderType, bool)`
+`func (o *TokenizedCreditCardExternal) GetCardCountryOk() (*string, bool)`
 
-GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
+GetCardCountryOk returns a tuple with the CardCountry field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProvider
+### SetCardCountry
 
-`func (o *TokenizedCreditCardExternal) SetProvider(v PaymentProviderType)`
+`func (o *TokenizedCreditCardExternal) SetCardCountry(v string)`
 
-SetProvider sets Provider field to given value.
+SetCardCountry sets CardCountry field to given value.
 
+### HasCardCountry
 
-### GetCardType
+`func (o *TokenizedCreditCardExternal) HasCardCountry() bool`
 
-`func (o *TokenizedCreditCardExternal) GetCardType() string`
+HasCardCountry returns a boolean if a field has been set.
 
-GetCardType returns the CardType field if non-nil, zero value otherwise.
+### SetCardCountryNil
 
-### GetCardTypeOk
+`func (o *TokenizedCreditCardExternal) SetCardCountryNil(b bool)`
 
-`func (o *TokenizedCreditCardExternal) GetCardTypeOk() (*string, bool)`
+ SetCardCountryNil sets the value for CardCountry to be an explicit nil
 
-GetCardTypeOk returns a tuple with the CardType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
+### UnsetCardCountry
+`func (o *TokenizedCreditCardExternal) UnsetCardCountry()`
 
-### SetCardType
-
-`func (o *TokenizedCreditCardExternal) SetCardType(v string)`
-
-SetCardType sets CardType field to given value.
-
-### HasCardType
-
-`func (o *TokenizedCreditCardExternal) HasCardType() bool`
-
-HasCardType returns a boolean if a field has been set.
-
-### SetCardTypeNil
-
-`func (o *TokenizedCreditCardExternal) SetCardTypeNil(b bool)`
-
- SetCardTypeNil sets the value for CardType to be an explicit nil
-
-### UnsetCardType
-`func (o *TokenizedCreditCardExternal) UnsetCardType()`
-
-UnsetCardType ensures that no value is present for CardType, not even an explicit nil
-### GetLastFour
-
-`func (o *TokenizedCreditCardExternal) GetLastFour() string`
-
-GetLastFour returns the LastFour field if non-nil, zero value otherwise.
-
-### GetLastFourOk
-
-`func (o *TokenizedCreditCardExternal) GetLastFourOk() (*string, bool)`
-
-GetLastFourOk returns a tuple with the LastFour field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastFour
-
-`func (o *TokenizedCreditCardExternal) SetLastFour(v string)`
-
-SetLastFour sets LastFour field to given value.
-
-### HasLastFour
-
-`func (o *TokenizedCreditCardExternal) HasLastFour() bool`
-
-HasLastFour returns a boolean if a field has been set.
-
-### SetLastFourNil
-
-`func (o *TokenizedCreditCardExternal) SetLastFourNil(b bool)`
-
- SetLastFourNil sets the value for LastFour to be an explicit nil
-
-### UnsetLastFour
-`func (o *TokenizedCreditCardExternal) UnsetLastFour()`
-
-UnsetLastFour ensures that no value is present for LastFour, not even an explicit nil
-### GetDisplayName
-
-`func (o *TokenizedCreditCardExternal) GetDisplayName() string`
-
-GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
-
-### GetDisplayNameOk
-
-`func (o *TokenizedCreditCardExternal) GetDisplayNameOk() (*string, bool)`
-
-GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayName
-
-`func (o *TokenizedCreditCardExternal) SetDisplayName(v string)`
-
-SetDisplayName sets DisplayName field to given value.
-
-
-### GetExpiryDate
-
-`func (o *TokenizedCreditCardExternal) GetExpiryDate() string`
-
-GetExpiryDate returns the ExpiryDate field if non-nil, zero value otherwise.
-
-### GetExpiryDateOk
-
-`func (o *TokenizedCreditCardExternal) GetExpiryDateOk() (*string, bool)`
-
-GetExpiryDateOk returns a tuple with the ExpiryDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpiryDate
-
-`func (o *TokenizedCreditCardExternal) SetExpiryDate(v string)`
-
-SetExpiryDate sets ExpiryDate field to given value.
-
-
-### SetExpiryDateNil
-
-`func (o *TokenizedCreditCardExternal) SetExpiryDateNil(b bool)`
-
- SetExpiryDateNil sets the value for ExpiryDate to be an explicit nil
-
-### UnsetExpiryDate
-`func (o *TokenizedCreditCardExternal) UnsetExpiryDate()`
-
-UnsetExpiryDate ensures that no value is present for ExpiryDate, not even an explicit nil
+UnsetCardCountry ensures that no value is present for CardCountry, not even an explicit nil
 ### GetCardFingerprint
 
 `func (o *TokenizedCreditCardExternal) GetCardFingerprint() string`
@@ -469,76 +220,6 @@ HasCardIin returns a boolean if a field has been set.
 `func (o *TokenizedCreditCardExternal) UnsetCardIin()`
 
 UnsetCardIin ensures that no value is present for CardIin, not even an explicit nil
-### GetCardCountry
-
-`func (o *TokenizedCreditCardExternal) GetCardCountry() string`
-
-GetCardCountry returns the CardCountry field if non-nil, zero value otherwise.
-
-### GetCardCountryOk
-
-`func (o *TokenizedCreditCardExternal) GetCardCountryOk() (*string, bool)`
-
-GetCardCountryOk returns a tuple with the CardCountry field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCardCountry
-
-`func (o *TokenizedCreditCardExternal) SetCardCountry(v string)`
-
-SetCardCountry sets CardCountry field to given value.
-
-### HasCardCountry
-
-`func (o *TokenizedCreditCardExternal) HasCardCountry() bool`
-
-HasCardCountry returns a boolean if a field has been set.
-
-### SetCardCountryNil
-
-`func (o *TokenizedCreditCardExternal) SetCardCountryNil(b bool)`
-
- SetCardCountryNil sets the value for CardCountry to be an explicit nil
-
-### UnsetCardCountry
-`func (o *TokenizedCreditCardExternal) UnsetCardCountry()`
-
-UnsetCardCountry ensures that no value is present for CardCountry, not even an explicit nil
-### GetCardBrand
-
-`func (o *TokenizedCreditCardExternal) GetCardBrand() string`
-
-GetCardBrand returns the CardBrand field if non-nil, zero value otherwise.
-
-### GetCardBrandOk
-
-`func (o *TokenizedCreditCardExternal) GetCardBrandOk() (*string, bool)`
-
-GetCardBrandOk returns a tuple with the CardBrand field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCardBrand
-
-`func (o *TokenizedCreditCardExternal) SetCardBrand(v string)`
-
-SetCardBrand sets CardBrand field to given value.
-
-### HasCardBrand
-
-`func (o *TokenizedCreditCardExternal) HasCardBrand() bool`
-
-HasCardBrand returns a boolean if a field has been set.
-
-### SetCardBrandNil
-
-`func (o *TokenizedCreditCardExternal) SetCardBrandNil(b bool)`
-
- SetCardBrandNil sets the value for CardBrand to be an explicit nil
-
-### UnsetCardBrand
-`func (o *TokenizedCreditCardExternal) UnsetCardBrand()`
-
-UnsetCardBrand ensures that no value is present for CardBrand, not even an explicit nil
 ### GetCardIssuer
 
 `func (o *TokenizedCreditCardExternal) GetCardIssuer() string`
@@ -574,26 +255,41 @@ HasCardIssuer returns a boolean if a field has been set.
 `func (o *TokenizedCreditCardExternal) UnsetCardIssuer()`
 
 UnsetCardIssuer ensures that no value is present for CardIssuer, not even an explicit nil
-### GetIsFullDetailsKnown
+### GetCardType
 
-`func (o *TokenizedCreditCardExternal) GetIsFullDetailsKnown() bool`
+`func (o *TokenizedCreditCardExternal) GetCardType() string`
 
-GetIsFullDetailsKnown returns the IsFullDetailsKnown field if non-nil, zero value otherwise.
+GetCardType returns the CardType field if non-nil, zero value otherwise.
 
-### GetIsFullDetailsKnownOk
+### GetCardTypeOk
 
-`func (o *TokenizedCreditCardExternal) GetIsFullDetailsKnownOk() (*bool, bool)`
+`func (o *TokenizedCreditCardExternal) GetCardTypeOk() (*string, bool)`
 
-GetIsFullDetailsKnownOk returns a tuple with the IsFullDetailsKnown field if it's non-nil, zero value otherwise
+GetCardTypeOk returns a tuple with the CardType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsFullDetailsKnown
+### SetCardType
 
-`func (o *TokenizedCreditCardExternal) SetIsFullDetailsKnown(v bool)`
+`func (o *TokenizedCreditCardExternal) SetCardType(v string)`
 
-SetIsFullDetailsKnown sets IsFullDetailsKnown field to given value.
+SetCardType sets CardType field to given value.
 
+### HasCardType
 
+`func (o *TokenizedCreditCardExternal) HasCardType() bool`
+
+HasCardType returns a boolean if a field has been set.
+
+### SetCardTypeNil
+
+`func (o *TokenizedCreditCardExternal) SetCardTypeNil(b bool)`
+
+ SetCardTypeNil sets the value for CardType to be an explicit nil
+
+### UnsetCardType
+`func (o *TokenizedCreditCardExternal) UnsetCardType()`
+
+UnsetCardType ensures that no value is present for CardType, not even an explicit nil
 ### GetCdeExternalId
 
 `func (o *TokenizedCreditCardExternal) GetCdeExternalId() string`
@@ -629,6 +325,336 @@ HasCdeExternalId returns a boolean if a field has been set.
 `func (o *TokenizedCreditCardExternal) UnsetCdeExternalId()`
 
 UnsetCdeExternalId ensures that no value is present for CdeExternalId, not even an explicit nil
+### GetCreatedAt
+
+`func (o *TokenizedCreditCardExternal) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *TokenizedCreditCardExternal) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *TokenizedCreditCardExternal) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+
+### GetCustomerId
+
+`func (o *TokenizedCreditCardExternal) GetCustomerId() string`
+
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+
+### GetCustomerIdOk
+
+`func (o *TokenizedCreditCardExternal) GetCustomerIdOk() (*string, bool)`
+
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerId
+
+`func (o *TokenizedCreditCardExternal) SetCustomerId(v string)`
+
+SetCustomerId sets CustomerId field to given value.
+
+### HasCustomerId
+
+`func (o *TokenizedCreditCardExternal) HasCustomerId() bool`
+
+HasCustomerId returns a boolean if a field has been set.
+
+### SetCustomerIdNil
+
+`func (o *TokenizedCreditCardExternal) SetCustomerIdNil(b bool)`
+
+ SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+
+### UnsetCustomerId
+`func (o *TokenizedCreditCardExternal) UnsetCustomerId()`
+
+UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+### GetDisplayName
+
+`func (o *TokenizedCreditCardExternal) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *TokenizedCreditCardExternal) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *TokenizedCreditCardExternal) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+
+### GetExpiryDate
+
+`func (o *TokenizedCreditCardExternal) GetExpiryDate() string`
+
+GetExpiryDate returns the ExpiryDate field if non-nil, zero value otherwise.
+
+### GetExpiryDateOk
+
+`func (o *TokenizedCreditCardExternal) GetExpiryDateOk() (*string, bool)`
+
+GetExpiryDateOk returns a tuple with the ExpiryDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiryDate
+
+`func (o *TokenizedCreditCardExternal) SetExpiryDate(v string)`
+
+SetExpiryDate sets ExpiryDate field to given value.
+
+
+### SetExpiryDateNil
+
+`func (o *TokenizedCreditCardExternal) SetExpiryDateNil(b bool)`
+
+ SetExpiryDateNil sets the value for ExpiryDate to be an explicit nil
+
+### UnsetExpiryDate
+`func (o *TokenizedCreditCardExternal) UnsetExpiryDate()`
+
+UnsetExpiryDate ensures that no value is present for ExpiryDate, not even an explicit nil
+### GetId
+
+`func (o *TokenizedCreditCardExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *TokenizedCreditCardExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *TokenizedCreditCardExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetIsDeleted
+
+`func (o *TokenizedCreditCardExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *TokenizedCreditCardExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *TokenizedCreditCardExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *TokenizedCreditCardExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
+### GetIsFullDetailsKnown
+
+`func (o *TokenizedCreditCardExternal) GetIsFullDetailsKnown() bool`
+
+GetIsFullDetailsKnown returns the IsFullDetailsKnown field if non-nil, zero value otherwise.
+
+### GetIsFullDetailsKnownOk
+
+`func (o *TokenizedCreditCardExternal) GetIsFullDetailsKnownOk() (*bool, bool)`
+
+GetIsFullDetailsKnownOk returns a tuple with the IsFullDetailsKnown field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFullDetailsKnown
+
+`func (o *TokenizedCreditCardExternal) SetIsFullDetailsKnown(v bool)`
+
+SetIsFullDetailsKnown sets IsFullDetailsKnown field to given value.
+
+
+### GetLastFour
+
+`func (o *TokenizedCreditCardExternal) GetLastFour() string`
+
+GetLastFour returns the LastFour field if non-nil, zero value otherwise.
+
+### GetLastFourOk
+
+`func (o *TokenizedCreditCardExternal) GetLastFourOk() (*string, bool)`
+
+GetLastFourOk returns a tuple with the LastFour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastFour
+
+`func (o *TokenizedCreditCardExternal) SetLastFour(v string)`
+
+SetLastFour sets LastFour field to given value.
+
+### HasLastFour
+
+`func (o *TokenizedCreditCardExternal) HasLastFour() bool`
+
+HasLastFour returns a boolean if a field has been set.
+
+### SetLastFourNil
+
+`func (o *TokenizedCreditCardExternal) SetLastFourNil(b bool)`
+
+ SetLastFourNil sets the value for LastFour to be an explicit nil
+
+### UnsetLastFour
+`func (o *TokenizedCreditCardExternal) UnsetLastFour()`
+
+UnsetLastFour ensures that no value is present for LastFour, not even an explicit nil
+### GetMappings
+
+`func (o *TokenizedCreditCardExternal) GetMappings() []PaymentMethodMappingExternal`
+
+GetMappings returns the Mappings field if non-nil, zero value otherwise.
+
+### GetMappingsOk
+
+`func (o *TokenizedCreditCardExternal) GetMappingsOk() (*[]PaymentMethodMappingExternal, bool)`
+
+GetMappingsOk returns a tuple with the Mappings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappings
+
+`func (o *TokenizedCreditCardExternal) SetMappings(v []PaymentMethodMappingExternal)`
+
+SetMappings sets Mappings field to given value.
+
+### HasMappings
+
+`func (o *TokenizedCreditCardExternal) HasMappings() bool`
+
+HasMappings returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *TokenizedCreditCardExternal) GetMetadata() map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *TokenizedCreditCardExternal) GetMetadataOk() (*map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *TokenizedCreditCardExternal) SetMetadata(v map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *TokenizedCreditCardExternal) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *TokenizedCreditCardExternal) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *TokenizedCreditCardExternal) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetObject
+
+`func (o *TokenizedCreditCardExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *TokenizedCreditCardExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *TokenizedCreditCardExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *TokenizedCreditCardExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
+
+### GetProvider
+
+`func (o *TokenizedCreditCardExternal) GetProvider() PaymentProviderType`
+
+GetProvider returns the Provider field if non-nil, zero value otherwise.
+
+### GetProviderOk
+
+`func (o *TokenizedCreditCardExternal) GetProviderOk() (*PaymentProviderType, bool)`
+
+GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvider
+
+`func (o *TokenizedCreditCardExternal) SetProvider(v PaymentProviderType)`
+
+SetProvider sets Provider field to given value.
+
+
+### GetUpdatedAt
+
+`func (o *TokenizedCreditCardExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *TokenizedCreditCardExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *TokenizedCreditCardExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,32 +4,34 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the checkout session. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_PAYMENT_LINK]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **AccountId** | **string** | Unique Identifier of the account. | 
 **AccountName** | **string** | Name of the account. | 
 **Active** | **bool** | Whether a payment link is active or not. | 
+**CheckoutPreferences** | [**NullableCheckoutPreferencesOutput**](CheckoutPreferencesOutput.md) |  | 
 **CouponId** | Pointer to **NullableString** |  | [optional] 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
 **Currency** | **NullableString** |  | 
-**CustomerId** | **NullableString** |  | 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **CustomerEmail** | **NullableString** |  | 
-**LineItems** | [**[]PaymentLinkLineItemExternal**](PaymentLinkLineItemExternal.md) |  | 
-**Mode** | [**CheckoutMode**](CheckoutMode.md) |  | 
+**CustomerId** | **NullableString** |  | 
+**Id** | **string** | Unique Identifier of the checkout session. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**LineItems** | [**[]PaymentLinkLineItemExternal**](PaymentLinkLineItemExternal.md) | The line items purchased by the customers. | 
+**Mode** | [**CheckoutMode**](CheckoutMode.md) | The mode of the checkout sessions created by this payment link. | 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
 **SecureToken** | **string** | The random secure token associated with the payment link. | 
 **SuccessUrl** | **NullableString** |  | 
 **TrialEnd** | **NullableTime** |  | 
-**TrialPeriodDays** | **NullableInt32** |  | 
 **TrialFromPrice** | **NullableBool** |  | 
+**TrialPeriodDays** | **NullableInt32** |  | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 **Url** | **string** | The main URL for this payment link. | 
 
 ## Methods
 
 ### NewPaymentLinkExternal
 
-`func NewPaymentLinkExternal(id string, createdAt time.Time, updatedAt time.Time, accountId string, accountName string, active bool, currency NullableString, customerId NullableString, customerEmail NullableString, lineItems []PaymentLinkLineItemExternal, mode CheckoutMode, secureToken string, successUrl NullableString, trialEnd NullableTime, trialPeriodDays NullableInt32, trialFromPrice NullableBool, url string, ) *PaymentLinkExternal`
+`func NewPaymentLinkExternal(accountId string, accountName string, active bool, checkoutPreferences NullableCheckoutPreferencesOutput, createdAt time.Time, currency NullableString, customerEmail NullableString, customerId NullableString, id string, lineItems []PaymentLinkLineItemExternal, mode CheckoutMode, secureToken string, successUrl NullableString, trialEnd NullableTime, trialFromPrice NullableBool, trialPeriodDays NullableInt32, updatedAt time.Time, url string, ) *PaymentLinkExternal`
 
 NewPaymentLinkExternal instantiates a new PaymentLinkExternal object
 This constructor will assign default values to properties that have it defined,
@@ -43,116 +45,6 @@ will change when the set of required properties is changed
 NewPaymentLinkExternalWithDefaults instantiates a new PaymentLinkExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *PaymentLinkExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PaymentLinkExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PaymentLinkExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *PaymentLinkExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *PaymentLinkExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *PaymentLinkExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *PaymentLinkExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *PaymentLinkExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *PaymentLinkExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *PaymentLinkExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *PaymentLinkExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *PaymentLinkExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *PaymentLinkExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *PaymentLinkExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *PaymentLinkExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *PaymentLinkExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *PaymentLinkExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
 
 ### GetAccountId
 
@@ -214,6 +106,36 @@ and a boolean to check if the value has been set.
 SetActive sets Active field to given value.
 
 
+### GetCheckoutPreferences
+
+`func (o *PaymentLinkExternal) GetCheckoutPreferences() CheckoutPreferencesOutput`
+
+GetCheckoutPreferences returns the CheckoutPreferences field if non-nil, zero value otherwise.
+
+### GetCheckoutPreferencesOk
+
+`func (o *PaymentLinkExternal) GetCheckoutPreferencesOk() (*CheckoutPreferencesOutput, bool)`
+
+GetCheckoutPreferencesOk returns a tuple with the CheckoutPreferences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckoutPreferences
+
+`func (o *PaymentLinkExternal) SetCheckoutPreferences(v CheckoutPreferencesOutput)`
+
+SetCheckoutPreferences sets CheckoutPreferences field to given value.
+
+
+### SetCheckoutPreferencesNil
+
+`func (o *PaymentLinkExternal) SetCheckoutPreferencesNil(b bool)`
+
+ SetCheckoutPreferencesNil sets the value for CheckoutPreferences to be an explicit nil
+
+### UnsetCheckoutPreferences
+`func (o *PaymentLinkExternal) UnsetCheckoutPreferences()`
+
+UnsetCheckoutPreferences ensures that no value is present for CheckoutPreferences, not even an explicit nil
 ### GetCouponId
 
 `func (o *PaymentLinkExternal) GetCouponId() string`
@@ -249,6 +171,26 @@ HasCouponId returns a boolean if a field has been set.
 `func (o *PaymentLinkExternal) UnsetCouponId()`
 
 UnsetCouponId ensures that no value is present for CouponId, not even an explicit nil
+### GetCreatedAt
+
+`func (o *PaymentLinkExternal) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *PaymentLinkExternal) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *PaymentLinkExternal) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+
 ### GetCurrency
 
 `func (o *PaymentLinkExternal) GetCurrency() string`
@@ -279,36 +221,41 @@ SetCurrency sets Currency field to given value.
 `func (o *PaymentLinkExternal) UnsetCurrency()`
 
 UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-### GetCustomerId
+### GetCustomFields
 
-`func (o *PaymentLinkExternal) GetCustomerId() string`
+`func (o *PaymentLinkExternal) GetCustomFields() map[string]interface{}`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetCustomFieldsOk
 
-`func (o *PaymentLinkExternal) GetCustomerIdOk() (*string, bool)`
+`func (o *PaymentLinkExternal) GetCustomFieldsOk() (*map[string]interface{}, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetCustomFields
 
-`func (o *PaymentLinkExternal) SetCustomerId(v string)`
+`func (o *PaymentLinkExternal) SetCustomFields(v map[string]interface{})`
 
-SetCustomerId sets CustomerId field to given value.
+SetCustomFields sets CustomFields field to given value.
 
+### HasCustomFields
 
-### SetCustomerIdNil
+`func (o *PaymentLinkExternal) HasCustomFields() bool`
 
-`func (o *PaymentLinkExternal) SetCustomerIdNil(b bool)`
+HasCustomFields returns a boolean if a field has been set.
 
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+### SetCustomFieldsNil
 
-### UnsetCustomerId
-`func (o *PaymentLinkExternal) UnsetCustomerId()`
+`func (o *PaymentLinkExternal) SetCustomFieldsNil(b bool)`
 
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+ SetCustomFieldsNil sets the value for CustomFields to be an explicit nil
+
+### UnsetCustomFields
+`func (o *PaymentLinkExternal) UnsetCustomFields()`
+
+UnsetCustomFields ensures that no value is present for CustomFields, not even an explicit nil
 ### GetCustomerEmail
 
 `func (o *PaymentLinkExternal) GetCustomerEmail() string`
@@ -339,6 +286,81 @@ SetCustomerEmail sets CustomerEmail field to given value.
 `func (o *PaymentLinkExternal) UnsetCustomerEmail()`
 
 UnsetCustomerEmail ensures that no value is present for CustomerEmail, not even an explicit nil
+### GetCustomerId
+
+`func (o *PaymentLinkExternal) GetCustomerId() string`
+
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+
+### GetCustomerIdOk
+
+`func (o *PaymentLinkExternal) GetCustomerIdOk() (*string, bool)`
+
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerId
+
+`func (o *PaymentLinkExternal) SetCustomerId(v string)`
+
+SetCustomerId sets CustomerId field to given value.
+
+
+### SetCustomerIdNil
+
+`func (o *PaymentLinkExternal) SetCustomerIdNil(b bool)`
+
+ SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+
+### UnsetCustomerId
+`func (o *PaymentLinkExternal) UnsetCustomerId()`
+
+UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+### GetId
+
+`func (o *PaymentLinkExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PaymentLinkExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PaymentLinkExternal) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetIsDeleted
+
+`func (o *PaymentLinkExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *PaymentLinkExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *PaymentLinkExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *PaymentLinkExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
 ### GetLineItems
 
 `func (o *PaymentLinkExternal) GetLineItems() []PaymentLinkLineItemExternal`
@@ -378,6 +400,31 @@ and a boolean to check if the value has been set.
 
 SetMode sets Mode field to given value.
 
+
+### GetObject
+
+`func (o *PaymentLinkExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *PaymentLinkExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *PaymentLinkExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *PaymentLinkExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### GetSecureToken
 
@@ -459,36 +506,6 @@ SetTrialEnd sets TrialEnd field to given value.
 `func (o *PaymentLinkExternal) UnsetTrialEnd()`
 
 UnsetTrialEnd ensures that no value is present for TrialEnd, not even an explicit nil
-### GetTrialPeriodDays
-
-`func (o *PaymentLinkExternal) GetTrialPeriodDays() int32`
-
-GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
-
-### GetTrialPeriodDaysOk
-
-`func (o *PaymentLinkExternal) GetTrialPeriodDaysOk() (*int32, bool)`
-
-GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrialPeriodDays
-
-`func (o *PaymentLinkExternal) SetTrialPeriodDays(v int32)`
-
-SetTrialPeriodDays sets TrialPeriodDays field to given value.
-
-
-### SetTrialPeriodDaysNil
-
-`func (o *PaymentLinkExternal) SetTrialPeriodDaysNil(b bool)`
-
- SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
-
-### UnsetTrialPeriodDays
-`func (o *PaymentLinkExternal) UnsetTrialPeriodDays()`
-
-UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
 ### GetTrialFromPrice
 
 `func (o *PaymentLinkExternal) GetTrialFromPrice() bool`
@@ -519,6 +536,56 @@ SetTrialFromPrice sets TrialFromPrice field to given value.
 `func (o *PaymentLinkExternal) UnsetTrialFromPrice()`
 
 UnsetTrialFromPrice ensures that no value is present for TrialFromPrice, not even an explicit nil
+### GetTrialPeriodDays
+
+`func (o *PaymentLinkExternal) GetTrialPeriodDays() int32`
+
+GetTrialPeriodDays returns the TrialPeriodDays field if non-nil, zero value otherwise.
+
+### GetTrialPeriodDaysOk
+
+`func (o *PaymentLinkExternal) GetTrialPeriodDaysOk() (*int32, bool)`
+
+GetTrialPeriodDaysOk returns a tuple with the TrialPeriodDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialPeriodDays
+
+`func (o *PaymentLinkExternal) SetTrialPeriodDays(v int32)`
+
+SetTrialPeriodDays sets TrialPeriodDays field to given value.
+
+
+### SetTrialPeriodDaysNil
+
+`func (o *PaymentLinkExternal) SetTrialPeriodDaysNil(b bool)`
+
+ SetTrialPeriodDaysNil sets the value for TrialPeriodDays to be an explicit nil
+
+### UnsetTrialPeriodDays
+`func (o *PaymentLinkExternal) UnsetTrialPeriodDays()`
+
+UnsetTrialPeriodDays ensures that no value is present for TrialPeriodDays, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *PaymentLinkExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *PaymentLinkExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *PaymentLinkExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
 ### GetUrl
 
 `func (o *PaymentLinkExternal) GetUrl() string`

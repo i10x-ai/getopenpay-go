@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
+**CustomerId** | Pointer to **NullableString** |  | [optional] 
+**Expand** | Pointer to **[]string** | Specifies which fields in the response should be expanded. | [optional] 
+**InvoiceId** | Pointer to **NullableString** |  | [optional] 
 **PageNumber** | Pointer to **int32** | Page number | [optional] [default to 1]
 **PageSize** | Pointer to **int32** | Page size | [optional] [default to 100]
-**SortKey** | Pointer to **string** | Key name based on which data is sorted. | [optional] [default to "created_at"]
 **SortDescending** | Pointer to **bool** | Sort direction. | [optional] [default to false]
-**CreatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
+**SortKey** | Pointer to **string** | Key name based on which data is sorted. | [optional] [default to "created_at"]
 **UpdatedAt** | Pointer to [**NullableDateTimeFilter**](DateTimeFilter.md) |  | [optional] 
-**Expand** | Pointer to **[]string** |  | [optional] 
-**InvoiceId** | Pointer to **NullableString** |  | [optional] 
-**CustomerId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -32,106 +32,6 @@ will change when the set of required properties is changed
 NewCreditNoteQueryParamsWithDefaults instantiates a new CreditNoteQueryParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPageNumber
-
-`func (o *CreditNoteQueryParams) GetPageNumber() int32`
-
-GetPageNumber returns the PageNumber field if non-nil, zero value otherwise.
-
-### GetPageNumberOk
-
-`func (o *CreditNoteQueryParams) GetPageNumberOk() (*int32, bool)`
-
-GetPageNumberOk returns a tuple with the PageNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPageNumber
-
-`func (o *CreditNoteQueryParams) SetPageNumber(v int32)`
-
-SetPageNumber sets PageNumber field to given value.
-
-### HasPageNumber
-
-`func (o *CreditNoteQueryParams) HasPageNumber() bool`
-
-HasPageNumber returns a boolean if a field has been set.
-
-### GetPageSize
-
-`func (o *CreditNoteQueryParams) GetPageSize() int32`
-
-GetPageSize returns the PageSize field if non-nil, zero value otherwise.
-
-### GetPageSizeOk
-
-`func (o *CreditNoteQueryParams) GetPageSizeOk() (*int32, bool)`
-
-GetPageSizeOk returns a tuple with the PageSize field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPageSize
-
-`func (o *CreditNoteQueryParams) SetPageSize(v int32)`
-
-SetPageSize sets PageSize field to given value.
-
-### HasPageSize
-
-`func (o *CreditNoteQueryParams) HasPageSize() bool`
-
-HasPageSize returns a boolean if a field has been set.
-
-### GetSortKey
-
-`func (o *CreditNoteQueryParams) GetSortKey() string`
-
-GetSortKey returns the SortKey field if non-nil, zero value otherwise.
-
-### GetSortKeyOk
-
-`func (o *CreditNoteQueryParams) GetSortKeyOk() (*string, bool)`
-
-GetSortKeyOk returns a tuple with the SortKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSortKey
-
-`func (o *CreditNoteQueryParams) SetSortKey(v string)`
-
-SetSortKey sets SortKey field to given value.
-
-### HasSortKey
-
-`func (o *CreditNoteQueryParams) HasSortKey() bool`
-
-HasSortKey returns a boolean if a field has been set.
-
-### GetSortDescending
-
-`func (o *CreditNoteQueryParams) GetSortDescending() bool`
-
-GetSortDescending returns the SortDescending field if non-nil, zero value otherwise.
-
-### GetSortDescendingOk
-
-`func (o *CreditNoteQueryParams) GetSortDescendingOk() (*bool, bool)`
-
-GetSortDescendingOk returns a tuple with the SortDescending field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSortDescending
-
-`func (o *CreditNoteQueryParams) SetSortDescending(v bool)`
-
-SetSortDescending sets SortDescending field to given value.
-
-### HasSortDescending
-
-`func (o *CreditNoteQueryParams) HasSortDescending() bool`
-
-HasSortDescending returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -168,41 +68,41 @@ HasCreatedAt returns a boolean if a field has been set.
 `func (o *CreditNoteQueryParams) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetUpdatedAt
+### GetCustomerId
 
-`func (o *CreditNoteQueryParams) GetUpdatedAt() DateTimeFilter`
+`func (o *CreditNoteQueryParams) GetCustomerId() string`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetCustomerIdOk
 
-`func (o *CreditNoteQueryParams) GetUpdatedAtOk() (*DateTimeFilter, bool)`
+`func (o *CreditNoteQueryParams) GetCustomerIdOk() (*string, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetCustomerId
 
-`func (o *CreditNoteQueryParams) SetUpdatedAt(v DateTimeFilter)`
+`func (o *CreditNoteQueryParams) SetCustomerId(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasUpdatedAt
+### HasCustomerId
 
-`func (o *CreditNoteQueryParams) HasUpdatedAt() bool`
+`func (o *CreditNoteQueryParams) HasCustomerId() bool`
 
-HasUpdatedAt returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
-### SetUpdatedAtNil
+### SetCustomerIdNil
 
-`func (o *CreditNoteQueryParams) SetUpdatedAtNil(b bool)`
+`func (o *CreditNoteQueryParams) SetCustomerIdNil(b bool)`
 
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+ SetCustomerIdNil sets the value for CustomerId to be an explicit nil
 
-### UnsetUpdatedAt
-`func (o *CreditNoteQueryParams) UnsetUpdatedAt()`
+### UnsetCustomerId
+`func (o *CreditNoteQueryParams) UnsetCustomerId()`
 
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
 ### GetExpand
 
 `func (o *CreditNoteQueryParams) GetExpand() []string`
@@ -263,41 +163,141 @@ HasInvoiceId returns a boolean if a field has been set.
 `func (o *CreditNoteQueryParams) UnsetInvoiceId()`
 
 UnsetInvoiceId ensures that no value is present for InvoiceId, not even an explicit nil
-### GetCustomerId
+### GetPageNumber
 
-`func (o *CreditNoteQueryParams) GetCustomerId() string`
+`func (o *CreditNoteQueryParams) GetPageNumber() int32`
 
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+GetPageNumber returns the PageNumber field if non-nil, zero value otherwise.
 
-### GetCustomerIdOk
+### GetPageNumberOk
 
-`func (o *CreditNoteQueryParams) GetCustomerIdOk() (*string, bool)`
+`func (o *CreditNoteQueryParams) GetPageNumberOk() (*int32, bool)`
 
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+GetPageNumberOk returns a tuple with the PageNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerId
+### SetPageNumber
 
-`func (o *CreditNoteQueryParams) SetCustomerId(v string)`
+`func (o *CreditNoteQueryParams) SetPageNumber(v int32)`
 
-SetCustomerId sets CustomerId field to given value.
+SetPageNumber sets PageNumber field to given value.
 
-### HasCustomerId
+### HasPageNumber
 
-`func (o *CreditNoteQueryParams) HasCustomerId() bool`
+`func (o *CreditNoteQueryParams) HasPageNumber() bool`
 
-HasCustomerId returns a boolean if a field has been set.
+HasPageNumber returns a boolean if a field has been set.
 
-### SetCustomerIdNil
+### GetPageSize
 
-`func (o *CreditNoteQueryParams) SetCustomerIdNil(b bool)`
+`func (o *CreditNoteQueryParams) GetPageSize() int32`
 
- SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+GetPageSize returns the PageSize field if non-nil, zero value otherwise.
 
-### UnsetCustomerId
-`func (o *CreditNoteQueryParams) UnsetCustomerId()`
+### GetPageSizeOk
 
-UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+`func (o *CreditNoteQueryParams) GetPageSizeOk() (*int32, bool)`
+
+GetPageSizeOk returns a tuple with the PageSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPageSize
+
+`func (o *CreditNoteQueryParams) SetPageSize(v int32)`
+
+SetPageSize sets PageSize field to given value.
+
+### HasPageSize
+
+`func (o *CreditNoteQueryParams) HasPageSize() bool`
+
+HasPageSize returns a boolean if a field has been set.
+
+### GetSortDescending
+
+`func (o *CreditNoteQueryParams) GetSortDescending() bool`
+
+GetSortDescending returns the SortDescending field if non-nil, zero value otherwise.
+
+### GetSortDescendingOk
+
+`func (o *CreditNoteQueryParams) GetSortDescendingOk() (*bool, bool)`
+
+GetSortDescendingOk returns a tuple with the SortDescending field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortDescending
+
+`func (o *CreditNoteQueryParams) SetSortDescending(v bool)`
+
+SetSortDescending sets SortDescending field to given value.
+
+### HasSortDescending
+
+`func (o *CreditNoteQueryParams) HasSortDescending() bool`
+
+HasSortDescending returns a boolean if a field has been set.
+
+### GetSortKey
+
+`func (o *CreditNoteQueryParams) GetSortKey() string`
+
+GetSortKey returns the SortKey field if non-nil, zero value otherwise.
+
+### GetSortKeyOk
+
+`func (o *CreditNoteQueryParams) GetSortKeyOk() (*string, bool)`
+
+GetSortKeyOk returns a tuple with the SortKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSortKey
+
+`func (o *CreditNoteQueryParams) SetSortKey(v string)`
+
+SetSortKey sets SortKey field to given value.
+
+### HasSortKey
+
+`func (o *CreditNoteQueryParams) HasSortKey() bool`
+
+HasSortKey returns a boolean if a field has been set.
+
+### GetUpdatedAt
+
+`func (o *CreditNoteQueryParams) GetUpdatedAt() DateTimeFilter`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *CreditNoteQueryParams) GetUpdatedAtOk() (*DateTimeFilter, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *CreditNoteQueryParams) SetUpdatedAt(v DateTimeFilter)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *CreditNoteQueryParams) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *CreditNoteQueryParams) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *CreditNoteQueryParams) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

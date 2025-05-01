@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**ListCustomerPaymentMethods**](CustomersAPI.md#ListCustomerPaymentMethods) | **Post** /customers/{customer_id}/payment-methods | List Customer Payment Methods
 [**ListCustomers**](CustomersAPI.md#ListCustomers) | **Post** /customers/list | List Customers
 [**ListValidSubscriptions**](CustomersAPI.md#ListValidSubscriptions) | **Post** /customers/{customer_id}/list_valid_subscriptions | List Valid Subscriptions
-[**SearchCustomers**](CustomersAPI.md#SearchCustomers) | **Post** /customers/search | Search Customers
 [**UpdateCustomer**](CustomersAPI.md#UpdateCustomer) | **Put** /customers/{customer_external_id} | Update Customer
 
 
@@ -30,24 +29,24 @@ Create Customer
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createCustomerRequest := *openapiclient.NewCreateCustomerRequest("johndoes@xyz.com") // CreateCustomerRequest | 
+	createCustomerRequest := *openapiclient.NewCreateCustomerRequest("johndoes@xyz.com") // CreateCustomerRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.CreateCustomer(context.Background()).CreateCustomerRequest(createCustomerRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CreateCustomer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCustomer`: CustomerExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CreateCustomer`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.CreateCustomer(context.Background()).CreateCustomerRequest(createCustomerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CreateCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomer`: CustomerExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CreateCustomer`: %v\n", resp)
 }
 ```
 
@@ -96,25 +95,25 @@ Create Customer Balance Transaction
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | 
-    createCustomerBalanceTransactionRequest := *openapiclient.NewCreateCustomerBalanceTransactionRequest(int32(123)) // CreateCustomerBalanceTransactionRequest | 
+	customerId := "customerId_example" // string | 
+	createCustomerBalanceTransactionRequest := *openapiclient.NewCreateCustomerBalanceTransactionRequest(int32(123)) // CreateCustomerBalanceTransactionRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.CreateCustomerBalanceTransaction(context.Background(), customerId).CreateCustomerBalanceTransactionRequest(createCustomerBalanceTransactionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CreateCustomerBalanceTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCustomerBalanceTransaction`: CustomerBalanceTransactionExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CreateCustomerBalanceTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.CreateCustomerBalanceTransaction(context.Background(), customerId).CreateCustomerBalanceTransactionRequest(createCustomerBalanceTransactionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CreateCustomerBalanceTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomerBalanceTransaction`: CustomerBalanceTransactionExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CreateCustomerBalanceTransaction`: %v\n", resp)
 }
 ```
 
@@ -166,24 +165,24 @@ Delete Customer Discount
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | 
+	customerId := "customerId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.DeleteCustomerDiscount(context.Background(), customerId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.DeleteCustomerDiscount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DeleteCustomerDiscount`: CustomerExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.DeleteCustomerDiscount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.DeleteCustomerDiscount(context.Background(), customerId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.DeleteCustomerDiscount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteCustomerDiscount`: CustomerExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.DeleteCustomerDiscount`: %v\n", resp)
 }
 ```
 
@@ -234,25 +233,25 @@ Get Customer
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | 
-    expand := []*string{"Inner_example"} // []*string |  (optional)
+	customerId := "customerId_example" // string | 
+	expand := []*string{"Inner_example"} // []*string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.GetCustomer(context.Background(), customerId).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomer`: CustomerExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomer`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.GetCustomer(context.Background(), customerId).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomer`: CustomerExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomer`: %v\n", resp)
 }
 ```
 
@@ -304,25 +303,25 @@ Get Customer Balance Transaction
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | 
-    transactionId := "transactionId_example" // string | 
+	customerId := "customerId_example" // string | 
+	transactionId := "transactionId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.GetCustomerBalanceTransaction(context.Background(), customerId, transactionId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomerBalanceTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomerBalanceTransaction`: CustomerBalanceTransactionExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomerBalanceTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.GetCustomerBalanceTransaction(context.Background(), customerId, transactionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomerBalanceTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerBalanceTransaction`: CustomerBalanceTransactionExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomerBalanceTransaction`: %v\n", resp)
 }
 ```
 
@@ -375,24 +374,24 @@ Get Customer Balance Transactions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | 
+	customerId := "customerId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.GetCustomerBalanceTransactions(context.Background(), customerId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomerBalanceTransactions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCustomerBalanceTransactions`: []CustomerBalanceTransactionExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomerBalanceTransactions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.GetCustomerBalanceTransactions(context.Background(), customerId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomerBalanceTransactions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerBalanceTransactions`: []CustomerBalanceTransactionExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.GetCustomerBalanceTransactions`: %v\n", resp)
 }
 ```
 
@@ -445,25 +444,25 @@ List Customer Payment Methods
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | Unique Identifier of the customer.
-    customerPaymentMethodQueryParams := *openapiclient.NewCustomerPaymentMethodQueryParams() // CustomerPaymentMethodQueryParams | 
+	customerId := "customerId_example" // string | Unique Identifier of the customer.
+	customerPaymentMethodQueryParams := *openapiclient.NewCustomerPaymentMethodQueryParams() // CustomerPaymentMethodQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.ListCustomerPaymentMethods(context.Background(), customerId).CustomerPaymentMethodQueryParams(customerPaymentMethodQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListCustomerPaymentMethods``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListCustomerPaymentMethods`: ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListCustomerPaymentMethods`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.ListCustomerPaymentMethods(context.Background(), customerId).CustomerPaymentMethodQueryParams(customerPaymentMethodQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListCustomerPaymentMethods``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListCustomerPaymentMethods`: ListResponseUnionTokenizedCreditCardExternalPaymentMethodExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListCustomerPaymentMethods`: %v\n", resp)
 }
 ```
 
@@ -515,24 +514,24 @@ List Customers
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerQueryParams := *openapiclient.NewCustomerQueryParams() // CustomerQueryParams | 
+	customerQueryParams := *openapiclient.NewCustomerQueryParams() // CustomerQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.ListCustomers(context.Background()).CustomerQueryParams(customerQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListCustomers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListCustomers`: ListResponseCustomerExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListCustomers`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.ListCustomers(context.Background()).CustomerQueryParams(customerQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListCustomers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListCustomers`: ListResponseCustomerExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListCustomers`: %v\n", resp)
 }
 ```
 
@@ -581,25 +580,25 @@ List Valid Subscriptions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerId := "customerId_example" // string | Unique Identifier of the customer.
-    listActiveSubParams := *openapiclient.NewListActiveSubParams() // ListActiveSubParams |  (optional)
+	customerId := "customerId_example" // string | Unique Identifier of the customer.
+	listActiveSubParams := *openapiclient.NewListActiveSubParams() // ListActiveSubParams |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.ListValidSubscriptions(context.Background(), customerId).ListActiveSubParams(listActiveSubParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListValidSubscriptions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListValidSubscriptions`: ActiveSubResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListValidSubscriptions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.ListValidSubscriptions(context.Background(), customerId).ListActiveSubParams(listActiveSubParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.ListValidSubscriptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListValidSubscriptions`: ActiveSubResponse
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.ListValidSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -639,70 +638,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchCustomers
-
-> ListResponseCustomerExternal SearchCustomers(ctx).SearchCustomerRequest(searchCustomerRequest).Execute()
-
-Search Customers
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
-)
-
-func main() {
-    searchCustomerRequest := *openapiclient.NewSearchCustomerRequest("Query_example") // SearchCustomerRequest | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.SearchCustomers(context.Background()).SearchCustomerRequest(searchCustomerRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.SearchCustomers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchCustomers`: ListResponseCustomerExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.SearchCustomers`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSearchCustomersRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **searchCustomerRequest** | [**SearchCustomerRequest**](SearchCustomerRequest.md) |  | 
-
-### Return type
-
-[**ListResponseCustomerExternal**](ListResponseCustomerExternal.md)
-
-### Authorization
-
-[HTTPBearer](../README.md#HTTPBearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## UpdateCustomer
 
 > CustomerExternal UpdateCustomer(ctx, customerExternalId).UpdateCustomerRequest(updateCustomerRequest).Execute()
@@ -715,25 +650,25 @@ Update Customer
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    customerExternalId := "customerExternalId_example" // string | 
-    updateCustomerRequest := *openapiclient.NewUpdateCustomerRequest() // UpdateCustomerRequest | 
+	customerExternalId := "customerExternalId_example" // string | 
+	updateCustomerRequest := *openapiclient.NewUpdateCustomerRequest() // UpdateCustomerRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomersAPI.UpdateCustomer(context.Background(), customerExternalId).UpdateCustomerRequest(updateCustomerRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.UpdateCustomer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCustomer`: CustomerExternal
-    fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.UpdateCustomer`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.UpdateCustomer(context.Background(), customerExternalId).UpdateCustomerRequest(updateCustomerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.UpdateCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomer`: CustomerExternal
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.UpdateCustomer`: %v\n", resp)
 }
 ```
 

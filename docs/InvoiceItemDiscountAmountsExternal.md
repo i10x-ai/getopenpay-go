@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_INVOICE_ITEM_DISCOUNT]
-**DiscountId** | **string** | Id of the discount that was applied to get this discount amount. | 
 **AmountAtom** | **int32** | The amount_atom, of the discount. | 
+**DiscountId** | **string** | Id of the discount that was applied to get this discount amount. | 
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
 
 ## Methods
 
 ### NewInvoiceItemDiscountAmountsExternal
 
-`func NewInvoiceItemDiscountAmountsExternal(discountId string, amountAtom int32, ) *InvoiceItemDiscountAmountsExternal`
+`func NewInvoiceItemDiscountAmountsExternal(amountAtom int32, discountId string, ) *InvoiceItemDiscountAmountsExternal`
 
 NewInvoiceItemDiscountAmountsExternal instantiates a new InvoiceItemDiscountAmountsExternal object
 This constructor will assign default values to properties that have it defined,
@@ -26,6 +26,46 @@ will change when the set of required properties is changed
 NewInvoiceItemDiscountAmountsExternalWithDefaults instantiates a new InvoiceItemDiscountAmountsExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAmountAtom
+
+`func (o *InvoiceItemDiscountAmountsExternal) GetAmountAtom() int32`
+
+GetAmountAtom returns the AmountAtom field if non-nil, zero value otherwise.
+
+### GetAmountAtomOk
+
+`func (o *InvoiceItemDiscountAmountsExternal) GetAmountAtomOk() (*int32, bool)`
+
+GetAmountAtomOk returns a tuple with the AmountAtom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmountAtom
+
+`func (o *InvoiceItemDiscountAmountsExternal) SetAmountAtom(v int32)`
+
+SetAmountAtom sets AmountAtom field to given value.
+
+
+### GetDiscountId
+
+`func (o *InvoiceItemDiscountAmountsExternal) GetDiscountId() string`
+
+GetDiscountId returns the DiscountId field if non-nil, zero value otherwise.
+
+### GetDiscountIdOk
+
+`func (o *InvoiceItemDiscountAmountsExternal) GetDiscountIdOk() (*string, bool)`
+
+GetDiscountIdOk returns a tuple with the DiscountId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountId
+
+`func (o *InvoiceItemDiscountAmountsExternal) SetDiscountId(v string)`
+
+SetDiscountId sets DiscountId field to given value.
+
 
 ### GetObject
 
@@ -51,46 +91,6 @@ SetObject sets Object field to given value.
 `func (o *InvoiceItemDiscountAmountsExternal) HasObject() bool`
 
 HasObject returns a boolean if a field has been set.
-
-### GetDiscountId
-
-`func (o *InvoiceItemDiscountAmountsExternal) GetDiscountId() string`
-
-GetDiscountId returns the DiscountId field if non-nil, zero value otherwise.
-
-### GetDiscountIdOk
-
-`func (o *InvoiceItemDiscountAmountsExternal) GetDiscountIdOk() (*string, bool)`
-
-GetDiscountIdOk returns a tuple with the DiscountId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDiscountId
-
-`func (o *InvoiceItemDiscountAmountsExternal) SetDiscountId(v string)`
-
-SetDiscountId sets DiscountId field to given value.
-
-
-### GetAmountAtom
-
-`func (o *InvoiceItemDiscountAmountsExternal) GetAmountAtom() int32`
-
-GetAmountAtom returns the AmountAtom field if non-nil, zero value otherwise.
-
-### GetAmountAtomOk
-
-`func (o *InvoiceItemDiscountAmountsExternal) GetAmountAtomOk() (*int32, bool)`
-
-GetAmountAtomOk returns a tuple with the AmountAtom field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAmountAtom
-
-`func (o *InvoiceItemDiscountAmountsExternal) SetAmountAtom(v int32)`
-
-SetAmountAtom sets AmountAtom field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

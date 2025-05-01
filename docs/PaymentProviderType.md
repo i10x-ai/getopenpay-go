@@ -15,6 +15,10 @@
 
 * `STRIPE_LINK` (value: `"stripe_link"`)
 
+* `PAYPAL` (value: `"paypal"`)
+
+* `CRYPTO` (value: `"crypto"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

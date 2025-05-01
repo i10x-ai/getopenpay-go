@@ -21,24 +21,24 @@ Create Dispute
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createDisputeRequest := *openapiclient.NewCreateDisputeRequest() // CreateDisputeRequest | 
+	createDisputeRequest := *openapiclient.NewCreateDisputeRequest() // CreateDisputeRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DisputesAPI.CreateDispute(context.Background()).CreateDisputeRequest(createDisputeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DisputesAPI.CreateDispute``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateDispute`: DisputeExternal
-    fmt.Fprintf(os.Stdout, "Response from `DisputesAPI.CreateDispute`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DisputesAPI.CreateDispute(context.Background()).CreateDisputeRequest(createDisputeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DisputesAPI.CreateDispute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDispute`: DisputeExternal
+	fmt.Fprintf(os.Stdout, "Response from `DisputesAPI.CreateDispute`: %v\n", resp)
 }
 ```
 
@@ -85,24 +85,24 @@ Get Dispute
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    disputeId := "disputeId_example" // string | 
+	disputeId := "disputeId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DisputesAPI.GetDispute(context.Background(), disputeId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DisputesAPI.GetDispute``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDispute`: DisputeExternal
-    fmt.Fprintf(os.Stdout, "Response from `DisputesAPI.GetDispute`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DisputesAPI.GetDispute(context.Background(), disputeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DisputesAPI.GetDispute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDispute`: DisputeExternal
+	fmt.Fprintf(os.Stdout, "Response from `DisputesAPI.GetDispute`: %v\n", resp)
 }
 ```
 

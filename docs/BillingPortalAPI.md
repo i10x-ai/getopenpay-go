@@ -20,24 +20,24 @@ Create Portal Session
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    createPortalSessionRequest := *openapiclient.NewCreatePortalSessionRequest("cust_dev_abc123", "http://example.com/account") // CreatePortalSessionRequest | 
+	createPortalSessionRequest := *openapiclient.NewCreatePortalSessionRequest("cust_dev_abc123", "http://example.com/account") // CreatePortalSessionRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BillingPortalAPI.CreatePortalSession(context.Background()).CreatePortalSessionRequest(createPortalSessionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BillingPortalAPI.CreatePortalSession``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreatePortalSession`: PortalSessionExternal
-    fmt.Fprintf(os.Stdout, "Response from `BillingPortalAPI.CreatePortalSession`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BillingPortalAPI.CreatePortalSession(context.Background()).CreatePortalSessionRequest(createPortalSessionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BillingPortalAPI.CreatePortalSession``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreatePortalSession`: PortalSessionExternal
+	fmt.Fprintf(os.Stdout, "Response from `BillingPortalAPI.CreatePortalSession`: %v\n", resp)
 }
 ```
 

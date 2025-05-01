@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CouponId** | **string** | The unique id of coupon for this promotion code. | 
 **Code** | **string** | The customer-facing code. This code must be unique across all active promotion codes for a specific customer. Case insensitive. | 
-**CustomerIds** | Pointer to **[]string** |  | [optional] 
+**CouponId** | **string** | The unique id of coupon for this promotion code. | 
+**CustomerIds** | Pointer to **[]string** | List of customer that this promotion code can be used by. If not set, the promotion code can be used by all customers. | [optional] 
 **ExpiresAt** | Pointer to **NullableTime** |  | [optional] 
 **MaxRedemptions** | Pointer to **NullableInt32** |  | [optional] 
 **MaxRedemptionsPerCustomer** | Pointer to **NullableInt32** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewCreatePromoCodeRequest
 
-`func NewCreatePromoCodeRequest(couponId string, code string, ) *CreatePromoCodeRequest`
+`func NewCreatePromoCodeRequest(code string, couponId string, ) *CreatePromoCodeRequest`
 
 NewCreatePromoCodeRequest instantiates a new CreatePromoCodeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewCreatePromoCodeRequestWithDefaults instantiates a new CreatePromoCodeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCouponId
-
-`func (o *CreatePromoCodeRequest) GetCouponId() string`
-
-GetCouponId returns the CouponId field if non-nil, zero value otherwise.
-
-### GetCouponIdOk
-
-`func (o *CreatePromoCodeRequest) GetCouponIdOk() (*string, bool)`
-
-GetCouponIdOk returns a tuple with the CouponId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCouponId
-
-`func (o *CreatePromoCodeRequest) SetCouponId(v string)`
-
-SetCouponId sets CouponId field to given value.
-
 
 ### GetCode
 
@@ -69,6 +49,26 @@ and a boolean to check if the value has been set.
 `func (o *CreatePromoCodeRequest) SetCode(v string)`
 
 SetCode sets Code field to given value.
+
+
+### GetCouponId
+
+`func (o *CreatePromoCodeRequest) GetCouponId() string`
+
+GetCouponId returns the CouponId field if non-nil, zero value otherwise.
+
+### GetCouponIdOk
+
+`func (o *CreatePromoCodeRequest) GetCouponIdOk() (*string, bool)`
+
+GetCouponIdOk returns a tuple with the CouponId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCouponId
+
+`func (o *CreatePromoCodeRequest) SetCouponId(v string)`
+
+SetCouponId sets CouponId field to given value.
 
 
 ### GetCustomerIds

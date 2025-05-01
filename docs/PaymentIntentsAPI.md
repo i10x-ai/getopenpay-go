@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetPaymentIntent**](PaymentIntentsAPI.md#GetPaymentIntent) | **Get** /payment-intents/{payment_intent_id} | Get Payment Intent
 [**ListPaymentIntents**](PaymentIntentsAPI.md#ListPaymentIntents) | **Post** /payment-intents/list | List Payment Intents
-[**SearchPaymentIntents**](PaymentIntentsAPI.md#SearchPaymentIntents) | **Post** /payment-intents/search | Search Payment Intents
 [**UpdatePaymentIntent**](PaymentIntentsAPI.md#UpdatePaymentIntent) | **Put** /payment-intents/{payment_intent_id} | Update Payment Intent
 
 
@@ -23,25 +22,25 @@ Get Payment Intent
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    paymentIntentId := "paymentIntentId_example" // string | 
-    expand := []string{"Inner_example"} // []string |  (optional)
+	paymentIntentId := "paymentIntentId_example" // string | 
+	expand := []string{"Inner_example"} // []string |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentIntentsAPI.GetPaymentIntent(context.Background(), paymentIntentId).Expand(expand).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.GetPaymentIntent``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetPaymentIntent`: PaymentIntentExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.GetPaymentIntent`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentIntentsAPI.GetPaymentIntent(context.Background(), paymentIntentId).Expand(expand).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.GetPaymentIntent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPaymentIntent`: PaymentIntentExternal
+	fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.GetPaymentIntent`: %v\n", resp)
 }
 ```
 
@@ -93,24 +92,24 @@ List Payment Intents
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    paymentIntentQueryParams := *openapiclient.NewPaymentIntentQueryParams() // PaymentIntentQueryParams | 
+	paymentIntentQueryParams := *openapiclient.NewPaymentIntentQueryParams() // PaymentIntentQueryParams | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentIntentsAPI.ListPaymentIntents(context.Background()).PaymentIntentQueryParams(paymentIntentQueryParams).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.ListPaymentIntents``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListPaymentIntents`: ListResponsePaymentIntentExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.ListPaymentIntents`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentIntentsAPI.ListPaymentIntents(context.Background()).PaymentIntentQueryParams(paymentIntentQueryParams).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.ListPaymentIntents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPaymentIntents`: ListResponsePaymentIntentExternal
+	fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.ListPaymentIntents`: %v\n", resp)
 }
 ```
 
@@ -145,70 +144,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchPaymentIntents
-
-> ListResponsePaymentIntentExternal SearchPaymentIntents(ctx).SearchPaymentIntentRequest(searchPaymentIntentRequest).Execute()
-
-Search Payment Intents
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
-)
-
-func main() {
-    searchPaymentIntentRequest := *openapiclient.NewSearchPaymentIntentRequest("Query_example") // SearchPaymentIntentRequest | 
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentIntentsAPI.SearchPaymentIntents(context.Background()).SearchPaymentIntentRequest(searchPaymentIntentRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.SearchPaymentIntents``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchPaymentIntents`: ListResponsePaymentIntentExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.SearchPaymentIntents`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSearchPaymentIntentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **searchPaymentIntentRequest** | [**SearchPaymentIntentRequest**](SearchPaymentIntentRequest.md) |  | 
-
-### Return type
-
-[**ListResponsePaymentIntentExternal**](ListResponsePaymentIntentExternal.md)
-
-### Authorization
-
-[HTTPBearer](../README.md#HTTPBearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## UpdatePaymentIntent
 
 > PaymentIntentExternal UpdatePaymentIntent(ctx, paymentIntentId).UpdatePaymentIntent(updatePaymentIntent).Execute()
@@ -221,25 +156,25 @@ Update Payment Intent
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/getopenpay/getopenpay-go"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/getopenpay/getopenpay-go"
 )
 
 func main() {
-    paymentIntentId := "paymentIntentId_example" // string | 
-    updatePaymentIntent := *openapiclient.NewUpdatePaymentIntent() // UpdatePaymentIntent | 
+	paymentIntentId := "paymentIntentId_example" // string | 
+	updatePaymentIntent := *openapiclient.NewUpdatePaymentIntent() // UpdatePaymentIntent | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentIntentsAPI.UpdatePaymentIntent(context.Background(), paymentIntentId).UpdatePaymentIntent(updatePaymentIntent).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.UpdatePaymentIntent``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdatePaymentIntent`: PaymentIntentExternal
-    fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.UpdatePaymentIntent`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PaymentIntentsAPI.UpdatePaymentIntent(context.Background(), paymentIntentId).UpdatePaymentIntent(updatePaymentIntent).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PaymentIntentsAPI.UpdatePaymentIntent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePaymentIntent`: PaymentIntentExternal
+	fmt.Fprintf(os.Stdout, "Response from `PaymentIntentsAPI.UpdatePaymentIntent`: %v\n", resp)
 }
 ```
 

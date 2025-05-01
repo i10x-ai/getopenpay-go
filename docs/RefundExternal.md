@@ -4,25 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Identifier of the refund. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_REFUND]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **AmountAtom** | **int32** | amount_atom that you want to refund. | 
-**Currency** | Pointer to [**CurrencyEnum**](CurrencyEnum.md) |  | [optional] [default to CURRENCYENUM_USD]
-**ChargeId** | **string** | Unique Identifier of the charge. | 
-**InvoiceId** | **string** | Invoice id to which the refund is attached. | 
-**PaymentIntentId** | **string** | Unique Identifier of the payment_intent. | 
-**Reason** | [**RefundReasonEnum**](RefundReasonEnum.md) |  | 
-**Status** | [**RefundStatusEnum**](RefundStatusEnum.md) |  | 
 **AttemptErrorMessage** | Pointer to **NullableString** |  | [optional] 
+**ChargeId** | **string** | Unique Identifier of the charge. | 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
+**Currency** | Pointer to [**CurrencyEnum**](CurrencyEnum.md) | Three-letter ISO currency code, in lowercase. | [optional] 
+**Id** | **string** | Unique Identifier of the refund. | 
+**InvoiceId** | **string** | Invoice id to which the refund is attached. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**PaymentIntentId** | **string** | Unique Identifier of the payment_intent. | 
+**Reason** | [**RefundReasonEnum**](RefundReasonEnum.md) | Reason of the refund. | 
+**Status** | [**RefundStatusEnum**](RefundStatusEnum.md) | Status of the refund. | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
 
 ## Methods
 
 ### NewRefundExternal
 
-`func NewRefundExternal(id string, createdAt time.Time, updatedAt time.Time, amountAtom int32, chargeId string, invoiceId string, paymentIntentId string, reason RefundReasonEnum, status RefundStatusEnum, ) *RefundExternal`
+`func NewRefundExternal(amountAtom int32, chargeId string, createdAt time.Time, id string, invoiceId string, paymentIntentId string, reason RefundReasonEnum, status RefundStatusEnum, updatedAt time.Time, ) *RefundExternal`
 
 NewRefundExternal instantiates a new RefundExternal object
 This constructor will assign default values to properties that have it defined,
@@ -36,116 +36,6 @@ will change when the set of required properties is changed
 NewRefundExternalWithDefaults instantiates a new RefundExternal object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *RefundExternal) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *RefundExternal) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *RefundExternal) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
-### GetObject
-
-`func (o *RefundExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *RefundExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *RefundExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *RefundExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *RefundExternal) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *RefundExternal) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *RefundExternal) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-
-### GetUpdatedAt
-
-`func (o *RefundExternal) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *RefundExternal) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *RefundExternal) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-
-### GetIsDeleted
-
-`func (o *RefundExternal) GetIsDeleted() bool`
-
-GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
-
-### GetIsDeletedOk
-
-`func (o *RefundExternal) GetIsDeletedOk() (*bool, bool)`
-
-GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDeleted
-
-`func (o *RefundExternal) SetIsDeleted(v bool)`
-
-SetIsDeleted sets IsDeleted field to given value.
-
-### HasIsDeleted
-
-`func (o *RefundExternal) HasIsDeleted() bool`
-
-HasIsDeleted returns a boolean if a field has been set.
 
 ### GetAmountAtom
 
@@ -165,6 +55,81 @@ and a boolean to check if the value has been set.
 `func (o *RefundExternal) SetAmountAtom(v int32)`
 
 SetAmountAtom sets AmountAtom field to given value.
+
+
+### GetAttemptErrorMessage
+
+`func (o *RefundExternal) GetAttemptErrorMessage() string`
+
+GetAttemptErrorMessage returns the AttemptErrorMessage field if non-nil, zero value otherwise.
+
+### GetAttemptErrorMessageOk
+
+`func (o *RefundExternal) GetAttemptErrorMessageOk() (*string, bool)`
+
+GetAttemptErrorMessageOk returns a tuple with the AttemptErrorMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttemptErrorMessage
+
+`func (o *RefundExternal) SetAttemptErrorMessage(v string)`
+
+SetAttemptErrorMessage sets AttemptErrorMessage field to given value.
+
+### HasAttemptErrorMessage
+
+`func (o *RefundExternal) HasAttemptErrorMessage() bool`
+
+HasAttemptErrorMessage returns a boolean if a field has been set.
+
+### SetAttemptErrorMessageNil
+
+`func (o *RefundExternal) SetAttemptErrorMessageNil(b bool)`
+
+ SetAttemptErrorMessageNil sets the value for AttemptErrorMessage to be an explicit nil
+
+### UnsetAttemptErrorMessage
+`func (o *RefundExternal) UnsetAttemptErrorMessage()`
+
+UnsetAttemptErrorMessage ensures that no value is present for AttemptErrorMessage, not even an explicit nil
+### GetChargeId
+
+`func (o *RefundExternal) GetChargeId() string`
+
+GetChargeId returns the ChargeId field if non-nil, zero value otherwise.
+
+### GetChargeIdOk
+
+`func (o *RefundExternal) GetChargeIdOk() (*string, bool)`
+
+GetChargeIdOk returns a tuple with the ChargeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChargeId
+
+`func (o *RefundExternal) SetChargeId(v string)`
+
+SetChargeId sets ChargeId field to given value.
+
+
+### GetCreatedAt
+
+`func (o *RefundExternal) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *RefundExternal) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *RefundExternal) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetCurrency
@@ -192,24 +157,24 @@ SetCurrency sets Currency field to given value.
 
 HasCurrency returns a boolean if a field has been set.
 
-### GetChargeId
+### GetId
 
-`func (o *RefundExternal) GetChargeId() string`
+`func (o *RefundExternal) GetId() string`
 
-GetChargeId returns the ChargeId field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetChargeIdOk
+### GetIdOk
 
-`func (o *RefundExternal) GetChargeIdOk() (*string, bool)`
+`func (o *RefundExternal) GetIdOk() (*string, bool)`
 
-GetChargeIdOk returns a tuple with the ChargeId field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetChargeId
+### SetId
 
-`func (o *RefundExternal) SetChargeId(v string)`
+`func (o *RefundExternal) SetId(v string)`
 
-SetChargeId sets ChargeId field to given value.
+SetId sets Id field to given value.
 
 
 ### GetInvoiceId
@@ -231,6 +196,56 @@ and a boolean to check if the value has been set.
 
 SetInvoiceId sets InvoiceId field to given value.
 
+
+### GetIsDeleted
+
+`func (o *RefundExternal) GetIsDeleted() bool`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *RefundExternal) GetIsDeletedOk() (*bool, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *RefundExternal) SetIsDeleted(v bool)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *RefundExternal) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
+### GetObject
+
+`func (o *RefundExternal) GetObject() ObjectName`
+
+GetObject returns the Object field if non-nil, zero value otherwise.
+
+### GetObjectOk
+
+`func (o *RefundExternal) GetObjectOk() (*ObjectName, bool)`
+
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObject
+
+`func (o *RefundExternal) SetObject(v ObjectName)`
+
+SetObject sets Object field to given value.
+
+### HasObject
+
+`func (o *RefundExternal) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### GetPaymentIntentId
 
@@ -292,41 +307,26 @@ and a boolean to check if the value has been set.
 SetStatus sets Status field to given value.
 
 
-### GetAttemptErrorMessage
+### GetUpdatedAt
 
-`func (o *RefundExternal) GetAttemptErrorMessage() string`
+`func (o *RefundExternal) GetUpdatedAt() time.Time`
 
-GetAttemptErrorMessage returns the AttemptErrorMessage field if non-nil, zero value otherwise.
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
-### GetAttemptErrorMessageOk
+### GetUpdatedAtOk
 
-`func (o *RefundExternal) GetAttemptErrorMessageOk() (*string, bool)`
+`func (o *RefundExternal) GetUpdatedAtOk() (*time.Time, bool)`
 
-GetAttemptErrorMessageOk returns a tuple with the AttemptErrorMessage field if it's non-nil, zero value otherwise
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttemptErrorMessage
+### SetUpdatedAt
 
-`func (o *RefundExternal) SetAttemptErrorMessage(v string)`
+`func (o *RefundExternal) SetUpdatedAt(v time.Time)`
 
-SetAttemptErrorMessage sets AttemptErrorMessage field to given value.
+SetUpdatedAt sets UpdatedAt field to given value.
 
-### HasAttemptErrorMessage
 
-`func (o *RefundExternal) HasAttemptErrorMessage() bool`
-
-HasAttemptErrorMessage returns a boolean if a field has been set.
-
-### SetAttemptErrorMessageNil
-
-`func (o *RefundExternal) SetAttemptErrorMessageNil(b bool)`
-
- SetAttemptErrorMessageNil sets the value for AttemptErrorMessage to be an explicit nil
-
-### UnsetAttemptErrorMessage
-`func (o *RefundExternal) UnsetAttemptErrorMessage()`
-
-UnsetAttemptErrorMessage ensures that no value is present for AttemptErrorMessage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

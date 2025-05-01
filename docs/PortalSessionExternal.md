@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The ID of the portal session. | 
-**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] [default to OBJECTNAME_PORTAL_SESSION]
-**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
-**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
-**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
 **AccountId** | **string** | Unique identifier for the account. | 
+**CreatedAt** | **time.Time** | DateTime at which the object was created, in &#39;ISO 8601&#39; format. | 
 **CustomerId** | **string** | The ID of an existing customer. | 
-**ReturnUrl** | **string** | The default URL to redirect customers to when they click on the portal&#39;s link to return to your website. | 
-**Url** | **string** | The short-lived URL of the session that gives customers access to the customer portal. | 
+**Id** | **string** | The ID of the portal session. | 
+**IsDeleted** | Pointer to **bool** | If true, indicates that this object has been deleted | [optional] [default to false]
+**Object** | Pointer to [**ObjectName**](ObjectName.md) |  | [optional] 
+**ReturnUrl** | **string** | The default URL to redirect customers to when they click on the portal\&quot;s link to return to your website. | 
 **Token** | **string** | The short-lived token of the session that gives customers access to the customer portal. | 
+**UpdatedAt** | **time.Time** | DateTime at which the object was updated, in &#39;ISO 8601&#39; format. | 
+**Url** | **string** | The short-lived URL of the session that gives customers access to the customer portal. | 
 
 ## Methods
 
 ### NewPortalSessionExternal
 
-`func NewPortalSessionExternal(id string, createdAt time.Time, updatedAt time.Time, accountId string, customerId string, returnUrl string, url string, token string, ) *PortalSessionExternal`
+`func NewPortalSessionExternal(accountId string, createdAt time.Time, customerId string, id string, returnUrl string, token string, updatedAt time.Time, url string, ) *PortalSessionExternal`
 
 NewPortalSessionExternal instantiates a new PortalSessionExternal object
 This constructor will assign default values to properties that have it defined,
@@ -34,50 +34,25 @@ NewPortalSessionExternalWithDefaults instantiates a new PortalSessionExternal ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetAccountId
 
-`func (o *PortalSessionExternal) GetId() string`
+`func (o *PortalSessionExternal) GetAccountId() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetAccountId returns the AccountId field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetAccountIdOk
 
-`func (o *PortalSessionExternal) GetIdOk() (*string, bool)`
+`func (o *PortalSessionExternal) GetAccountIdOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetAccountId
 
-`func (o *PortalSessionExternal) SetId(v string)`
+`func (o *PortalSessionExternal) SetAccountId(v string)`
 
-SetId sets Id field to given value.
+SetAccountId sets AccountId field to given value.
 
-
-### GetObject
-
-`func (o *PortalSessionExternal) GetObject() ObjectName`
-
-GetObject returns the Object field if non-nil, zero value otherwise.
-
-### GetObjectOk
-
-`func (o *PortalSessionExternal) GetObjectOk() (*ObjectName, bool)`
-
-GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObject
-
-`func (o *PortalSessionExternal) SetObject(v ObjectName)`
-
-SetObject sets Object field to given value.
-
-### HasObject
-
-`func (o *PortalSessionExternal) HasObject() bool`
-
-HasObject returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -99,24 +74,44 @@ and a boolean to check if the value has been set.
 SetCreatedAt sets CreatedAt field to given value.
 
 
-### GetUpdatedAt
+### GetCustomerId
 
-`func (o *PortalSessionExternal) GetUpdatedAt() time.Time`
+`func (o *PortalSessionExternal) GetCustomerId() string`
 
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetUpdatedAtOk
+### GetCustomerIdOk
 
-`func (o *PortalSessionExternal) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *PortalSessionExternal) GetCustomerIdOk() (*string, bool)`
 
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetCustomerId
 
-`func (o *PortalSessionExternal) SetUpdatedAt(v time.Time)`
+`func (o *PortalSessionExternal) SetCustomerId(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetCustomerId sets CustomerId field to given value.
+
+
+### GetId
+
+`func (o *PortalSessionExternal) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PortalSessionExternal) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PortalSessionExternal) SetId(v string)`
+
+SetId sets Id field to given value.
 
 
 ### GetIsDeleted
@@ -144,45 +139,30 @@ SetIsDeleted sets IsDeleted field to given value.
 
 HasIsDeleted returns a boolean if a field has been set.
 
-### GetAccountId
+### GetObject
 
-`func (o *PortalSessionExternal) GetAccountId() string`
+`func (o *PortalSessionExternal) GetObject() ObjectName`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+GetObject returns the Object field if non-nil, zero value otherwise.
 
-### GetAccountIdOk
+### GetObjectOk
 
-`func (o *PortalSessionExternal) GetAccountIdOk() (*string, bool)`
+`func (o *PortalSessionExternal) GetObjectOk() (*ObjectName, bool)`
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+GetObjectOk returns a tuple with the Object field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetObject
 
-`func (o *PortalSessionExternal) SetAccountId(v string)`
+`func (o *PortalSessionExternal) SetObject(v ObjectName)`
 
-SetAccountId sets AccountId field to given value.
+SetObject sets Object field to given value.
 
+### HasObject
 
-### GetCustomerId
+`func (o *PortalSessionExternal) HasObject() bool`
 
-`func (o *PortalSessionExternal) GetCustomerId() string`
-
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
-
-### GetCustomerIdOk
-
-`func (o *PortalSessionExternal) GetCustomerIdOk() (*string, bool)`
-
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerId
-
-`func (o *PortalSessionExternal) SetCustomerId(v string)`
-
-SetCustomerId sets CustomerId field to given value.
-
+HasObject returns a boolean if a field has been set.
 
 ### GetReturnUrl
 
@@ -204,26 +184,6 @@ and a boolean to check if the value has been set.
 SetReturnUrl sets ReturnUrl field to given value.
 
 
-### GetUrl
-
-`func (o *PortalSessionExternal) GetUrl() string`
-
-GetUrl returns the Url field if non-nil, zero value otherwise.
-
-### GetUrlOk
-
-`func (o *PortalSessionExternal) GetUrlOk() (*string, bool)`
-
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrl
-
-`func (o *PortalSessionExternal) SetUrl(v string)`
-
-SetUrl sets Url field to given value.
-
-
 ### GetToken
 
 `func (o *PortalSessionExternal) GetToken() string`
@@ -242,6 +202,46 @@ and a boolean to check if the value has been set.
 `func (o *PortalSessionExternal) SetToken(v string)`
 
 SetToken sets Token field to given value.
+
+
+### GetUpdatedAt
+
+`func (o *PortalSessionExternal) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *PortalSessionExternal) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *PortalSessionExternal) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+
+### GetUrl
+
+`func (o *PortalSessionExternal) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *PortalSessionExternal) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *PortalSessionExternal) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
 
 
 
