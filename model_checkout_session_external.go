@@ -11,10 +11,10 @@ API version: 1.2.1
 package getopenpay
 
 import (
-	"encoding/json"
-	"time"
 	"bytes"
+	"enco
 	"fmt"
+n
 )
 
 // checks if the CheckoutSessionExternal type satisfies the MappedNullable interface at compile time
@@ -29,38 +29,38 @@ type CheckoutSessionExternal struct {
 	// The integer amount representing the subtotal amount for the line items.
 	AmountSubtotalAtom int32 `json:"amount_subtotal_atom"`
 	// The integer amount representing the total amount for the line items, after discounts and taxes.
-	AmountTotalAtom int32 `json:"amount_total_atom"`
+	AmountTotalAtom   int32          `json:"amount_total_atom"`
 	ClientReferenceId NullableString `json:"client_reference_id,omitempty"`
-	CouponId NullableString `json:"coupon_id,omitempty"`
+	CouponId          NullableString `json:"coupon_id,omitempty"`
 	// DateTime at which the object was created, in 'ISO 8601' format.
-	CreatedAt time.Time `json:"created_at"`
-	Currency NullableString `json:"currency"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	CustomerEmail NullableString `json:"customer_email"`
-	CustomerId NullableString `json:"customer_id"`
+	CreatedAt     time.Time              `json:"created_at"`
+	Currency      NullableString         `json:"currency"`
+	CustomFields  map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomerEmail NullableString         `json:"customer_email"`
+	CustomerId    NullableString         `json:"customer_id"`
 	// Unique Identifier of the checkout session.
 	Id string `json:"id"`
 	// If true, indicates that this object has been deleted
-	IsDeleted *bool `json:"is_deleted,omitempty"`
-	Language NullableCustomerLanguage `json:"language,omitempty"`
+	IsDeleted *bool                    `json:"is_deleted,omitempty"`
+	Language  NullableCustomerLanguage `json:"language,omitempty"`
 	// The line items purchased by the customers.
 	LineItems []CheckoutSessionLineItemExternal `json:"line_items"`
 	// The mode of the Checkout Session.
-	Mode CheckoutMode `json:"mode"`
-	Object *ObjectName `json:"object,omitempty"`
+	Mode      CheckoutMode   `json:"mode"`
+	Object    *ObjectName    `json:"object,omitempty"`
 	ReturnUrl NullableString `json:"return_url"`
 	// The random secure token associated with the checkout session.
-	SecureToken string `json:"secure_token"`
+	SecureToken string                      `json:"secure_token"`
 	SetupIntent NullableSetupIntentExternal `json:"setup_intent"`
 	// The current status of the checkout session.
-	Status CheckoutSessionStatus `json:"status"`
-	SubscriptionId NullableString `json:"subscription_id,omitempty"`
-	SubscriptionIds []string `json:"subscription_ids"`
-	SuccessUrl NullableString `json:"success_url"`
+	Status          CheckoutSessionStatus `json:"status"`
+	SubscriptionId  NullableString        `json:"subscription_id,omitempty"`
+	SubscriptionIds []string              `json:"subscription_ids"`
+	SuccessUrl      NullableString        `json:"success_url"`
 	// The integer amount representing the tax amount for the line items.
-	TaxAmountAtom int32 `json:"tax_amount_atom"`
-	TrialEnd NullableTime `json:"trial_end"`
-	TrialFromPrice NullableBool `json:"trial_from_price"`
+	TaxAmountAtom   int32         `json:"tax_amount_atom"`
+	TrialEnd        NullableTime  `json:"trial_end"`
+	TrialFromPrice  NullableBool  `json:"trial_from_price"`
 	TrialPeriodDays NullableInt32 `json:"trial_period_days"`
 	// DateTime at which the object was updated, in 'ISO 8601' format.
 	UpdatedAt time.Time `json:"updated_at"`
@@ -242,6 +242,10 @@ func (o *CheckoutSessionExternal) HasClientReferenceId() bool {
 func (o *CheckoutSessionExternal) SetClientReferenceId(v string) {
 	o.ClientReferenceId.Set(&v)
 }
+nceId.Set(&v)
+}
+
+// SetClientReferenceIdNil sets the value for ClientReferenceId to b
 // SetClientReferenceIdNil sets the value for ClientReferenceId to be an explicit nil
 func (o *CheckoutSessionExternal) SetClientReferenceIdNil() {
 	o.ClientReferenceId.Set(nil)
@@ -281,6 +285,10 @@ func (o *CheckoutSessionExternal) HasCouponId() bool {
 }
 
 // SetCouponId gets a reference to the given NullableString and assigns it to the CouponId field.
+.Set(&v)
+}
+
+// SetCouponIdNil sets the value for CouponId
 func (o *CheckoutSessionExternal) SetCouponId(v string) {
 	o.CouponId.Set(&v)
 }
@@ -511,6 +519,7 @@ func (o *CheckoutSessionExternal) HasLanguage() bool {
 	}
 
 	return false
+u
 }
 
 // SetLanguage gets a reference to the given NullableCustomerLanguage and assigns it to the Language field.
@@ -733,6 +742,7 @@ func (o *CheckoutSessionExternal) HasSubscriptionId() bool {
 	}
 
 	return false
+o
 }
 
 // SetSubscriptionId gets a reference to the given NullableString and assigns it to the SubscriptionId field.
@@ -946,7 +956,7 @@ func (o *CheckoutSessionExternal) GetUrlOk() (*string, bool) {
 	return &o.Url, true
 }
 
-// SetUrl sets field value
+	toSerialize, err := o.ToMap()
 func (o *CheckoutSessionExternal) SetUrl(v string) {
 	o.Url = v
 }
@@ -1039,10 +1049,10 @@ func (o *CheckoutSessionExternal) UnmarshalJSON(data []byte) (err error) {
 		"updated_at",
 		"url",
 	}
-
+		return err
 	allProperties := make(map[string]interface{})
 
-	err = json.Unmarshal(data, &allProperties)
+	for _, requiredProperty := range requiredProperties {
 
 	if err != nil {
 		return err;
@@ -1057,7 +1067,6 @@ func (o *CheckoutSessionExternal) UnmarshalJSON(data []byte) (err error) {
 	varCheckoutSessionExternal := _CheckoutSessionExternal{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
 	err = decoder.Decode(&varCheckoutSessionExternal)
 
 	if err != nil {
@@ -1099,8 +1108,6 @@ func NewNullableCheckoutSessionExternal(val *CheckoutSessionExternal) *NullableC
 func (v NullableCheckoutSessionExternal) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
-
-func (v *NullableCheckoutSessionExternal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
